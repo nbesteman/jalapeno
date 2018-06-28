@@ -1,0 +1,77 @@
+\documentclass{book}
+
+\usepackage{float} % Required for specifying the exact location of a figure or table
+\usepackage{graphicx} % Required for including images
+\usepackage{wrapfig}
+\usepackage{standalone}
+\usepackage{import}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make the lines in the title page
+%\newcommand*{\MyPath}{../processing/Goals/GoalSection1}
+\newcommand*{\MyPath}{../processing}
+\graphicspath{ {.././source/} }
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+%\setcounter{tocdepth}{2}
+
+%----------------------------------------------------------------------------------------
+%Title Page Defined with a horizontal line above and below
+%\HRule \\[.4cm] \Huge \bfseries Allegan County GIS Services\\[0.5cm] \Large startup guide
+%\title{\HRule \\[.4cm]\Huge \bfseries Policy
+\title{\HRule \\[.4cm] 
+\begin{figure}[H] % included image
+\begin{center}	 
+	\includegraphics[scale=.5]{GIS_Logo_better.jpg}
+	\end{center}
+	\end{figure}
+	\Huge \bfseries What We Do
+\HRule \\[.4cm]
+}
+
+\author{\Large Allegan County GIS \\\Large www.allegancounty.org/gis}
+%----------------------------------------------------------------------------------------
+%Document Begins
+\begin{document}
+\frontmatter
+%----------------------------------------------------------------------------------------
+%%Title Page Called
+\maketitle
+%----------------------------------------------------------------------------------------
+%\tableofcontents\clearpage
+\tableofcontents
+\mainmatter
+\pagebreak
+%----------------------------------------------------------------------------------------
+%\part*{Introduction}
+
+\part{Brand}
+\import{\MyPath/brand/}{brandChapter}
+
+%\input{\MyPath/brand/brandSection2.tex}
+%\include{\MyPath/brand/brandSection1}
+
+\part{Methods}
+\import{\MyPath/methods/}{methodChapter}
+
+
+%\include{\MyPath}
+%\import{Goals/}{GoalSection1}
+
+%\part{Methods}
+
+%\chapter{Method X}
+%Description of Method X
+%
+%%\include{MethodSection1}
+%
+\part{Service}
+\import{\MyPath/service/}{serviceChapter}
+
+%
+%\chapter{Tools}
+%
+%%\include{QGISCOGO}
+
+\end{document}
+ 
+ 
+ 

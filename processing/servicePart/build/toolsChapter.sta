@@ -1,0 +1,5 @@
+\standalonepreambles
+\subpreamble{toolsChapter/QGISSection.tex}
+\usepackage [subpreambles=false]{standalone}\input {../../preamble}\graphicspath {{img/}{QGisSection/img/}{toolsChapter/QGisSection/img/}{servicePart/toolsChapter/QGisSection/img/}}
+\endsubpreamble
+\endstandalonepreambles

@@ -1,0 +1,5 @@
+\standalonepreambles
+\subpreamble{awardsChapter/GIS_ChampionSection.tex}
+\usepackage {standalone}\usepackage {import}
+\endsubpreamble
+\endstandalonepreambles

@@ -1,0 +1,319 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.18)  25 JUN 2018 16:51
+entering extended mode
+**./fileStandardSubsection.tex
+(fileStandardSubsection.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\standalone\standalo
+ne.cls"
+Document Class: standalone 2018/03/26 v1.3a Class to compile TeX sub-files stan
+dalone
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\shellesc.sty"
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluatex
+.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.st
+y"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.s
+ty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty
+"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.t
+ex"
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.
+tex"
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\xkeyval\keyval.te
+x"))
+\XKV@depth=\count79
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\sa@internal=\count80
+\c@sapage=\count81
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\standalone\standalo
+ne.cfg"
+File: standalone.cfg 2018/03/26 v1.3a Default configuration file for 'standalon
+e' class
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\book.cls"
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\bk10.clo"
+File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count82
+\c@chapter=\count83
+\c@section=\count84
+\c@subsection=\count85
+\c@subsubsection=\count86
+\c@paragraph=\count87
+\c@subparagraph=\count88
+\c@figure=\count89
+\c@table=\count90
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+))
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\standalone\standalo
+ne.sty"
+Package: standalone 2018/03/26 v1.3a Package to include TeX sub-files with prea
+mbles
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\currfile\currfile.s
+ty"
+Package: currfile 2015/04/23 v0.7c Provides the file path elements of the curre
+nt input file
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.
+sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.
+sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetkey
+s.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwarer
+r.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmds
+.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\filehook\filehook.s
+ty"
+Package: filehook 2011/10/12 v0.5d Hooks for input files
+)
+\c@currfiledepth=\count91
+)
+\sa@out=\write3
+Package standalone Info: STA file not found! on input line 554.
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\gincltex\gincltex.s
+ty"
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\svn-prov\svn-prov.s
+ty"
+Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
+)
+Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\adjustbox
+.sty"
+Package: adjustbox 2018/04/08 v1.1 Adjusting TeX boxes (trim, clip, ...)
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\adjcalc.s
+ty"
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\trimclip.
+sty"
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.s
+ty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.s
+ty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graphi
+cs.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdftex
+.def"
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\collectbox\collectb
+ox.sty"
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box26
+)
+\tc@llx=\dimen105
+\tc@lly=\dimen106
+\tc@urx=\dimen107
+\tc@ury=\dimen108
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\adjustbox\tc-pdftex
+.def"
+File: tc-pdftex.def 2018/04/08 v2.1 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen109
+\adjbox@Height=\dimen110
+\adjbox@Depth=\dimen111
+\adjbox@Totalheight=\dimen112
+\adjbox@pwidth=\dimen113
+\adjbox@pheight=\dimen114
+\adjbox@pdepth=\dimen115
+\adjbox@ptotalheight=\dimen116
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ifoddpage\ifoddpage
+.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count92
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ltxmisc\varwidth.st
+y"
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box27
+\sift@deathcycles=\count93
+\@vwid@loff=\dimen117
+\@vwid@roff=\dimen118
+))
+\gincltex@box=\box28
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\filemod\filemod-exp
+min.sty"
+Package: filemod-expmin 2011/09/19 v1.2 Get and compare file modification times
+ (expandable; minimal)
+))
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\import\import.sty"
+Package: import 2009/03/23  v 5.1
+) ("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count94
+\float@exts=\toks16
+\float@box=\box29
+\@float@everytoks=\toks17
+\@floatcapt=\box30
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty
+"
+\wrapoverhang=\dimen119
+\WF@size=\dimen120
+\c@WF@wrappedlines=\count95
+\WF@box=\box31
+\WF@everypar=\toks18
+Package: wrapfig 2003/01/31  v 3.6
+) ("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+No file fileStandardSubsection.aux.
+\openout1 = `fileStandardSubsection.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+\openout3 = `fileStandardSubsection.sta'.
+
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mki
+i"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count96
+\scratchdimen=\dimen121
+\scratchbox=\box32
+\nofMPsegments=\count97
+\nofMParguments=\count98
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count99
+\MPscratchDim=\dimen122
+\MPnumerator=\count100
+\makeMPintoPDFobject=\count101
+\everyMPtoPDFconversion=\toks20
+)
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-b
+ase.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty
+"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefine
+keys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexcm
+ds.sty"
+Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 19.
+
+("C:\Users\bmay\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
+
+[1{C:/Users/bmay/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+]
+(J:\LIS\GIS_Doc\Book\processing\methodPart\methodChapter\docStorageOrgSection\b
+uild\fileStandardSubsection.aux) ) 
+Here is how much of TeX's memory you used:
+ 3249 strings out of 493305
+ 54378 string characters out of 3130237
+ 108442 words of memory out of 3000000
+ 6732 multiletter control sequences out of 15000+200000
+ 4906 words of font info for 18 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 66i,4n,56p,338b,145s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/bmay/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/bmay/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/bmay/AppDat
+a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/
+bmay/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
+b>
+Output written on J:\LIS\GIS_Doc\Book\processing\methodPart\methodChapter\docSt
+orageOrgSection\build\fileStandardSubsection.pdf (1 page, 43817 bytes).
+PDF statistics:
+ 22 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

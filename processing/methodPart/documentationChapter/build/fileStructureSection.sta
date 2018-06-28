@@ -1,0 +1,5 @@
+\standalonepreambles
+\subpreamble{fileStructureSection/filingSubsection.tex}
+\usepackage [subpreambles=true]{standalone} \usepackage {import}\usepackage {float} \usepackage {graphicx} \usepackage {wrapfig}\usepackage {url}\graphicspath {{img/}{pairedProgSection/img/}{methodChapter/pairedProgSection/img/}{methodPart/methodChapter/pairedProgSection/img/}}\setcounter {secnumdepth}{1}
+\endsubpreamble
+\endstandalonepreambles

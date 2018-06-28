@@ -1,0 +1,16 @@
+\documentclass[class=book , crop=false]{standalone}
+\usepackage[subpreambles=false]{standalone}
+
+\input{../preamble}
+
+\begin{document}
+
+\chapter{Documentation}
+
+\subimport{documentationChapter/}{GIS_BookDocSection.tex}
+\clearpage % clears the rest of the page
+\subimport{documentationChapter/}{docStorageOrgSection.tex}
+\clearpage
+\subimport{documentationChapter/}{teamConceptSection.tex}
+\clearpage
+\end{document}

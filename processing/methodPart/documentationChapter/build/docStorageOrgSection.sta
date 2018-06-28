@@ -1,0 +1,5 @@
+\standalonepreambles
+\subpreamble{docStorageOrgSection/fileStandardSubsection.tex}
+\usepackage [subpreambles=true]{standalone} \usepackage {import}\usepackage {float} \usepackage {graphicx} \usepackage {wrapfig}\usepackage {url}\graphicspath {{img/}{/docStorageOrgSection/img}{methodChapter/docStorageOrgSection/img/}{/methodPart/methodChapter/docStorageOrgSection/img/}}\setcounter {secnumdepth}{1}
+\endsubpreamble
+\endstandalonepreambles

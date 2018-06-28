@@ -1,0 +1,44 @@
+\contentsline {part}{I\hspace {1em}Brand}{1}
+\contentsline {paragraph}{About the Brand}{3}
+\contentsline {chapter}{\numberline {1}Awards}{5}
+\contentsline {section}{\numberline {1.1}The GIS Champion Award}{5}
+\contentsline {subsection}{\numberline {1.1.1}GIS Champion Award Code}{5}
+\contentsline {part}{II\hspace {1em}Methods}{9}
+\contentsline {paragraph}{About the Methods}{11}
+\contentsline {chapter}{\numberline {2}Documentation}{13}
+\contentsline {section}{\numberline {2.1}About Documentation}{13}
+\contentsline {subsection}{\numberline {2.1.1}How This Book Works}{13}
+\contentsline {subsubsection}{Project General Notes:}{13}
+\contentsline {subsubsection}{Project file structure:}{13}
+\contentsline {subsubsection}{Service Book Part Detail}{15}
+\contentsline {paragraph}{}{15}
+\contentsline {subparagraph}{}{15}
+\contentsline {paragraph}{}{15}
+\contentsline {subparagraph}{}{15}
+\contentsline {subparagraph}{}{15}
+\contentsline {subsubsection}{toolsChapter}{15}
+\contentsline {paragraph}{}{15}
+\contentsline {subparagraph}{}{15}
+\contentsline {paragraph}{}{15}
+\contentsline {subparagraph}{}{15}
+\contentsline {subparagraph}{\LaTeX {} file}{15}
+\contentsline {section}{\numberline {2.2}Document Storage Concepts}{16}
+\contentsline {subsection}{\numberline {2.2.1}GIS File Standard}{16}
+\contentsline {subsubsection}{ Folders inside the project folder}{16}
+\contentsline {section}{\numberline {2.3}Team Concept}{17}
+\contentsline {subsection}{\numberline {2.3.1}Paired Programming}{17}
+\contentsline {subsubsection}{ some point about pp}{17}
+\contentsline {part}{III\hspace {1em}Service}{19}
+\contentsline {paragraph}{About the Service}{21}
+\contentsline {chapter}{\numberline {3}Tools}{23}
+\contentsline {section}{\numberline {3.1}QGIS Tools}{23}
+\contentsline {subsection}{\numberline {3.1.1}Using COGO Tools in QGIS}{23}
+\contentsline {subsubsection}{\relax \fontsize {14.4}{18}\selectfont Set up the Azimuth and Distance Plugin \\\relax \fontsize {9}{11}\selectfont \abovedisplayskip 8.5\p@ plus3\p@ minus4\p@ \abovedisplayshortskip \z@ plus2\p@ \belowdisplayshortskip 4\p@ plus2\p@ minus2\p@ \def \leftmargin \leftmargini \parsep 4\p@ plus2\p@ minus\p@ \topsep 8\p@ plus2\p@ minus4\p@ \itemsep 4\p@ plus2\p@ minus\p@ {\leftmargin \leftmargini \topsep 4\p@ plus2\p@ minus2\p@ \parsep 2\p@ plus\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip (Azd Plugin).}{23}
+\contentsline {paragraph}{Configure Options}{27}
+\contentsline {paragraph}{Using the tool}{28}
+\contentsline {subsubsection}{Configure editing environment}{29}
+\contentsline {subsubsection}{\relax \fontsize {14.4}{18}\selectfont Locate Point of Commencement}{30}
+\contentsline {paragraph}{Using Reference Layer}{30}
+\contentsline {paragraph}{Using Measuring Tool}{31}
+\contentsline {paragraph}{Search by Parcel Number}{32}
+\contentsline {subparagraph}{}{32}
