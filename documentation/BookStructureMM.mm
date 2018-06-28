@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node COLOR="#009999" CREATED="1529517476207" ID="ID_1118779580" MODIFIED="1530189749806" TEXT="What We Do" VGAP="2">
+<node COLOR="#009999" CREATED="1529517476207" ID="ID_1118779580" MODIFIED="1530211408359" TEXT="What We Do" VGAP="2">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -102,8 +102,7 @@
       We document the concepts in this book.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="SansSerif" SIZE="16"/>
 <node COLOR="#009999" CREATED="1530104050970" HGAP="41" ID="ID_1705539748" MODIFIED="1530110218638" TEXT="About Documentation" VSHIFT="-14">
@@ -130,8 +129,7 @@
       Paragraph describing file structure for MapInfo.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 </node>
@@ -148,8 +146,7 @@
       This needs to be flushed out more.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 </node>
@@ -176,8 +173,7 @@
       <font color="rgb(34, 34, 34)" face="Roboto, arial, sans-serif">A&#160;</font><font color="rgb(34, 34, 34)" face="Roboto, arial, sans-serif" size="16px"><b style="color: rgb(34, 34, 34); font-family: Roboto, arial, sans-serif; font-size: 16px; font-style: normal; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 255)">model</b></font><font color="rgb(34, 34, 34)" face="Roboto, arial, sans-serif">&#160;is a finished product similar to what you're looking to produce.</font>
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <arrowlink DESTINATION="ID_1460089185" ENDARROW="Default" ENDINCLINATION="0;0;" ID="Arrow_ID_790825268" STARTARROW="None" STARTINCLINATION="0;0;"/>
 <arrowlink DESTINATION="ID_1460089185" ENDARROW="Default" ENDINCLINATION="0;0;" ID="Arrow_ID_921923511" STARTARROW="None" STARTINCLINATION="0;0;"/>
@@ -210,8 +206,7 @@
       screenshots of each user and admin page, reports and tables
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1530190205236" ID="ID_1607077262" MODIFIED="1530190246216" TEXT="Introduction Splash Screen"/>
 <node CREATED="1530190246763" ID="ID_400913229" MODIFIED="1530190264431" TEXT="Control Panel"/>
 <node CREATED="1530189931860" ID="ID_677182190" MODIFIED="1530190296473" TEXT="Reports"/>
@@ -223,7 +218,7 @@
 <node CREATED="1530189914961" ID="ID_134128418" MODIFIED="1530189925638" TEXT="Code"/>
 </node>
 </node>
-<node COLOR="#00cc00" CREATED="1530104098825" FOLDED="true" HGAP="26" ID="ID_1623711650" MODIFIED="1530191043047" TEXT="Product Template" VSHIFT="-40">
+<node COLOR="#00cc00" CREATED="1530104098825" FOLDED="true" HGAP="26" ID="ID_1623711650" MODIFIED="1530211460585" TEXT="Product Template" VSHIFT="-40">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -234,9 +229,6 @@
     </p>
     <p>
       <font color="rgb(34, 34, 34)" face="Roboto, arial, sans-serif">A&#160;</font><font color="rgb(34, 34, 34)" face="Roboto, arial, sans-serif" size="16px"><b style="color: rgb(34, 34, 34); font-family: Roboto, arial, sans-serif; font-size: 16px; font-style: normal; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 255)">model</b></font><font color="rgb(34, 34, 34)" face="Roboto, arial, sans-serif">&#160;is a finished product similar to what you're looking to produce. </font>
-    </p>
-    <p>
-      
     </p>
   </body>
 </html>
@@ -300,8 +292,7 @@
       Paragraph describing the concept from Joy Inc.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 </node>
@@ -328,6 +319,14 @@
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 </node>
+</node>
+<node COLOR="#009999" CREATED="1530206438686" HGAP="155" ID="ID_478399301" MODIFIED="1530207532094" TEXT="LaTex Packages" VSHIFT="87">
+<font BOLD="true" NAME="SansSerif" SIZE="14"/>
+<node CREATED="1530206544035" HGAP="34" ID="ID_367784001" MODIFIED="1530207556584" TEXT="float" VSHIFT="-37"/>
+<node CREATED="1530207558127" ID="ID_1750576289" MODIFIED="1530207564603" TEXT="graphicx"/>
+<node CREATED="1530207565182" ID="ID_929961723" MODIFIED="1530207571994" TEXT="import"/>
+<node CREATED="1530207572479" ID="ID_856131837" MODIFIED="1530207579182" TEXT="url"/>
+<node CREATED="1530207579575" ID="ID_1107796444" MODIFIED="1530207585918" TEXT="wrapfig"/>
 </node>
 </node>
 </node>
