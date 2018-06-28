@@ -1,0 +1,57 @@
+\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}
+
+%\input{../../../preamble}
+
+\usepackage{url} % Required for command (in subimports) \url{path\with\back\slashes} for paths to be printed as text.
+\usepackage{import} % Required for importing other .tex docs.  (import uses everything bw Begin and End Doc)
+\usepackage{float} % Required for specifying the exact location of a figure or table
+\usepackage{graphicx} % Required for including images
+\usepackage{wrapfig}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make the lines in the title page
+
+%\graphicspath{{img/}{GIS_ChampionSection/img/}{awardsChapter/GIS_ChampionSection/img/}{brandPart/awardsChapter/GIS_ChampionSection/img/}{img/}{pairedProgSection/img/}{methodChapter/pairedProgSection/img/}{methodPart/methodChapter/pairedProgSection/img/}{documentationSection/img/}{methodChapter/documentationSection/img/}{methodPart/methodChapter/documentationSection/img/}{docStorageOrgSection/img/}{methodChapter/docStorageOrgSection/img/}{methodPart/methodChapter/docStorageOrgSection/img/}{QGisSection/img/}{toolsChapter/QGisSection/img/}{servicePart/toolsChapter/QGisSection/img/}{ESRISection/img/}{toolChapter/ESRISection/img/}{servicePart/toolChapter/ESRISection/img/}}
+
+
+
+%\graphicspath{{img/}{Section/img/}{Chapter/Section/img/}{Part/Chapter/Section/img/}}
+
+\title{ % create title page
+\HRule % Horizontal Line added
+\\[.4cm] % space
+%\begin{figure}[H] % included image
+%\begin{center}	% centered horizontally
+%	\includegraphics[scale=.45]{GIS_Logo_better.jpg}
+%	\end{center}
+%	\end{figure}
+	\Huge \bfseries \LaTeX{} Packages\\ \medskip\large The graphicx Package % Title text
+\HRule \\[.4cm] % Horizontal Line added
+}  % closing brace for title
+
+\author{\Large Allegan County GIS \\\Large www.allegancounty.org/gis} % defines author
+
+\begin{document}% Document Begins
+
+\ifstandalone
+%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+\maketitle % creates title page and blank page after title page
+\tableofcontents % creates TOC and blank page
+\clearpage
+%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\fi
+
+
+
+\subsection{graphicx Package}
+	\medskip 
+	\subsubsection{\Large BLAH \\\small(BLAH).}
+	
+	
+%		\large BLAH\\\Large BLAH \textbf {BLAH}(see fig.).
+%		\begin{figure}[H] % included image	
+%		\centering
+%		\includegraphics[scale=.30]{1.png}
+%		\caption{BLAH}
+%		\end{figure}
+%\clearpage		
+
+\end{document}

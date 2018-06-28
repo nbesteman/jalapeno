@@ -1,5 +1,0 @@
-\standalonepreambles
-\subpreamble{pairedProgSection/pairedProgSubsection.tex}
-\usepackage [subpreambles=true]{standalone} \usepackage {import}\usepackage {float} \usepackage {graphicx} \usepackage {wrapfig}\usepackage {url}\graphicspath {{img/}{pairedProgSection/img/}{methodChapter/pairedProgSection/img/}{methodPart/methodChapter/pairedProgSection/img/}}
-\endsubpreamble
-\endstandalonepreambles

@@ -1,5 +1,0 @@
-\standalonepreambles
-\subpreamble{GIS_ChampionSection/GIS_ChampionCodeSubsection.tex}
-\input {../../../preamble}\graphicspath {{img/}{GIS_ChampionSection/img/}{awardsChapter/GIS_ChampionSection/img/}{brandPart/awardsChapter/GIS_ChampionSection/img/}}\title { \HRule \\[.4cm] \begin {figure}[H] \begin {center}\includegraphics [scale=.45]{GIS_Logo_better.jpg}\end {center}\end {figure}\Huge \bfseries GIS Champion Award Code \HRule \\[.4cm] } \author {\Large Allegan County GIS \\\Large www.allegancounty.org/gis} 
-\endsubpreamble
-\endstandalonepreambles
