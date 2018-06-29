@@ -119,7 +119,7 @@
 <node COLOR="#cc33ff" CREATED="1530103755143" HGAP="53" ID="ID_1778119501" MODIFIED="1530285692009" POSITION="right" TEXT="Methods" VSHIFT="-13">
 <edge COLOR="#111111" STYLE="sharp_bezier" WIDTH="8"/>
 <font BOLD="true" NAME="SansSerif" SIZE="18"/>
-<node COLOR="#009999" CREATED="1530103998762" HGAP="66" ID="ID_857853392" MODIFIED="1530285692009" TEXT="Documentation" VSHIFT="-252">
+<node COLOR="#009999" CREATED="1530103998762" HGAP="104" ID="ID_857853392" MODIFIED="1530292025108" TEXT="Documentation" VSHIFT="23">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -173,8 +173,7 @@
       This needs to be flushed out more.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 </node>
@@ -216,7 +215,7 @@
 <node COLOR="#ff6666" CREATED="1530189866290" ID="ID_131261994" MODIFIED="1530287158522" TEXT="Table of Contents">
 <font NAME="Dialog" SIZE="12"/>
 </node>
-<node COLOR="#ff6666" CREATED="1530189885620" FOLDED="true" ID="ID_927959438" MODIFIED="1530287158522" TEXT="Problem and Analysis">
+<node COLOR="#ff6666" CREATED="1530189885620" FOLDED="true" ID="ID_927959438" MODIFIED="1530292001349" TEXT="Problem and Analysis">
 <font NAME="Dialog" SIZE="12"/>
 <node COLOR="#ff6666" CREATED="1530189971302" ID="ID_1454897015" MODIFIED="1530287158522" TEXT="Statement of Problem">
 <font NAME="Dialog" SIZE="12"/>
@@ -225,7 +224,7 @@
 <font NAME="Dialog" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#ff6666" CREATED="1530189897299" FOLDED="true" ID="ID_302144754" MODIFIED="1530287158522" TEXT="Design">
+<node COLOR="#ff6666" CREATED="1530189897299" FOLDED="true" ID="ID_302144754" MODIFIED="1530291998398" TEXT="Design">
 <font NAME="Dialog" SIZE="12"/>
 <node COLOR="#ff6666" CREATED="1530189998775" FOLDED="true" ID="ID_580261421" MODIFIED="1530287158537" TEXT="Program and Data Flow description">
 <font NAME="Dialog" SIZE="12"/>
@@ -233,7 +232,7 @@
 <font NAME="Dialog" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#ff6666" CREATED="1530190024779" FOLDED="true" ID="ID_1538051139" MODIFIED="1530287158537" TEXT="User Navigation description">
+<node COLOR="#ff6666" CREATED="1530190024779" FOLDED="true" ID="ID_1538051139" MODIFIED="1530291997422" TEXT="User Navigation description">
 <font NAME="Dialog" SIZE="12"/>
 <node COLOR="#ff6666" CREATED="1530190041659" ID="ID_1711030904" MODIFIED="1530287158537" TEXT="Function Navigation Flow Chart">
 <font NAME="Dialog" SIZE="12"/>
@@ -243,7 +242,7 @@
 <font NAME="Dialog" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#ff6666" CREATED="1530189903255" FOLDED="true" ID="ID_1092986864" MODIFIED="1530287158537" TEXT="Hard Copy Record">
+<node COLOR="#ff6666" CREATED="1530189903255" FOLDED="true" ID="ID_1092986864" MODIFIED="1530292000329" TEXT="Hard Copy Record">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -295,8 +294,7 @@
       <font color="rgb(34, 34, 34)" face="Roboto, arial, sans-serif">A&#160;</font><font color="rgb(34, 34, 34)" face="Roboto, arial, sans-serif" size="16px"><b style="color: rgb(34, 34, 34); font-family: Roboto, arial, sans-serif; font-size: 16px; font-style: normal; letter-spacing: normal; text-align: left; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 255)">model</b></font><font color="rgb(34, 34, 34)" face="Roboto, arial, sans-serif">&#160;is a finished product similar to what you're looking to produce. </font>
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <arrowlink DESTINATION="ID_1623711650" ENDARROW="Default" ENDINCLINATION="0;0;" ID="Arrow_ID_347391665" STARTARROW="None" STARTINCLINATION="0;0;"/>
 <arrowlink DESTINATION="ID_1623711650" ENDARROW="Default" ENDINCLINATION="0;0;" ID="Arrow_ID_1877349623" STARTARROW="None" STARTINCLINATION="0;0;"/>
@@ -379,7 +377,7 @@
 </node>
 </node>
 </node>
-<node COLOR="#009999" CREATED="1530104072441" HGAP="39" ID="ID_1165004208" MODIFIED="1530287315314" TEXT="Team Concept" VSHIFT="55">
+<node COLOR="#009999" CREATED="1530104072441" HGAP="98" ID="ID_1165004208" MODIFIED="1530292031206" TEXT="Team Concept" VSHIFT="-118">
 <edge COLOR="#111111" STYLE="bezier" WIDTH="thin"/>
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node COLOR="#00cc00" CREATED="1530104169929" HGAP="41" ID="ID_521471839" MODIFIED="1530285396704" TEXT="Paired Programming" VSHIFT="-70">
