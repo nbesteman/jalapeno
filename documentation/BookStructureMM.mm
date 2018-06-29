@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node COLOR="#009999" CREATED="1529517476207" ID="ID_1118779580" MODIFIED="1530281072920" TEXT="What We Do" VGAP="2">
+<node COLOR="#009999" CREATED="1529517476207" ID="ID_1118779580" MODIFIED="1530286329629" TEXT="What We Do" VGAP="2">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -10,7 +10,8 @@
       What We Do:&#160;&#160;This process is to be used and adapted to build the skills and abilities of the team members while strengthening the environment that we work in and improving the service.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Tahoma" SIZE="20"/>
 <hook NAME="accessories/plugins/HierarchicalIcons.properties"/>
