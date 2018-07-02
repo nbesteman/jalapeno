@@ -179,8 +179,7 @@
       This needs to be flushed out more.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 </node>
@@ -522,7 +521,7 @@
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 </node>
 </node>
-<node COLOR="#00cc00" CREATED="1530206438686" HGAP="155" ID="ID_478399301" MODIFIED="1530286056631" TEXT="LaTex Packages" VSHIFT="87">
+<node COLOR="#00cc00" CREATED="1530206438686" HGAP="155" ID="ID_478399301" MODIFIED="1530563696929" TEXT="LaTex Packages" VSHIFT="87">
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 <node COLOR="#ff6666" CREATED="1530206544035" HGAP="48" ID="ID_367784001" MODIFIED="1530287210321" TEXT="float" VSHIFT="-51">
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
@@ -532,7 +531,7 @@
 </node>
 <node COLOR="#ff6666" CREATED="1530207565182" HGAP="62" ID="ID_929961723" MODIFIED="1530287239798" TEXT="import" VSHIFT="8">
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
-<node COLOR="#ff6666" CREATED="1530278502362" HGAP="67" ID="ID_1527256046" MODIFIED="1530287563622" TEXT="Include vs Imput documentation" VSHIFT="-35">
+<node COLOR="#ff6666" CREATED="1530278502362" HGAP="67" ID="ID_1527256046" MODIFIED="1530554845572" TEXT="Include vs Input documentation" VSHIFT="-35">
 <font NAME="Dialog" SIZE="12"/>
 <node COLOR="#ff6666" CREATED="1530278565611" ID="ID_1714086271" MODIFIED="1530287158600" TEXT="Import comes from include" VSHIFT="-39">
 <font NAME="Dialog" SIZE="12"/>
@@ -550,6 +549,20 @@
 <node COLOR="#ff6666" CREATED="1530278334818" HGAP="33" ID="ID_927615683" MODIFIED="1530287158616" TEXT="/begin{center} vs. /centering" VSHIFT="59">
 <font NAME="Dialog" SIZE="12"/>
 </node>
+</node>
+<node COLOR="#ff6666" CREATED="1530563696929" ID="ID_353388247" MODIFIED="1530563800222" TEXT="hyperref">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      20180702 in development
+    </p>
+  </body>
+</html>
+</richcontent>
+<font BOLD="true" NAME="Dialog" SIZE="17"/>
 </node>
 </node>
 <node COLOR="#00cc00" CREATED="1530278281017" HGAP="116" ID="ID_971935948" MODIFIED="1530291579464" TEXT="LaTex Templates" VSHIFT="105">

@@ -1,0 +1,91 @@
+
+
+%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}
+\documentclass{report}
+
+%\input{../../../preamble}
+
+\usepackage[pdftex,breaklinks,colorlinks,citecolor=blue,urlcolor=red]{hyperref}
+
+%\title{ % create title page
+%\HRule % Horizontal Line added
+%\\[.4cm] % space
+%\begin{figure}[H] % included image
+%\begin{center}	% centered horizontally
+%	\includegraphics[scale=.45]{GIS_Logo_better.jpg}
+%	\end{center}
+%	\end{figure}
+%	\Huge \bfseries TITLE GOES HERE % Title text
+%\HRule \\[.4cm] % Horizontal Line added
+%}  % closing brace for title
+%
+%\author{\Large Allegan County GIS \\\Large www.allegancounty.org/gis} % defines author
+
+\begin{document}% Document Begins
+
+%\ifstandalone
+%%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+%\maketitle % creates title page and blank page after title page
+%\tableofcontents % creates TOC and blank page
+%\clearpage
+%%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+%\fi
+
+\subsection{hyperref Package}
+\medskip 
+\subsubsection{\Large usepackage}
+
+Add the \textit{hyperref package} to the preamble\begin{large}\textbf{ last}\end{large}.	
+
+\begin{verbatim}\usepackage[options]{hyperref}\end{verbatim}
+
+\subsubsection{\Large Simple Use}
+\begin{verbatim}Use \href{URL}{DESCRIPTION} to add a link with description
+Example:
+\href{https://www.latex-tutorial.com}{Website with tutorials}
+produces:
+\end{verbatim}
+\href{https://www.latex-tutorial.com}{Website with tutorials}
+
+	
+\subsubsection{\Large Options}
+Add optional arguments to the usepackage line:\\
+Useful options:\begin{itemize}
+\item \begin{large}\textbf{pdftex}\end{large}\\enables other options like breaklines
+\item \begin{large}\textbf{breaklinks}\end{large}\\allow links to be broken across several lines\\eg. \url{https://lists.gnu.org/archive/html/emacs-orgmode/2013-06/msg00776.html}
+\item \begin{large}\textbf{colorlinks}\end{large}\\Colors the text of links and anchors.(default is false)
+\item \begin{large}\textbf{linkcolor}\end{large}\\Color for normal internal links(default is red).
+\item \begin{large}\textbf{anchorcolor}\end{large}\\Color for anchor text.
+\item \begin{large}\textbf{citecolor}\end{large}\\Color for bibliographic citations in text.
+\item \begin{large}\textbf{urlcolor}\end{large}\\Color for linked URLs
+
+\end{itemize}
+
+\subsubsection{\Large Use with options}
+\begin{verbatim}
+\usepackage[breaklinks,colorlinks,citecolor=blue,urlcolor=green]{hyperref}
+\end{verbatim}
+
+\subsubsection{\Large Commands}
+\begin{verbatim}
+\href{URL}{text} — Makes text a link to URL.
+\end{verbatim}
+\href{../../../../../documentation/references/hyperrefmanual.pdf}{Manual for hyperref}
+%\href{../hyperrefmanual.pdf}{Manual for hyperref}
+%\href{c://AC/jalapeno/documentation/hyperrefmanual.pdf}{Manual for hyperref}
+
+\begin{verbatim}
+
+
+\hyperref[label]{text} 
+  — Makes text a link to where
+\ref{label} would point.
+\hypertarget{name}{text} — Sets an anchor on textwith the label name. 
+\hyperlink{name}{text} — Makes text a link that takes you to the anchor labeled name. 
+Pair with \hypertarget. 
+\phantomsection — Used in conjunction with
+\addcontentsline to make the correct link in the Table of Contents.
+\end{verbatim}				
+
+
+\end{document}
