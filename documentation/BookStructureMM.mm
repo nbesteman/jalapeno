@@ -160,12 +160,18 @@
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 </node>
-<node COLOR="#ff6666" CREATED="1530104098825" HGAP="47" ID="ID_1329901202" MODIFIED="1530291473051" TEXT="GitHub" VSHIFT="-44">
+<node COLOR="#ff6666" CREATED="1530104098825" HGAP="47" ID="ID_1329901202" MODIFIED="1530302506329" TEXT="GitHub" VSHIFT="-44">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
+    <p>
+      20180629 update:&#160;&#160;git is in Beta use
+    </p>
+    <p>
+      
+    </p>
     <p>
       We have explored this but are weak in this area.&#160;&#160;We need to start pushing all code to Github.&#160;&#160;Security needs to be kept in mind at all times.
     </p>
@@ -173,7 +179,8 @@
       This needs to be flushed out more.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 </node>
