@@ -1,16 +1,15 @@
-\documentclass[class=book , crop=false]{standalone}
+%\documentclass{book}  % Switch to compile from here down
+\documentclass[class=book , crop=false]{standalone} %Switch to compile from above
 \usepackage[subpreambles=false]{standalone}
 
 \input{../../preamble}
 
-%\graphicspath{{img/}{QGisSection/img/}{toolsChapter/QGisSection/img/}{servicePart/toolsChapter/QGisSection/img/}}
-
 \begin{document}
-	% Maintain QGIS tools docs within the QGIS Tools section here
-	\section{QGIS Tools}
+% Maintain QGIS tools docs within the QGIS Tools section here
+\section{QGIS Tools}
 
-		\subimport{QGisSection/}{QGISCOGOSubsection.tex}
-		%\subimport{QGisSection/}{genericQGISTool.tex}
-		% etc...
+\subimport{QGisSection/}{QGISCOGOSubsection.tex}
+%\subimport{QGisSection/}{genericQGISTool.tex}
+% etc...
 
 \end{document}

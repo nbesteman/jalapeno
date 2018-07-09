@@ -1,35 +1,31 @@
-
-
-%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}
-\documentclass{report}
+%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
+\documentclass[class=book , crop=false]{standalone}
 
 \input{../../../preamble}
 
-%\usepackage[pdftex,breaklinks,colorlinks,citecolor=blue,urlcolor=red]{hyperref}
+\title{ % create title page
+\HRule % Horizontal Line added
+\\[.4cm] % space
+\begin{figure}[H] % included image
+\begin{center}	% centered horizontally
+\includegraphics[scale=.45]{GIS_Logo_better.jpg}
+\end{center}
+\end{figure}
+\Huge \bfseries The Hyperref Package % Title text
+\HRule \\[.4cm] % Horizontal Line added
+}  % closing brace for title
 
-%\title{ % create title page
-%\HRule % Horizontal Line added
-%\\[.4cm] % space
-%\begin{figure}[H] % included image
-%\begin{center}	% centered horizontally
-%	\includegraphics[scale=.45]{GIS_Logo_better.jpg}
-%	\end{center}
-%	\end{figure}
-%	\Huge \bfseries TITLE GOES HERE % Title text
-%\HRule \\[.4cm] % Horizontal Line added
-%}  % closing brace for title
-%
-%\author{\Large Allegan County GIS \\\Large www.allegancounty.org/gis} % defines author
+\author{\Large Allegan County GIS \\\Large www.allegancounty.org/gis} % defines author
 
 \begin{document}% Document Begins
 
-%\ifstandalone
-%%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-%\maketitle % creates title page and blank page after title page
-%\tableofcontents % creates TOC and blank page
-%\clearpage
-%%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-%\fi
+\ifstandalone
+%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+\maketitle % creates title page and blank page after title page
+\tableofcontents % creates TOC and blank page
+\clearpage
+%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\fi
 
 \subsection{hyperref Package}
 \medskip 
@@ -75,8 +71,6 @@ Useful options:\begin{itemize}
 %\href{c://AC/jalapeno/documentation/hyperrefmanual.pdf}{Manual for hyperref}
 
 \begin{verbatim}
-
-
 \hyperref[label]{text} 
   — Makes text a link to where
 \ref{label} would point.
@@ -86,6 +80,5 @@ Pair with \hypertarget.
 \phantomsection — Used in conjunction with
 \addcontentsline to make the correct link in the Table of Contents.
 \end{verbatim}				
-
 
 \end{document}

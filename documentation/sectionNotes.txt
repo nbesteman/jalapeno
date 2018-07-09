@@ -1,5 +1,5 @@
 %\documentclass{book}  % Switch to compile from here down
-\documentclass[class=book , crop=false]{standalone} % Switch to compile from above
+\documentclass[class=book , crop=false]{standalone} %Switch to compile from above
 \usepackage[subpreambles=false]{standalone}
 
 \input{../../preamble}
@@ -9,8 +9,8 @@
 
 \subimport{latexPackagesSection/}{floatPackageSubsection.tex}
 \subimport{latexPackagesSection/}{graphicxPackageSubsection.tex}
-\subimport{latexPackagesSection/}{hyperrefSubsection.tex}
 \subimport{latexPackagesSection/}{importPackageSubsection.tex}
+%\subimport{latexPackagesSection/}{urlPackageSubsection.tex}%abandoned bc conflicts with hyperref package
 \subimport{latexPackagesSection/}{wrapfigPackageSubsection.tex}
 
 \end{document}

@@ -1,17 +1,17 @@
-\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}
+%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
+\documentclass[class=book , crop=false]{standalone}
 
 \input{../../../preamble}
-
 
 \title{ % create title page
 \HRule % Horizontal Line added
 \\[.4cm] % space
-%\begin{figure}[H] % included image
-%\begin{center}	% centered horizontally
-%	\includegraphics[scale=.45]{GIS_Logo_better.jpg}
-%	\end{center}
-%	\end{figure}
-	\Huge \bfseries \LaTeX{} Packages\\ \medskip\large The float Package % Title text
+\begin{figure}[H] % included image
+\begin{center}	% centered horizontally
+\includegraphics[scale=.45]{GIS_Logo_better.jpg}
+\end{center}
+\end{figure}
+\Huge \bfseries \LaTeX{} Packages\\ \medskip\large The float Package % Title text
 \HRule \\[.4cm] % Horizontal Line added
 }  % closing brace for title
 
@@ -28,18 +28,7 @@
 \fi
 
 \subsection{float Package}
-	\medskip 
-	\subsubsection{\Large BLAH \\\small(BLAH).}
-
-	
-%		\large BLAH\\\Large BLAH \textbf {BLAH}(see fig.).
-%		\begin{figure}[H] % included image	
-%		\centering
-%		\includegraphics[scale=.30]{1.png}
-%		\caption{BLAH}
-%		\end{figure}
-%\clearpage		
-
-
+\medskip 
+\subsubsection{\Large BLAH \\\small(BLAH).}
 
 \end{document}

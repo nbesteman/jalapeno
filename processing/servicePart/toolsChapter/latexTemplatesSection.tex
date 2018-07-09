@@ -1,16 +1,14 @@
-\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}
+%\documentclass{book}  % Switch to compile from here down
+\documentclass[class=book , crop=false]{standalone} %Switch to compile from above
 \usepackage[subpreambles=false]{standalone}
 
 \input{../../preamble}
 
-%\graphicspath{{img/}{QGisSection/img/}{toolsChapter/QGisSection/img/}{servicePart/toolsChapter/QGisSection/img/}}
-
 \begin{document}
-	% 
-	\section{\LaTeX{} Templates}
+ 
+\section{\LaTeX{} Templates}
 
-		\subimport{latexTemplatesSection/}{sectionTemplateSubsection.tex}
-		\subimport{latexTemplatesSection/}{subsectionTemplateSubsection.tex}
-		% etc...
+\subimport{latexTemplatesSection/}{sectionTemplateSubsection.tex}
+\subimport{latexTemplatesSection/}{subsectionTemplateSubsection.tex}
 
 \end{document}

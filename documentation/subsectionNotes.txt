@@ -2,6 +2,9 @@
 \documentclass[class=book , crop=false]{standalone}
 
 \input{../../../preamble}
+
+
+
 \title{ % create title page
 \HRule % Horizontal Line added
 \\[.4cm] % space
@@ -10,7 +13,7 @@
 \includegraphics[scale=.45]{GIS_Logo_better.jpg}
 \end{center}
 \end{figure}
-\Huge \bfseries Section Template % Title text
+\Huge \bfseries Parcel Editing with COGO Tools in QGIS % Title text
 \HRule \\[.4cm] % Horizontal Line added
 }  % closing brace for title
 
@@ -21,33 +24,7 @@
 \ifstandalone
 %\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
 \maketitle % creates title page and blank page after title page
-%\tableofcontents % creates TOC and blank page
+\tableofcontents % creates TOC and blank page
 \clearpage
 %\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
 \fi
-
-\subsection{\LaTeX{} Section Template}
-
-\begin{verbatim}
-
-\documentclass[class=book , crop=false]{standalone}
-
-\usepackage[subpreambles=false]{standalone}
-
-\input{../../preamble}
-
-\begin{document}
-
-\section{SECTION NAME HERE}
-
-\subimport{RELATIVE PATH TO NEW Section/}{NEW SUBSECTION Subsection.tex}
-
-%eg.
-%\subimport{latexTemplatesSection/}{subsectionTemplateSubsection.tex}
-% etc...
-
-\end{document}
-
-\end{verbatim}
-
-\end{document}
