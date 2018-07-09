@@ -1,15 +1,25 @@
+%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
 \documentclass[class=book , crop=false]{standalone}
-\usepackage[subpreambles=false]{standalone}
 
 \input{../../../preamble}
 
-%\graphicspath{{img/}{pairedProgSection/img/}{methodChapter/pairedProgSection/img/}{methodPart/methodChapter/pairedProgSection/img/}}
+\def\titlename{Paired Programming\\ \medskip\large No I In Team}
 
-\begin{document}
+\title{\input{../../../commonTitle}}  % closing brace for title
+
+\begin{document}% Document Begins
+
+\ifstandalone
+%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+\maketitle % creates title page and blank page after title page
+\tableofcontents % creates TOC and blank page
+\clearpage
+%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\fi
 
 \subsection{Paired Programming}
 
-	\subsubsection{ some point about pp}
+\subsubsection{ some point about pp}
 	
 \end{document}
 		

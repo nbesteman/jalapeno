@@ -1,11 +1,16 @@
-%\documentclass{book}  % Switch to compile from here down
-\documentclass[class=book , crop=false]{standalone} %Switch to compile from above
+\documentclass[class=book , crop=false]{standalone}
 \usepackage[subpreambles=false]{standalone}
 
 \input{../../preamble}
 
+\def\titlename{\LaTeX{} Templates}
+
+\title{\input{../../commonTitle}}  % closing brace for title
+
 \begin{document}
- 
+
+\input{../../commonFront} % provides standalone options
+
 \section{\LaTeX{} Templates}
 
 \subimport{latexTemplatesSection/}{sectionTemplateSubsection.tex}

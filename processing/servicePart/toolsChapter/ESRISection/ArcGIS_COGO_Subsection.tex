@@ -3,41 +3,15 @@
 
 \input{../../../preamble}
 
-\title{ % create title page
-\HRule % Horizontal Line added
-\\[.4cm] % space
-\begin{figure}[H] % included image
-\begin{center}	% centered horizontally
-\includegraphics[scale=.45]{../../../../source/GIS_Logo_better.jpg}
-\end{center}
-\end{figure}
-\Huge \bfseries Parcel Editing with COGO Tools in ArcGIS % Title text
-\HRule \\[.4cm] % Horizontal Line added
-}  % closing brace for title
+\def\titlename{Parcel Editing with COGO\\ \medskip\large in ArcGIS}
+
+\title{\input{../../../commonTitle}}  % closing brace for title
 
 \begin{document}% Document Begins
 
-\ifstandalone
-%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-\maketitle % creates title page and blank page after title page
-\tableofcontents % creates TOC and blank page
-\clearpage
-%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-\fi
+\input{../../../commonFront} % provides standalone options
 
-\subsection{SUBSECTION NAME GOES HERE}
-TEXT ABOUT THE SUBSECTION GOES HERE
-
-%\subsubsection{SUBSUBSECTION1 TITLE GOES HERE}
-%TEXT ABOUT THE SUBSUBSECTION1 GOES HERE
-%
-%\paragraph{GOES HERE}
-%
-%\clearpage
-%
-%\subsubsection{SUBSUBSECTION2 TITLE GOES HERE}
-%TEXT ABOUT THE SUBSUBSECTION2 GOES HERE
-%
-%\paragraph{}
+\subsection{COGO Tools in ArcGIS}
+TEXT 
 
 \end{document}

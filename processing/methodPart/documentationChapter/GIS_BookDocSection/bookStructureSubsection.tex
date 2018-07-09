@@ -1,8 +1,20 @@
 \documentclass[class=book , crop=false]{standalone}
-\usepackage[subpreambles=false]{standalone}
+
 \input{../../../preamble}
-%\graphicspath{{img/}{documentationSection/img/}{methodChapter/documentationSection/img/}{methodPart/methodChapter/documentationSection/img/}}
-\begin{document}
+\def\titlename{How This Book Works\\ \medskip\LARGE Jalape\~no}
+
+\title{\input{../../../commonTitle}}  % closing brace for title
+
+\begin{document}% Document Begins
+
+\ifstandalone
+%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+\maketitle % creates title page and blank page after title page
+\tableofcontents % creates TOC and blank page
+\clearpage
+%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\fi
+
 \subsection{How This Book Works}
 \subsubsection{Project General Notes:}
 \begin{itemize}

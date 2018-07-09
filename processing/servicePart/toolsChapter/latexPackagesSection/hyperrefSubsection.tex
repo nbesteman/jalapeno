@@ -3,29 +3,13 @@
 
 \input{../../../preamble}
 
-\title{ % create title page
-\HRule % Horizontal Line added
-\\[.4cm] % space
-\begin{figure}[H] % included image
-\begin{center}	% centered horizontally
-\includegraphics[scale=.45]{GIS_Logo_better.jpg}
-\end{center}
-\end{figure}
-\Huge \bfseries The Hyperref Package % Title text
-\HRule \\[.4cm] % Horizontal Line added
-}  % closing brace for title
+\def\titlename{\LaTeX{} Packages\\ \medskip\large The hyperref Package}
 
-\author{\Large Allegan County GIS \\\Large www.allegancounty.org/gis} % defines author
+\title{\input{../../../commonTitle}}  % closing brace for title
 
 \begin{document}% Document Begins
 
-\ifstandalone
-%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-\maketitle % creates title page and blank page after title page
-\tableofcontents % creates TOC and blank page
-\clearpage
-%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-\fi
+\input{../../../commonFront} % provides standalone options
 
 \subsection{hyperref Package}
 \medskip 

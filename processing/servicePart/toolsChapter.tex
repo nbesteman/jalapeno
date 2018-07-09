@@ -1,11 +1,16 @@
-%\documentclass{book}  % Switch to compile from here down
+%\documentclass{book}  % Switch to compile from here down MAYBE
 \documentclass[class=book , crop=false]{standalone} %Switch to compile from above
 \usepackage[subpreambles=false]{standalone}
 
 \input{../preamble}
 
+\def\titlename{Tools}
+
+\title{\input{../commonTitle}}  % closing brace for title
+
 \begin{document}
 
+\maketitle
 \chapter{Tools}
 
 \subimport{toolsChapter/}{QGISSection.tex}
