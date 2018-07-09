@@ -1,90 +1,89 @@
 \documentclass[class=book , crop=false]{standalone}
 \usepackage[subpreambles=false]{standalone}
-
 \input{../../../preamble}
 %\graphicspath{{img/}{documentationSection/img/}{methodChapter/documentationSection/img/}{methodPart/methodChapter/documentationSection/img/}}
-
 \begin{document}
-
 \subsection{How This Book Works}
-
-	\subsubsection{Project General Notes:}
-		\begin{itemize}
-		\item Book folder can be renamed an moved.
-		\item This project is coded with relative paths from processing folder down.
-		\end{itemize}
-
-	\subsubsection{Project file structure:}			
-		\url{J:\LIS\GIS_Doc\mybsBook\build} 
-			\begin{description}
-			\item pdf docs created by the underlying .tex docs and copied here manually.
-			\end{description}		
-		\url{J:\LIS\GIS_Doc\Book\source}
-			\begin{description}
-			\item images that appear in \url{\GIS_Documentation.tex}.
-			\end{description}
-		\url{J:\LIS\GIS_Doc\Book\processing}
-			\begin{description}
-			\item the Tex workspace.
-			\end{description}
-		\url{\GIS_Documentation.tex}
-			\begin{description}
-			\item top level of documentation of type "book" in \LaTeX{}.  Where book properties and book parts are managed and chapters are imported.
-			\end{description}
-		\url{\archive}
-			\begin{description}
-			\item archive copies of entire processing folder.
-			\end{description}
-		\url{\brandPart}
-			\begin{description}
-			\item \LaTeX{} "book part" about the brand.
-			\end{description}
-		\url{\methodsPart}
-			\begin{description}
-			\item \LaTeX{} "book part" about the methods.
-			\end{description}
-		\url{\servicePart}
-			\begin{description}
-			\item \LaTeX{} "book part" about services.
-			\end{description}
-		\url{\build}
-			\begin{description}
-			\item folder for temp docs when \url{GIS_Documentation.tex} is compiled.
-			\end{description}
-	\textbf{* Note: each level from here down has a build folder for temp Latex files like this.}
-	\newpage 
-	\subsubsection{Service Book Part Detail}
-		\paragraph{}
-			relative path:
-			\subparagraph{}
-				\url{\processing\servicePart}
-		\paragraph{}
-			absolute path:
-			\subparagraph{}
-				\url {J:\LIS\GIS_Doc\Book\processing\servicePart}\\
-			\subparagraph{}				
-				\url{\toolsChapter.tex}
-			
-				\begin{description}
-				\item  intermediate level of "book" in \LaTeX{}.  Where (service part, tool) chapter properties are managed and sections are imported.
-				\end{description}
-								
-	\subsubsection{toolsChapter}
-		\paragraph{}
-		relative path:
-			\subparagraph{}
-			\url{ \processing\servicePart\toolsChapter}
-		\paragraph{}
-			absolute path:
-			\subparagraph{}
-				\url{J:\LIS\GIS_Doc\Book\processing\servicePart\toolsChapter}
-			\subparagraph{\LaTeX{} file}
-				\url{\QGISSection.tex}
-				\begin {description}
-				\item intermed level of "book" in \LaTeX{}.  Where book section properties are managed and subsections are imported.
-				\end{description}
-		
-				
-				
-			
+\subsubsection{Project General Notes:}
+\begin{itemize}
+\item Book folder can be renamed an moved.
+\item This project is coded with relative paths from processing folder down.
+\end{itemize}
+\subsubsection{Project file structure:}
+\begin{verbatim}
+J:\LIS\GIS_Doc\book\build
+\end{verbatim}
+\begin{description}
+\item pdf docs created by the underlying .tex docs and copied here manually.
+\end{description}
+\begin{verbatim}
+J:\LIS\GIS_Doc\Book\source
+\end{verbatim}
+\begin{description}
+\item images that appear in
+\begin{verbatim}
+\GIS_Documentation.tex
+\end{verbatim}
+\end{description}
+\begin{verbatim}
+J:\LIS\GIS_Doc\Book\processing
+\end{verbatim}
+\begin{description}
+\item the Tex workspace.
+\end{description}
+\begin{verbatim}
+\GIS_Documentation.tex
+\end{verbatim}
+\begin{description}
+\item top level of documentation of type "book" in \LaTeX{}.  Where book properties and book parts are managed and chapters are imported.
+\end{description}
+\begin{verbatim}
+\archive
+\end{verbatim}
+\begin{description}
+\item archive copies of entire processing folder.
+\end{description}
+\begin{verbatim}
+\brandPart
+\end{verbatim}
+\begin{description}
+\item \LaTeX{} "book part" about the brand.
+\end{description}
+\begin{verbatim}
+\methodsPart
+\end{verbatim}
+\begin{description}
+\item \LaTeX{} "book part" about the methods.
+\end{description}
+\begin{verbatim}
+\servicePart
+\end{verbatim}
+\begin{description}
+\item \LaTeX{} "book part" about services.
+\end{description}
+\begin{verbatim}
+\build
+\end{verbatim}
+\begin{description}
+\item folder for temp docs when created by compiling of:
+\begin{verbatim}
+GIS_Documentation.tex
+\end{verbatim}
+\end{description}
+\textbf{* Note: each level from here down has a build folder for temp Latex files like this.}
+\newpage
+\subsubsection{Service Book Part Detail}
+relative path:
+\begin{verbatim}
+\processing\servicePart\toolsChapter.tex
+\end{verbatim}
+\begin{description}
+\item  intermediate level of "book" in \LaTeX{}.  Where (service part, tool) chapter properties are managed and sections are imported.
+\end{description}
+\subsubsection{toolsChapter}
+relative path:
+\begin{verbatim}
+\processing\servicePart\toolsChapter
+\end{verbatim}
+intermed level of "book" in \LaTeX{}.  Where book section properties are managed and subsections are imported.
 \end{document}

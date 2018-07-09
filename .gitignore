@@ -1,5 +1,11 @@
-
+<!---
+https://git-scm.com/docs/gitignore
+--->
 archive/
+
+## Vim edit files
+*.*~
+*.*swp
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
