@@ -1,6 +1,4 @@
-%\documentclass{book}  % Switch to compile from here down
-\documentclass[class=book , crop=false]{standalone} %Switch to compile from above
-\usepackage[subpreambles=false]{standalone}
+\input{../../commonSecChapPartClass}
 
 \input{../../preamble}
 
@@ -10,20 +8,9 @@
 
 \begin{document}
 
-\ifstandalone
-%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-\maketitle % creates title page and blank page after title page
-\tableofcontents % creates TOC and blank page
-\clearpage
-%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-\fi
+\input{../../commonFront} % provides standalone options
 
 \section{\LaTeX{} Packages}
 
-\subimport{latexPackagesSection/}{floatPackageSubsection.tex}
-\subimport{latexPackagesSection/}{graphicxPackageSubsection.tex}
-\subimport{latexPackagesSection/}{importPackageSubsection.tex}
-%\subimport{latexPackagesSection/}{urlPackageSubsection.tex}%abandoned bc conflicts with hyperref package
-\subimport{latexPackagesSection/}{wrapfigPackageSubsection.tex}
 
-\end{document}
+\subimport{latexPackagesSection/}{floatPackageSubsection.tex}

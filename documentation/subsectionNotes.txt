@@ -9,12 +9,6 @@
 
 \begin{document}% Document Begins
 
-\ifstandalone
-%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-\maketitle % creates title page and blank page after title page
-\tableofcontents % creates TOC and blank page
-\clearpage
-%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-\fi
+\input{../../../commonFront} % provides standalone options
 
 \subsection{Using COGO Tools in QGIS}
