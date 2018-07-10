@@ -1,20 +1,25 @@
-%\documentclass{book}  % Switch to compile from here down MAYBE
-\documentclass[class=book , crop=false]{standalone} %Switch to compile from above
+\documentclass[class=report , crop=false, openany, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
 \usepackage[subpreambles=false]{standalone}
 
-\input{../preamble}
-
+\input{../../preamble}
+\setcounter{tocdepth}{3}  % Sets Table of Contents level to show sections
 \def\titlename{Tools}
 
 \title{\input{../commonTitle}}  % closing brace for title
 
 \begin{document}
 
-\maketitle
-\chapter{Tools}
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC
+\clearpage
+\fi
 
-\subimport{toolsChapter/}{QGISSection.tex}
-\subimport{toolsChapter/}{latexPackagesSection.tex}
-\subimport{toolsChapter/}{latexTemplatesSection.tex}
+\chapter{Tools}
+%\section{Latex Package Section}
+%\subimport{toolsChapter/}{QGISSection.tex}
+\subimport*{toolsChapter/}{latexPackagesSection.tex}
+%\subimport{toolsChapter/}{latexTemplatesSection.tex}
 
 \end{document}

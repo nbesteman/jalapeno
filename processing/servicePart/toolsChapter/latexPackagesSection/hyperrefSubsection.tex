@@ -1,34 +1,37 @@
-%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
-\documentclass[class=book , crop=false]{standalone}
+\documentclass[class=article, crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
 
 \input{../../../preamble}
 
-\def\titlename{\LaTeX{} Packages\\ \medskip\large The hyperref Package}
+\def\titlename{The hyperref Package\\ \medskip\large \LaTeX{} Packages }
 
-\title{\input{../../../commonTitle}}  % closing brace for title
+\title{\input{../../../commonTitle}}  % inputs common title
 
 \begin{document}% Document Begins
 
-\input{../../../commonFront} % provides standalone options
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC
+\clearpage
+\fi
 
-\subsection{hyperref Package}
-\medskip 
-\subsubsection{\Large usepackage}
+\subsection[hyperref Package]{\LARGE hyperref Package}
+
+\subsubsection[usepackage]{\Large usepackage}
 
 Add the \textit{hyperref package} to the preamble\begin{large}\textbf{ last}\end{large}.	
 
 \begin{verbatim}\usepackage[options]{hyperref}\end{verbatim}
 
-\subsubsection{\Large Simple Use}
+\subsubsection[Simple Use]{\Large Simple Use}
 \begin{verbatim}Use \href{URL}{DESCRIPTION} to add a link with description
-Example:
+
 \href{https://www.latex-tutorial.com}{Website with tutorials}
 produces:
 \end{verbatim}
 \href{https://www.latex-tutorial.com}{Website with tutorials}
 
-	
-\subsubsection{\Large Options}
+\subsubsection[Options]{\Large Options}
 Add optional arguments to the usepackage line:\\
 Useful options:\begin{itemize}
 \item \begin{large}\textbf{pdftex}\end{large}\\enables other options like breaklines
@@ -41,28 +44,34 @@ Useful options:\begin{itemize}
 
 \end{itemize}
 
-\subsubsection{\Large Use with options}
+\subsubsection[Use with Options]{\Large Use with options}
 \begin{verbatim}
-\usepackage[breaklinks,colorlinks,citecolor=blue,urlcolor=green]{hyperref}
+\usepackage[breaklinks,colorlinks,citecolor=blue,
+urlcolor=green]{hyperref}
 \end{verbatim}
 
-\subsubsection{\Large Commands}
+\subsubsection[Commands]{\Large Commands}
 \begin{verbatim}
 \href{URL}{text} — Makes text a link to URL.
 \end{verbatim}
 \href{../../../../../documentation/references/hyperrefmanual.pdf}{Manual for hyperref}
-%\href{../hyperrefmanual.pdf}{Manual for hyperref}
-%\href{c://AC/jalapeno/documentation/hyperrefmanual.pdf}{Manual for hyperref}
 
 \begin{verbatim}
 \hyperref[label]{text} 
-  — Makes text a link to where
-\ref{label} would point.
-\hypertarget{name}{text} — Sets an anchor on textwith the label name. 
-\hyperlink{name}{text} — Makes text a link that takes you to the anchor labeled name. 
-Pair with \hypertarget. 
-\phantomsection — Used in conjunction with
-\addcontentsline to make the correct link in the Table of Contents.
+  — Makes text a link to where \ref{label} would point.
+  
+\hypertarget{name}{text}
+    Sets an anchor on text with the label name.
+     
+\hyperlink{name}{text} 
+    Makes text a link that takes you to the anchor labeled name.     
+    *Pair with \hypertarget.
+ 
+\phantomsection
+    Used in conjunction with
+
+\addcontentsline 
+    to make the correct link in the Table of Contents.
 \end{verbatim}				
 
 \end{document}

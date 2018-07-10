@@ -548,8 +548,7 @@
       Abandoned bc of conflicts w/ hyperref package
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <font BOLD="true" NAME="Dialog" SIZE="12"/>
 </node>
 <node COLOR="#ff6666" CREATED="1530207579575" HGAP="59" ID="ID_1107796444" MODIFIED="1531149062144" TEXT="wrapfig" VSHIFT="50">
@@ -561,7 +560,7 @@
 <font NAME="Dialog" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#ff6666" CREATED="1530563696929" ID="ID_353388247" MODIFIED="1531149062526" TEXT="hyperref">
+<node COLOR="#ff6666" CREATED="1530563696929" ID="ID_353388247" MODIFIED="1531167230224" TEXT="hyperref">
 <richcontent TYPE="NOTE"><html>
   <head>
     

@@ -1,16 +1,21 @@
-\input{../../commonSecChapPartClass}
+\documentclass[class= article, crop=false]{standalone}
+
+\usepackage[subpreambles=false]{standalone}
 
 \input{../../preamble}
 
 \def\titlename{\LaTeX{} Packages}
 
-\title{\input{../../commonTitle}}  % closing brace for title
+\title{\input{../../commonTitle}}  % inputs common title
 
 \begin{document}
 
-\input{../../commonFront} % provides standalone options
 
-\section{\LaTeX{} Packages}
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC and blank page
+\fi
 
 
-\subimport{latexPackagesSection/}{floatPackageSubsection.tex}
+\subimport{latexPackagesSection/}{hyperrefSubsection.tex}

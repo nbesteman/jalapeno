@@ -1,18 +1,38 @@
-\documentclass[class=book , crop=false]{standalone}
-%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
+\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
 
 \input{../../../preamble}
 
-\def\titlename{\LaTeX{} Packages\\ \medskip\large The import Package}
+\def\titlename{The import Package\\ \medskip\large \LaTeX{} Packages}
 
-\title{\input{../../../commonTitle}}  % closing brace for title
+\title{\input{../../../commonTitle}}  % inputs common title
 
-\begin{document}% Document Begins
+\begin{document}% document begins
 
-\input{../../../commonFront} % provides standalone options
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC
+\clearpage
+\fi
 
-\subsection{import Package}
-\medskip
-\subsubsection{\Large BLAH \\\small(BLAH).}
+\clearpage
 
+\subsubsection[usepackage]{\Large usepackage}
+\begin{verbatim} text \end{verbatim}
+
+\subsubsection[Simple Use]{\Large Simple Use}
+\begin{verbatim} text \end{verbatim}
+
+\subsubsection[Options]{\Large Options}
+\begin{verbatim} text \end{verbatim}
+Add optional arguments to the usepackage line:\\
+Useful options:\begin{itemize}
+\item \begin{large}\textbf{OPTION NAME}\end{large}\\OPTION NOTE
+\item \begin{large}\textbf{OPTION NAME}\end{large}\\OPTION NOTE
+\end{itemize}
+
+\subsubsection[Use with Options]{\Large Use with options}
+\begin{verbatim} text \end{verbatim}
+
+\subsubsection[Commands]{\Large Commands}
 \end{document}
