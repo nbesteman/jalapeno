@@ -1,0 +1,169 @@
+\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+
+\input{../../../preamble}
+
+
+\def\titlename{The standalone Package\\ \medskip\large \LaTeX{} Packages }
+\title{\input{../../../commonTitle}}  % inputs common title
+
+\begin{document}% document begins
+
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC
+\clearpage
+\fi
+
+\clearpage
+
+\subsection[standalone Package]{\LARGE standalone Package}
+
+\subsubsection[Introduction]{\Large Introduction}
+
+\IfStandalone{\href{../../../../../documentation/packageDocs/standalonePkg1.3a.pdf}{Link to official standalone documentation}}{\href{../../documentation/packageDocs/standalonePkg1.3a.pdf}{Link to official standalone documentation}}
+
+\emph{standalone} provides a \textbf{package} and a \textbf{class}
+
+\begin{itemize}
+\item The \emph{standalone} \textbf{package} is used for:
+
+\begin{itemize}
+\item Main documents that will input or import sub documents.
+\item For example:
+
+\begin{verbatim}
+\usepackage[subpreambles=false]{standalone}
+\end{verbatim}
+
+\begin{itemize}
+\item Ignores preambles of imported sub documents
+
+\end{itemize}
+
+\end{itemize}
+
+\item the \emph{standalone} \textbf{class}:  
+
+\begin{itemize}
+\item Is a document class
+\item Provides standalone / subdocument switches and options
+\item For example:
+\begin{verbatim}
+\documentclass[class=article]{standalone}
+\end{verbatim}
+
+\begin{itemize}
+\item behaves as an article when standalone
+\item makes document available for import into a master document 
+
+\end{itemize}
+
+\end{itemize}
+
+\end{itemize} 
+
+\subsubsection[Simple Use]{\Large Simple Use}
+%\begin{verbatim} text \end{verbatim}
+
+\begin{itemize}
+\item The \emph{standalone} \textbf{package}
+
+\begin{itemize}
+\item In the main document:
+\begin{verbatim}
+\documentclass[openany]{book}
+
+\preamble...
+
+\usepackage{standalone}
+\end{verbatim}
+
+\end{itemize}
+
+\item the \emph{standalone} \textbf{class}:  
+
+\begin{itemize}
+\item In any subdocument:
+\begin{verbatim}
+\documentclass[class=article]{standalone}
+
+\preamble...
+\end{verbatim}
+
+\end{itemize}
+
+\end{itemize} 
+
+
+\subsubsection[Options]{\Large Options}
+\begin{itemize}
+\item The \emph{standalone} \textbf{package}
+
+\begin{itemize}
+
+\item \begin{large}\textbf{subpreamble}\end{large}
+
+\begin{itemize}
+\item default value of subpreambles is \emph{false}
+
+\end{itemize}
+
+\end{itemize}
+
+\item the \emph{standalone} \textbf{class}:  
+\begin{itemize}
+\item \begin{large}\textbf{crop}\end{large}
+\item \begin{large}\textbf{titlepage}\end{large}
+\item \begin{large}\textbf{twoside}\end{large}
+
+\begin{itemize}
+\item Makes pagination style match book
+\item default value is \emph{false}
+
+\end{itemize}
+\item \begin{large}\textbf{multi}\end{large}
+
+\begin{itemize}
+\item \begin{verbatim} multi=true|false \end{verbatim}
+\item \begin{verbatim} multi={<environment name>, ...>}\end{verbatim}
+\end{itemize}
+
+\item \begin{large}\textbf{float}\end{large}
+\end{itemize}
+
+\end{itemize}
+
+\subsubsection[Use with Options]{\Large Use with options}
+\begin{itemize}
+
+
+\item the \emph{standalone} \textbf{package}:
+\begin{itemize}
+\item \begin{verbatim}\usepackage[subpreambles=false]{standalone}
+\end{verbatim}
+\end{itemize}
+
+\item the \emph{standalone} \textbf{class}:
+\begin{itemize}
+\item \begin{verbatim}
+\documentclass[class=article , crop=false, 
+    titlepage, twoside, 
+    multi={itemize, figure, verbatim}, 
+    float=false]{standalone}
+\end{verbatim}
+
+\end{itemize}
+
+\end{itemize}
+
+\subsubsection[Commands]{\Large Commands}
+
+\end{document}
+
+%\begin{verbatim}
+%\documentclass[class=article , crop=false, 
+%    titlepage, twoside, 
+%    multi={itemize, figure, verbatim}, 
+%    float=false]{standalone}
+%\end{verbatim}

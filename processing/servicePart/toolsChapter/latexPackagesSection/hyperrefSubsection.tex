@@ -17,9 +17,10 @@
 
 \subsection[hyperref Package]{\LARGE hyperref Package}
 
-\subsubsection[usepackage]{\Large usepackage}
+\subsubsection[Introduction]{\Large Introduction}
+\IfStandalone{\href{../../../../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}}{\href{../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}}
 
-Add the \textit{hyperref package} to the preamble\begin{large}\textbf{ last}\end{large}.	
+\textbf{Note:} Add the \textit{hyperref package} to the preamble\begin{large}\textbf{ last}\end{large}.	
 
 \begin{verbatim}\usepackage[options]{hyperref}\end{verbatim}
 
@@ -57,15 +58,9 @@ urlcolor=green]{hyperref}
 
 \begin{Large}To put a file path in text:\end{Large}\\
 eg:\\
-%\href{../../../../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}
-\ifstandalone
-This link uses path relative to subsection document\\
-\href{../../../../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}\\
-The second link will only work from the main document
-\fi
 
-\href{../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}\\
-%\href{C:/AC/jalapeno/documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}
+\IfStandalone{\href{../../../../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}}{\href{../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}}\\
+
 \begin{tiny}(documentation Pt.4 pg.15)\end{tiny}
 \begin{verbatim}
 \href[options}{URL}{text}
@@ -97,7 +92,6 @@ Options:\begin{itemize}
 \end{footnotesize}
 
 \end{itemize}
-
 
 \begin{verbatim}
 \hyperref[label]{text} 

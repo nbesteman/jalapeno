@@ -560,7 +560,7 @@
 <font NAME="Dialog" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#ff6666" CREATED="1530563696929" ID="ID_353388247" MODIFIED="1531167230224" TEXT="hyperref">
+<node COLOR="#ff6666" CREATED="1530563696929" ID="ID_353388247" MODIFIED="1531335969207" TEXT="hyperref">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -573,6 +573,20 @@
 </html>
 </richcontent>
 <font BOLD="true" NAME="Dialog" SIZE="12"/>
+</node>
+<node COLOR="#ff6666" CREATED="1531336003525" ID="ID_260857711" MODIFIED="1531336127322" TEXT="standalone">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      options need some more editing
+    </p>
+  </body>
+</html>
+</richcontent>
+<font NAME="Dialog" SIZE="12"/>
 </node>
 </node>
 <node COLOR="#00cc00" CREATED="1530278281017" HGAP="116" ID="ID_971935948" MODIFIED="1531149062144" TEXT="LaTex Templates" VSHIFT="105">
