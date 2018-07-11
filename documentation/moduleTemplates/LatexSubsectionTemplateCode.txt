@@ -1,25 +1,4 @@
-\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
-
-\input{../../../preamble}
-
-\def\titlename{Parcel Editing with COGO\\ \medskip\large in ArcGIS}
-
-\title{\input{../../../commonTitle}}  % inputs common title
-
-\begin{document}% document begins
-
-\ifstandalone
-\maketitle % creates title page
-\clearpage
-\tableofcontents % creates TOC
-\clearpage
-\fi
-
-\clearpage
-
-
-
-Latex Pack Subsections
+Latex Package Subsections
 
 \subsection[ Package]{\LARGE  Package}
 
@@ -39,5 +18,3 @@ Useful options:\begin{itemize}
 
 \subsubsection[Use with Options]{\Large Use with options}
 \begin{verbatim} text \end{verbatim}
-
-\subsubsection[Commands]{\Large Commands}

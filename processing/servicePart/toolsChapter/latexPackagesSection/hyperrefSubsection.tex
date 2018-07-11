@@ -54,11 +54,54 @@ urlcolor=green]{hyperref}
 \begin{verbatim}
 \href{URL}{text} — Makes text a link to URL.
 \end{verbatim}
-\href{../../../../../documentation/references/hyperrefmanual.pdf}{Manual for hyperref}
+
+\begin{Large}To put a file path in text:\end{Large}\\
+eg:\\
+%\href{../../../../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}
+\ifstandalone
+This link uses path relative to subsection document\\
+\href{../../../../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}\\
+The second link will only work from the main document
+\fi
+
+\href{../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}\\
+%\href{C:/AC/jalapeno/documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}
+\begin{tiny}(documentation Pt.4 pg.15)\end{tiny}
+\begin{verbatim}
+\href[options}{URL}{text}
+\end{verbatim}
+
+Options:\begin{itemize}
+\item absolute
+\begin{footnotesize}
+\begin{verbatim}
+\href{C:/AC/jalapeno/documentation/packageDocs/hyperref2017.pdf}
+    {Official hyperref doc}
+\end{verbatim}
+\end{footnotesize}
+
+\item relative \textbf{Note: relative path must be from final pdf location}
+\begin{footnotesize}
+\begin{verbatim}
+\href{../../../../../documentation/packageDocs/hyperref2017.pdf}
+    {Official hyperref package doc}
+\end{verbatim}
+*This path works from main document
+\begin{verbatim}
+
+\href{../../documentation/packageDocs/hyperref2017.pdf}
+    {Official hyperref package documentation}
+\end{verbatim}
+*This path works from subsection document
+
+\end{footnotesize}
+
+\end{itemize}
+
 
 \begin{verbatim}
 \hyperref[label]{text} 
-  — Makes text a link to where \ref{label} would point.
+    Makes text a link to where \ref{label} would point.
   
 \hypertarget{name}{text}
     Sets an anchor on text with the label name.
