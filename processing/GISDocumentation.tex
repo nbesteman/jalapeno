@@ -1,0 +1,42 @@
+\documentclass[openany]{book}  % Use a real document class for the main
+
+\input{preamble}
+
+\usepackage{standalone}
+%\setcounter{tocdepth}{2}  % Sets Table of Contents level to show sections
+
+\def\titlename{What We Do}
+\title{\input{commonTitle}}  % closing brace for title
+%--------------------
+%		Front Section
+%--------------------
+\begin{document}% Document Begins
+\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+
+\maketitle % creates title page and blank page after title page
+
+\tableofcontents % creates TOC
+	
+%-------------------
+%		Main Section
+%-------------------
+\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+
+%\part*{Introduction} % * makes this part unnumbered
+
+\part{Brand} % Creates Methods Book Part.  (Title page, blank page, then 1st chapter)
+\subimport{brandPart/}{awardsChapter.tex}	
+	
+\part{Methods}
+\subimport{methodPart/}{documentationChapter.tex}	
+			
+\part{Service}
+text~\cite[pg.4]{standalone1.3}.
+\subimport{servicePart/}{toolsChapter.tex}
+
+\addcontentsline{toc}{part}{References}
+\bibliographystyle{amsplain}
+%\bibliographystyle{plain}
+\bibliography{commonBib}
+
+\end{document} % Document Ends

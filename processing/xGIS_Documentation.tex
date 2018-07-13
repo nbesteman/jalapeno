@@ -1,8 +1,11 @@
 \documentclass[openany]{book}  % Use a real document class for the main
 
 \input{preamble}
+%\usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
 
-
+%\bibliographystyle{Abbrv}
+%\bibliography{commonBib}
+\usepackage{cite}
 
 \usepackage{standalone}
 %\setcounter{tocdepth}{2}  % Sets Table of Contents level to show sections
@@ -32,7 +35,12 @@
 \part{Methods}
 \subimport{methodPart/}{documentationChapter.tex}	
 			
-\part{Service}
+\part{Service}\cite{standalone1.3}
 \subimport{servicePart/}{toolsChapter.tex}
+
+\bibliography{commonBib}{}
+\bibliographystyle{plain}
+
+\printbibliography
 
 \end{document} % Document Ends
