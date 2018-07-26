@@ -9,14 +9,18 @@
 
 \begin{document}% Document Begins
 
-\input{../../../commonFront} % provides standalone options
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC
+\clearpage
+\fi
 
 \subsection{\LaTeX{} Subsection Template}
 \medskip 
 	
 \begin{verbatim}
 
-%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
 \documentclass[class=book , crop=false]{standalone}
 
 \input{../../../preamble}

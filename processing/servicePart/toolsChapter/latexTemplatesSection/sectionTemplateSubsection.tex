@@ -9,7 +9,12 @@
 
 \begin{document}% Document Begins
 
-\input{../../../commonFront} % provides standalone options
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC
+\clearpage
+\fi
 
 \subsection{\LaTeX{} Section Template}
 

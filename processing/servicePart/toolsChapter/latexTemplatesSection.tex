@@ -9,7 +9,11 @@
 
 \begin{document}
 
-\input{../../commonFront} % provides standalone options
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC and blank page
+\fi
 
 \section{\LaTeX{} Templates}
 

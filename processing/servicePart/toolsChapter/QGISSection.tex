@@ -4,21 +4,19 @@
 
 \input{../../preamble}
 
+\setcounter{tocdepth}{3}  % Sets Table of Contents level to show sections
+
 \def\titlename{QGIS}
 
 \title{\input{../../commonTitle}}  % closing brace for title
 
 \begin{document}
-%\ifstandalone
-\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-
-\maketitle % creates title page and blank page after title page
-
+\ifstandalone
+\maketitle % creates title page
+\clearpage
 \tableofcontents % creates TOC and blank page
 \clearpage
-
-\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-%\fi
+\fi
 
 
 % Maintain QGIS tools docs within the QGIS Tools section here

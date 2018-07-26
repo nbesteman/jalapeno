@@ -9,10 +9,20 @@
 
 \begin{document}
 
-\input{../../commonFront} % provides standalone options
+
+
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC and blank page
+\fi
+
+
 
 \section{ESRI Tools}
 
 \subimport{ESRISection/}{ArcGIS_COGO_Subsection.tex}
+
+\subimport{ESRISection/}{ForfeitureMobileAppSubsection.tex}
 
 \end{document}
