@@ -1,0 +1,82 @@
+\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+
+\input{../../../preamble}
+
+\def\titlename{Batch PDF Optimization\\ \medskip\large with Python, batch files, and ghostscript}
+
+\title{\input{../../../commonTitle}}  % inputs common title
+
+\begin{document}% document begins
+
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC
+\clearpage
+\fi
+
+\clearpage
+
+\subsection{Introduction}
+\paragraph{Summary}
+Optimization of a large number of pdf docs can be accomplished with the following workflow.
+\paragraph{requirements}
+Opensource software:
+\begin{itemize}
+\item ghostscript 
+\item python 2.7 and a Python IDE 
+\item A text editor
+\end{itemize}
+\subsection{Python(2.7)}
+\paragraph{Script}
+\begin{verbatim}
+import os, sys
+
+project = os.path.dirname(os.path.dirname(__file__))
+processing = os.path.join(project, 'processing')
+#source = os.path.join(project,'source')
+build = os.path.join(project,'build')
+sourcepdf = os.path.join(build, '20180716')
+
+inString1 = "gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 
+-dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH 
+-sOutputFile=J:\\Projects\\2018ParcelAtlas\\build\\optimized\\"
+
+inString2 = " J:\\Projects\\2018ParcelAtlas\\build\\20180716\\"
+
+batchdoc = os.path.join(processing,"bDoc.txt")
+
+#   Main
+################################################################################
+
+if __name__ == "__main__":
+
+    list1 = os.listdir(sourcepdf)
+    l = open(batchdoc,'w')
+    for i in list1:
+        newi = i[1:]
+        print newi
+        t = inString1 + newi + inString2 + i + "\n"
+        print t
+        l.write(t)
+
+    l.close()
+
+\end{verbatim}
+
+\subsection{ghostscript}
+
+\paragraph{About}
+ghostscript is an interpreter for the PostScript language and for PDF~\cite{ghostscript1}.
+\paragraph{Licensing}
+ghostscript is available opensource under AGPL conditions.  more information can be found \href{https://www.ghostscript.com/license.html}{here}.
+\paragraph{Download}
+ghostscript can be downloladed \href{https://www.ghostscript.com/download/gsdnld.html}{here}.
+
+
+\subsection{Windows batch files}
+
+
+
+
+\end{document}

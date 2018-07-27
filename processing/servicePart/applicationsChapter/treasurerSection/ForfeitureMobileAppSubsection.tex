@@ -1,0 +1,117 @@
+\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+\usepackage{caption}
+\input{../../../preamble}
+
+\def\titlename{Forfeiture Data Collection\\ \medskip\large Mobile App with Collector for ArcGIS}
+
+\title{\input{../../../commonTitle}}  % inputs common title
+
+\begin{document}% document begins
+
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC
+\clearpage
+\fi
+
+\subsection{Forfeiture Data Collection}
+
+\subsubsection{Problem and Analysis}
+
+\paragraph{Background\\}
+Treasurer department has an annual responsibility to properly document the tax forfeiture process.  The LIS Department built an application in MS Access and MapInfo that consumed a daily export from BSA and was deployed to the field on a laptop.  A digital camera was used for site photos and later imported into the laptop.
+
+\paragraph{Statement of Problem\\}
+Current Tax Forfeiture workflow is built on MapInfo software which has been replaced by ESRI software.  The Forfeiture data collection application must be recreated in the ESRI framework.
+
+
+\paragraph{Analysis\\}
+Tax Forfeiture Application will facilitate:
+
+\begin{itemize} %1
+
+\item Mobile data collection on handheld device via Collector for ArcGIS configured with Allegan County GIS Portal  (\textbf{device app})
+
+\begin{itemize} %2
+
+\item Device app will:
+
+\begin{itemize} %3
+
+\item Synchronize with data in the office (online)
+\item Navigate to forfeiture sites (offline)
+\item Collect data and photos of forfeiture sites (offline)
+\item Synchronize the collected data with data in the office (online)
+\end{itemize} %3
+
+\end{itemize} %2
+
+\item Daily form production and printing for each site visited with required data and images.
+
+\end{itemize} %1
+
+\clearpage
+\subsubsection{Design}
+
+\paragraph{Forfeiture Data Collection\\}
+Three parts of the daily routine:
+
+\begin{enumerate}
+
+\item Pre-processing (in the office):
+\begin{itemize}
+
+\item Export current forfeiture list from BSA
+\item Update webmap layers with results from BSA export
+\item Synchronize from webmap layers to field collection device \textbf{(device app)}
+\end{itemize}
+
+\item Field data collection with device app:
+\begin{itemize}
+
+\item Support navigation to forfeiture sites
+\item Provide a checklist of data points about the site
+\item Attach photos to the site
+\item Save results for synchronization in post-processing
+\end{itemize}
+
+\item Post-processing (in the office)
+\begin{itemize}
+
+\item Synchronize data and images collected in device app to webmap layers
+
+\end{itemize}
+\end{enumerate}
+
+\paragraph{Backend Data Details\\\\}
+%feature class : ForfetureParcels
+
+\begin{minipage}{0.4\textwidth}
+\begin{itemize}
+\item[\textbf{ForfeitureParcels}]Dat is in 
+\end{itemize}
+\end{minipage}%
+%
+\begin{minipage}{0.4\textwidth}
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{ForfParcelsCatalog2}
+    \captionof{figure}{live data}
+    \label{img:g}
+\end{center}
+\end{minipage}
+
+\subparagraph{ForfeitureParcels Feature Class\\}
+Details about the data
+\clearpage
+\paragraph{Collector Setup Details\\}
+Install Collector for ArcGIS from Google Play Store
+
+\clearpage
+\subsubsection{Hard Copy Record}
+\clearpage
+\subsubsection{User Manual}
+\clearpage
+\subsubsection{Software}
+\clearpage
+\end{document}

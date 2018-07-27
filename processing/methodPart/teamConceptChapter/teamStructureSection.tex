@@ -1,0 +1,25 @@
+\documentclass[class= article, crop=false]{standalone}
+
+\usepackage[subpreambles=false]{standalone}
+
+\input{../../preamble}
+
+\def\titlename{Team Structure}
+
+\title{\input{../../commonTitle}}  % inputs common title
+
+\begin{document}
+
+
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC and blank page
+\fi
+
+
+\section{Team Structure}
+
+\subimport{teamStructureSection/}{pairedProgSubsection.tex}
+
+\end{document}

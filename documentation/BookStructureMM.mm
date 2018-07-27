@@ -13,18 +13,18 @@
 </html></richcontent>
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Tahoma" SIZE="20"/>
-<hook NAME="accessories/plugins/AutomaticLayout.properties"/>
 <hook NAME="accessories/plugins/HierarchicalIcons.properties"/>
+<hook NAME="accessories/plugins/AutomaticLayout.properties"/>
 <node COLOR="#cc33ff" CREATED="1529517476207" HGAP="59" ID="ID_844360277" MODIFIED="1531149062050" POSITION="right" TEXT="Brand" VSHIFT="777">
 <edge COLOR="#111111" STYLE="sharp_bezier" WIDTH="8"/>
 <font BOLD="true" NAME="SansSerif" SIZE="18"/>
-<node COLOR="#009999" CREATED="1530104257113" HGAP="195" ID="ID_505485373" MODIFIED="1531149062050" TEXT="Awards" VSHIFT="-80">
+<node COLOR="#009999" CREATED="1530104257113" HGAP="235" ID="ID_505485373" MODIFIED="1532721558887" TEXT="Awards" VSHIFT="-40">
 <edge COLOR="#111111" STYLE="bezier" WIDTH="thin"/>
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node COLOR="#00cc00" CREATED="1530104266170" HGAP="40" ID="ID_680262672" MODIFIED="1531149062050" TEXT="GIS Champion" VSHIFT="-75">
+<node COLOR="#00cc00" CREATED="1530104266170" HGAP="68" ID="ID_680262672" MODIFIED="1532721656297" TEXT="GIS Champion" VSHIFT="-35">
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
-<node COLOR="#ff6666" CREATED="1530104285434" HGAP="118" ID="ID_220192891" MODIFIED="1531149062066" TEXT="GIS Champion Award Code" VSHIFT="-58">
+<node COLOR="#ff6666" CREATED="1530104285434" HGAP="118" ID="ID_220192891" MODIFIED="1532724287947" TEXT="GIS Champion Award Code" VSHIFT="-58">
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="12"/>
 </node>
@@ -38,11 +38,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00cc00" CREATED="1530192157520" ID="ID_1358991753" MODIFIED="1531149062066" TEXT="ex">
-<font BOLD="true" NAME="Dialog" SIZE="20"/>
 </node>
-</node>
-<node COLOR="#009999" CREATED="1530104257113" HGAP="237" ID="ID_532337857" MODIFIED="1531149062066" TEXT="Social Media" VSHIFT="-14">
+<node COLOR="#009999" CREATED="1530104257113" HGAP="252" ID="ID_532337857" MODIFIED="1532721555019" TEXT="Social Media" VSHIFT="20">
 <edge COLOR="#111111" STYLE="bezier" WIDTH="thin"/>
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node COLOR="#00cc00" CREATED="1529507731565" ID="ID_198567546" MODIFIED="1531149062066" TEXT="GVSU Alumni">
@@ -53,7 +50,7 @@
 </node>
 <node COLOR="#00cc00" CREATED="1529505878767" ID="ID_1762647964" MODIFIED="1531149062082" TEXT="Watercooler">
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
-<node COLOR="#ff6666" CREATED="1529507346247" HGAP="29" ID="ID_1825773858" MODIFIED="1531149062082" TEXT="post the GIS Champion certificate" VSHIFT="70">
+<node COLOR="#ff6666" CREATED="1529507346247" HGAP="25" ID="ID_1825773858" MODIFIED="1532721541465" TEXT="post the GIS Champion certificate" VSHIFT="43">
 <font BOLD="true" NAME="Dialog" SIZE="12"/>
 </node>
 </node>
@@ -79,7 +76,7 @@
 <edge STYLE="bezier" WIDTH="thin"/>
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 </node>
-<node COLOR="#009999" CREATED="1529505954406" HGAP="239" ID="ID_371925706" MODIFIED="1531149062082" TEXT="Outreach" VSHIFT="-91">
+<node COLOR="#009999" CREATED="1529505954406" HGAP="250" ID="ID_371925706" MODIFIED="1532721643124" TEXT="Outreach" VSHIFT="-196">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -116,7 +113,7 @@
 </node>
 </node>
 </node>
-<node COLOR="#cc33ff" CREATED="1530103755143" HGAP="53" ID="ID_1778119501" MODIFIED="1531149062082" POSITION="right" TEXT="Methods" VSHIFT="-13">
+<node COLOR="#cc33ff" CREATED="1530103755143" HGAP="53" ID="ID_1778119501" MODIFIED="1532723939983" POSITION="right" TEXT="Methods" VSHIFT="-13">
 <edge COLOR="#111111" STYLE="sharp_bezier" WIDTH="8"/>
 <font BOLD="true" NAME="SansSerif" SIZE="18"/>
 <node COLOR="#009999" CREATED="1530103998762" HGAP="104" ID="ID_857853392" MODIFIED="1531149062082" TEXT="Documentation" VSHIFT="23">
@@ -376,7 +373,7 @@
 <node COLOR="#ff6666" CREATED="1530189910021" ID="ID_1062430166" MODIFIED="1531149062113" TEXT="User Manual">
 <font NAME="Dialog" SIZE="12"/>
 </node>
-<node COLOR="#ff6666" CREATED="1530189914961" ID="ID_1336931371" MODIFIED="1531149062113" TEXT="Code">
+<node COLOR="#ff6666" CREATED="1530189914961" ID="ID_1336931371" MODIFIED="1532723984644" TEXT="Code">
 <font NAME="Dialog" SIZE="12"/>
 </node>
 </node>
@@ -386,20 +383,6 @@
 <node COLOR="#009999" CREATED="1530104072441" HGAP="98" ID="ID_1165004208" MODIFIED="1531149062113" TEXT="Team Concept" VSHIFT="-118">
 <edge COLOR="#111111" STYLE="bezier" WIDTH="thin"/>
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node COLOR="#00cc00" CREATED="1530104169929" HGAP="41" ID="ID_521471839" MODIFIED="1531149062113" TEXT="Paired Programming" VSHIFT="-70">
-<richcontent TYPE="NOTE"><html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Paragraph describing the concept from Joy Inc.
-    </p>
-  </body>
-</html></richcontent>
-<edge COLOR="#111111" WIDTH="thin"/>
-<font BOLD="true" NAME="Dialog" SIZE="20"/>
-</node>
 <node COLOR="#00cc00" CREATED="1530278657767" ID="ID_727740901" MODIFIED="1531149062113" TEXT="Onboarding">
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 <node COLOR="#ff6666" CREATED="1530278666330" HGAP="91" ID="ID_1494399551" MODIFIED="1531149062113" TEXT="Booklist" VSHIFT="-107">
@@ -421,6 +404,23 @@
 </node>
 </node>
 </node>
+<node COLOR="#00cc00" CREATED="1532723698640" HGAP="28" ID="ID_283387264" MODIFIED="1532723851830" TEXT="Team Structure" VSHIFT="20">
+<font BOLD="true" NAME="Dialog" SIZE="20"/>
+<node COLOR="#ff6666" CREATED="1530104169929" HGAP="41" ID="ID_521471839" MODIFIED="1532723725415" TEXT="Paired Programming" VSHIFT="-70">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Paragraph describing the concept from Joy Inc.
+    </p>
+  </body>
+</html></richcontent>
+<edge COLOR="#111111" WIDTH="thin"/>
+<font BOLD="true" NAME="Dialog" SIZE="20"/>
+</node>
+</node>
 </node>
 </node>
 <node COLOR="#cc33ff" CREATED="1530103778763" HGAP="37" ID="ID_1932581142" MODIFIED="1531149062129" POSITION="right" TEXT="Service" VSHIFT="-557">
@@ -436,79 +436,6 @@
 <edge COLOR="#111111" WIDTH="thin"/>
 <font BOLD="true" NAME="Dialog" SIZE="12"/>
 </node>
-<node COLOR="#ff6666" CREATED="1530279611432" HGAP="8" ID="ID_1816098309" MODIFIED="1531149062129" TEXT="Forfeiture Mobile App" VSHIFT="52">
-<font BOLD="true" NAME="Dialog" SIZE="12"/>
-<node COLOR="#ff6666" CREATED="1530189858160" HGAP="16" ID="ID_1004432884" MODIFIED="1532615987350" TEXT="Title and approval page" VSHIFT="-6">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-<node COLOR="#ff6666" CREATED="1530189866290" ID="ID_976677947" MODIFIED="1531149062129" TEXT="Table of Contents">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-<node COLOR="#ff6666" CREATED="1530189885620" FOLDED="true" ID="ID_1804443943" MODIFIED="1532616011150" TEXT="Problem and Analysis">
-<font NAME="Dialog" SIZE="12"/>
-<node COLOR="#ff6666" CREATED="1530189971302" ID="ID_336640307" MODIFIED="1531149062129" TEXT="Statement of Problem">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-<node COLOR="#ff6666" CREATED="1530189980001" ID="ID_748136552" MODIFIED="1531149062129" TEXT="Analysis">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-</node>
-<node COLOR="#ff6666" CREATED="1530189897299" FOLDED="true" ID="ID_1759750065" MODIFIED="1532616012412" TEXT="Design">
-<font NAME="Dialog" SIZE="12"/>
-<node COLOR="#ff6666" CREATED="1530189998775" FOLDED="true" ID="ID_1301210742" MODIFIED="1531149062129" TEXT="Program and Data Flow description">
-<font NAME="Dialog" SIZE="12"/>
-<node COLOR="#ff6666" CREATED="1530190017558" HGAP="35" ID="ID_1223398576" MODIFIED="1531149062129" TEXT="Data Flow Chart" VSHIFT="-25">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-</node>
-<node COLOR="#ff6666" CREATED="1530190024779" FOLDED="true" ID="ID_955548542" MODIFIED="1531149062129" TEXT="User Navigation description">
-<font NAME="Dialog" SIZE="12"/>
-<node COLOR="#ff6666" CREATED="1530190041659" HGAP="49" ID="ID_1449104345" MODIFIED="1531149062129" TEXT="Function Navigation Flow Chart" VSHIFT="23">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-</node>
-<node COLOR="#ff6666" CREATED="1530190117043" ID="ID_1142024852" MODIFIED="1531149062129" TEXT="Application Results">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-</node>
-<node COLOR="#ff6666" CREATED="1530189903255" FOLDED="true" ID="ID_1498288590" MODIFIED="1532616013844" TEXT="Hard Copy Record">
-<richcontent TYPE="NOTE"><html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      screenshots of each user and admin page, reports and tables
-    </p>
-  </body>
-</html></richcontent>
-<font NAME="Dialog" SIZE="12"/>
-<node COLOR="#ff6666" CREATED="1530190205236" ID="ID_1171742373" MODIFIED="1531149062129" TEXT="Introduction Splash Screen">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-<node COLOR="#ff6666" CREATED="1530190246763" ID="ID_200837708" MODIFIED="1531149062129" TEXT="Control Panel">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-<node COLOR="#ff6666" CREATED="1530189931860" ID="ID_1629843004" MODIFIED="1531149062129" TEXT="Reports">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-<node COLOR="#ff6666" CREATED="1530190297194" ID="ID_954059010" MODIFIED="1531149062129" TEXT="Tables">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-<node COLOR="#ff6666" CREATED="1530190316050" ID="ID_1930823833" MODIFIED="1531149062129" TEXT="Queries">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-<node COLOR="#ff6666" CREATED="1530190321284" ID="ID_1027883886" MODIFIED="1531149062129" TEXT="Relationships">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-</node>
-<node COLOR="#ff6666" CREATED="1530189910021" ID="ID_895334920" MODIFIED="1531149062129" TEXT="User Manual">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-<node COLOR="#ff6666" CREATED="1530189914961" HGAP="16" ID="ID_1607676939" MODIFIED="1532615991268" TEXT="Code" VSHIFT="16">
-<font NAME="Dialog" SIZE="12"/>
-</node>
-</node>
 </node>
 <node COLOR="#00cc00" CREATED="1529522423919" HGAP="148" ID="ID_69661875" MODIFIED="1531149062129" TEXT="QGIS Tools" VSHIFT="52">
 <edge COLOR="#111111" WIDTH="thin"/>
@@ -518,7 +445,7 @@
 <font BOLD="true" NAME="Dialog" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#00cc00" CREATED="1530206438686" HGAP="155" ID="ID_478399301" MODIFIED="1531149062129" TEXT="LaTex Packages" VSHIFT="87">
+<node COLOR="#00cc00" CREATED="1530206438686" HGAP="155" ID="ID_478399301" MODIFIED="1532623047807" TEXT="LaTex Packages" VSHIFT="87">
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 <node COLOR="#ff6666" CREATED="1530206544035" HGAP="48" ID="ID_367784001" MODIFIED="1531149062129" TEXT="float" VSHIFT="-51">
 <font BOLD="true" NAME="Dialog" SIZE="12"/>
@@ -591,6 +518,86 @@
 </node>
 <node COLOR="#ff6666" CREATED="1530280523340" HGAP="33" ID="ID_1160994416" MODIFIED="1531149062144" TEXT="SectionTemplate.tex" VSHIFT="20">
 <font BOLD="true" NAME="Dialog" SIZE="12"/>
+</node>
+</node>
+</node>
+<node COLOR="#009999" CREATED="1532721336173" ID="ID_1061115500" MODIFIED="1532721407875" TEXT="Applications">
+<edge STYLE="bezier" WIDTH="thin"/>
+<font BOLD="true" NAME="SansSerif" SIZE="14"/>
+<node COLOR="#00cc00" CREATED="1532721407875" HGAP="45" ID="ID_530132731" MODIFIED="1532721438592" TEXT="Treasurer" VSHIFT="98">
+<font BOLD="true" NAME="Dialog" SIZE="20"/>
+<node COLOR="#ff6666" CREATED="1530279611432" HGAP="122" ID="ID_1816098309" MODIFIED="1532721429797" TEXT="Forfeiture Mobile App" VSHIFT="97">
+<font BOLD="true" NAME="Dialog" SIZE="20"/>
+<node COLOR="#ff6666" CREATED="1530189858160" HGAP="16" ID="ID_1004432884" MODIFIED="1532615987350" TEXT="Title and approval page" VSHIFT="-6">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+<node COLOR="#ff6666" CREATED="1530189866290" ID="ID_976677947" MODIFIED="1531149062129" TEXT="Table of Contents">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+<node COLOR="#ff6666" CREATED="1530189885620" FOLDED="true" ID="ID_1804443943" MODIFIED="1532616011150" TEXT="Problem and Analysis">
+<font NAME="Dialog" SIZE="12"/>
+<node COLOR="#ff6666" CREATED="1530189971302" ID="ID_336640307" MODIFIED="1531149062129" TEXT="Statement of Problem">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+<node COLOR="#ff6666" CREATED="1530189980001" ID="ID_748136552" MODIFIED="1531149062129" TEXT="Analysis">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+</node>
+<node COLOR="#ff6666" CREATED="1530189897299" FOLDED="true" ID="ID_1759750065" MODIFIED="1532616012412" TEXT="Design">
+<font NAME="Dialog" SIZE="12"/>
+<node COLOR="#ff6666" CREATED="1530189998775" FOLDED="true" ID="ID_1301210742" MODIFIED="1531149062129" TEXT="Program and Data Flow description">
+<font NAME="Dialog" SIZE="12"/>
+<node COLOR="#ff6666" CREATED="1530190017558" HGAP="35" ID="ID_1223398576" MODIFIED="1531149062129" TEXT="Data Flow Chart" VSHIFT="-25">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+</node>
+<node COLOR="#ff6666" CREATED="1530190024779" FOLDED="true" ID="ID_955548542" MODIFIED="1531149062129" TEXT="User Navigation description">
+<font NAME="Dialog" SIZE="12"/>
+<node COLOR="#ff6666" CREATED="1530190041659" HGAP="49" ID="ID_1449104345" MODIFIED="1531149062129" TEXT="Function Navigation Flow Chart" VSHIFT="23">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+</node>
+<node COLOR="#ff6666" CREATED="1530190117043" ID="ID_1142024852" MODIFIED="1531149062129" TEXT="Application Results">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+</node>
+<node COLOR="#ff6666" CREATED="1530189903255" FOLDED="true" ID="ID_1498288590" MODIFIED="1532616013844" TEXT="Hard Copy Record">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      screenshots of each user and admin page, reports and tables
+    </p>
+  </body>
+</html></richcontent>
+<font NAME="Dialog" SIZE="12"/>
+<node COLOR="#ff6666" CREATED="1530190205236" ID="ID_1171742373" MODIFIED="1531149062129" TEXT="Introduction Splash Screen">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+<node COLOR="#ff6666" CREATED="1530190246763" ID="ID_200837708" MODIFIED="1531149062129" TEXT="Control Panel">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+<node COLOR="#ff6666" CREATED="1530189931860" ID="ID_1629843004" MODIFIED="1531149062129" TEXT="Reports">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+<node COLOR="#ff6666" CREATED="1530190297194" ID="ID_954059010" MODIFIED="1531149062129" TEXT="Tables">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+<node COLOR="#ff6666" CREATED="1530190316050" ID="ID_1930823833" MODIFIED="1531149062129" TEXT="Queries">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+<node COLOR="#ff6666" CREATED="1530190321284" ID="ID_1027883886" MODIFIED="1531149062129" TEXT="Relationships">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+</node>
+<node COLOR="#ff6666" CREATED="1530189910021" ID="ID_895334920" MODIFIED="1531149062129" TEXT="User Manual">
+<font NAME="Dialog" SIZE="12"/>
+</node>
+<node COLOR="#ff6666" CREATED="1530189914961" HGAP="16" ID="ID_1607676939" MODIFIED="1532615991268" TEXT="Code" VSHIFT="16">
+<font NAME="Dialog" SIZE="12"/>
+</node>
 </node>
 </node>
 </node>

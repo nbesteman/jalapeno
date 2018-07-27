@@ -1,0 +1,23 @@
+\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+\usepackage[subpreambles=false]{standalone}
+
+\input{../../preamble}
+\setcounter{tocdepth}{3}  % Sets Table of Contents level to show sections
+\def\titlename{PDF Tools}
+
+\title{\input{../../commonTitle}}  % inputs common title
+
+\begin{document}
+
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC and blank page
+\clearpage
+\fi
+
+\section[PDF Tools]{PDF Tools used by AC GIS}
+
+\subimport{pdfToolsSection/}{pdfOptimizersubsection.tex}
+
+\end{document}
