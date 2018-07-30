@@ -19,7 +19,8 @@
 
 \subsection{Introduction}
 \paragraph{Summary}
-Optimization of a large number of pdf docs can be accomplished with the following workflow.
+\textbf{Workflow Purpose:}  Optimization of a large number of pdf docs.\\
+Uses Python to create a list of .pdf docs in a folder and creates a batch file to optimize the pdfs in the list to another location.  The batch process calls ghost script for the optimization
 \paragraph{requirements}
 Opensource software:
 \begin{itemize}
@@ -28,7 +29,7 @@ Opensource software:
 \item A text editor
 \end{itemize}
 \subsection{Python(2.7)}
-\paragraph{Script}
+\paragraph{Script that creates a batch file}
 \begin{verbatim}
 import os, sys
 
@@ -67,7 +68,7 @@ if __name__ == "__main__":
 \subsection{ghostscript}
 
 \paragraph{About}
-ghostscript is an interpreter for the PostScript language and for PDF~\cite{ghostscript1}.
+ghostghostscript is an interpreter for the PostScript language and for PDF~\cite{ghostscript1}.
 \paragraph{Licensing}
 ghostscript is available opensource under AGPL conditions.  more information can be found \href{https://www.ghostscript.com/license.html}{here}.
 \paragraph{Download}
