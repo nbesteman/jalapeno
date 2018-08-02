@@ -2,21 +2,26 @@
 
 \input{preamble}
 \input{glossaryEntries}
-\usepackage{standalone}
-%\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts
-%\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
-\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
+\input{indexEntries}
 
-\def\titlename{What We Do}
+\usepackage{standalone} % 
+
+%\setcounter{tocdepth}{5}  % paragraph and down
+%\setcounter{tocdepth}{4}  % subparagraph and down
+%\setcounter{tocdepth}{3}  % subsubsection and down
+%\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
+\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts 
+%\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
+
+\def\titlename{What We Do} % Sets book title
 \title{\input{commonTitle}}  % closing brace for title
-\makeglossaries
+\makeglossaries % creates glo file
+\makeindex % Creates idx file
 
 %--------------------
 %		Front Section
 %--------------------
-
 \begin{document}% Document Begins
-
 
 \frontmatter % turns off chapter numbering and uses roman numerals for page numbers
 
@@ -31,7 +36,7 @@
 
 %\part*{Introduction} % * makes this part unnumbered
 
-\part{Brand} % Creates Methods Book Part.  (Title page, blank page, then 1st chapter)
+\part{Brand} % Creates Book Part.  (Title page, blank page, then 1st chapter)
 \subimport{brandPart/}{awardsChapter.tex}	
 	
 \part{Methods}
@@ -45,16 +50,24 @@
 %-------------------
 %		Back Section
 %-------------------
-\backmatter
-\addcontentsline{toc}{part}{References}
-\bibliographystyle{amsplain}
-\bibliographystyle{plain}
-\bibliography{commonBib}
 
-\subimport{resourcesPart/}{appendixChapter.tex}
+\part{Resources}
+\subimport{resourcesPart/}{appendices.tex}
 
-\addcontentsline{toc}{part}{Glossary}
-\glsaddall
-\printglossaries
+\backmatter % does \clearpage
+
+\addcontentsline{toc}{section}{References} % Adds references to TOC as a part
+
+\bibliographystyle{amsplain} % sets biblioigraphy style
+%\bibliographystyle{plain} % sets biblioigraphy style
+\bibliography{referenceEntries} % Puts bibliography here
+
+\addcontentsline{toc}{part}{Glossary} % add glassary to TOC as a Part
+\glsaddall % Includes all glossary entries whether they appear in the text or not
+\printglossaries % Puts glossaries here
+
+\addcontentsline{toc}{part}{Index} % Adds Index to TOC as a part
+
+\printindex % Puts index here
 
 \end{document} % Document Ends

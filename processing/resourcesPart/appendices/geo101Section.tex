@@ -4,18 +4,18 @@
 
 \input{../../preamble}
 
-\def\titlename{Appendix Section}
+\def\titlename{Geography 101}
 
 \title{\input{../../commonTitle}}  % inputs common title
 
 \begin{document}
 
 
-%\ifstandalone
-%\maketitle % creates title page
-%\clearpage
-%\tableofcontents % creates TOC and blank page
-%\fi
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC and blank page
+\fi
 
 \section{Geography 101}
 
@@ -23,7 +23,9 @@ Foundations of geography
 
 \subsection[Coordinate Systems for Michigan]{A Primer on Coordinate Systems Commonly Used in Michigan}
 
-\href{../../../documentation/references/geo101/MiCoordinateSystems.pdf}{A Primer on Coordinate Systems Commonly Used in Michigan}
+\IfStandalone{\href{../../../../documentation/references/geo101/MiCoordinateSystems.pdf}{A Primer on Coordinate Systems Commonly Used in Michigan}}{\href{../../documentation/references/geo101/MiCoordinateSystems.pdf}{A Primer on Coordinate Systems Commonly Used in Michigan}}
+
+
 \index{coordinate systems}
 \index{Michigan}
 \index{State Plane}
