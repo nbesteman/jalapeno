@@ -1,0 +1,28 @@
+\documentclass[class=report , crop=false, openany, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+
+\usepackage[subpreambles=false]{standalone}
+
+\input{../../preamble}
+
+\def\titlename{Appendix Chapter}
+
+\title{\input{../commonTitle}}  % inputs common title
+
+\begin{document}
+
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC and blank page
+\fi
+
+\appendix
+\renewcommand{\thesection}{\Alph{section}.\arabic{section}}
+\setcounter{section}{0}
+\begin{appendices}
+
+\subimport{appendixChapter/}{geo101Section.tex}
+
+\end{appendices}
+
+\end{document}

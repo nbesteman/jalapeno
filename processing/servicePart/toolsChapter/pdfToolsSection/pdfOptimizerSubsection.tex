@@ -18,9 +18,10 @@
 \clearpage
 
 \subsection{Introduction}
-\paragraph{Summary}
-\textbf{Workflow Purpose:}  Optimization of a large number of pdf docs.\\
-Uses Python to create a list of .pdf docs in a folder and creates a batch file to optimize the pdfs in the list to another location.  The batch process calls ghost script for the optimization
+\paragraph{Pupose and Summary}
+\textbf{Workflow Purpose:} Optimization of a large number of pdf docs.\\
+\textbf{Workflow Summary:} Uses Python to create a list of .pdf docs in a folder and creates a batch file to optimize the pdfs in the list to another location.  The batch process calls ghost script for the optimization.
+
 \paragraph{requirements}
 Opensource software:
 \begin{itemize}
@@ -29,6 +30,9 @@ Opensource software:
 \item A text editor
 \end{itemize}
 \subsection{Python(2.7)}
+
+\paragraph{Note:} The output of this script is bdoc.txt, Save as a .bat to execute the optimize.
+
 \paragraph{Script that creates a batch file}
 \begin{verbatim}
 import os, sys
@@ -68,7 +72,7 @@ if __name__ == "__main__":
 \subsection{ghostscript}
 
 \paragraph{About}
-ghostghostscript is an interpreter for the PostScript language and for PDF~\cite{ghostscript1}.
+ghostscript is used for the optimization. ghostscript is an interpreter for the PostScript language and for PDF~\cite{ghostscript1}.
 \paragraph{Licensing}
 ghostscript is available opensource under AGPL conditions.  more information can be found \href{https://www.ghostscript.com/license.html}{here}.
 \paragraph{Download}
@@ -76,8 +80,17 @@ ghostscript can be downloladed \href{https://www.ghostscript.com/download/gsdnld
 
 
 \subsection{Windows batch files}
+A line from the batch file looks like:\\
+\begin{verbatim}
 
 
 
+gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4
+ -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH 
+ -sOutputFile=J:\Project\2018ParcelAtlas\build\optimized\
+ 02-001-001-00.pdf J:\Projects\2018ParcelAtlas\build\20180716
+ \_02-001-001-00.pdf
+
+\end{verbatim}
 
 \end{document}

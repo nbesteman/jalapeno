@@ -1,16 +1,23 @@
 \documentclass[openany]{book}  % Use a real document class for the main
 
 \input{preamble}
-
+\input{glossaryEntries}
 \usepackage{standalone}
-%\setcounter{tocdepth}{2}  % Sets Table of Contents level to show sections
+%\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts
+%\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
+\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
 
 \def\titlename{What We Do}
 \title{\input{commonTitle}}  % closing brace for title
+\makeglossaries
+
 %--------------------
 %		Front Section
 %--------------------
+
 \begin{document}% Document Begins
+
+
 \frontmatter % turns off chapter numbering and uses roman numerals for page numbers
 
 \maketitle % creates title page and blank page after title page
@@ -32,14 +39,22 @@
 \subimport{methodPart/}{teamConceptChapter.tex}
 			
 \part{Service}
-
 \subimport{servicePart/}{applicationsChapter.tex}
-
 \subimport{servicePart/}{toolsChapter.tex}
 
+%-------------------
+%		Back Section
+%-------------------
+\backmatter
 \addcontentsline{toc}{part}{References}
 \bibliographystyle{amsplain}
-%\bibliographystyle{plain}
+\bibliographystyle{plain}
 \bibliography{commonBib}
+
+\subimport{resourcesPart/}{appendixChapter.tex}
+
+\addcontentsline{toc}{part}{Glossary}
+\glsaddall
+\printglossaries
 
 \end{document} % Document Ends
