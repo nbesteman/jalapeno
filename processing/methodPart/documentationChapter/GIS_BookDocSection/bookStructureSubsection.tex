@@ -1,101 +1,87 @@
 \documentclass[class=book , crop=false]{standalone}
 
 \input{../../../preamble}
-\def\titlename{How This Book Works\\ \medskip\LARGE Jalape\~no}
+\def\titlename{Jalape\~no\\ \medskip\LARGE How This Book Works}
 
 \title{\input{../../../commonTitle}}  % closing brace for title
 
 \begin{document}% Document Begins
 
 \ifstandalone
-%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
 \maketitle % creates title page and blank page after title page
 \tableofcontents % creates TOC and blank page
 \clearpage
-%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
 \fi
 
-\subsection{How This Book Works}
-\subsubsection{Project General Notes:}
+\subsection{\large How \LARGE Jalape\~no \large Works}
+\subsubsection{General Notes:}
 \begin{itemize}
-\item Book folder can be renamed an moved.
-\item This project is coded with relative paths from processing folder down.
+\item jalapeno folder is a git package.
+
+\href{https://github.com/nbesteman/jalapeno}{https://github.com/nbesteman/jalapeno}
+
+\item Project is coded with relative paths and jalapeno can be located anywhere.
+
 \end{itemize}
+
 \subsubsection{Project file structure:}
-\begin{verbatim}
-J:\LIS\GIS_Doc\book\build
-\end{verbatim}
-\begin{description}
-\item pdf docs created by the underlying .tex docs and copied here manually.
-\end{description}
-\begin{verbatim}
-J:\LIS\GIS_Doc\Book\source
-\end{verbatim}
-\begin{description}
-\item images that appear in
-\begin{verbatim}
-\GIS_Documentation.tex
-\end{verbatim}
-\end{description}
-\begin{verbatim}
-J:\LIS\GIS_Doc\Book\processing
-\end{verbatim}
-\begin{description}
-\item the Tex workspace.
-\end{description}
-\begin{verbatim}
-\GIS_Documentation.tex
-\end{verbatim}
-\begin{description}
-\item top level of documentation of type "book" in \LaTeX{}.  Where book properties and book parts are managed and chapters are imported.
-\end{description}
-\begin{verbatim}
-\archive
-\end{verbatim}
-\begin{description}
-\item archive copies of entire processing folder.
-\end{description}
-\begin{verbatim}
-\brandPart
-\end{verbatim}
-\begin{description}
-\item \LaTeX{} "book part" about the brand.
-\end{description}
-\begin{verbatim}
-\methodsPart
-\end{verbatim}
-\begin{description}
-\item \LaTeX{} "book part" about the methods.
-\end{description}
-\begin{verbatim}
-\servicePart
-\end{verbatim}
-\begin{description}
-\item \LaTeX{} "book part" about services.
-\end{description}
-\begin{verbatim}
-\build
-\end{verbatim}
-\begin{description}
-\item folder for temp docs when created by compiling of:
-\begin{verbatim}
-GIS_Documentation.tex
-\end{verbatim}
-\end{description}
-\textbf{* Note: each level from here down has a build folder for temp Latex files like this.}
-\newpage
-\subsubsection{Service Book Part Detail}
-relative path:
-\begin{verbatim}
-\processing\servicePart\toolsChapter.tex
-\end{verbatim}
-\begin{description}
-\item  intermediate level of "book" in \LaTeX{}.  Where (service part, tool) chapter properties are managed and sections are imported.
-\end{description}
-\subsubsection{toolsChapter}
-relative path:
-\begin{verbatim}
-\processing\servicePart\toolsChapter
-\end{verbatim}
-intermed level of "book" in \LaTeX{}.  Where book section properties are managed and subsections are imported.
+{\Large ...\textbackslash jalapeno\textbackslash..}\\
+\begin{tabular}{p{4cm}| p{7cm} } 
+folder & description \\ \hline 
+documentation & resources used in Jalape\~no\\
+processing & .tex douments and build folders\\
+source & common image files\\
+\end{tabular}
+\bigskip\\
+{\Large ...\textbackslash jalapeno\textbackslash documentation\textbackslash..}\\
+\begin{tabular}{p{4cm} | p{7cm} } 
+folder or file & description \\ \hline
+moduleTemplates & .tex templates\\
+packageDocs & \LaTeX{} documentation\\
+references & reference and appendix resources\\
+unsorted & catch all for unsorted documentation\\
+BookStructureMM.mm & A mindmap of jalapeno\\
+\end{tabular}
+\bigskip\\
+{\Large ...\textbackslash jalapeno\textbackslash processing\textbackslash..}\\
+\begin{tabular}{p{4cm}| p{7cm} } 
+folder or file & description \\ \hline
+...Part & folders of book \textit{part}s\\
+build & \LaTeX{} workspace and location of .pdf output and referenceEntries.bib* \\
+commonTitle.tex & code for all title pages\\
+fullCompile.sh & shell script to compile GISDocumentation.tex\\
+GISDocumentation.tex & master document code\\
+glossaryEntries.tex & entries that appear in glossary\\
+indexEntries.tex & entries that appear in the index\\
+preamble.tex & preamble code for all documents\\
+\end{tabular}
+
+\paragraph{*Note about referenceEntries.bib\\}
+{\footnotesize Any reference entries built here can be cited in any .tex document in the project.}
+
+\subsubsection{Using the glossary}
+\paragraph{}
+Glossary commands require a Perl interpreter.  Activeperl is a free Perl interpreter and can be downloaded from: \href{https://www.activestate.com/activeperl/downloads}{https://www.activestate.com/activeperl/downloads}
+{\tiny (A typical installation adds Perl to your path)}
+
+\paragraph{}%{Creating a glossary entry:}
+\textbf{To create a glossary entry:}\\ Add an entry to glossaryEntries.tex.  Save it there but use the makeglossaries command to update the .gls file.
+
+\paragraph{Using makeglossaries:}
+In the (main document)build folder:
+\begin{itemize}
+\item Launch command prompt
+\item enter command: \textbf{{\large makeglossaries GISDocumentation*}}
+\end{itemize}
+\subparagraph{*Note:} {\footnotesize This command reads the .aux file and creates the .gls file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail.}
+
+\subsubsection{Using the bibliography(References)}
+
+\subsubsection{Using the Index}
+
+\subsubsection{Using the Appendix}
+
+
 \end{document}
