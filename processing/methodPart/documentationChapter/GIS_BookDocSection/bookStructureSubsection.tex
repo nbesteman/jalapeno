@@ -1,6 +1,11 @@
 \documentclass[class=book , crop=false]{standalone}
 
 \input{../../../preamble}
+\input{../../../glossaryEntries}
+%\setcounter{tocdepth}{5}  % paragraph and down
+\setcounter{tocdepth}{4}  % subparagraph and down
+%\setcounter{tocdepth}{3}  % subsubsection and down
+
 \def\titlename{Jalape\~no\\ \medskip\LARGE How This Book Works}
 
 \title{\input{../../../commonTitle}}  % closing brace for title
@@ -15,7 +20,7 @@
 \mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
 \fi
 
-\subsection{\large How \LARGE Jalape\~no \large Works}
+\subsection[How Jalape\~no Works]{\large How \LARGE Jalape\~no \large Works}
 \subsubsection{General Notes:}
 \begin{itemize}
 \item jalapeno folder is a git package.
@@ -29,7 +34,7 @@
 \subsubsection{Project file structure:}
 {\Large ...\textbackslash jalapeno\textbackslash..}\\
 \begin{tabular}{p{4cm}| p{7cm} } 
-folder & description \\ \hline 
+{\footnotesize folder & description} \\ \hline 
 documentation & resources used in Jalape\~no\\
 processing & .tex douments and build folders\\
 source & common image files\\
@@ -37,7 +42,7 @@ source & common image files\\
 \bigskip\\
 {\Large ...\textbackslash jalapeno\textbackslash documentation\textbackslash..}\\
 \begin{tabular}{p{4cm} | p{7cm} } 
-folder or file & description \\ \hline
+{\footnotesize folder or file & description} \\ \hline
 moduleTemplates & .tex templates\\
 packageDocs & \LaTeX{} documentation\\
 references & reference and appendix resources\\
@@ -47,7 +52,7 @@ BookStructureMM.mm & A mindmap of jalapeno\\
 \bigskip\\
 {\Large ...\textbackslash jalapeno\textbackslash processing\textbackslash..}\\
 \begin{tabular}{p{4cm}| p{7cm} } 
-folder or file & description \\ \hline
+{\footnotesize folder or file & description} \\ \hline
 ...Part & folders of book \textit{part}s\\
 build & \LaTeX{} workspace and location of .pdf output and referenceEntries.bib* \\
 commonTitle.tex & code for all title pages\\
@@ -57,31 +62,115 @@ glossaryEntries.tex & entries that appear in glossary\\
 indexEntries.tex & entries that appear in the index\\
 preamble.tex & preamble code for all documents\\
 \end{tabular}
-
-\paragraph{*Note about referenceEntries.bib\\}
+\paragraph*{*Note about referenceEntries.bib}
 {\footnotesize Any reference entries built here can be cited in any .tex document in the project.}
 
-\subsubsection{Using the glossary}
-\paragraph{}
-Glossary commands require a Perl interpreter.  Activeperl is a free Perl interpreter and can be downloaded from: \href{https://www.activestate.com/activeperl/downloads}{https://www.activestate.com/activeperl/downloads}
-{\tiny (A typical installation adds Perl to your path)}
-
-\paragraph{}%{Creating a glossary entry:}
-\textbf{To create a glossary entry:}\\ Add an entry to glossaryEntries.tex.  Save it there but use the makeglossaries command to update the .gls file.
-
-\paragraph{Using makeglossaries:}
-In the (main document)build folder:
+\subsubsection[Using the glossary]{{\Large Using the glossary}}
+\paragraph{Glossary requirements:}
+Glossary commands require a Perl interpreter.  Activeperl is a free Perl interpreter and can be downloaded from:\\ \href{https://www.activestate.com/activeperl/downloads}{https://www.activestate.com/activeperl/downloads}
+{\tiny (A typical installation adds Perl to your path)}.  Compiling the glossary requires running the makeglossaries command either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by makeglossaries to create an .gls file.  After the .gls file is created, PDFLatex must be run again to insert the glossary at the \textbackslash printglossaries location.
+\paragraph{Creating a new glossary entry}
+To \textbf{create a new glossary entry:} Add an entry to glossaryEntries.tex.  Save it there and then use the makeglossaries command to recompile the .gls file.
+\paragraph{Rebuilding the glossary}
+\textbf{To Recompile the .gls}.  In the (main document)build folder:
 \begin{itemize}
 \item Launch command prompt
 \item enter command: \textbf{{\large makeglossaries GISDocumentation*}}
 \end{itemize}
 \subparagraph{*Note:} {\footnotesize This command reads the .aux file and creates the .gls file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail.}
+\paragraph{Using glossary terms in a subdocument:}
+In the subdocument you must add code to input the glossaryEntries file.  For example:\\
+After the line:
+\begin{verbatim}
+\input{../../../preamble}
+\end{verbatim}
+Add the line:
+\begin{verbatim}
+\input{../../../glossaryEntries}
+\end{verbatim}
+\subparagraph{To use a glossary term in the subdocument:\\}
+In place of the term, use code referencing the key (in the glossaryEntries file):
+\begin{itemize}
+\item \textbackslash gls\{key\}
+\end{itemize} 
+\subparagraph{To add the glossary to the subdocument:}
+\begin{itemize}
+\item Add the line \textbackslash makeglossaries to the preamble of the subdocument.
+\item Add the line \textbackslash printglossaries to the subdocument.
+\item Run makeglossaries in command line on the subdocument similar to how is described above.
+\end{itemize}
 
-\subsubsection{Using the bibliography(References)}
 
-\subsubsection{Using the Index}
 
-\subsubsection{Using the Appendix}
 
+\subsubsection[Using the bibliography(References)]{{\Large Using the bibliography(References)}}
+\paragraph{Bibliography requirements:}
+Compiling the bibliography requires running bibtex either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by bibtex to create a .bbl file.  After the .bbl file is created, PDFLatex must be run again to insert the bibliography at the \textbackslash bibliography location. \subparagraph{}
+For example, the command:...\textbackslash bibliography\{referenceEntries\}\\
+...places the bibliography called referenceEntries.bib which must be in the same folder as the project .aux file. 
+\paragraph{Creating a new bibliography entry}
+To \textbf{create a new bibliography entry:} Add an entry to referenceEntries.bib.  Save it there and then use bibtex to recompile the .bbl file.
+\paragraph{Rebuilding the bibliography}
+\textbf{To Recompile the .bbl}.  In the (main document)build folder:
+\begin{itemize}
+\item Launch command prompt
+\item enter command: \textbf{{\large bibtex GISDocumentation}}
+\end{itemize}
+\subparagraph{*Note:} {\footnotesize This command reads the .aux file and creates the .bbl file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail.}
+
+\paragraph{To cite a bibliography source in a subdocument:\\}
+In the place that you want the citation:
+\begin{itemize}
+\item \begin{verbatim} ~\cite[pg.#]{key}\end{verbatim}
+\end{itemize} 
+\subparagraph{To add the bibliography to the subdocument:}
+\begin{itemize}
+\item Similar to adding to the master document but not documented here.
+\end{itemize}
+
+
+\subsubsection[Using the Index]{{\Large Using the Index}}
+\paragraph{Index requirements:}
+Compiling the index requires running the makeindex command either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by makeindex to create an .idx file.  After the .idx file is created, PDFLatex must be run again to insert the index at the \textbackslash printindex location. 
+
+\paragraph{Creating a new index entry}
+To \textbf{create a new index entry:} Add an entry to indexEntries.tex.  Save it there and then use the makeindex command to recompile the .idx file.
+
+\paragraph{Rebuilding the index}
+\textbf{To Recompile the .idx}.  In the (main document)build folder:
+\begin{itemize}
+\item Launch command prompt
+\item enter command: \textbf{{\large makeindex GISDocumentation*}}
+\end{itemize}
+\subparagraph{*Note:} {\footnotesize This command reads the .aux file and creates the .idx file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail. Run PDFLatex first}
+
+\paragraph{Using index terms in a subdocument:}
+In the subdocument you must add code to input the indexEntries file.  For example:\\
+After the line:
+\begin{verbatim}
+\input{../../../preamble}
+\end{verbatim}
+Add the line:
+\begin{verbatim}
+\input{../../../indexEntries}
+\end{verbatim}
+
+\subparagraph{To use a index term in the subdocument:\\}
+In place of the term, use code referencing the key (in the indexEntries file):
+
+\begin{itemize}
+\item \textbackslash index \{key\}
+\end{itemize} 
+
+\subparagraph{To add the index to the subdocument:}
+\begin{itemize}
+\item Add the line \textbackslash makeindex to the preamble of the subdocument.
+\item Add the line \textbackslash printindex to the subdocument.
+\item Run makeindex in command line on the subdocument similar to how is described above.
+
+\end{itemize}
+
+
+\subsubsection[Using the Appendices]{{\Large Using the Appendices}}
 
 \end{document}
