@@ -34,7 +34,8 @@
 \subsubsection{Project file structure:}
 {\Large ...\textbackslash jalapeno\textbackslash..}\\
 \begin{tabular}{p{4cm}| p{7cm} } 
-{\footnotesize folder & description} \\ \hline 
+%{\footnotesize folder & description} \\ \hline
+folder & description \\ \hline 
 documentation & resources used in Jalape\~no\\
 processing & .tex douments and build folders\\
 source & common image files\\
@@ -42,7 +43,7 @@ source & common image files\\
 \bigskip\\
 {\Large ...\textbackslash jalapeno\textbackslash documentation\textbackslash..}\\
 \begin{tabular}{p{4cm} | p{7cm} } 
-{\footnotesize folder or file & description} \\ \hline
+\footnotesize folder or file & description \\ \hline
 moduleTemplates & .tex templates\\
 packageDocs & \LaTeX{} documentation\\
 references & reference and appendix resources\\
@@ -52,7 +53,7 @@ BookStructureMM.mm & A mindmap of jalapeno\\
 \bigskip\\
 {\Large ...\textbackslash jalapeno\textbackslash processing\textbackslash..}\\
 \begin{tabular}{p{4cm}| p{7cm} } 
-{\footnotesize folder or file & description} \\ \hline
+\footnotesize folder or file & description \\ \hline
 ...Part & folders of book \textit{part}s\\
 build & \LaTeX{} workspace and location of .pdf output and referenceEntries.bib* \\
 commonTitle.tex & code for all title pages\\
@@ -118,8 +119,8 @@ To \textbf{create a new bibliography entry:} Add an entry to referenceEntries.bi
 \end{itemize}
 \subparagraph{*Note:} {\footnotesize This command reads the .aux file and creates the .bbl file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail.}
 
-\paragraph{To cite a bibliography source in a subdocument:\\}
-In the place that you want the citation:
+\paragraph{To cite a bibliography source in a subdocument:} 
+\subparagraph{}In the place that you want the citation:
 \begin{itemize}
 \item \begin{verbatim} ~\cite[pg.#]{key}\end{verbatim}
 \end{itemize} 
@@ -137,7 +138,7 @@ Compiling the index requires running the makeindex command either in a \LaTeX{} 
 To \textbf{create a new index entry:} Add an entry to indexEntries.tex.  Save it there and then use the makeindex command to recompile the .idx file.
 
 \paragraph{Rebuilding the index}
-\textbf{To Recompile the .idx}.  In the (main document)build folder:
+\subparagraph{}\textbf{To Recompile the .idx}In the (main document)build folder:
 \begin{itemize}
 \item Launch command prompt
 \item enter command: \textbf{{\large makeindex GISDocumentation*}}
