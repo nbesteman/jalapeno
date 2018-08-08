@@ -54,27 +54,38 @@ Tax Forfeiture Application will facilitate:
 \clearpage
 \subsubsection{Design}
 
-\paragraph{Overview}Application uses BSA, ArcGIS Desktop, ArcGIS Collector for Android, and ArcGIS Portal to enable forfeiture data collection.
-%This app is built upon a combination of :BSA Export routine, ArcGIS Desktop dataset update routine, ArcGIS Collector(Android app) mobile data collection, and Collector syncronize process,   
+\paragraph{Overview}The Forfeiture Data Collection Application uses BSA, ArcGIS Desktop, ArcGIS Collector for Android, and ArcGIS Portal web maps and apps to enable forfeiture data collection.  A daily routine is supported that maintains forfeiture parcel data through the notification period.
+\begin{center}
+    %\includegraphics[width=1\textwidth]{DesignFlowChart}
+    \includegraphics{DesignFlowChart}
+    \captionof{figure}{Project Design}
+    
+\end{center}
 
-\subparagraph{BSA data export}Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office has a BSA export the parcels that need a site visit.  Export of the updated list is the beginning of the daily .
+
+\subparagraph{BSA data export}Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office has a BSA export the parcels that need a site visit.  Export of the updated list is the beginning of the daily routine in this workflow.
+
+\subparagraph{ArcGIS Desktop tasks}Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network. 
+
+\subparagraph{ArcGIS Collector}A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork.
+
+\subparagraph{ArcGIS Portal Webmaps and Apps}Live data from a publishing (replica of ACPro) enterprise geodatabase (ACPub) running on SQL Server database server (acintsql01) is provided through a feature service (REST service)  named TaxReversionParcels.  A webmap called Forfeiture Field Map consumes the TaxReversionParcels feature service exposing the forfeiture parcels, for editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.  The app downloads the webmap, allowing the user to collect the necessary information on each forfeiture parcel in the field disconnected and uploads the changes when reconnected. 
 
 \paragraph{Forfeiture Data Collection}
+
 Three parts of the daily routine:
-
 \begin{enumerate}
-
 \item Pre-processing (in the office):
-\begin{itemize}
 
+\begin{itemize}
 \item Export current forfeiture list from BSA
 \item Update webmap layers with results from BSA export
 \item Synchronize from webmap layers to field collection device \textbf{(device app)}
 \end{itemize}
 
 \item Field data collection with device app:
-\begin{itemize}
 
+\begin{itemize}
 \item Support navigation to forfeiture sites
 \item Provide a checklist of data points about the site
 \item Attach photos to the site
@@ -82,8 +93,8 @@ Three parts of the daily routine:
 \end{itemize}
 
 \item Post-processing (in the office)
-\begin{itemize}
 
+\begin{itemize}
 \item Synchronize data and images collected in device app to webmap layers
 
 \end{itemize}
@@ -103,23 +114,29 @@ Three parts of the daily routine:
 
 
 \paragraph{Collector Setup Details}
+
 \subparagraph{Install Collector for ArcGIS} Available from the Google Play Store
-\subparagraph{App setup}\begin{itemize}
+
+\subparagraph{App setup}
+
+\begin{itemize}
 \item Connect to Allegan County GIS
+
 \begin{itemize}
 \item Sign In : enter this website address
+
 \begin{verbatim}
 https://gis.allegancounty.org/portal_webadaptor
 \end{verbatim}
-to connect to:
-\begin{center}
-    \includegraphics[width=1\textwidth]{CollectorConnection}
-    \captionof{figure}{Connect to AC GIS}
-    \label{img:g}
-\end{center}
+
 \item Username is JMorris or CAndress
 \item Password: (enter password)
+
+\centering \includegraphics[width=4in]{CollectorConnection}
+\captionof{figure}{Collector Connection}
+%label{img:g}
 \end{itemize}
+
 \item Find the map Forfeiture Field Map under Treasury Services
 \item Download the field map
 \item Select area needed and detail needed
@@ -127,15 +144,9 @@ to connect to:
 
 \end{itemize}
 
-
 \subparagraph{Synchronize app}
 
 \paragraph{Webmap details}
-
-
-\paragraph{•}
-
-
 
 \clearpage
 \subsubsection{Hard Copy Record}
