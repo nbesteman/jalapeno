@@ -5,7 +5,7 @@
 \def\titlename{Forfeiture Data Collection\\ \medskip\large Mobile App with Collector for ArcGIS}
 
 \title{\input{../../../commonTitle}}  % inputs common title
-
+\setcounter{tocdepth}{5}  % subparagraph and down
 \begin{document}% document begins
 
 \ifstandalone
@@ -19,14 +19,14 @@
 
 \subsubsection{Problem and Analysis}
 
-\paragraph{Background\\}
+\paragraph{Background}
 Treasurer department has an annual responsibility to properly document the tax forfeiture process.  The LIS Department built an application in MS Access and MapInfo that consumed a daily export from BSA and was deployed to the field on a laptop.  A digital camera was used for site photos and later imported into the laptop.
 
-\paragraph{Statement of Problem\\}
+\paragraph{Statement of Problem}
 Current Tax Forfeiture workflow is built on MapInfo software which has been replaced by ESRI software.  The Forfeiture data collection application must be recreated in the ESRI framework.
 
 
-\paragraph{Analysis\\}
+\paragraph{Analysis}
 Tax Forfeiture Application will facilitate:
 
 \begin{itemize} %1
@@ -54,7 +54,12 @@ Tax Forfeiture Application will facilitate:
 \clearpage
 \subsubsection{Design}
 
-\paragraph{Forfeiture Data Collection\\}
+\paragraph{Overview}Application uses BSA, ArcGIS Desktop, ArcGIS Collector for Android, and ArcGIS Portal to enable forfeiture data collection.
+%This app is built upon a combination of :BSA Export routine, ArcGIS Desktop dataset update routine, ArcGIS Collector(Android app) mobile data collection, and Collector syncronize process,   
+
+\subparagraph{BSA data export}Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office has a BSA export the parcels that need a site visit.  Export of the updated list is the beginning of the daily .
+
+\paragraph{Forfeiture Data Collection}
 Three parts of the daily routine:
 
 \begin{enumerate}
@@ -84,8 +89,8 @@ Three parts of the daily routine:
 \end{itemize}
 \end{enumerate}
 
-\paragraph{Backend Data Details\\}
-Location of production data:
+\paragraph{Backend data details}
+\subparagraph{Location of production data}
 
 \begin{center}
     \includegraphics[width=1\textwidth]{ForfParcelsCatalog2}
@@ -93,16 +98,63 @@ Location of production data:
     \label{img:g}
 \end{center}
 
-\subparagraph{ForfeitureParcels Feature Class\\}
-%Details about the data
-\clearpage
-\paragraph{Collector Setup Details\\}
-Install Collector for ArcGIS from Google Play Store
+\subparagraph{ForfeitureParcels feature class}
+
+
+
+\paragraph{Collector Setup Details}
+\subparagraph{Install Collector for ArcGIS} Available from the Google Play Store
+\subparagraph{App setup}\begin{itemize}
+\item Connect to Allegan County GIS
+\begin{itemize}
+\item Sign In : enter this website address
+\begin{verbatim}
+https://gis.allegancounty.org/portal_webadaptor
+\end{verbatim}
+to connect to:
+\begin{center}
+    \includegraphics[width=1\textwidth]{CollectorConnection}
+    \captionof{figure}{Connect to AC GIS}
+    \label{img:g}
+\end{center}
+\item Username is JMorris or CAndress
+\item Password: (enter password)
+\end{itemize}
+\item Find the map Forfeiture Field Map under Treasury Services
+\item Download the field map
+\item Select area needed and detail needed
+
+
+\end{itemize}
+
+
+\subparagraph{Synchronize app}
+
+\paragraph{Webmap details}
+
+
+\paragraph{•}
+
+
 
 \clearpage
 \subsubsection{Hard Copy Record}
 \clearpage
 \subsubsection{User Manual}
+\paragraph{Preprocessing}
+
+\paragraph{fieldwork}
+
+\paragraph{postprocessing}
+
+\subparagraph{Sync Edits}
+
+\subparagraph{reconcile Versions}
+
+\subparagraph{print forms for sites visited}
+
+\subparagraph{update BSA}
+
 \clearpage
 \subsubsection{Software}
 \clearpage
