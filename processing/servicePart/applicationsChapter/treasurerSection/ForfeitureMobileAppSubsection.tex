@@ -1,5 +1,5 @@
 \documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
-\usepackage{caption}
+
 \input{../../../preamble}
 
 \def\titlename{Forfeiture Data Collection\\ \medskip\large Mobile App with Collector for ArcGIS}
@@ -56,10 +56,9 @@ Tax Forfeiture Application will facilitate:
 
 \paragraph{Overview}The Forfeiture Data Collection Application uses BSA, ArcGIS Desktop, ArcGIS Collector for Android, and ArcGIS Portal web maps and apps to enable forfeiture data collection.  A daily routine is supported that maintains forfeiture parcel data through the notification period.
 \begin{center}
-    %\includegraphics[width=1\textwidth]{DesignFlowChart}
-    \includegraphics{DesignFlowChart}
+    \includegraphics[width=1\textwidth]{DesignFlowChart}
     \captionof{figure}{Project Design}
-    
+    \label{img:dflow1}
 \end{center}
 
 
@@ -106,67 +105,162 @@ Three parts of the daily routine:
 \begin{center}
     \includegraphics[width=1\textwidth]{ForfParcelsCatalog2}
     \captionof{figure}{live data}
-    \label{img:g}
+    \label{img:forfCat1}
 \end{center}
 
 \subparagraph{ForfeitureParcels feature class}
 
+%\begin{center}
+%    \includegraphics[width=1\textwidth]{xxx}
+%    \captionof{figure}{data details}
+%    \label{img:fcdetails}
+%\end{center}
+
+\paragraph{Collector for ArcGIS}
+
+
+
+\paragraph{Webmap details}
+
+\clearpage
+
+
+
+
+\subsubsection{Hard Copy Record}
+\clearpage
+\
+
+
+
+\subsubsection{User Manual}
+
+\paragraph{Admin Tasks}
+
+\subparagraph{Setup Users in ArcGIS}Users that will run Pre and Post processing scripts must be created and given priviliges on ACPub Treasurer Feature Data Set.
+
+\subparagraph{Setup users in Portal for ArcGIS}Users that will use the Collector for ArcGIS must have profiles added to and managed in the Allegan County GIS Portal site.
 
 
 \paragraph{Collector Setup Details}
 
-\subparagraph{Install Collector for ArcGIS} Available from the Google Play Store
-
-\subparagraph{App setup}
-
+\subparagraph{Install Collector for ArcGIS}
+\begin{itemize}
+\item Available from the Google Play Store
+\end{itemize}
+\subparagraph{Configure Collector}
 \begin{itemize}
 \item Connect to Allegan County GIS
 
 \begin{itemize}
-\item Sign In : enter this website address
+\item Choose or add the connection:
 
 \begin{verbatim}
 https://gis.allegancounty.org/portal_webadaptor
 \end{verbatim}
 
+\begin{center}
+
+\includegraphics[width=1\textwidth]{CollectorConnection}
+\captionof{figure}{Collector Connection}
+%label{img:g}
+\end{center}
+
 \item Username is JMorris or CAndress
 \item Password: (enter password)
 
-\centering \includegraphics[width=4in]{CollectorConnection}
-\captionof{figure}{Collector Connection}
-%label{img:g}
 \end{itemize}
 
 \item Find the map Forfeiture Field Map under Treasury Services
 \item Download the field map
-\item Select area needed and detail needed
-
+\item Select area needed and detail needed and download the webmap
 
 \end{itemize}
 
-\subparagraph{Synchronize app}
 
-\paragraph{Webmap details}
+%\paragraph{Preprocess Before Fieldwork}
 
-\clearpage
-\subsubsection{Hard Copy Record}
-\clearpage
-\subsubsection{User Manual}
-\paragraph{Preprocessing}
+\paragraph{Daily Preprocessing Routine}
 
-\paragraph{fieldwork}
+\subparagraph{Execute Preprocessing Script}A tool in ArcGIS that:
 
-\paragraph{postprocessing}
+\begin{itemize}
 
-\subparagraph{Sync Edits}
+\item Exports current forfeiture list from BSA
+\item Updates webmap layers with results from BSA export
 
-\subparagraph{reconcile Versions}
+%Insert screenshot of Preprocesing script in Arc here
 
-\subparagraph{print forms for sites visited}
+\end{itemize}
 
-\subparagraph{update BSA}
+\subparagraph{Synchronize Webmap}In Collector for ArcGIS, push the sync button on the Forfeiture Field Map 
+
+\paragraph{Forfeiture Data Collection}
+
+\subparagraph{Navigation}Either device can be used to search for parcels and navigate to them. 
+
+\subparagraph{Device 1 Field Operation}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and collect the following attributes.  Save at the end of each parcel collection:
+\begin{table}[h!]
+
+\begin{center}
+\begin{tabular}{l|c|r}
+Field Name&Entry Type&Note\\ \hline
+Property Number&Prefilled&NA\\
+Inspection Date&{\footnotesize Autofill or Dropdown}&NA\\
+Inspector&Dropdown&NA\\
+Class&Prefilled&Missing!\\
+Acres&Prefilled&Missing!\\
+Address&Prefilled&NA\\
+Status&Dropdown&NA\\
+Status Notes&Open entry&254 Character limit\\
+Road Frontage&Dropdown&Yes or No\\
+Access via&Open entry&30 Character Limit\\
+Agent&Open entry&30 Character Limit\\
+Agent Contact&Open entry&30 Character Limit\\
+Property in use&Dropdown&Yes or No Missing!\\
+Use Notes&Open entry&254 Character limit\\
+Property Maintained&Dropdown&Yes or No Missing!\\
+Notes&Dropdown&254 Character Limit(maintNotes!)\\
+Property Contaminated&Dropdown&Yes or No Missing!\\
+Notes&Open entry&254 Character limit Missing!\\
+Adjacent Property Contaminated&Dropdown&Missing!\\
+Notes&Open entry&254 Character limit Missing!\\
+Property for sale&Dropdown&Yes or No\\
+Posted&Prefilled&Handled in Pre and Postprocessing\\
+InList&Prefilled&Handled in Preprocessing\\
+PostedInList&Prefilled&Handled in Preprocessing\\
+Print Today&Dropdown&Yes or No\\
+
+\end{tabular}
+\end{center}
+\end{table}
+
+
+%\begin{description}[labelindent=1cm]
+%
+%\item [Inspection Date] Autofill current or enter other
+%
+%\end{description}
+
+
+\subparagraph{Device 2 Field Operation}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and then the add attachment button.  Select photo, and take a photo.
+
+\paragraph{Daily Postprocessing Routine}Back at the office
+
+\begin{description}
+\item [Sync Edits] \blindtext
+\item [reconcile Versions] \blindtext
+\item[Print forms for site visits] \blindtext
+\item[Update BSA] \blindtext
+\end{description}
 
 \clearpage
 \subsubsection{Software}
-\clearpage
+\paragraph{ESRI Licensed Products}
+\subparagraph{ArcDesktop}
+
+\subparagraph{Enterprise ArcGIS Deployment}
+
+\subparagraph{Collector for ArcGIS}Developed and tested on Android(7.0)
+
 \end{document}
