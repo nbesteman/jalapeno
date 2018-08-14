@@ -60,15 +60,15 @@ Tax Forfeiture Application will facilitate:
     \captionof{figure}{Project Design}
     \label{img:dflow1}
 \end{center}
+The workflow is designed in three stages: Preprocessing, Field Collection, and Postprocessing.  The key dataset, Forfeiture Parcels, is a map feature class that is exposed through the internal network or externally via an internet map service.  In preprocessing, the data is updated to match the Treasures data in BSAforfeiture.net and synchronized to two android mobile devices.  In field data collection, the two mobile devices are used to collect info required, one for all the attributes, the other for photos.  In postprocessing, the mobile devices are syncronized back to the network data and a form is exported for each site visited that day.
 
-
-\subparagraph{BSA data export}Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office has a BSA export the parcels that need a site visit.  Export of the updated list is the beginning of the daily routine in this workflow.
+\subparagraph{BSA data export}Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
 
 \subparagraph{ArcGIS Desktop tasks}Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network. 
 
 \subparagraph{ArcGIS Collector}A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork.
 
-\subparagraph{ArcGIS Portal Webmaps and Apps}Live data from a publishing (replica of ACPro) enterprise geodatabase (ACPub) running on SQL Server database server (acintsql01) is provided through a feature service (REST service)  named TaxReversionParcels.  A webmap called Forfeiture Field Map consumes the TaxReversionParcels feature service exposing the forfeiture parcels, for editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.  The app downloads the webmap, allowing the user to collect the necessary information on each forfeiture parcel in the field disconnected and uploads the changes when reconnected. 
+\subparagraph{ArcGIS Portal Webmaps and Apps}Live data from a publishing enterprise geodatabase(ACPub), running on SQL Server database server (acintsql01) is provided through a feature service (REST service)  named TaxReversionParcels.  A webmap called the Forfeiture Field Map consumes the TaxReversionParcels feature service, exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.  The app downloads the webmap, allowing the user to collect the necessary information on each forfeiture parcel in the field disconnected and uploads the changes when reconnected. 
 
 \paragraph{Forfeiture Data Collection}
 
@@ -79,14 +79,14 @@ Three parts of the daily routine:
 \begin{itemize}
 \item Export current forfeiture list from BSA
 \item Update webmap layers with results from BSA export
-\item Synchronize from webmap layers to field collection device \textbf{(device app)}
+\item Synchronize from webmap layers to field collection devices \textbf{(device app)}
 \end{itemize}
 
 \item Field data collection with device app:
 
 \begin{itemize}
-\item Support navigation to forfeiture sites
-\item Provide a checklist of data points about the site
+\item Navigation to forfeiture sites is aided by users location shown in map
+\item A Checklist of data points about the site
 \item Attach photos to the site
 \item Save results for synchronization in post-processing
 \end{itemize}
@@ -117,7 +117,11 @@ Three parts of the daily routine:
 %\end{center}
 
 \paragraph{Collector for ArcGIS}
-
+%\begin{center}
+%    \includegraphics[width=1\textwidth]{xxx}
+%    \captionof{figure}{data details}
+%    \label{img:fcdetails}
+%\end{center}
 
 
 \paragraph{Webmap details}
@@ -125,12 +129,9 @@ Three parts of the daily routine:
 \clearpage
 
 
-
-
 \subsubsection{Hard Copy Record}
 \clearpage
 \
-
 
 
 \subsubsection{User Manual}
@@ -161,7 +162,7 @@ https://gis.allegancounty.org/portal_webadaptor
 
 \begin{center}
 
-\includegraphics[width=1\textwidth]{CollectorConnection}
+\includegraphics[width=.75\textwidth]{CollectorConnection}
 \captionof{figure}{Collector Connection}
 %label{img:g}
 \end{center}
@@ -199,52 +200,64 @@ https://gis.allegancounty.org/portal_webadaptor
 
 \subparagraph{Navigation}Either device can be used to search for parcels and navigate to them. 
 
-\subparagraph{Device 1 Field Operation}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and collect the following attributes.  Save at the end of each parcel collection:
-\begin{table}[h!]
-
-\begin{center}
-\begin{tabular}{l|c|r}
+\newpage
+\subparagraph*{Data details\\}
+Attributes are of four collection types; prefilled, autofill, dropdown or textbox.  In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and collect attributes.  The boxes are autofill, select from dropdown or typed.\\ \bigskip 
+\begin{tabular}{|l|c|r|}
+\hline
+\multicolumn{3}{|c|}{Attribute List} \\
+\hline
 Field Name&Entry Type&Note\\ \hline
 Property Number&Prefilled&NA\\
-Inspection Date&{\footnotesize Autofill or Dropdown}&NA\\
+Inspection Date&{\scriptsize Autofill or Dropdown}&NA\\
 Inspector&Dropdown&NA\\
-Class&Prefilled&Missing!\\
-Acres&Prefilled&Missing!\\
+Class&Prefilled&NA\\
+Acres&Prefilled&NA\\
 Address&Prefilled&NA\\
 Status&Dropdown&NA\\
-Status Notes&Open entry&254 Character limit\\
+Status Notes&Open entry&254 Char limit\\
 Road Frontage&Dropdown&Yes or No\\
-Access via&Open entry&30 Character Limit\\
-Agent&Open entry&30 Character Limit\\
-Agent Contact&Open entry&30 Character Limit\\
-Property in use&Dropdown&Yes or No Missing!\\
-Use Notes&Open entry&254 Character limit\\
-Property Maintained&Dropdown&Yes or No Missing!\\
-Notes&Dropdown&254 Character Limit(maintNotes!)\\
-Property Contaminated&Dropdown&Yes or No Missing!\\
-Notes&Open entry&254 Character limit Missing!\\
-Adjacent Property Contaminated&Dropdown&Missing!\\
-Notes&Open entry&254 Character limit Missing!\\
+Access via&Open entry&30 Char Limit\\
+Agent&Open entry&30 Char Limit\\
+Agent Contact&Open entry&30 Char Limit\\
+Property in use&Dropdown&Yes or\\
+Use Notes&Open entry&254 Char limit\\
+Property Maintained&Dropdown&Yes or No\\
+Notes&Dropdown&254 Char limit\\
+Prop Contam&Dropdown&Yes or No\\
+Notes&Open entry&254 Char limit\\
+Adj Prop Contam&Dropdown&NA\\
+Notes&Open entry&254 Char limit\\
 Property for sale&Dropdown&Yes or No\\
-Posted&Prefilled&Handled in Pre and Postprocessing\\
-InList&Prefilled&Handled in Preprocessing\\
-PostedInList&Prefilled&Handled in Preprocessing\\
-Print Today&Dropdown&Yes or No\\
-
+Posted&Prefilled&in Pre and Postproc\\
+InList&Prefilled&in Preproc\\
+PostedInList&Prefilled&in Preproc\\
+Print Today&Dropdown&Yes or No\\ \hline
 \end{tabular}
-\end{center}
-\end{table}
+\subparagraph{Device 1 Field Operation}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and then edit attributes.
+\begin{figure}[h]
+\begin{minipage}[t]{0.4\textwidth}
+\centering \raisebox{\dimexpr-\height+1.5ex\relax}{\includegraphics[width=.8\textwidth]{editsInterface}}
+\captionof{figure}{device 1 data entry}
+\label{img:device 1 data entry}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+The figure to the left shows the data collection interface.  Device one will be used to add data to all of the boxes.  Touch the boxes to enter text or select a dropdown.
+\end{minipage}
+\end{figure}
 
-
-%\begin{description}[labelindent=1cm]
-%
-%\item [Inspection Date] Autofill current or enter other
-%
-%\end{description}
-
-
+\clearpage
 \subparagraph{Device 2 Field Operation}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and then the add attachment button.  Select photo, and take a photo.
-
+\begin{figure}[h]
+\begin{minipage}[t]{0.4\textwidth}
+\centering \raisebox{\dimexpr-\height+1.5ex\relax}{\includegraphics[width=.8\textwidth]{photosInterface}}
+\captionof{figure}{device 1 data entry}
+\label{img:device 1 data entry}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+The figure to the left shows the data collection interface.  Device two will be used to add photos to a parcel.
+\end{minipage}
+\end{figure}
 \paragraph{Daily Postprocessing Routine}Back at the office
 
 \begin{description}
