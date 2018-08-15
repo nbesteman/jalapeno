@@ -25,7 +25,6 @@ Treasurer department has an annual responsibility to properly document the tax f
 \paragraph{Statement of Problem}
 Current Tax Forfeiture workflow is built on MapInfo software which has been replaced by ESRI software.  The Forfeiture data collection application must be recreated in the ESRI framework.
 
-
 \paragraph{Analysis}
 Tax Forfeiture Application will facilitate:
 
@@ -53,24 +52,32 @@ Tax Forfeiture Application will facilitate:
 
 \clearpage
 \subsubsection{Design}
-
-\paragraph{Overview}The Forfeiture Data Collection Application uses BSA, ArcGIS Desktop, ArcGIS Collector for Android, and ArcGIS Portal web maps and apps to enable forfeiture data collection.  A daily routine is supported that maintains forfeiture parcel data through the notification period.
-\begin{center}
+\paragraph{Overview}This Application utilizes Treasurer Department data to document the forfeiture process.  An enterprise GIS deployment enables offline data collection by up to two users.
+\begin{figure}
+\centering
     \includegraphics[width=1\textwidth]{DesignFlowChart}
-    \captionof{figure}{Project Design}
-    \label{img:dflow1}
-\end{center}
-The workflow is designed in three stages: Preprocessing, Field Collection, and Postprocessing.  The key dataset, Forfeiture Parcels, is a map feature class that is exposed through the internal network or externally via an internet map service.  In preprocessing, the data is updated to match the Treasures data in BSAforfeiture.net and synchronized to two android mobile devices.  In field data collection, the two mobile devices are used to collect info required, one for all the attributes, the other for photos.  In postprocessing, the mobile devices are syncronized back to the network data and a form is exported for each site visited that day.
+\caption{Project Design}
+\end{figure}
+\subparagraph*{}There are three stages to daily workflow: Preprocessing, Field Collection, and Postprocessing.  Forfeiture Parcels, is a map feature class that is processed in the office via the network and remotely via the internet.
+\clearpage
+\subparagraph{Workflow Summary}
+\begin{description}
+\item [Preprocessing] The data is updated to match the Treasures data in BSAforfeiture.net and synchronized to two android mobile devices.
+\item [Field data collection] The two mobile devices are used to collect info required, one for all the attributes, the other for photos.
+\item[Postprocessing] The mobile devices are syncronized back to the network data and a form is exported for each site visited that day.
+\end{description}
 
-\subparagraph{BSA data export}Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
 
-\subparagraph{ArcGIS Desktop tasks}Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network. 
+\paragraph{Technologies Used}
+\subparagraph{BSA Data}Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
+
+\subparagraph{ArcGIS Desktop}Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network. 
 
 \subparagraph{ArcGIS Collector}A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork.
 
 \subparagraph{ArcGIS Portal Webmaps and Apps}Live data from a publishing enterprise geodatabase(ACPub), running on SQL Server database server (acintsql01) is provided through a feature service (REST service)  named TaxReversionParcels.  A webmap called the Forfeiture Field Map consumes the TaxReversionParcels feature service, exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.  The app downloads the webmap, allowing the user to collect the necessary information on each forfeiture parcel in the field disconnected and uploads the changes when reconnected. 
 
-\paragraph{Forfeiture Data Collection}
+\paragraph{Field Data Collection}
 
 Three parts of the daily routine:
 \begin{enumerate}
@@ -99,48 +106,35 @@ Three parts of the daily routine:
 \end{itemize}
 \end{enumerate}
 
-\paragraph{Backend data details}
-\subparagraph{Location of production data}
+\paragraph{Data Details}
+\subparagraph{Location of Production Data}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.45\textwidth]{ForfParcelsCatalog3}
+\caption{Live Data Location Screnshot}
+\end{wrapfigure}
+The data is located in ACPUB.
+\clearpage
 
-\begin{center}
-    \includegraphics[width=1\textwidth]{ForfParcelsCatalog2}
-    \captionof{figure}{live data}
-    \label{img:forfCat1}
-\end{center}
-
-\subparagraph{ForfeitureParcels feature class}
-
-%\begin{center}
-%    \includegraphics[width=1\textwidth]{xxx}
-%    \captionof{figure}{data details}
-%    \label{img:fcdetails}
-%\end{center}
+\subparagraph{ForfeitureParcels Feature Class}
 
 \paragraph{Collector for ArcGIS}
-%\begin{center}
-%    \includegraphics[width=1\textwidth]{xxx}
-%    \captionof{figure}{data details}
-%    \label{img:fcdetails}
-%\end{center}
-
-
-\paragraph{Webmap details}
 
 \clearpage
+\paragraph{Webmap Details}
 
-
+\clearpage
 \subsubsection{Hard Copy Record}
+
+
 \clearpage
-\
-
-
 \subsubsection{User Manual}
 
 \paragraph{Admin Tasks}
 
 \subparagraph{Setup Users in ArcGIS}Users that will run Pre and Post processing scripts must be created and given priviliges on ACPub Treasurer Feature Data Set.
 
-\subparagraph{Setup users in Portal for ArcGIS}Users that will use the Collector for ArcGIS must have profiles added to and managed in the Allegan County GIS Portal site.
+\subparagraph{Setup Users in Portal for ArcGIS}Users that will use the Collector for ArcGIS must have profiles added to and managed in the Allegan County GIS Portal site.
 
 
 \paragraph{Collector Setup Details}
@@ -160,16 +154,14 @@ Three parts of the daily routine:
 https://gis.allegancounty.org/portal_webadaptor
 \end{verbatim}
 
-\begin{center}
-
+\begin{figure}
+\centering
 \includegraphics[width=.75\textwidth]{CollectorConnection}
-\captionof{figure}{Collector Connection}
-%label{img:g}
-\end{center}
+\caption{Collector Connection Screenshot}
+\end{figure}
 
 \item Username is JMorris or CAndress
 \item Password: (enter password)
-
 \end{itemize}
 
 \item Find the map Forfeiture Field Map under Treasury Services
@@ -178,8 +170,6 @@ https://gis.allegancounty.org/portal_webadaptor
 
 \end{itemize}
 
-
-%\paragraph{Preprocess Before Fieldwork}
 
 \paragraph{Daily Preprocessing Routine}
 
@@ -195,14 +185,17 @@ https://gis.allegancounty.org/portal_webadaptor
 \end{itemize}
 
 \subparagraph{Synchronize Webmap}In Collector for ArcGIS, push the sync button on the Forfeiture Field Map 
-
-\paragraph{Forfeiture Data Collection}
-
-\subparagraph{Navigation}Either device can be used to search for parcels and navigate to them. 
-
 \newpage
-\subparagraph*{Data details\\}
-Attributes are of four collection types; prefilled, autofill, dropdown or textbox.  In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and collect attributes.  The boxes are autofill, select from dropdown or typed.\\ \bigskip 
+\paragraph{Forfeiture Data Collection}
+\subparagraph{Forfeiture Parcels Data Details}
+Attributes are of four entry types:\begin{itemize}
+\item prefilled
+\item autofill
+\item dropdown
+\item text box \end{itemize}
+In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and collect attributes.  If the boxes are autofill, select from dropdown or typed.\bigskip 
+\begin{table}
+\centering
 \begin{tabular}{|l|c|r|}
 \hline
 \multicolumn{3}{|c|}{Attribute List} \\
@@ -234,46 +227,63 @@ InList&Prefilled&in Preproc\\
 PostedInList&Prefilled&in Preproc\\
 Print Today&Dropdown&Yes or No\\ \hline
 \end{tabular}
-\subparagraph{Device 1 Field Operation}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and then edit attributes.
-\begin{figure}[h]
-\begin{minipage}[t]{0.4\textwidth}
-\centering \raisebox{\dimexpr-\height+1.5ex\relax}{\includegraphics[width=.8\textwidth]{editsInterface}}
-\captionof{figure}{device 1 data entry}
-\label{img:device 1 data entry}
-\end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
-The figure to the left shows the data collection interface.  Device one will be used to add data to all of the boxes.  Touch the boxes to enter text or select a dropdown.
-\end{minipage}
-\end{figure}
+\caption{Dataset Details}
+\end{table}
 
 \clearpage
-\subparagraph{Device 2 Field Operation}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and then the add attachment button.  Select photo, and take a photo.
-\begin{figure}[h]
-\begin{minipage}[t]{0.4\textwidth}
-\centering \raisebox{\dimexpr-\height+1.5ex\relax}{\includegraphics[width=.8\textwidth]{photosInterface}}
-\captionof{figure}{device 1 data entry}
-\label{img:device 1 data entry}
-\end{minipage}
-\begin{minipage}[t]{0.5\textwidth}
-The figure to the left shows the data collection interface.  Device two will be used to add photos to a parcel.
-\end{minipage}
-\end{figure}
-\paragraph{Daily Postprocessing Routine}Back at the office
+\subparagraph{Device 1 Field Operation}
+\subparagraph*{}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and then edit attributes.
 
-\begin{description}
-\item [Sync Edits] \blindtext
-\item [reconcile Versions] \blindtext
-\item[Print forms for site visits] \blindtext
-\item[Update BSA] \blindtext
-\end{description}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.3\textwidth]{editsInterface}
+\caption {Device 1 Data Entry}
+\end{wrapfigure}
+\vspace{1in}
+
+This figure shows the data collection interface.  Device one will be used to add data to all of the boxes.  Touch the boxes to enter text or select a dropdown.
+
+\clearpage
+\subparagraph{Device 2 Field Operation} 
+\subparagraph*{}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and then the add attachment button.  Select photo and take a photo.
+
+\begin{wrapfigure}{l}{0.5\textwidth}
+\centering
+\includegraphics[width=.3\textwidth]{photosInterface}
+\caption {Device 2 Data Entry}
+\end{wrapfigure}
+\vspace{1in}
+
+This figure shows the data collection interface.  Device two will be used to add photos to a parcel.
+
+\clearpage
+\paragraph{Daily Postprocessing Routine}Back at the office
+\subparagraph{Synchronize Webmap}In Collector for ArcGIS, push the sync button on the Forfeiture Field Map
+\subparagraph{Execute Postprocessing Script}A tool in ArcGIS that:
+
+\begin{itemize}
+\item Reconciles geodatabase versions
+\item Generates forms for each site visited
+
+
+%Insert screenshot of Postprocesing script in Arc here
+
+\end{itemize}
+
+%\begin{description}
+%\item [Sync Edits] \blindtext
+%\item [reconcile Versions] \blindtext
+%\item[Print forms for site visits] \blindtext
+%\item[Update BSA] \blindtext
+%\end{description}
 
 \clearpage
 \subsubsection{Software}
 \paragraph{ESRI Licensed Products}
-\subparagraph{ArcDesktop}
+\subparagraph{ArcDesktop}Users of this application need a license to ArcGIS Standard level.
 
-\subparagraph{Enterprise ArcGIS Deployment}
+\subparagraph{Enterprise ArcGIS Deployment}This app uses ArcGIS Server and ArcGIS Portal.
 
-\subparagraph{Collector for ArcGIS}Developed and tested on Android(7.0)
+\subparagraph{Collector for ArcGIS}Developed and tested on Android(7.0).  Collector is available at the Google Play Store.
 
 \end{document}
