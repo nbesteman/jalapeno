@@ -53,9 +53,10 @@ Tax Forfeiture Application will facilitate:
 \clearpage
 \subsubsection{Design}
 \paragraph{Overview}This Application utilizes Treasurer Department data to document the forfeiture process.  An enterprise GIS deployment enables offline data collection by up to two users.
-\begin{figure}
+\begin{figure}[h!]
 \centering
-    \includegraphics[width=1\textwidth]{DesignFlowChart}
+    \includegraphics[width=.95\textwidth]{ProjectDesign}
+    %\includegraphics{DesignFlowChart}
 \caption{Project Design}
 \end{figure}
 \subparagraph*{}There are three stages to daily workflow: Preprocessing, Field Collection, and Postprocessing.  Forfeiture Parcels, is a map feature class that is processed in the office via the network and remotely via the internet.
@@ -110,8 +111,8 @@ Three parts of the daily routine:
 \subparagraph{Location of Production Data}
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.45\textwidth]{ForfParcelsCatalog3}
-\caption{Live Data Location Screnshot}
+\includegraphics[width=.45\textwidth]{LiveDataLocationScreenshot}
+\caption{Live Data Location Screenshot}
 \end{wrapfigure}
 The data is located in ACPUB.
 \clearpage
@@ -136,39 +137,111 @@ The data is located in ACPUB.
 
 \subparagraph{Setup Users in Portal for ArcGIS}Users that will use the Collector for ArcGIS must have profiles added to and managed in the Allegan County GIS Portal site.
 
+\subparagraph{Schema Change Procedure}
 
+\subparagraph{Form Edits Procedure}
+
+\paragraph{Collection Device Setup}
+
+\subparagraph{Camera Settings}
+
+\subparagraph{Internet Settings}
+
+\clearpage
 \paragraph{Collector Setup Details}
 
 \subparagraph{Install Collector for ArcGIS}
 \begin{itemize}
 \item Available from the Google Play Store
 \end{itemize}
-\subparagraph{Configure Collector}
-\begin{itemize}
-\item Connect to Allegan County GIS
-
-\begin{itemize}
-\item Choose or add the connection:
-
-\begin{verbatim}
-https://gis.allegancounty.org/portal_webadaptor
-\end{verbatim}
-
-\begin{figure}
+\begin{figure}[h!]
 \centering
-\includegraphics[width=.75\textwidth]{CollectorConnection}
-\caption{Collector Connection Screenshot}
+    \includegraphics[width=.5\textwidth]{DownloadtheApp.png}
+\caption{Download the App}
 \end{figure}
 
-\item Username is JMorris or CAndress
-\item Password: (enter password)
-\end{itemize}
+\clearpage
+\subparagraph{Configure Collector}
 
-\item Find the map Forfeiture Field Map under Treasury Services
-\item Download the field map
-\item Select area needed and detail needed and download the webmap
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.3\textwidth]{CollectorConnection}
+\caption{Collector Connection}
+\vspace{.25in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
+\includegraphics[width=.3\textwidth]{EnterCredentials.png}
+\caption{Enter Credentials}
+\end{wrapfigure}
+for Organization Website, Type:
+\vspace{.5in}
 
-\end{itemize}
+\begin{verbatim}
+https://gis.allegancounty.org/
+portal_webadaptor
+
+\end{verbatim}
+
+then:\\
+
+Press Continue
+
+\vspace{3in}
+Enter Credentials\\
+
+then:\\
+
+Press SIGN IN
+\clearpage
+\subparagraph{Download the Forfeiture Field Map}
+
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.3\textwidth]{CollectorMapsMenu.png}
+\caption{Collector Maps Menu}
+\vspace{.25in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
+\includegraphics[width=.3\textwidth]{ChooseWorkAreaLarge.png}
+\caption{Choose Work Area (large)}
+\end{wrapfigure}
+The Download option indicates it is not on the device but is available for offline use.
+\vspace{.5in}
+
+\noindent Press Download\\
+\vspace{3in}
+
+\noindent Specify work area to download\\
+\vspace{1in}
+
+\noindent \footnotesize Note that a larger area takes longer to download but the basemap only needs to be downloaded once.
+\clearpage
+\subparagraph{Choose Map Detail}
+
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.3\textwidth]{ChooseMapDetail.png}
+\caption{Choose Map Detail}
+\vspace{.25in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
+\includegraphics[width=.3\textwidth]{MaponDevice.png}
+\caption{Map on Device}
+\end{wrapfigure}
+Zoom into the level of detail desired.
+\vspace{.5in}
+
+\noindent Press Download \\
+\vspace{3in}
+
+\noindent Here is how the map should look on the device:\\
+\vspace{1in}
+
+\noindent This area is ready for field data collection.
+\clearpage
 
 
 \paragraph{Daily Preprocessing Routine}
@@ -184,8 +257,27 @@ https://gis.allegancounty.org/portal_webadaptor
 
 \end{itemize}
 
-\subparagraph{Synchronize Webmap}In Collector for ArcGIS, push the sync button on the Forfeiture Field Map 
-\newpage
+\clearpage
+\subparagraph{Synchronize the Forfeiture Field Map\\}
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.3\textwidth]{MapDownloaded.png}
+\caption{Map Downloaded}
+\vspace{.5in}
+\includegraphics[width=.3\textwidth]{MapSyncronized.png}
+\caption{Map Synchronized}
+\end{wrapfigure}
+Note the date and time:
+\vspace{1.5in}
+
+\noindent Press Sync
+\vspace{1.5in}
+
+Note the date and time\\
+
+Map is now synchronized
+\clearpage
 \paragraph{Forfeiture Data Collection}
 \subparagraph{Forfeiture Parcels Data Details}
 Attributes are of four entry types:\begin{itemize}
@@ -236,7 +328,7 @@ Print Today&Dropdown&Yes or No\\ \hline
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{editsInterface}
+\includegraphics[width=.3\textwidth]{Device1DataEntry}
 \caption {Device 1 Data Entry}
 \end{wrapfigure}
 \vspace{1in}
@@ -249,7 +341,7 @@ This figure shows the data collection interface.  Device one will be used to add
 
 \begin{wrapfigure}{l}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{photosInterface}
+\includegraphics[width=.3\textwidth]{Device2DataEntry}
 \caption {Device 2 Data Entry}
 \end{wrapfigure}
 \vspace{1in}
