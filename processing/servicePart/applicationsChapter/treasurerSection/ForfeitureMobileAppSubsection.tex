@@ -68,15 +68,14 @@ Tax Forfeiture Application will facilitate:
 \item[Postprocessing] The mobile devices are syncronized back to the network data and a form is exported for each site visited that day.
 \end{description}
 
-
-\paragraph{Technologies Used}
+\medskip \paragraph{Technologies Used}
 \subparagraph{BSA Data}Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
 
 \subparagraph{ArcGIS Desktop}Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network. 
 
 \subparagraph{ArcGIS Collector}A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork.
 
-\subparagraph{ArcGIS Portal Webmaps and Apps}Live data from a publishing enterprise geodatabase(ACPub), running on SQL Server database server (acintsql01) is provided through a feature service (REST service)  named TaxReversionParcels.  A webmap called the Forfeiture Field Map consumes the TaxReversionParcels feature service, exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.  The app downloads the webmap, allowing the user to collect the necessary information on each forfeiture parcel in the field disconnected and uploads the changes when reconnected. 
+\subparagraph{ArcGIS Portal Webmaps and Apps}Live data from a publishing enterprise geodatabase(ACPub), running on SQL Server database server (acintsql01) is provided through a feature service (REST service)  named TaxReversionParcels.  A webmap called the Forfeiture Field Map consumes the TaxReversionParcels feature service, exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.  The app downloads the webmap, allowing the user to collect the necessary information on each forfeiture parcel in the field disconnected, and then to upload the changes when reconnected. 
 
 \paragraph{Field Data Collection}
 
@@ -107,26 +106,83 @@ Three parts of the daily routine:
 \end{itemize}
 \end{enumerate}
 
+
+
+\clearpage
 \paragraph{Data Details}
-\subparagraph{Location of Production Data}
+\subparagraph*{Location}
+
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.45\textwidth]{LiveDataLocationScreenshot}
-\caption{Live Data Location Screenshot}
+\includegraphics[width=.45\textwidth]{LiveDataLocation}
+\caption{Live Data Location}
 \end{wrapfigure}
-The data is located in ACPUB.
+The data is located in ACPUB.  ACPUB is a geodatabase on ACINTSQL01.
 \clearpage
 
-\subparagraph{ForfeitureParcels Feature Class}
 
+\subparagraph{ForfeitureParcels Feature Class}
+\clearpage
 \paragraph{Collector for ArcGIS}
 
 \clearpage
-\paragraph{Webmap Details}
+\paragraph{Webmap Details}The Forfeiture Field Map can be accessed on PC through the Allegan County GIS Portal.  The map is made up of a basemap and a feature layer.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.6\textwidth]{webMapDetails}
+\caption{Web Map Details}
+\end{figure}
+
+\subparagraph{Feature Layer Details}The webmap consists of a basemap and a feature layer, TaxReversionParcels.  TaxReversionParcels has been configured for offline use.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.6\textwidth]{layerDetails}
+\caption{Layer Details}
+\end{figure}
+\clearpage
+
+
+
+%images of publishing the service and explanation of settings required for offline use
+
+
+
+
+\subparagraph{Basemap Details}A tiled basemap service is used.  The infoserv user credentials are used for sharing.  The url for the shared service is:
+\begin{verbatim}
+https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Street_Map/MapServer
+\end{verbatim}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.7\textwidth]{BasemapSourceDescription}
+\caption{Basemap Source Description}
+\end{figure}
+\clearpage
+
+
+%Unplaced images
+\subparagraph{unplaced images}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.7\textwidth]{PortalContents}
+\caption{Portal Contents}
+\end{figure}
+%\subparagraph{Feature layer configuration}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=.7\textwidth]{featureLayerConfig}
+%\caption{Feature Layer Configuration}
+%\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.5\textwidth]{FieldMapOnPC}
+\caption{Field Map on PC}
+\end{figure}
+
 
 \clearpage
 \subsubsection{Hard Copy Record}
-
 
 \clearpage
 \subsubsection{User Manual}
@@ -156,7 +212,7 @@ The data is located in ACPUB.
 \end{itemize}
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.5\textwidth]{DownloadtheApp.png}
+    \includegraphics[width=.7\textwidth]{DownloadtheApp.png}
 \caption{Download the App}
 \end{figure}
 
@@ -185,14 +241,14 @@ portal_webadaptor
 
 then:\\
 
-Press Continue
+Press \Large Continue
 
 \vspace{3in}
 Enter Credentials\\
 
 then:\\
 
-Press SIGN IN
+Press \Large SIGN IN
 \clearpage
 \subparagraph{Download the Forfeiture Field Map}
 
@@ -214,7 +270,7 @@ The Download option indicates it is not on the device but is available for offli
 \vspace{3in}
 
 \noindent Specify work area to download\\
-\vspace{1in}
+\vspace{.5in}
 
 \noindent \footnotesize Note that a larger area takes longer to download but the basemap only needs to be downloaded once.
 \clearpage
@@ -259,12 +315,15 @@ Zoom into the level of detail desired.
 
 \clearpage
 \subparagraph{Synchronize the Forfeiture Field Map\\}
+
 \subparagraph*{\\}
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
 \includegraphics[width=.3\textwidth]{MapDownloaded.png}
 \caption{Map Downloaded}
-\vspace{.5in}
+\vspace{.25in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
 \includegraphics[width=.3\textwidth]{MapSyncronized.png}
 \caption{Map Synchronized}
 \end{wrapfigure}
@@ -362,12 +421,6 @@ This figure shows the data collection interface.  Device two will be used to add
 
 \end{itemize}
 
-%\begin{description}
-%\item [Sync Edits] \blindtext
-%\item [reconcile Versions] \blindtext
-%\item[Print forms for site visits] \blindtext
-%\item[Update BSA] \blindtext
-%\end{description}
 
 \clearpage
 \subsubsection{Software}
