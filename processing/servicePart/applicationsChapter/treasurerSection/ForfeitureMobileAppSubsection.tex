@@ -180,6 +180,18 @@ https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Street_Map/MapServer
 \caption{Field Map on PC}
 \end{figure}
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.5\textwidth]{openCameraAppStore.png}
+\caption{Open Camera from Google Play Store}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=.5\textwidth]{findSettings.png}
+\caption{Find Settings}
+\end{figure}
+
 
 \clearpage
 \subsubsection{Hard Copy Record}
@@ -187,7 +199,7 @@ https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Street_Map/MapServer
 \clearpage
 \subsubsection{User Manual}
 
-\paragraph{Admin Tasks}
+\paragraph{Administrative Tasks}
 
 \subparagraph{Setup Users in ArcGIS}Users that will run Pre and Post processing scripts must be created and given priviliges on ACPub Treasurer Feature Data Set.
 
@@ -197,14 +209,10 @@ https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Street_Map/MapServer
 
 \subparagraph{Form Edits Procedure}
 
+\clearpage
 \paragraph{Collection Device Setup}
 
-\subparagraph{Camera Settings}
-
-\subparagraph{Internet Settings}
-
-\clearpage
-\paragraph{Collector Setup Details}
+\paragraph{Collector Application Setup Details}
 
 \subparagraph{Install Collector for ArcGIS}
 \begin{itemize}
@@ -297,9 +305,64 @@ Zoom into the level of detail desired.
 \vspace{1in}
 
 \noindent This area is ready for field data collection.
+
 \clearpage
+\paragraph{Open Camera Application Setup Details}
 
+\subparagraph{Install Open Camera}
+\begin{itemize}
+\item Available from the Google Play Store
+\end{itemize}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.7\textwidth]{openCameraAppStore.png}
+\caption{Open Camera from Google Play Store}
+\end{figure}
 
+\clearpage
+\subparagraph{Configure Open Camera}
+
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.3\textwidth]{findSettings.png}
+\caption{Find Settings Menu}
+\vspace{.25in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
+\includegraphics[width=.3\textwidth]{settingsScreen.png}
+\caption{Setting Screen}
+\end{wrapfigure}
+In the Open Camera Application:\\
+\vspace{1in}
+
+\noindent Press the gear shaped button to go into the settings menu\\
+\vspace{3in}
+
+\noindent Press the Photo settings button\\
+
+\clearpage
+\subparagraph*{Set Photo Resolution}
+
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.3\textwidth]{photoSettings.png}
+\caption{Photo Settings Menu}
+\vspace{.25in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
+\includegraphics[width=.3\textwidth]{cameraResolutionSetting.png}
+\caption{Camera Resolution Setting}
+\end{wrapfigure}
+In photo settings:\\
+\vspace{1in}
+
+\noindent Press the Camera resolution button\\
+\vspace{3in}
+
+\noindent Select \textbf{640 x 480}\\
+\clearpage
 \paragraph{Daily Preprocessing Routine}
 
 \subparagraph{Execute Preprocessing Script}A tool in ArcGIS that:
@@ -333,7 +396,8 @@ Note the date and time:
 \noindent Press Sync
 \vspace{1.5in}
 
-Note the date and time\\
+Note the date and time
+\vspace{1.5in}
 
 Map is now synchronized
 \clearpage
@@ -344,7 +408,7 @@ Attributes are of four entry types:\begin{itemize}
 \item autofill
 \item dropdown
 \item text box \end{itemize}
-In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and collect attributes.  If the boxes are autofill, select from dropdown or typed.\bigskip 
+For each site visited, select the desired parcel, push the edit button and collect attributes.  If the boxes are autofill, select from dropdown or typed.\bigskip 
 \begin{table}
 \centering
 \begin{tabular}{|l|c|r|}
@@ -359,19 +423,19 @@ Class&Prefilled&NA\\
 Acres&Prefilled&NA\\
 Address&Prefilled&NA\\
 Status&Dropdown&NA\\
-Status Notes&Open entry&254 Char limit\\
+Status Notes&Open entry&120 Char limit\\
 Road Frontage&Dropdown&Yes or No\\
 Access via&Open entry&30 Char Limit\\
 Agent&Open entry&30 Char Limit\\
 Agent Contact&Open entry&30 Char Limit\\
 Property in use&Dropdown&Yes or\\
-Use Notes&Open entry&254 Char limit\\
+Use Notes&Open entry&120 Char limit\\
 Property Maintained&Dropdown&Yes or No\\
-Notes&Dropdown&254 Char limit\\
+Notes&Dropdown&120 Char limit\\
 Prop Contam&Dropdown&Yes or No\\
-Notes&Open entry&254 Char limit\\
+Notes&Open entry&120 Char limit\\
 Adj Prop Contam&Dropdown&NA\\
-Notes&Open entry&254 Char limit\\
+Notes&Open entry&120 Char limit\\
 Property for sale&Dropdown&Yes or No\\
 Posted&Prefilled&in Pre and Postproc\\
 InList&Prefilled&in Preproc\\
@@ -382,17 +446,213 @@ Print Today&Dropdown&Yes or No\\ \hline
 \end{table}
 
 \clearpage
-\subparagraph{Device 1 Field Operation}
-\subparagraph*{}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and then edit attributes.
-
+\subparagraph{Device 1 Field Operation}Device one data collection interface, used to add data to all of the boxes
+\subparagraph*{\\}
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{Device1DataEntry}
-\caption {Device 1 Data Entry}
+\includegraphics[width=.3\textwidth]{selectParcel.png}
+\caption {Select Parcel}
+\vspace{.25in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
+\includegraphics[width=.3\textwidth]{parcelDetails.png}
+\caption{Parcel Details}
 \end{wrapfigure}
 \vspace{1in}
 
-This figure shows the data collection interface.  Device one will be used to add data to all of the boxes.  Touch the boxes to enter text or select a dropdown.
+In the Forfeiture Field Map, for each site visited:\\
+\vspace{1in}
+
+Select the desired parcel
+\vspace{3in}
+
+Push the edit button 
+
+\clearpage
+Class prefilled
+Acres prefilled
+
+\clearpage
+\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.2\textwidth]{printToday.png}
+\caption {Print Today Yes or No}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{enterDate.png}
+\caption{Enter Date}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{selectInspector.png}
+\caption{Select Inspector}
+\end{wrapfigure}
+Select Yes for Print Today\\
+\vspace{3in}
+
+\noindent Select the current date or select date\\
+\vspace{3in}
+
+\noindent Select Inspector From Dropdown\\
+
+\clearpage
+\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.2\textwidth]{status.png}
+\caption {Status}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{statusNotes.png}
+\caption{Status Notes}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{roadFrontage.png}
+\caption{Road Frontage}
+\end{wrapfigure}
+Select Occupied or Not Occupied\\
+\vspace{3in}
+
+\noindent Enter status notes up to 120 characters\\
+\vspace{3in}
+
+\noindent Select Yes or No for Road Frontage\\
+
+\clearpage
+\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.2\textwidth]{accessVia.png}
+\caption {Access Via}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{agent.png}
+\caption{Agent}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{agentContact.png}
+\caption{Agent Contact}
+\end{wrapfigure}
+Enter road used for access\\
+\vspace{3in}
+
+\noindent Enter Agent Name\\
+\vspace{3in}
+
+\noindent Enter Agent Contact Info\\
+
+\clearpage
+\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.2\textwidth]{notes.png}
+\caption {Use Notes}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{notes.png}
+\caption{Notes}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{propertyForSale.png}
+\caption{Property for Sale}
+\end{wrapfigure}
+Enter  Use Notes up to 120 characters\\
+\vspace{3in}
+
+\noindent Enter Notes up to 120 characters\\
+\vspace{3in}
+
+\noindent Enter property for sale yes or no\\
+
+\clearpage
+\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.2\textwidth]{propertyInUse.png}
+\caption {Property in Use}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{adjPropertyContNotes.png}
+\caption{Adjacent Property Contaminated Notes}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{notes.png}
+\caption{Property Contaminated}
+\end{wrapfigure}
+Property in Use Yes or No\\
+\vspace{3in}
+
+\noindent Adjacent Property Contaminated Notes up to 120 characters\\
+\vspace{3in}
+
+\noindent Property Contaminated yes or no prefilled\\
+
+\clearpage
+\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.2\textwidth]{notes.png}
+\caption {Notes up to 120 characters}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{adjPropertyContNotes.png}
+\caption{Adjacent Property Contaminated}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{notes.png}
+\caption{Property Contaminated}
+\end{wrapfigure}
+Enter notes up to 120 characters\\
+\vspace{3in}
+
+\noindent Adjacent Property Contaminated yes or no prefilled\\
+\vspace{3in}
+
+\noindent Enter Property Contaminated notes up to 120 characters\\
+
+\clearpage
+\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.2\textwidth]{propertyMaintained.png}
+\caption {Property Maintained}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{pictureComments.png}
+\caption{Picture Comments}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{notes.png}
+\caption{Placeholder}
+\end{wrapfigure}
+Property Maintained Yes or No\\
+\vspace{3in}
+
+\noindent Picture Comments up to 120 characters\\
+\vspace{3in}
+
+\noindent Placeholder\\
 
 \clearpage
 \subparagraph{Device 2 Field Operation} 
@@ -405,7 +665,7 @@ This figure shows the data collection interface.  Device one will be used to add
 \end{wrapfigure}
 \vspace{1in}
 
-This figure shows the data collection interface.  Device two will be used to add photos to a parcel.
+Add photos to a parcel.
 
 \clearpage
 \paragraph{Daily Postprocessing Routine}Back at the office
@@ -416,11 +676,9 @@ This figure shows the data collection interface.  Device two will be used to add
 \item Reconciles geodatabase versions
 \item Generates forms for each site visited
 
-
 %Insert screenshot of Postprocesing script in Arc here
 
 \end{itemize}
-
 
 \clearpage
 \subsubsection{Software}

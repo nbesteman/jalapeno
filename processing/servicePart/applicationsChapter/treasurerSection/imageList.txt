@@ -1,0 +1,31 @@
+1 x Print Today
+
+Class prefilled
+Acres prefilled
+
+1 x Inspection Date enterDate.png
+1 x Inspector selectInspector.png
+
+2 x Status status.png
+2 x Status Notes statusNotes.png 120
+2 x Road Frontage roadFrontage.png
+
+
+3 x Access Via accessVia.png
+3 x Agent agent.png
+3 x Agent Contact agentContact.png
+
+4 x Use Notes 120
+4 x Notes notes.png
+4 x Property For Sale propertyForSale.png
+
+5 x Property in Use propertyInUse.png
+5 x Adjacent Property Contaminated Notes adjacentPropCont.png 120
+5 x Property Contaminated prefilled
+
+6 x Notes 120
+6 x Adjacent Property Contaminated prefilled
+6 x Property Contaminated Notes propContNotes.png 120
+
+7 x Property Maintained propertyMaintained.png
+7 x Picture 1 Comments pictureComments.png 50
