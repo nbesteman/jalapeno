@@ -77,11 +77,11 @@ Tax Forfeiture Application will facilitate:
 
 \subparagraph{ArcGIS Portal Webmaps and Apps}Live data from a publishing enterprise geodatabase(ACPub), running on SQL Server database server (acintsql01) is provided through a feature service (REST service)  named TaxReversionParcels.  A webmap called the Forfeiture Field Map consumes the TaxReversionParcels feature service, exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.  The app downloads the webmap, allowing the user to collect the necessary information on each forfeiture parcel in the field disconnected, and then to upload the changes when reconnected. 
 
-\paragraph{Field Data Collection}
+\paragraph{Forfeiture Mobile Data Collection App in Action}
 
 Three parts of the daily routine:
 \begin{enumerate}
-\item Pre-processing (in the office):
+\item \Large Preprocessing \normalsize(in the office):
 
 \begin{itemize}
 \item Export current forfeiture list from BSA
@@ -89,7 +89,7 @@ Three parts of the daily routine:
 \item Synchronize from webmap layers to field collection devices \textbf{(device app)}
 \end{itemize}
 
-\item Field data collection with device app:
+\item \Large Field data collection \normalsize with device app:
 
 \begin{itemize}
 \item Navigation to forfeiture sites is aided by users location shown in map
@@ -98,15 +98,13 @@ Three parts of the daily routine:
 \item Save results for synchronization in post-processing
 \end{itemize}
 
-\item Post-processing (in the office)
+\item \Large Post-processing \normalsize (in the office)
 
 \begin{itemize}
 \item Synchronize data and images collected in device app to webmap layers
 
 \end{itemize}
 \end{enumerate}
-
-
 
 \clearpage
 \paragraph{Data Details}
@@ -118,12 +116,44 @@ Three parts of the daily routine:
 \caption{Live Data Location}
 \end{wrapfigure}
 The data is located in ACPUB.  ACPUB is a geodatabase on ACINTSQL01.
+
 \clearpage
-
-
 \subparagraph{ForfeitureParcels Feature Class}
-\clearpage
-\paragraph{Collector for ArcGIS}
+\begin{table}
+\centering
+\begin{tabular}{|l|c|r|}
+\hline
+\multicolumn{3}{|c|}{Attribute List} \\
+\hline
+Field Name&Entry Type&Note\\ \hline
+Property Number&Prefilled&NA\\
+Inspection Date&{\scriptsize Autofill or Dropdown}&NA\\
+Inspector&Dropdown&NA\\
+Class&Prefilled&NA\\
+Acres&Prefilled&NA\\
+Address&Prefilled&NA\\
+Status&Dropdown&NA\\
+Status Notes&Open entry&120 Char limit\\
+Road Frontage&Dropdown&Yes or No\\
+Access via&Open entry&30 Char Limit\\
+Agent&Open entry&30 Char Limit\\
+Agent Contact&Open entry&30 Char Limit\\
+Property in use&Dropdown&Yes or\\
+Use Notes&Open entry&120 Char limit\\
+Property Maintained&Dropdown&Yes or No\\
+Notes&Dropdown&120 Char limit\\
+Prop Contam&Dropdown&Yes or No\\
+Notes&Open entry&120 Char limit\\
+Adj Prop Contam&Dropdown&NA\\
+Notes&Open entry&120 Char limit\\
+Property for sale&Dropdown&Yes or No\\
+Posted&Prefilled&in Pre and Postproc\\
+InList&Prefilled&in Preproc\\
+PostedInList&Prefilled&in Preproc\\
+Print Today&Dropdown&Yes or No\\ \hline
+\end{tabular}
+\caption{Dataset Details}
+\end{table}
 
 \clearpage
 \paragraph{Webmap Details}The Forfeiture Field Map can be accessed on PC through the Allegan County GIS Portal.  The map is made up of a basemap and a feature layer.
@@ -180,26 +210,26 @@ https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Street_Map/MapServer
 \caption{Field Map on PC}
 \end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=.5\textwidth]{openCameraAppStore.png}
-\caption{Open Camera from Google Play Store}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=.5\textwidth]{findSettings.png}
-\caption{Find Settings}
-\end{figure}
-
-
 \clearpage
 \subsubsection{Hard Copy Record}
+screenshots:
+arcmap map 
+arcmap tools
+portal screenshots
+sql server mgt screen shots
+phone screenshots
+
+\paragraph{ArcGIS Server}
+
+\paragraph{xx}
+
 
 \clearpage
 \subsubsection{User Manual}
 
 \paragraph{Administrative Tasks}
+
+\subparagraph{Annual Setup}
 
 \subparagraph{Setup Users in ArcGIS}Users that will run Pre and Post processing scripts must be created and given priviliges on ACPub Treasurer Feature Data Set.
 
@@ -220,7 +250,7 @@ https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Street_Map/MapServer
 \end{itemize}
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.7\textwidth]{DownloadtheApp.png}
+    \includegraphics[width=.65\textwidth]{DownloadtheApp.png}
 \caption{Download the App}
 \end{figure}
 
@@ -274,10 +304,10 @@ Press \Large SIGN IN
 The Download option indicates it is not on the device but is available for offline use.
 \vspace{.5in}
 
-\noindent Press Download\\
+\noindent Press \Large Download\\
 \vspace{3in}
 
-\noindent Specify work area to download\\
+\noindent Specify work area to download and press \Large map detail\\
 \vspace{.5in}
 
 \noindent \footnotesize Note that a larger area takes longer to download but the basemap only needs to be downloaded once.
@@ -299,10 +329,7 @@ Zoom into the level of detail desired.
 \vspace{.5in}
 
 \noindent Press Download \\
-\vspace{3in}
-
-\noindent Here is how the map should look on the device:\\
-\vspace{1in}
+\vspace{3.5in}
 
 \noindent This area is ready for field data collection.
 
@@ -336,10 +363,10 @@ Zoom into the level of detail desired.
 In the Open Camera Application:\\
 \vspace{1in}
 
-\noindent Press the gear shaped button to go into the settings menu\\
+\noindent Press the gear shaped \Large Settings \normalsize button to go into the settings menu\\
 \vspace{3in}
 
-\noindent Press the Photo settings button\\
+\noindent Press the \Large Photo Settings \normalsize button\\
 
 \clearpage
 \subparagraph*{Set Photo Resolution}
@@ -355,13 +382,13 @@ In the Open Camera Application:\\
 \includegraphics[width=.3\textwidth]{cameraResolutionSetting.png}
 \caption{Camera Resolution Setting}
 \end{wrapfigure}
-In photo settings:\\
+In \Large photo settings:\\
 \vspace{1in}
 
-\noindent Press the Camera resolution button\\
+\noindent Press the \Large Camera resolution \normalsize button\\
 \vspace{3in}
 
-\noindent Select \textbf{640 x 480}\\
+\noindent Select \textbf{\LARGE 640 x 480}\\
 \clearpage
 \paragraph{Daily Preprocessing Routine}
 
@@ -372,9 +399,22 @@ In photo settings:\\
 \item Exports current forfeiture list from BSA
 \item Updates webmap layers with results from BSA export
 
-%Insert screenshot of Preprocesing script in Arc here
-
 \end{itemize}
+
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.75\textwidth}
+\centering
+\includegraphics[width=.65\textwidth]{preprocess.png}
+\caption{Processing Tools}
+\end{wrapfigure}
+In Catalog:\\
+\vspace{1in}
+
+\noindent Open the toolbox\\
+\vspace{1in}
+
+\noindent Open tool 1\\
+
 
 \clearpage
 \subparagraph{Synchronize the Forfeiture Field Map\\}
@@ -390,16 +430,17 @@ In photo settings:\\
 \includegraphics[width=.3\textwidth]{MapSyncronized.png}
 \caption{Map Synchronized}
 \end{wrapfigure}
-Note the date and time:
+\Large Note the date and time:
 \vspace{1.5in}
 
-\noindent Press Sync
+\noindent Press \Large Sync
 \vspace{1.5in}
 
-Note the date and time
+\Large Note the date and time
 \vspace{1.5in}
 
 Map is now synchronized
+
 \clearpage
 \paragraph{Forfeiture Data Collection}
 \subparagraph{Forfeiture Parcels Data Details}
@@ -409,41 +450,6 @@ Attributes are of four entry types:\begin{itemize}
 \item dropdown
 \item text box \end{itemize}
 For each site visited, select the desired parcel, push the edit button and collect attributes.  If the boxes are autofill, select from dropdown or typed.\bigskip 
-\begin{table}
-\centering
-\begin{tabular}{|l|c|r|}
-\hline
-\multicolumn{3}{|c|}{Attribute List} \\
-\hline
-Field Name&Entry Type&Note\\ \hline
-Property Number&Prefilled&NA\\
-Inspection Date&{\scriptsize Autofill or Dropdown}&NA\\
-Inspector&Dropdown&NA\\
-Class&Prefilled&NA\\
-Acres&Prefilled&NA\\
-Address&Prefilled&NA\\
-Status&Dropdown&NA\\
-Status Notes&Open entry&120 Char limit\\
-Road Frontage&Dropdown&Yes or No\\
-Access via&Open entry&30 Char Limit\\
-Agent&Open entry&30 Char Limit\\
-Agent Contact&Open entry&30 Char Limit\\
-Property in use&Dropdown&Yes or\\
-Use Notes&Open entry&120 Char limit\\
-Property Maintained&Dropdown&Yes or No\\
-Notes&Dropdown&120 Char limit\\
-Prop Contam&Dropdown&Yes or No\\
-Notes&Open entry&120 Char limit\\
-Adj Prop Contam&Dropdown&NA\\
-Notes&Open entry&120 Char limit\\
-Property for sale&Dropdown&Yes or No\\
-Posted&Prefilled&in Pre and Postproc\\
-InList&Prefilled&in Preproc\\
-PostedInList&Prefilled&in Preproc\\
-Print Today&Dropdown&Yes or No\\ \hline
-\end{tabular}
-\caption{Dataset Details}
-\end{table}
 
 \clearpage
 \subparagraph{Device 1 Field Operation}Device one data collection interface, used to add data to all of the boxes
@@ -463,10 +469,10 @@ Print Today&Dropdown&Yes or No\\ \hline
 In the Forfeiture Field Map, for each site visited:\\
 \vspace{1in}
 
-Select the desired parcel
+\textbf{Select the desired parcel}
 \vspace{3in}
 
-Push the edit button 
+Push the \Large edit button 
 
 \clearpage
 Class prefilled
@@ -491,10 +497,10 @@ Acres prefilled
 \caption{Select Inspector}
 \end{wrapfigure}
 Select Yes for Print Today\\
-\vspace{3in}
+\vspace{2.5in}
 
-\noindent Select the current date or select date\\
-\vspace{3in}
+\noindent Select Use Current or enter any date\\
+\vspace{2in}
 
 \noindent Select Inspector From Dropdown\\
 
@@ -517,16 +523,16 @@ Select Yes for Print Today\\
 \caption{Road Frontage}
 \end{wrapfigure}
 Select Occupied or Not Occupied\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Enter status notes up to 120 characters\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Select Yes or No for Road Frontage\\
 
 \clearpage
 \subparagraph*{Device 1 Field Operation Cont.}
-\subparagraph*{\\}
+%\subparagraph*{\\}
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
 \includegraphics[width=.2\textwidth]{accessVia.png}
@@ -543,10 +549,10 @@ Select Occupied or Not Occupied\\
 \caption{Agent Contact}
 \end{wrapfigure}
 Enter road used for access\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Enter Agent Name\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Enter Agent Contact Info\\
 
@@ -569,10 +575,10 @@ Enter road used for access\\
 \caption{Property for Sale}
 \end{wrapfigure}
 Enter  Use Notes up to 120 characters\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Enter Notes up to 120 characters\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Enter property for sale yes or no\\
 
@@ -595,10 +601,10 @@ Enter  Use Notes up to 120 characters\\
 \caption{Property Contaminated}
 \end{wrapfigure}
 Property in Use Yes or No\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Adjacent Property Contaminated Notes up to 120 characters\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Property Contaminated yes or no prefilled\\
 
@@ -621,10 +627,10 @@ Property in Use Yes or No\\
 \caption{Property Contaminated}
 \end{wrapfigure}
 Enter notes up to 120 characters\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Adjacent Property Contaminated yes or no prefilled\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Enter Property Contaminated notes up to 120 characters\\
 
@@ -635,37 +641,80 @@ Enter notes up to 120 characters\\
 \centering
 \includegraphics[width=.2\textwidth]{propertyMaintained.png}
 \caption {Property Maintained}
-\vspace{.2in}
+\vspace{.15in}
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.2in}
 \includegraphics[width=.2\textwidth]{pictureComments.png}
 \caption{Picture Comments}
-\vspace{.2in}
+\vspace{.15in}
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.2in}
 \includegraphics[width=.2\textwidth]{notes.png}
 \caption{Placeholder}
 \end{wrapfigure}
 Property Maintained Yes or No\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Picture Comments up to 120 characters\\
-\vspace{3in}
+\vspace{2in}
 
 \noindent Placeholder\\
 
 \clearpage
-\subparagraph{Device 2 Field Operation} 
-\subparagraph*{}In the Forfeiture Field Map, for each site visited, select the desired parcel, push the edit button and then the add attachment button.  Select photo and take a photo.
+\subparagraph{Device 2 Field Operation}In the Forfeiture Field Map, for each site visited, a photo or photos can be added from the Open Camera Application.
+%\subparagraph*{}In the Forfeiture Field Map, for each site visited, a photo or photos can be added from the Open Camera Application.
 
-\begin{wrapfigure}{l}{0.5\textwidth}
+\begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{Device2DataEntry}
-\caption {Device 2 Data Entry}
+\includegraphics[width=.185\textwidth]{selectParcel.png}
+\caption {Select Parcel}
+\vspace{.15in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.15in}
+\includegraphics[width=.185\textwidth]{pushAttachmentButton.png}
+\caption{Push Attachment Button}
+\vspace{.15in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.15in}
+\includegraphics[width=.185\textwidth]{addAttachmentFromGallery.png}
+\caption{Add Attachment From Gallery}
 \end{wrapfigure}
-\vspace{1in}
+\vspace{.5in}
 
-Add photos to a parcel.
+Select a parcel from the map\\
+\vspace{2in}
+
+\noindent Push Attachment Button
+\vspace{2in}
+
+\noindent Select Gallery
+
+\clearpage
+\subparagraph*{Device 2 Field Operation Cont.} 
+\subparagraph*{\\}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.2\textwidth]{openCameraFolderInGallery.png}
+\caption {Open Camera Folder}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{openCameraFolder.png}
+\caption{In the Open Camera Folder}
+\vspace{.2in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.2in}
+\includegraphics[width=.2\textwidth]{imageInApp.png}
+\caption{Image in the App}
+\end{wrapfigure}
+Navigate to the Open Camera Folder\\
+\vspace{2in}
+
+\noindent From within the Open Camera Folder, Select the appropriate image
+\vspace{2in}
+
+\noindent Press the check button to save the image to the parcel 
 
 \clearpage
 \paragraph{Daily Postprocessing Routine}Back at the office
@@ -688,5 +737,15 @@ Add photos to a parcel.
 \subparagraph{Enterprise ArcGIS Deployment}This app uses ArcGIS Server and ArcGIS Portal.
 
 \subparagraph{Collector for ArcGIS}Developed and tested on Android(7.0).  Collector is available at the Google Play Store.
+
+\paragraph{Other Software}
+
+\subparagraph{Open Camera for Android}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.7\textwidth]{openCameraAppStore.png}
+\caption{Open Camera from Google Play Store}
+\end{figure}
 
 \end{document}

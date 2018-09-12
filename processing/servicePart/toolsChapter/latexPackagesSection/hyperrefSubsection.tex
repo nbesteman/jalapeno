@@ -20,7 +20,14 @@
 \subsubsection[Introduction]{\Large Introduction}
 \IfStandalone{\href{../../../../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}}{\href{../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}}
 
-\textbf{Note:} Add the \textit{hyperref package} to the preamble\begin{large}\textbf{ last}\end{large}~\cite{hyperref}.	
+\textbf{Notes:} 
+\begin{itemize}
+\item Add the \textit{hyperref package} to the preamble\begin{large}\textbf{ last}\end{large}~\cite{hyperref}
+\item To use Tex in a pdf bookmark: use \begin{verbatim} \texorpdfstring{\\}{}
+
+ie. \paragraph{Sample Text\texorpdfstring{\\}{}}\end{verbatim}
+Creates a new line without an error.
+\end{itemize}
 
 \begin{verbatim}\usepackage[options]{hyperref}\end{verbatim}
 
@@ -57,9 +64,9 @@ urlcolor=green]{hyperref}
 \end{verbatim}
 
 \begin{Large}To put a file path in text:\end{Large}\\
-eg:\\
+eg:
 
-\IfStandalone{\href{../../../../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}}{\href{../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}}\\
+\IfStandalone{\href{../../../../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}}{\href{../../documentation/packageDocs/hyperref2017.pdf}{Official hyperref package documentation}}
 
 \begin{tiny}(documentation Pt.4 pg.15)\end{tiny}
 \begin{verbatim}
@@ -94,21 +101,21 @@ Options:\begin{itemize}
 \end{itemize}
 
 \begin{verbatim}
-\hyperref[label]{text} 
+\hyperref[label]{text}
     Makes text a link to where \ref{label} would point.
-  
+
 \hypertarget{name}{text}
     Sets an anchor on text with the label name.
-     
-\hyperlink{name}{text} 
-    Makes text a link that takes you to the anchor labeled name.     
+
+\hyperlink{name}{text}
+    Makes text a link that takes you to the anchor labeled name.
     *Pair with \hypertarget.
- 
+
 \phantomsection
     Used in conjunction with
 
-\addcontentsline 
+\addcontentsline
     to make the correct link in the Table of Contents.
-\end{verbatim}				
+\end{verbatim}
 
 \end{document}
