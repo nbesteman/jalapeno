@@ -1,0 +1,46 @@
+\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+
+\input{../../../preamble}
+
+\def\titlename{Versioning\\ \medskip\large Version Management in ArcGIS}
+
+\title{\input{../../../commonTitle}}  % inputs common title
+\setcounter{tocdepth}{5}  % subparagraph and down
+\begin{document}% document begins
+
+
+\ifstandalone
+%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+\maketitle % creates title page and blank page after title page
+\tableofcontents % creates TOC and blank page
+\clearpage
+%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\fi
+
+\subsection{Managing Geodatabase Versions}
+\medskip 
+\subsubsection[Versioning Notes]{\Large Versioning Notes}
+
+
+\paragraph{SQL Queries \texorpdfstring{\\}{}}
+\begin{verbatim}
+SDE_states Info on the existing SDE_states
+
+
+use AC_Pub
+select name, owner, version_id, state_id, parent_name, parent_owner from [AC_Pub].[dbo].[SDE_versions]
+select * from  [AC_Pub].[dbo].[SDE_versions]
+select * from [AC_Pub].[dbo].[SDE_states] order by state_id
+select * from [AC_Pub].[dbo].[sde_state_lineages] order by lineage_name, lineage_id
+/* now I've added */
+select TOP(5) * from [AC_Pub].[dbo].[SDE_compress_log] order by compress_end DESC
+
+use AC_Pub
+select name, owner, version_id, state_id, parent_name, parent_owner from [AC_Pub].[dbo].[SDE_versions]
+select * from [AC_Pub].[dbo].[SDE_states] order by state_id
+select * from [AC_Pub].[dbo].[sde_state_lineages] order by lineage_name, lineage_id
+select TOP(5) * from [AC_Pub].[dbo].[SDE_compress_log] order by compress_end DESC
+\end{verbatim}
+
+
+\end{document}
