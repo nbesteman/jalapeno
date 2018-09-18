@@ -2,7 +2,7 @@
 
 \input{../../../preamble}
 
-\def\titlename{Map Services\\ \medskip\large Managing Map Services in ArcGIS}
+\def\titlename{Control Point}
 
 \title{\input{../../../commonTitle}}  % inputs common title
 \setcounter{tocdepth}{5}  % subparagraph and down
@@ -16,39 +16,24 @@
 %\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
 \fi
 
-\subsection{Managing Map Services}
+\subsection{Control Points}
 \medskip
-\subsubsection[Stopping the Server]{To stop ArcGIS Server}
+\subsubsection[Editing Control Points]{Maintaining Cadastral Control Points}
 
-\paragraph*{Launch ArcGIS Server Manager}
-\begin{figure}[h!]
-\centering
-    \includegraphics[width=.95\textwidth]{stopGisServer.png}
-\caption{Stop the GIS Server}
-\end{figure}
-
-\subsubsection[Fixing Damaged Services]{\Large Fixing Damaged Services}
-
-\paragraph[Remove Lock Files]{Removing Lock Files \texorpdfstring{\\}{}}
-A blog about it 
-\href{https://community.esri.com/thread/103710}{https://community.esri.com/thread/103710}
-
+\paragraph*{Steps}
 \begin{verbatim}
-on juniper
-C:\arcgisserver\config-store\services\ParcelViewer2\
-PV2Adresses.MapServer\startup\JUNIPER.ALLEGANCOUNTY.ORG
 
-This method works. 
+Identify position of new control point
+Place Taarget Point
+Update Target Point attributes to associated fabric point OID
+Push move point button
+Zoom to Control point
+Open maintain control point tool
+Select control Point
+edit button
+copy x and y value from 
+identify tool x and y of points
+update button
 
-Steps:
-
-1)stop arcgis server services.
-
-2)delete the lock files(*.glock and *.rlock ) 
-    in arcgisserver\config-store.
-
-3) restart arcgis server service.
-
-4)stop the pending stopping service and then start it.
 \end{verbatim}
 \end{document}
