@@ -28,18 +28,49 @@ SDE_states Info on the existing SDE_states
 
 
 use AC_Pub
-select name, owner, version_id, state_id, parent_name, parent_owner from [AC_Pub].[dbo].[SDE_versions]
+select name, owner, version_id, state_id, parent_name, parent_owner from
+ [AC_Pub].[dbo].[SDE_versions]
 select * from  [AC_Pub].[dbo].[SDE_versions]
 select * from [AC_Pub].[dbo].[SDE_states] order by state_id
-select * from [AC_Pub].[dbo].[sde_state_lineages] order by lineage_name, lineage_id
+select * from [AC_Pub].[dbo].[sde_state_lineages] order by lineage_name,
+ lineage_id
 /* now I've added */
-select TOP(5) * from [AC_Pub].[dbo].[SDE_compress_log] order by compress_end DESC
+select TOP(5) * from [AC_Pub].[dbo].[SDE_compress_log] order by
+ compress_end DESC
 
 use AC_Pub
-select name, owner, version_id, state_id, parent_name, parent_owner from [AC_Pub].[dbo].[SDE_versions]
+select name, owner, version_id, state_id, parent_name, parent_owner from
+ [AC_Pub].[dbo].[SDE_versions]
 select * from [AC_Pub].[dbo].[SDE_states] order by state_id
-select * from [AC_Pub].[dbo].[sde_state_lineages] order by lineage_name, lineage_id
-select TOP(5) * from [AC_Pub].[dbo].[SDE_compress_log] order by compress_end DESC
+select * from [AC_Pub].[dbo].[sde_state_lineages] order by lineage_name,
+ lineage_id
+select TOP(5) * from [AC_Pub].[dbo].[SDE_compress_log] order by
+ compress_end DESC
+ 
+SELECT v.version_id,v.creation_time,v.creation_time, s.state_id, s.creation_time
+FROM SDE_versions v
+INNER JOIN SDE_states s ON v.state_id = s.state_id 
+ 
+To find orphaned versions 
+https://support.esri.com/en/technical-article/000011719
+
+Step 1:
+SELECT
+ITEMS.Definition .value( '(/GPReplica/ID)[1]', 'nvarchar(max)') AS "ID" ,
+ITEMS.Definition .value( '(/GPReplica/Name)[1]', 'nvarchar(max)') AS "Replica Name" ,
+ITEMS.Definition .value( '(/GPReplica/ReplicaVersion)[1]', 'nvarchar(max)') AS "Replica Version" ,
+ITEMS.Definition .value( '(/GPReplica/CreationDate)[1]', 'nvarchar(max)') AS "Creation Date"
+from 
+dbo.GDB_ITEMS AS ITEMS INNER JOIN dbo.GDB_ITEMTYPES AS ITEMTYPES
+ON ITEMS .Type = ITEMTYPES .UUID
+WHERE
+ ITEMTYPES. Name = 'Replica';
+
+
+Step2
+use AC_Pub
+SELECT name from [dbo].[SDE_versions]
+order by name 
 \end{verbatim}
 
 
