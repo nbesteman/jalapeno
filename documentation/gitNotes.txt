@@ -1,0 +1,3 @@
+
+To overwrite you repo with origin/ master
+git reset --hard origin/master
