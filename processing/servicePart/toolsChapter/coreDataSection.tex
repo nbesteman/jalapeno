@@ -1,0 +1,30 @@
+\documentclass{book}
+%\documentclass[class=book , crop=false]{standalone}
+\usepackage[subpreambles=false]{standalone}
+
+\input{../../preamble}
+
+\setcounter{tocdepth}{3}  % Sets Table of Contents level to show sections
+
+\def\titlename{QGIS}
+
+\title{\input{../../commonTitle}}  % closing brace for title
+
+\begin{document}
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC and blank page
+\clearpage
+\fi
+
+
+% 
+\section{GIS Administration}
+
+\subimport{gisAdminSection/}{mapServicesSubsection.tex}
+\subimport{gisAdminSection/}{replicaManagementSubsection.tex}
+\subimport{gisAdminSection/}{versioningSubsection.tex}
+
+
+\end{document}

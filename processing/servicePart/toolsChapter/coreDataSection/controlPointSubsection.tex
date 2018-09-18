@@ -1,0 +1,54 @@
+\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+
+\input{../../../preamble}
+
+\def\titlename{Map Services\\ \medskip\large Managing Map Services in ArcGIS}
+
+\title{\input{../../../commonTitle}}  % inputs common title
+\setcounter{tocdepth}{5}  % subparagraph and down
+\begin{document}% document begins
+
+\ifstandalone
+%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+\maketitle % creates title page and blank page after title page
+\tableofcontents % creates TOC and blank page
+\clearpage
+%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\fi
+
+\subsection{Managing Map Services}
+\medskip
+\subsubsection[Stopping the Server]{To stop ArcGIS Server}
+
+\paragraph*{Launch ArcGIS Server Manager}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{stopGisServer.png}
+\caption{Stop the GIS Server}
+\end{figure}
+
+\subsubsection[Fixing Damaged Services]{\Large Fixing Damaged Services}
+
+\paragraph[Remove Lock Files]{Removing Lock Files \texorpdfstring{\\}{}}
+A blog about it 
+\href{https://community.esri.com/thread/103710}{https://community.esri.com/thread/103710}
+
+\begin{verbatim}
+on juniper
+C:\arcgisserver\config-store\services\ParcelViewer2\
+PV2Adresses.MapServer\startup\JUNIPER.ALLEGANCOUNTY.ORG
+
+This method works. 
+
+Steps:
+
+1)stop arcgis server services.
+
+2)delete the lock files(*.glock and *.rlock ) 
+    in arcgisserver\config-store.
+
+3) restart arcgis server service.
+
+4)stop the pending stopping service and then start it.
+\end{verbatim}
+\end{document}
