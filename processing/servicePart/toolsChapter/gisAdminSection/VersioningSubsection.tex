@@ -19,59 +19,72 @@
 
 \subsection{Managing Geodatabase Versions}
 \medskip 
-\subsubsection[Versioning Notes]{\Large Versioning Notes}
+\subsubsection[Version Queries]{\Large Version Queries}
 
 
 \paragraph{SQL Queries \texorpdfstring{\\}{}}
+Four queries of SDE_versions, SDE_states, sde_state_lineages, and SDE_compress_log
+
 \begin{verbatim}
-SDE_states Info on the existing SDE_states
-
 
 use AC_Pub
-select name, owner, version_id, state_id, parent_name, parent_owner from
- [AC_Pub].[dbo].[SDE_versions]
-select * from  [AC_Pub].[dbo].[SDE_versions]
-select * from [AC_Pub].[dbo].[SDE_states] order by state_id
-select * from [AC_Pub].[dbo].[sde_state_lineages] order by lineage_name,
- lineage_id
-/* now I've added */
-select TOP(5) * from [AC_Pub].[dbo].[SDE_compress_log] order by
- compress_end DESC
-
-use AC_Pub
-select name, owner, version_id, state_id, parent_name, parent_owner from
+select name, owner, version_id, state_id, parent_name
+, parent_owner from
  [AC_Pub].[dbo].[SDE_versions]
 select * from [AC_Pub].[dbo].[SDE_states] order by state_id
-select * from [AC_Pub].[dbo].[sde_state_lineages] order by lineage_name,
+select * from [AC_Pub].[dbo].[sde_state_lineages] order
+ by lineage_name,
  lineage_id
 select TOP(5) * from [AC_Pub].[dbo].[SDE_compress_log] order by
  compress_end DESC
+ \end{verbatim}
+Query of SDE_versions and SDE_states
  
-SELECT v.version_id,v.creation_time,v.creation_time, s.state_id, s.creation_time
+ \begin{verbatim}
+ use AC_Pub
+SELECT v.version_id,v.creation_time,v.creation_time,
+ s.state_id, s.creation_time
 FROM SDE_versions v
 INNER JOIN SDE_states s ON v.state_id = s.state_id 
- 
-To find orphaned versions 
-https://support.esri.com/en/technical-article/000011719
 
-Step 1:
-SELECT
-ITEMS.Definition .value( '(/GPReplica/ID)[1]', 'nvarchar(max)') AS "ID" ,
-ITEMS.Definition .value( '(/GPReplica/Name)[1]', 'nvarchar(max)') AS "Replica Name" ,
-ITEMS.Definition .value( '(/GPReplica/ReplicaVersion)[1]', 'nvarchar(max)') AS "Replica Version" ,
-ITEMS.Definition .value( '(/GPReplica/CreationDate)[1]', 'nvarchar(max)') AS "Creation Date"
-from 
-dbo.GDB_ITEMS AS ITEMS INNER JOIN dbo.GDB_ITEMTYPES AS ITEMTYPES
-ON ITEMS .Type = ITEMTYPES .UUID
-WHERE
- ITEMTYPES. Name = 'Replica';
-
-
-Step2
+\end{verbatim}
+\clearpage
+\subsubsection[Orphaned Versions]{\Large Finding Orphaned Versions}
+\paragraph{ID and delete orphaned geodatabase versions \texorpdfstring{\\}{}}
+Follow the procedure:
+\href{https://support.esri.com/en/technical-article/000010858}{Link to source}\\
+Use SQL Server Management Studio to execute two queries and compare the results.
+\subparagraph*{Step 1: \texorpdfstring{\\}{}}
+Execute the query:
+\begin{verbatim}
+use AC_Pub
+SELECT ObjectID, name from dbo.GDB_ITEMS where 
+ TYPE='4ED4A58E-621F-4043-95ED-850FBA45FCBC';
+\end{verbatim}
+\subparagraph*{Step 2: \texorpdfstring{\\}{}}
+Execute the query:
+\begin{verbatim}
 use AC_Pub
 SELECT name from [dbo].[SDE_versions]
-order by name 
-\end{verbatim}
+order by name
 
+\end{verbatim}
+Compare the tables
+\paragraph*{}This graphic summarizes elements of the queries.
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{findOrphanReplicaSystemVersions.png}
+\caption{Find Orphan Versions}
+\end{figure}
+Note the items from step two that have no match in step one.
+\clearpage
+
+\paragraph*{}Orphaned versions can be removed by name in ArcGIS
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{deleteOrphanVersion.png}
+\caption{Delete Orphan Versions}
+\end{figure}
+\clearpage
 
 \end{document}
