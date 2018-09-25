@@ -1,0 +1,45 @@
+\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+
+\input{../../../preamble}
+
+\def\titlename{MXD\\ \medskip\large MXD Management in ArcGIS}
+
+\title{\input{../../../commonTitle}}  % inputs common title
+\setcounter{tocdepth}{5}  % subparagraph and down
+\begin{document}% document begins
+
+
+\ifstandalone
+%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+\maketitle % creates title page and blank page after title page
+\tableofcontents % creates TOC and blank page
+\clearpage
+%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\fi
+
+\subsection{MXD Management}
+\medskip
+\subsubsection[Find/Replace Text Object]{\Large Find/Replace Text Object}
+
+
+\paragraph{Python Code \texorpdfstring{\\}{}}
+Python Code for finding and replacing a text object in a ArcGIS .mxd file.
+A snippet of this code may be found in the LayerUpdates/Zoning/processing folder.
+It is used to edit the .mxd files located there.
+
+\begin{verbatim}
+import arcpy
+from arcpy import env
+
+env.workspace = r"J:\Apps\Python\LayerUpdates\zoning\processing"
+for mxdname in arcpy.ListFiles("*.mxd"):
+    print mxdname
+    mxd = arcpy.mapping.MapDocument(r"J:\Apps\Python\LayerUpdates\zoning\processing\\" + mxdname)
+    for elm in arcpy.mapping.ListLayoutElements(mxd, "TEXT_ELEMENT"):
+        if elm.text.startswith('As ammended'):
+            elm.text = elm.text.replace('As ammended', 'As amended')
+            print elm.text
+    mxd.save()
+del mxd
+ \end{verbatim}
+\end{document}
