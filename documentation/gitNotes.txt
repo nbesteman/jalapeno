@@ -1,3 +1,20 @@
 
 To overwrite you repo with origin/ master
+
+
 git reset --hard origin/master
+
+
+----------------------------------------------------------------------
+To remove a .pdf merge conflict:
+git fetch -all
+
+git rm ./processing/build/GISDocumentation.pdf
+
+git commit
+
+git merge 1f28df6e3f1168a281aae7dd88457136d4394f1c
+
+git pull
+
+git push 
