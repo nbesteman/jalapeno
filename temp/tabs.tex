@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[a5paper,vmargin=2cm]{geometry}
+\usepackage{background}
+\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{totcount}
+\usepackage{lipsum}
+\usepackage{hyperref}
+
+% to have access to the total number of sections
+\regtotcounter{section}
+
+% every section starts on a new page
+\pretocmd{\section}{\clearpage}{}{}
+
+% auxiliary lengths for the height of the frame and the width of each tab
+\newlength\mylen
+\newlength\mylena
+
+% style for the section tabs
+\tikzset{
+tab/.style={
+  text width=\mylena,
+  draw=gray,
+  thick,
+  rectangle,
+  rounded corners=12pt,
+  align=center,
+  text width=53pt,
+  inner sep=0pt,
+  fill=gray!20,
+  font=\sffamily\LARGE
+  }
+}
+% style for the current section tab
+\tikzset{selectedtab/.style={tab,color=white,fill=gray!90}}
+
+% the page number is showed in the background material
+\pagestyle{empty}
+
+\AtBeginDocument{
+% calculation of the width for each tab
+\setlength\mylen{\dimexpr\textheight+2cm\relax}
+\ifnum\totvalue{section}>0
+\setlength\mylena{\dimexpr\mylen/\totvalue{section}\relax}
+\fi
+
+% the main part; as background material we place the border,
+% the section (current and other) tabs and the page number
+\backgroundsetup{
+scale=1,
+color=black,
+angle=0,
+opacity=1,
+contents= {
+  \begin{tikzpicture}[remember picture, overlay]
+  \node[
+    inner sep=0pt,
+    text width=\the\dimexpr\textwidth+1.5cm\relax
+  ]
+    at (current page.center) (border) {\rule{0pt}{\dimexpr\textheight+2cm\relax}};
+  \foreach \valsection in {0,...,\numexpr\totvalue{section}-1\relax}
+  {
+    \node[
+      \ifnum\thesection<\numexpr\valsection+1\relax
+        tab%
+      \else
+      \ifnum\thesection>\numexpr\valsection+1\relax
+        tab%
+      \else selectedtab%
+      \fi\fi,
+      minimum height=\mylena
+      ]
+      at ([yshift=-(0.5+\valsection)*\mylena]border.north east)
+      (tab-\valsection)
+      {\hspace*{25pt}\rotatebox{-90}{%
+        \hyperlink{sec:\valsection}{Section \the\numexpr\valsection+1\relax}%
+        }
+      };
+  }
+  \node[
+    draw=gray,
+    line width=2pt,
+    rectangle,
+    rounded corners=10pt,
+    inner sep=0pt,
+    text width=\the\dimexpr\textwidth+1.5cm\relax,
+    fill=white
+  ]
+    at (current page.center)
+    {\rule{0pt}{\dimexpr\textheight+2cm\relax}};
+  \node[font=\LARGE\sffamily,fill=white]
+    at (border.south)
+    {\makebox[3em][c]{\thepage}};
+\end{tikzpicture}}
+  }
+}
+
+\begin{document}
+
+\section{Section One}
+\hypertarget{sec:0}{}
+\lipsum[1-3]
+\section{Test Section Two}
+\hypertarget{sec:1}{}
+\lipsum[1-3]
+\section{Test Section Three}
+\hypertarget{sec:2}{}
+\lipsum[1-3]
+\section{Test Section Four}
+\hypertarget{sec:3}{}
+\lipsum[2]
+\section{Test Section Five}
+\hypertarget{sec:4}{}
+\lipsum[2]
+
+\end{document}
