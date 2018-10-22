@@ -63,7 +63,7 @@ Tax Forfeiture Application will facilitate:
 \clearpage
 \subparagraph{Workflow Summary}
 \begin{description}
-\item [Preprocessing] The data is updated to match the Treasures data in BSAforfeiture.net and synchronized to two android mobile devices.
+\item [Preprocessing] The data is updated to match the Treasures data in BSAforfeiture.net and check for intersections with known contamination sites.  Data is then synchronized to two android mobile devices.
 \item [Field data collection] The two mobile devices are used to collect info required, one for all the attributes, the other for photos.
 \item[Postprocessing] The mobile devices are syncronized back to the network data and a form is exported for each site visited that day.
 \end{description}
@@ -86,6 +86,7 @@ Three parts of the daily routine:
 \begin{itemize}
 \item Export current forfeiture list from BSA
 \item Update webmap layers with results from BSA export
+\item Update webmap layers with results of an intersect routine with contaminated sites  
 \item Synchronize from webmap layers to field collection devices \textbf{(device app)}
 \end{itemize}
 
@@ -114,43 +115,57 @@ Three parts of the daily routine:
 \centering
 \includegraphics[width=.45\textwidth]{LiveDataLocation}
 \caption{Live Data Location}
+\vspace{.25in}
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
+\includegraphics[width=.3\textwidth]{contaminationFeatureClass.png}
+\caption{Contamination Feature Class}
 \end{wrapfigure}
 The data is located in ACPUB.  ACPUB is a geodatabase on ACINTSQL01.
+\vspace{.5in}
 
+Forfeiture Parcels Data
+\vspace{3.5in}
+
+Contamination Data
 \clearpage
 \subparagraph{ForfeitureParcels Feature Class}
 \begin{table}
 \centering
-\begin{tabular}{|l|c|r|}
+\begin{tabular}{|l|l|c|r|}
 \hline
-\multicolumn{3}{|c|}{Attribute List} \\
+\multicolumn{4}{|c|}{{\LARGE Attribute List}} \\
 \hline
-Field Name&Entry Type&Note\\ \hline
-Property Number&Prefilled&NA\\
-Inspection Date&{\scriptsize Autofill or Dropdown}&NA\\
-Inspector&Dropdown&NA\\
-Class&Prefilled&NA\\
-Acres&Prefilled&NA\\
-Address&Prefilled&NA\\
-Status&Dropdown&NA\\
-Status Notes&Open entry&120 Char limit\\
-Road Frontage&Dropdown&Yes or No\\
-Access via&Open entry&30 Char Limit\\
-Agent&Open entry&30 Char Limit\\
-Agent Contact&Open entry&30 Char Limit\\
-Property in use&Dropdown&Yes or\\
-Use Notes&Open entry&120 Char limit\\
-Property Maintained&Dropdown&Yes or No\\
-Notes&Dropdown&120 Char limit\\
-Prop Contam&Dropdown&Yes or No\\
-Notes&Open entry&120 Char limit\\
-Adj Prop Contam&Dropdown&NA\\
-Notes&Open entry&120 Char limit\\
-Property for sale&Dropdown&Yes or No\\
-Posted&Prefilled&in Pre and Postproc\\
-InList&Prefilled&in Preproc\\
-PostedInList&Prefilled&in Preproc\\
-Print Today&Dropdown&Yes or No\\ \hline
+Field Name&Field Alias&Entry Type&Note\\ \hline
+PropertyNumber&Property Number&Prefilled&NA\\
+Need2Print&Print Today&Dropdown&Yes or No\\
+InspectionDate&InspectionDate&{\scriptsize Autofill or Dropdown}&NA\\
+Inspector&Inspector&Dropdown&NA\\
+Address&Address&Prefilled&NA\\
+Status&Status&Dropdown&NA\\
+StatusNotes&Status Notes&Open Entry&120Char\\
+Roadfrontage&Road Frontage&Dropdown&Yes or No\\
+AccessVia&Access via&Open Entry&30Char\\
+Agent&Agent&Open Entry&30Char\\
+AgentContact&Agent Contact&Open Entry&30Char\\
+UseNotes&Use Notes&Open Entry&120Char\\
+PropMaintNotes&{\footnotesize Property Maintained Notes}&Open Entry&120Char\\
+PropertyForSale&Property for sale&Dropdown&Yes or No\\
+Posted&Posted&Prefilled&NA\\
+InList&In List&Prefilled&in Preproc\\
+PostedInList&PostedInList&Prefilled&in Preproc\\
+Acres&Acres&Prefilled&NA\\
+Class&Class&Prefilled&NA\\
+PropertyInUse&Property In Use&Dropdown&Yes or No\\
+PropertyMaintained&Property Maintained&Dropdown&Yes or No\\
+PropertyContaminated&Property Contaminated&Prefilled&in Preproc\\
+Notes&Notes&Open Entry&120Char\\
+{\footnotesize AdjacentPropertyContaminated}&{\footnotesize Adjacent Property Contaminated}&Prefilled&in Preproc\\
+{\footnotesize PropertyContaminatedNotes}&{\footnotesize PropertyContaminatedNotes}&Prefilled&in Preproc\\
+{\footnotesize AdjPropertyContaminatedNotes}&{\footnotesize AdjPropertyContaminatedNotes}&Prefilled&in Preproc\\
+PictureComments&Picture1Comments&Open Entry&50Char\\
+PostedDate&PostedDate&Dropdown&Date\\
+\hline
 \end{tabular}
 \caption{Dataset Details}
 \end{table}
@@ -180,7 +195,8 @@ Print Today&Dropdown&Yes or No\\ \hline
 
 \subparagraph{Basemap Details}A tiled basemap service is used.  The infoserv user credentials are used for sharing.  The url for the shared service is:
 \begin{verbatim}
-https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Street_Map/MapServer
+https://tiledbasemaps.arcgis.com/arcgis/rest/
+   services/World_Street_Map/MapServer
 \end{verbatim}
 \begin{figure}[h!]
 \centering
@@ -276,28 +292,33 @@ https://gis.allegancounty.org/
 portal_webadaptor
 
 \end{verbatim}
-
 then:\\
-
 Press \Large Continue
-
 \vspace{3in}
 Enter Credentials\\
-
 then:\\
-
 Press \Large SIGN IN
 \clearpage
 \subparagraph{Download the Forfeiture Field Map}
-
+There are 3 different versions of the map.
 \subparagraph*{\\}
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{CollectorMapsMenu.png}
+\includegraphics[width=.5\textwidth]{CollectorChooseMap.png}
 \caption{Collector Maps Menu}
-\vspace{.25in}
-\HRule \\[.4cm] % Horizontal Line added
-\vspace{.25in}
+\end{wrapfigure}
+\begin{itemize}
+\item Forfeiture Field Map
+\item Forfeiture Field Map For Photos
+\item Forfeiture Field Map For Attributes
+\end{itemize}
+\clearpage
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+%\vspace{.25in}
+%\HRule \\[.4cm] % Horizontal Line added
+%\vspace{.25in}
 \includegraphics[width=.3\textwidth]{ChooseWorkAreaLarge.png}
 \caption{Choose Work Area (large)}
 \end{wrapfigure}
@@ -362,15 +383,11 @@ Zoom into the level of detail desired.
 \end{wrapfigure}
 In the Open Camera Application:\\
 \vspace{1in}
-
 \noindent Press the gear shaped \Large Settings \normalsize button to go into the settings menu\\
 \vspace{3in}
-
 \noindent Press the \Large Photo Settings \normalsize button\\
-
 \clearpage
 \subparagraph*{Set Photo Resolution}
-
 \subparagraph*{\\}
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
@@ -384,23 +401,16 @@ In the Open Camera Application:\\
 \end{wrapfigure}
 In \Large photo settings:\\
 \vspace{1in}
-
 \noindent Press the \Large Camera resolution \normalsize button\\
 \vspace{3in}
-
 \noindent Select \textbf{\LARGE 640 x 480}\\
 \clearpage
 \paragraph{Daily Preprocessing Routine}
-
 \subparagraph{Execute Preprocessing Script}A tool in ArcGIS that:
-
 \begin{itemize}
-
 \item Exports current forfeiture list from BSA
 \item Updates webmap layers with results from BSA export
-
 \end{itemize}
-
 \subparagraph*{\\}
 \begin{wrapfigure}{r}{0.75\textwidth}
 \centering
@@ -409,16 +419,11 @@ In \Large photo settings:\\
 \end{wrapfigure}
 In Catalog:\\
 \vspace{1in}
-
 \noindent Open the toolbox\\
 \vspace{1in}
-
 \noindent Open tool 1\\
-
-
 \clearpage
 \subparagraph{Synchronize the Forfeiture Field Map\\}
-
 \subparagraph*{\texorpdfstring{\\}{}}
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
@@ -432,15 +437,11 @@ In Catalog:\\
 \end{wrapfigure}
 \Large Note the date and time:
 \vspace{1.5in}
-
 \noindent Press \Large Sync
 \vspace{1.5in}
-
 \Large Note the date and time
 \vspace{1.5in}
-
 Map is now synchronized
-
 \clearpage
 \paragraph{Forfeiture Data Collection}
 \subparagraph{Forfeiture Parcels Data Details}
@@ -450,7 +451,6 @@ Attributes are of four entry types:\begin{itemize}
 \item dropdown
 \item text box \end{itemize}
 For each site visited, select the desired parcel, push the edit button and collect attributes.  If the boxes are autofill, select from dropdown or typed.\bigskip 
-
 \clearpage
 \subparagraph{Device 1 Field Operation}Device one data collection interface, used to add data to all of the boxes
 \subparagraph*{\\}
@@ -465,19 +465,14 @@ For each site visited, select the desired parcel, push the edit button and colle
 \caption{Parcel Details}
 \end{wrapfigure}
 \vspace{1in}
-
 In the Forfeiture Field Map, for each site visited:\\
 \vspace{1in}
-
 \textbf{Select the desired parcel}
 \vspace{3in}
-
 Push the \Large edit button 
-
 \clearpage
 Class prefilled
 Acres prefilled
-
 \clearpage
 \subparagraph*{Device 1 Field Operation Cont.}
 \subparagraph*{\\}
@@ -498,12 +493,9 @@ Acres prefilled
 \end{wrapfigure}
 Select Yes for Print Today\\
 \vspace{2.5in}
-
 \noindent Select Use Current or enter any date\\
 \vspace{2in}
-
 \noindent Select Inspector From Dropdown\\
-
 \clearpage
 \subparagraph*{Device 1 Field Operation Cont.}
 \subparagraph*{\\}
@@ -524,12 +516,9 @@ Select Yes for Print Today\\
 \end{wrapfigure}
 Select Occupied or Not Occupied\\
 \vspace{2in}
-
 \noindent Enter status notes up to 120 characters\\
 \vspace{2in}
-
 \noindent Select Yes or No for Road Frontage\\
-
 \clearpage
 \subparagraph*{Device 1 Field Operation Cont.}
 %\subparagraph*{\\}
@@ -576,12 +565,9 @@ Enter road used for access\\
 \end{wrapfigure}
 Enter  Use Notes up to 120 characters\\
 \vspace{2in}
-
 \noindent Enter Notes up to 120 characters\\
 \vspace{2in}
-
 \noindent Enter property for sale yes or no\\
-
 \clearpage
 \subparagraph*{Device 1 Field Operation Cont.}
 \subparagraph*{\\}
@@ -602,12 +588,9 @@ Enter  Use Notes up to 120 characters\\
 \end{wrapfigure}
 Property in Use Yes or No\\
 \vspace{2in}
-
 \noindent Adjacent Property Contaminated Notes up to 120 characters\\
 \vspace{2in}
-
 \noindent Property Contaminated yes or no prefilled\\
-
 \clearpage
 \subparagraph*{Device 1 Field Operation Cont.}
 \subparagraph*{\\}

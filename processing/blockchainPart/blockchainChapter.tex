@@ -1,0 +1,24 @@
+%\documentclass[class=report , crop=false, openany, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+
+\documentclass[class=report , crop=false, openany, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+\usepackage[subpreambles=false]{standalone}
+
+\input{../../preamble}
+\setcounter{tocdepth}{3}  % Sets Table of Contents level to show sections
+\def\titlename{The Blockchain}
+
+\title{\input{../commonTitle}}  % closing brace for title
+
+\begin{document}
+
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC
+\clearpage
+\fi
+
+\chapter{Blockchain Chapter 1}
+\subimport{blockchainChapter/}{blockchainSection1.tex}
+\clearpage
+\end{document}

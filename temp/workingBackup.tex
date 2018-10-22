@@ -1,0 +1,97 @@
+%\documentclass[class=report , crop=false, openany, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+
+%\documentclass[class=article]{standalone}
+
+\documentclass{article}
+
+%\usepackage[subpreambles=false]{standalone}
+
+%\usepackage[a5paper,vmargin=2cm]{geometry}
+\usepackage[letterpaper,vmargin=2cm]{geometry}
+%\usepackage{geometry}
+
+\usepackage{background}
+\usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{totcount}
+\usepackage{lipsum}
+%\usepackage{hyperref}
+
+\input{../../preamble}
+\setcounter{tocdepth}{3}  % Sets Table of Contents level to show sections
+\def\titlename{Blockchain}
+
+%\title{\input{../commonTitle}}  % closing brace for title
+
+% to have access to the total number of sections
+%\regtotcounter{section}
+
+% every section starts on a new page
+%\pretocmd{\section}{\clearpage}{}{}
+
+% auxiliary lengths for the height of the frame and the width of each tab
+%\newlength\mylen
+%\newlength\mylena
+% the page number is showed in the background material
+\pagestyle{empty}
+
+\AtBeginDocument{
+\backgroundsetup{
+scale=1,
+color=black,
+angle=0,
+opacity=1,
+contents= {
+  \begin{tikzpicture}[remember picture, overlay]
+  \node[
+    inner sep=0pt,
+    text width=\the\dimexpr\textwidth+1.5cm\relax
+  ]
+    at (current page.center) (border) {\rule{0pt}{\dimexpr\textheight+2cm\relax}};
+  \node[
+    draw=gray,
+    line width=2pt,
+    rectangle,
+    rounded corners=10pt,
+    inner sep=0pt,
+    text width=\the\dimexpr\textwidth+1.5cm\relax,
+    fill=white
+  ]
+    at (current page.center)
+    {\rule{0pt}{\dimexpr\textheight+2cm\relax}};
+  \node[font=\LARGE\sffamily,fill=white]
+    at (border.south)
+    {\makebox[3em][c]{\thepage}};
+\end{tikzpicture}}
+  }
+}
+
+\begin{document}
+
+%\ifstandalone
+%%\maketitle % creates title page
+%\clearpage
+%%\tableofcontents % creates TOC
+%\clearpage
+%\fi
+
+%\chapter{Blockchain Chapter 1}
+\section{Section One}
+\hypertarget{sec:0}{}
+\lipsum[1-2]
+\section{Test Section Two}
+\hypertarget{sec:1}{}
+\lipsum[1-2]
+\section{Test Section Three}
+\hypertarget{sec:2}{}
+\lipsum[1-2]
+\section{Test Section Four}
+\hypertarget{sec:3}{}
+\lipsum[1-2]
+\section{Test Section Five}
+\hypertarget{sec:4}{}
+\lipsum[1-2]
+%\subimport{blockchainChapter/}{blockchainSection1.tex}
+%\clearpage
+
+\end{document}
