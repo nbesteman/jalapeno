@@ -1,0 +1,47 @@
+\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+
+\input{../../../preamble}
+
+\def\titlename{Database Connections\\ \medskip\large Connections in ArcGIS Catalog}
+
+\title{\input{../../../commonTitle}}  % inputs common title
+\setcounter{tocdepth}{5}  % subparagraph and down
+\begin{document}% document begins
+
+
+\ifstandalone
+%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+\maketitle % creates title page and blank page after title page
+\tableofcontents % creates TOC and blank page
+\clearpage
+%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\fi
+
+\subsection{New Connections in ArcCatalog}
+\medskip
+\subsubsection[New Database Connection in ArcCatalog]{\Large New Database Connection in ArcCatalog}
+\paragraph{In Catalog: \texorpdfstring{\\}{}}
+Double click on add database connection
+\paragraph*{}NOTE
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{CatalogAddDbConnection.png}
+\caption{Catalog Add Db Connection}
+\end{figure}
+\clearpage
+\subsubsection[New Connection Dialog]{\Large New Connection Dialog}
+\paragraph{Enter into the tool \texorpdfstring{\\}{}}
+\begin{itemize}
+  \item Select Database Platform
+  \item Enter Instance Name
+  \item Enter user name and password
+  \item Check Save user name and password
+  \item Select Database in dropdown
+\end{itemize}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{CreateNewDbConnection.png}
+\caption{Catalog Add Database Connection}
+\end{figure}
+\clearpage
+\end{document}
