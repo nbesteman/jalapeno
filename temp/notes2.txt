@@ -1,0 +1,92 @@
+Not
+431 -456
+
+\clearpage
+\subparagraph{Synchronize the Forfeiture Field Map}
+\subparagraph*{\texorpdfstring{\\}{}}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.3\textwidth]{MapDownloaded.png}
+\caption{Map Downloaded}
+\vspace{.25in}
+
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
+
+\includegraphics[width=.3\textwidth]{MapSyncronized.png}
+\caption{Map Synchronized}
+\end{wrapfigure}
+\Large Note the date and time:
+\vspace{1.5in}
+
+\noindent Press \Large Sync
+\vspace{1.5in}
+
+\Large Note the date and time
+\vspace{1.5in}
+
+Map is now synchronized
+\clearpage
+
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+\centering
+\includegraphics[width=.2\textwidth]{status.png}
+\caption {Status}
+\vspace{.1in}
+
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.1in}
+
+\includegraphics[width=.2\textwidth]{statusNotes.png}
+\caption{Status Notes}
+\vspace{.1in}
+
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.1in}
+
+\includegraphics[width=.2\textwidth]{roadFrontage.png}
+\caption{Road Frontage}
+\end{wrapfigure}
+
+
+\subparagraph{Download the Forfeiture Field Map\texorpdfstring{\\}{}}
+\noindent There are 3 different versions of the map
+\subparagraph*{}
+
+
+
+\documentclass[a4paper]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{lipsum}
+
+\title{Package Example: wrapfig}
+\author{writeLaTeX}
+
+\begin{document}
+\maketitle
+
+
+
+
+\begin{wrapfigure}{R}{0.3\textwidth}
+\centering
+\includegraphics[width=0.25\textwidth]{frog.jpg}
+\caption{\label{fig:frog1}This is a figure caption.}
+\end{wrapfigure}
+
+\lipsum[1]
+
+\begin{wrapfigure}{L}{0.3\textwidth}
+\centering
+\includegraphics[width=0.25\textwidth]{frog.jpg}
+\caption{\label{fig:frog2}This is a figure caption.}
+\end{wrapfigure}
+
+\lipsum[2-3]
+
+\end{document}

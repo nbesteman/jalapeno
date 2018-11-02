@@ -1,0 +1,57 @@
+Works
+391 -413
+
+\clearpage
+\subparagraph*{Set Photo Resolution}
+\subparagraph*{\\}
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.3\textwidth]{photoSettings.png}
+\caption{Photo Settings Menu}
+\vspace{.25in}
+
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
+
+\includegraphics[width=.3\textwidth]{cameraResolutionSetting.png}
+\caption{Camera Resolution Setting}
+\end{wrapfigure}
+In \Large photo settings:
+\vspace{1in}
+
+\noindent Press the \Large Camera resolution \normalsize button
+\vspace{3in}
+
+\noindent Select \textbf{\LARGE 640 x 480}
+\clearpage
+
+\noindent Select \textbf{\LARGE 640 x 480}
+
+\subparagraph*{Device 1 Field Operation Cont.}
+
+
+
+
+\end{wrapfigure}
+for Organization Website, Type:
+\vspace{.5in}
+
+\begin{verbatim}
+https://gis.allegancounty.org/
+portal_webadaptor
+
+\end{verbatim}
+\large then:
+\vspace{.5in}
+
+\noindent Press \Large Continue
+\vspace{2in}
+
+\noindent Enter Credentials
+\vspace{.5in}
+
+\noindent \large then:
+\vspace{.5in}
+
+\noindent Press \Large SIGN IN
+\clearpage
