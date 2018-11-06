@@ -17,23 +17,23 @@
 
 \clearpage
 
-\subsection{Introduction}
-\paragraph{Pupose and Summary}
+\subsection{PDF Optimizer}
+\subsubsection{Pupose and Summary}
 \textbf{Workflow Purpose:} Optimization of a large number of pdf docs.\\
 \textbf{Workflow Summary:} Uses Python to create a list of .pdf docs in a folder and creates a batch file to optimize the pdfs in the list to another location.  The batch process calls ghost script for the optimization.
 
-\paragraph{requirements}
+\subsubsection{requirements}
 Opensource software:
 \begin{itemize}
-\item ghostscript 
-\item python 2.7 and a Python IDE 
+\item ghostscript
+\item python 2.7 and a Python IDE
 \item A text editor
 \end{itemize}
-\subsection{Python(2.7)}
+paragraph{Python(2.7)}
 
-\paragraph{Note:} The output of this script is bdoc.txt, Save as a .bat to execute the optimize.
+\paragraph*{Note:} The output of this script is bdoc.txt, Save as a .bat to execute the optimize.
 
-\paragraph{Script that creates a batch file}
+\paragraph*{Script that creates a batch file}
 \begin{verbatim}
 import os, sys
 
@@ -43,8 +43,8 @@ processing = os.path.join(project, 'processing')
 build = os.path.join(project,'build')
 sourcepdf = os.path.join(build, '20180716')
 
-inString1 = "gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 
--dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH 
+inString1 = "gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4
+-dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH
 -sOutputFile=J:\\Projects\\2018ParcelAtlas\\build\\optimized\\"
 
 inString2 = " J:\\Projects\\2018ParcelAtlas\\build\\20180716\\"
@@ -69,7 +69,7 @@ if __name__ == "__main__":
 
 \end{verbatim}
 
-\subsection{ghostscript}
+\subsubsection{ghostscript}
 
 \paragraph{About}
 ghostscript is used for the optimization. ghostscript is an interpreter for the PostScript language and for PDF~\cite{ghostscript1}.
@@ -79,14 +79,14 @@ ghostscript is available opensource under AGPL conditions.  more information can
 ghostscript can be downloladed \href{https://www.ghostscript.com/download/gsdnld.html}{here}.
 
 
-\subsection{Windows batch files}
+\subsubsection{Windows batch files}
 A line from the batch file looks like:\\
 \begin{verbatim}
 
 
 
 gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4
- -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH 
+ -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH
  -sOutputFile=J:\Project\2018ParcelAtlas\build\optimized\
  02-001-001-00.pdf J:\Projects\2018ParcelAtlas\build\20180716
  \_02-001-001-00.pdf

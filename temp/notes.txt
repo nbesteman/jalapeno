@@ -1,57 +1,110 @@
 Works
 391 -413
-
+Two image wrap text:
+%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
-\subparagraph*{Set Photo Resolution}
+\subparagraph*{text}
 \subparagraph*{\\}
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{photoSettings.png}
-\caption{Photo Settings Menu}
+\includegraphics[width=.3\textwidth]{graphic.png}
+\caption{graphic}
 \vspace{.25in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.25in}
 
-\includegraphics[width=.3\textwidth]{cameraResolutionSetting.png}
-\caption{Camera Resolution Setting}
+\includegraphics[width=.3\textwidth]{graphic.png}
+\caption{graphic}
 \end{wrapfigure}
-In \Large photo settings:
+text:
 \vspace{1in}
 
-\noindent Press the \Large Camera resolution \normalsize button
+\noindent Press the \Large NOTE \normalsize note
 \vspace{3in}
 
-\noindent Select \textbf{\LARGE 640 x 480}
+\noindent Select \textbf{\LARGE NOTE}
 \clearpage
-
-\noindent Select \textbf{\LARGE 640 x 480}
-
-\subparagraph*{Device 1 Field Operation Cont.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
+%%%%%%%%%%%%%%%%
+2 figs with wrap fig
+%%%%%%%%%%%%%%%%%
+\clearpage
+\paragraph{Data Details}
+\subparagraph*{Data Location}
 
+\begin{wrapfigure}{r}{0.6\textwidth}
+\centering
+\includegraphics[width=.5\textwidth]{LiveDataLocation}
+\caption{Live Data Location}
+\vspace{.25in}
+
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.25in}
+
+\includegraphics[width=.4\textwidth]{contaminationFeatureClass.png}
+\caption{Contamination Feature Class}
 \end{wrapfigure}
-for Organization Website, Type:
+The data is located in ACPUB.  ACPUB is a geodatabase on ACINTSQL01.
 \vspace{.5in}
 
-\begin{verbatim}
-https://gis.allegancounty.org/
-portal_webadaptor
+Forfeiture Parcels Data
+\vspace{4in}
 
-\end{verbatim}
-\large then:
-\vspace{.5in}
-
-\noindent Press \Large Continue
-\vspace{2in}
-
-\noindent Enter Credentials
-\vspace{.5in}
-
-\noindent \large then:
-\vspace{.5in}
-
-\noindent Press \Large SIGN IN
+Contamination Data
 \clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+One image before text:
+  (with working newlines)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Create Query in ArcGIS to SQL Database}
+\medskip
+\subsubsection[Add Query Layer ]{\Large Add Query Layer}
+\paragraph*{In ArcMap: \texorpdfstring{\\}{}}
+Open the New Query Layer Dialog\\
+Go to $\Rightarrow$ File $\Rightarrow$ Add Data $\Rightarrow$ Add Query Layer
+In the connection dropdown select your connection
+\paragraph*{}NOTE
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{NewQueryLayerDialog.png}
+\caption{New Query Layer Dialog}
+\end{figure}
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+One image after text:
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+
+\paragraph{Technologies Used in The Forfeiture App}
+\subparagraph{BSA Data}Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
+
+\subparagraph{ArcGIS Desktop}Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network.
+
+\subparagraph{ArcGIS Collector}A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork. The user collects the necessary information on each forfeiture parcel in the field disconnected, and then uploads the changes when reconnected.
+
+\subparagraph{ArcGIS Enterprise Geodatabse}Live data from a publishing geodatabase(ACPub), running on SQL Server database server (acintsql01) provides access to Forfeiture Parcels
+
+\subparagraph{ArcGIS Portal Webmaps and Apps} Forfeiture Parcels is served as a feature service (REST service)  named TaxReversionParcels.  A webmap on Portal, called the Forfeiture Field Map consumes the TaxReversionParcels exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.9\textwidth]{TechFlowChart}
+\caption{Technology Design}
+\end{figure}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%
+To have a line break in the tex but not the toc:
+\paragraph[SQL Queries]{SQL Queries \texorpdfstring{\\}{}}

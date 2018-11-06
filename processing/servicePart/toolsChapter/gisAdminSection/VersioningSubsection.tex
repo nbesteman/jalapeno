@@ -18,11 +18,11 @@
 \fi
 
 \subsection{Managing Geodatabase Versions}
-\medskip 
+\medskip
 \subsubsection[Version Queries]{\Large Version Queries}
 
-
-\paragraph{SQL Queries \texorpdfstring{\\}{}}
+%\paragraph{SQL Queries \texorpdfstring{\\}{}}
+\paragraph[SQL Queries]{SQL Queries \texorpdfstring{\\}{}}
 Four queries of SDEversions, SDEstates, sdestatelineages, and SDEcompresslog
 
 \begin{verbatim}
@@ -39,13 +39,13 @@ select TOP(5) * from [AC_Pub].[dbo].[SDE_compress_log] order by
  compress_end DESC
  \end{verbatim}
 Query of SDEversions and SDEstates
- 
+
  \begin{verbatim}
  use AC_Pub
 SELECT v.version_id,v.creation_time,v.creation_time,
  s.state_id, s.creation_time
 FROM SDE_versions v
-INNER JOIN SDE_states s ON v.state_id = s.state_id 
+INNER JOIN SDE_states s ON v.state_id = s.state_id
 
 \end{verbatim}
 \clearpage
@@ -58,7 +58,7 @@ Use SQL Server Management Studio to execute two queries and compare the results.
 Execute the query:
 \begin{verbatim}
 use AC_Pub
-SELECT ObjectID, name from dbo.GDB_ITEMS where 
+SELECT ObjectID, name from dbo.GDB_ITEMS where
  TYPE='4ED4A58E-621F-4043-95ED-850FBA45FCBC';
 \end{verbatim}
 \subparagraph*{Step 2: \texorpdfstring{\\}{}}

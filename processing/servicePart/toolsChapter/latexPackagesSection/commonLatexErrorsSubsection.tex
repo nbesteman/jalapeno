@@ -14,13 +14,13 @@
 %\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
 \fi
 
-
+\subsection{Common Errors}
+\label{cha:common-errors}
 \begin{verbatim}
 Source:
 https://www.ocf.berkeley.edu/~latex/files/commonerrors.tex
 \end{verbatim}
-\chapter{Common Errors}
-\label{cha:common-errors}
+
 
 If you have every compiled a \LaTeX{} document, chances are high you
 have received a few error messages.  Sometimes they come from
@@ -33,7 +33,7 @@ The purpose of this is to explain some of the common errors that may
 happen when compiling a \LaTeX{} document and suggestions for what is
 probably going on and how to debug your document.
 
-\section{The Form of an Error}
+\subsubsection{The Form of an Error}
 \label{sec:form-an-error}
 
 There are two forms of errors: \LaTeX{} errors and \TeX{} errors.  In
@@ -45,7 +45,7 @@ l.15 <offending text>
 The \texttt{l.15} tells you what line the error occurred on and the
 text will tell you the text that caused the error.
 
-\subsection{\LaTeX{} Errors}
+\subsubsection{\LaTeX{} Errors}
 \label{sec:latex-errors}
 
 The general form of an error in \LaTeX{} is shown below:
@@ -64,7 +64,7 @@ the ellipses, you will find the line at which the error occurred and
 the text that caused the error (or at least the text where \LaTeX{}
 found the error).
 
-\subsection{\TeX{} Errors}
+\subsubsection{\TeX{} Errors}
 \label{sec:tex-errors}
 
 Errors may also have the following form:
@@ -77,14 +77,14 @@ that came from \TeX{} instead of \LaTeX{}.  After the error, you will
 still find the line that the error occurred in and the text of the
 error.
 
-\section{Warnings}
+\subsubsection{Warnings}
 \label{sec:warnings}
 
 There are some error messages that are just warnings and will not stop
 or change the compilation of the document.  Chances are you have seen
 them many times.
 
-\subsection{Underfull}
+\subsubsection{Underfull}
 \label{sec:underfull}
 
 The following error results when a line does not extend the width of
@@ -99,7 +99,7 @@ about.  For the most part, when a line does not span the width of the
 page, it is because you have written something that you want to only
 cover part of the page.
 
-\subsection{Overfull}
+\subsubsection{Overfull}
 \label{sec:overfull}
 
 The following error results when a line extends beyond the width of
@@ -120,7 +120,7 @@ outside of the width of text that \LaTeX{} has set.  In this case, you
 are welcome to fix things so that the error does not show up or you
 can leave the text as it is.
 
-\subsection{References}
+\subsubsection{References}
 \label{sec:references-1}
 
 The following warnings occur when references are changed when \LaTeX{}
@@ -141,10 +141,10 @@ document twice to fix this error.  You also may have defined a
 reference wrong, so you should check to make sure your label is
 correct.
 
-\section{Beginning and Ending}
+\subsubsection{Beginning and Ending}
 \label{sec:beginning-ending}
 
-\subsection{Begin Ended by End}
+\subsubsection{Begin Ended by End}
 \label{sec:begin-ended-end}
 
 This type of error occurs when each environment is not correctly
@@ -168,7 +168,7 @@ To fix this, you basically do the same thing as before, correctly
 beginning the environment mentioned in the error with the appropriate
 command.
 
-\subsection{End Occurred Inside a Group}
+\subsubsection{End Occurred Inside a Group}
 \label{sec:end-occurred-inside}
 
 The following error message will show up at the end of compiling a
@@ -181,7 +181,7 @@ To fix this error, make sure you end the environment that was begun.
 The previous error is more helpful in finding the \verb|\begin|
 statement.
 
-\subsection{Ended by End of Line}
+\subsubsection{Ended by End of Line}
 \label{sec:ended-end-line}
 
 The following error will occur when you try to place a command inside
@@ -199,7 +199,7 @@ There will be many errors of the same type for this mistake.  In order
 to find where you put the command, look in the output file and find
 the last heading that shows up.
 
-\subsection{Missing Begin Document}
+\subsubsection{Missing Begin Document}
 \label{sec:miss-begin-docum}
 
 This error is self-explanatory:
@@ -207,10 +207,10 @@ This error is self-explanatory:
 ! LaTeX Error: Missing \begin{document}
 \end{verbatim}
 
-\section{Errors Usually Caused by Bad Spelling}
+\subsubsection{Errors Usually Caused by Bad Spelling}
 \label{sec:errors-usually-caus}
 
-\subsection{Unknown Control Sequence}
+\subsubsection{Unknown Control Sequence}
 \label{sec:unkn-contr-sequ}
 
 This error results when you use a command (something that starts with a
@@ -222,7 +222,7 @@ This error results when you use a command (something that starts with a
 Usually this error results from spelling a command incorrectly.  Go to
 the line that is indicated by the error and fix the command.
 
-\subsection{Environment Undefined}
+\subsubsection{Environment Undefined}
 \label{sec:envir-undef}
 
 This error results when you begin an environment with a \verb|\begin|
@@ -234,7 +234,7 @@ command that is not recognized:
 Usually you have just spelled your environment incorrectly, so you
 just need to fix it.
 
-\subsection{Bad File Name}
+\subsubsection{Bad File Name}
 \label{sec:bad-file-name}
 
 This error results when you have mistyped the command \texttt{latex}
@@ -245,7 +245,7 @@ Bad command or file name
 To fix this, correctly spell the command to compile your file or make
 sure that \LaTeX{} is correctly installed on your computer.
 
-\subsection{Cannot Find File Name}
+\subsubsection{Cannot Find File Name}
 \label{sec:cannot-find-file}
 
 This error occurs when you try to compile a file that the computer
@@ -262,10 +262,10 @@ correctly.  You also may be in the wrong directory to compile the
 file, so check to make sure you are in the same directory as your
 file.
 
-\section{Fatal Errors}
+\subsubsection{Fatal Errors}
 \label{sec:fatal-errors}
 
-\subsection{Runaway Argument}
+\subsubsection{Runaway Argument}
 \label{sec:runaway-argument}
 
 This error happens when a paragraph ends before a command's argument
@@ -282,7 +282,7 @@ paragraph.
 This error can also be caused by a missing mandatory argument to a
 command.
 
-\subsection{Just an *}
+\subsubsection{Just an *}
 \label{sec:just-an-asterisk}
 
 This error normally occurs when you do not end your document with \\ \verb|\end{document}|:
@@ -297,7 +297,7 @@ If you are prompted to enter something in, it is best to enter
 and hope it works.  Be sure to end your document
 with the appropriate command.
 
-\subsection{Emergency Stop}
+\subsubsection{Emergency Stop}
 \label{sec:emergency-stop}
 
 This error happens when \LaTeX{} will stop trying to compile your
@@ -310,7 +310,7 @@ compiling.  Chance are you forgot to end your document with
 \verb|\end{document}|, but there might also be another reason for the
 emergency stop.
 
-\subsection{Please Type a Command or Say End}
+\subsubsection{Please Type a Command or Say End}
 \label{sec:please-type-command}
 
 This error happens when your file has ended prematurely:
@@ -331,10 +331,10 @@ caused the error.  Usually if you have ended your document correctly,
 the error will result from a missing \} or forgetting to end a
 verbatim environment.
 
-\section{Graphics Errors}
+\subsubsection{Graphics Errors}
 \label{sec:graphics-errors}
 
-\subsection{Too Many Unprocessed Floats}
+\subsubsection{Too Many Unprocessed Floats}
 \label{sec:too-many-unprocessed}
 
 This error occurs when figures or tables (i.e., floats) have not been
@@ -349,7 +349,7 @@ you want them (with a \texttt{[h]} option) and not wanting too many on
 one page in sequence.  Using the command \verb|\clearpage| can be very
 useful in distributing floats correctly.
 
-\subsection{Unknown Graphics Extension}
+\subsubsection{Unknown Graphics Extension}
 \label{sec:unkn-graph-extens}
 
 The following error occurs when you try to use a type of graphic that
@@ -364,7 +364,7 @@ will need to include the correct package to deal with that type of
 graphic.  Sometimes you may have named the graphic poorly so that
 \LaTeX{} will not recognize it as a graphic file.
 
-\subsection{Division by Zero}
+\subsubsection{Division by Zero}
 \label{sec:division-zero}
 
 The following error occurs when the height of a graphic object is zero:
@@ -376,10 +376,10 @@ This is usually caused when you rotate an object with zero depth so
 that its height becomes zero.  The best way to fix this is to use the
 keyword \texttt{totalheight} instead of \texttt{height}.
 
-\section{Math Errors}
+\subsubsection{Math Errors}
 \label{sec:math-errors}
 
-\subsection{Display Math Should End With \$\$}
+\subsubsection{Display Math Should End With \$\$}
 \label{sec:display-math-should}
 
 This error occurs when the displaymath or equation mode is ended incorrectly:
@@ -390,7 +390,7 @@ This error occurs when the displaymath or equation mode is ended incorrectly:
 To fix this error, make sure that you end the displaymath or equation
 mode correctly (ending them with a \$ is not acceptable).
 
-\subsection{Bad Math Environment Delimiter}
+\subsubsection{Bad Math Environment Delimiter}
 \label{sec:bad-math-environment}
 
 This error occurs when you do not have your delimiters correct in math
@@ -403,7 +403,7 @@ Usually this occurs when you forget to match a right delimiter with
 every left delimiter.  This error may also happen when you forget to
 end an array.
 
-\subsection{Missing Right}
+\subsubsection{Missing Right}
 \label{sec:missing-right}
 
 This error occurs when you have a missing right parenthesis:
@@ -414,7 +414,7 @@ This error occurs when you have a missing right parenthesis:
 To fix this, you either need to add a \verb|\right| command or you
 need to end an array.
 
-\subsection{Missing Delimiter}
+\subsubsection{Missing Delimiter}
 \label{sec:missing-delimiter}
 
 This error message occurs when a delimiter is missing:
@@ -427,7 +427,7 @@ delimiter for every left delimiter.  If you do not want a right
 delimiter matching a left delimiter, you need to use ``.''\ to not
 have an error message show up.
 
-\subsection{Missing \$ Inserted}
+\subsubsection{Missing \$ Inserted}
 \label{sec:missing--inserted}
 
 The following error occurs when you try to use a character that can
@@ -439,10 +439,10 @@ only be used in math mode, like \_ or \^{}:
 To fix this error, make sure you change the character to what it
 should be in text mode.
 
-\section{Tabular Environment Errors}
+\subsubsection{Tabular Environment Errors}
 \label{sec:tabul-envir-errors}
 
-\subsection{Misplaced Alignment Tab Character \&}
+\subsubsection{Misplaced Alignment Tab Character \&}
 \label{sec:mispl-alignm-tab}
 
 This error occurs when you use \texttt{\&} and when you are not in a
@@ -453,7 +453,7 @@ Misplaced alignment tab character &
 
 To fix this error, you need to use \verb|\&| to make a \&.
 
-\subsection{Extra Alignment Tab}
+\subsubsection{Extra Alignment Tab}
 \label{sec:extra-alignment-tab}
 
 This error occurs when you use too many tabs for the number of columns
@@ -466,7 +466,7 @@ The result of this error is that a new row is formed where the extra
 tab was.  You should go back and fix your table so that the correct
 number of items in each row would show up.
 
-\subsection{Argument Has an Extra \}}
+\subsubsection{Argument Has an Extra \}}
 \label{sec:argument-has-an}
 
 These errors happen when an incorrect number of arguments to a tabular
@@ -480,10 +480,10 @@ environment have been specified:
 To fix this error, make sure your arguments to the tabular environment
 are correct.
 
-\section{Errors With Lists}
+\subsubsection{Errors With Lists}
 \label{sec:errors-with-lists}
 
-\subsection{Missing Item}
+\subsubsection{Missing Item}
 \label{sec:missing-item}
 
 This error occurs when there is plain text in an environment that
@@ -495,7 +495,7 @@ takes items:
 
 To fix this error, make sure the plain text is changed into an item.
 
-\subsection{Too Deeply Nested}
+\subsubsection{Too Deeply Nested}
 \label{sec:too-deeply-nested}
 
 This error occurs when there are too many lists for \LaTeX{} to
@@ -508,10 +508,10 @@ handle:
 levels of different types of lists.  To fix this, you need to use less
 levels of lists or define your own list environment.
 
-\section{Miscellaneous Errors}
+\subsubsection{Miscellaneous Errors}
 \label{sec:miscellaneous-errors}
 
-\subsection{Only Used in the Preamble}
+\subsubsection{Only Used in the Preamble}
 \label{sec:only-used-preamble}
 
 This error occurs when you place a command in the body of a \LaTeX{}
@@ -522,7 +522,7 @@ document that should be placed in the preamble:
 
 To fix this error, just move the command to the preamble.
 
-\subsection{There Is No Line/Page Here to End}
+\subsubsection{There Is No Line/Page Here to End}
 \label{sec:there-no-linepage}
 
 This error occurs when you incorrectly use the commands that make a
@@ -535,7 +535,7 @@ You may just leave the command that is making a new line in place or
 you can take it out.  Here, \LaTeX{} is just trying to make sure that
 everything looks nice.
 
-\subsection{Command Already Defined}
+\subsubsection{Command Already Defined}
 \label{sec:comm-alre-defin}
 
 This error occurs when you try to define a command that already exists:
@@ -545,7 +545,7 @@ This error occurs when you try to define a command that already exists:
 
 To fix this, you need to define your command differently.
 
-\subsection{Missing Number}
+\subsubsection{Missing Number}
 \label{sec:missing-number}
 
 This error is made when a number is expected as an argument and one is
@@ -557,9 +557,9 @@ not provided:
 To fix this error, you need to find where a number is expected so that
 you can provide the correct one.
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "reader"
-%%% End: 
+%%% End:
 
 \end{document}

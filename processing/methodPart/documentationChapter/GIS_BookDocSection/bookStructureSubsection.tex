@@ -33,7 +33,7 @@
 
 \subsubsection{Project file structure:}
 {\Large ...\textbackslash jalapeno\textbackslash..}\\
-\begin{tabular}{p{4cm}| p{7cm} } 
+\begin{tabular}{p{4cm}| p{7cm} }
 \footnotesize folder & {\footnotesize description} \\ \hline
 documentation & resources used in Jalape\~no\\
 processing & .tex douments and build folders\\
@@ -41,7 +41,7 @@ source & common image files\\
 \end{tabular}
 \bigskip\\
 {\Large ...\textbackslash jalapeno\textbackslash documentation\textbackslash..}\\
-\begin{tabular}{p{4cm} | p{7cm} } 
+\begin{tabular}{p{4cm} | p{7cm} }
 \footnotesize folder or file & {\footnotesize description} \\ \hline
 moduleTemplates & .tex templates\\
 packageDocs & \LaTeX{} documentation\\
@@ -51,7 +51,7 @@ BookStructureMM.mm & A mindmap of jalapeno\\
 \end{tabular}
 \bigskip\\
 {\Large ...\textbackslash jalapeno\textbackslash processing\textbackslash..}\\
-\begin{tabular}{p{4cm}| p{7cm} } 
+\begin{tabular}{p{4cm}| p{7cm} }
 \footnotesize folder or file & {\footnotesize description }\\ \hline
 ...Part & folders of book \textit{part}s\\
 build & \LaTeX{}folder for .pdf output and temp files \\
@@ -78,7 +78,7 @@ To \textbf{create a new glossary entry:} Add an entry to glossaryEntries.tex.  S
 \item Launch command prompt
 \item enter command: \textbf{{\large makeglossaries GISDocumentation*}}
 \end{itemize}
-\subparagraph{*Note:} {\footnotesize This command reads the .aux file and creates the .gls file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail.}
+\subparagraph*{*Note:} {\footnotesize This command reads the .aux file and creates the .gls file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail.}
 \paragraph{Using glossary terms in a subdocument:}
 In the subdocument you must add code to input the glossaryEntries file.  For example:\\
 After the line:
@@ -89,11 +89,12 @@ Add the line:
 \begin{verbatim}
 \input{../../../glossaryEntries}
 \end{verbatim}
-\subparagraph{To use a glossary term in the subdocument:\texorpdfstring{\\}{}}
+\subparagraph[To use a glossary term]{To use a glossary term in the subdocument:\texorpdfstring{\\}{}}
+%\subparagraph*{\texorpdfstring{\\}{}}
 In place of the term, use code referencing the key (in the glossaryEntries file):
 \begin{itemize}
 \item \textbackslash gls\{key\}
-\end{itemize} 
+\end{itemize}
 \subparagraph{To add the glossary to the subdocument:}
 \begin{itemize}
 \item Add the line \textbackslash makeglossaries to the preamble of the subdocument.
@@ -108,7 +109,7 @@ In place of the term, use code referencing the key (in the glossaryEntries file)
 \paragraph{Bibliography requirements:}
 Compiling the bibliography requires running bibtex either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by bibtex to create a .bbl file.  After the .bbl file is created, PDFLatex must be run again to insert the bibliography at the \textbackslash bibliography location. \subparagraph{}
 For example, the command:...\textbackslash bibliography\{referenceEntries\}\\
-...places the bibliography called referenceEntries.bib which must be in the same folder as the project .aux file. 
+...places the bibliography called referenceEntries.bib which must be in the same folder as the project .aux file.
 \paragraph{Creating a new bibliography entry}
 To \textbf{create a new bibliography entry:} Add an entry to referenceEntries.bib.  Save it there and then use bibtex to recompile the .bbl file.
 \paragraph{Rebuilding the bibliography}
@@ -119,11 +120,11 @@ To \textbf{create a new bibliography entry:} Add an entry to referenceEntries.bi
 \end{itemize}
 \subparagraph{*Note:} {\footnotesize This command reads the .aux file and creates the .bbl file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail.}
 
-\paragraph{To cite a bibliography source in a subdocument:} 
+\paragraph{To cite a bibliography source in a subdocument:}
 \subparagraph{}In the place that you want the citation:
 \begin{itemize}
 \item \begin{verbatim} ~\cite[pg.#]{key}\end{verbatim}
-\end{itemize} 
+\end{itemize}
 \subparagraph{To add the bibliography to the subdocument:}
 \begin{itemize}
 \item Similar to adding to the master document but not documented here.
@@ -132,7 +133,7 @@ To \textbf{create a new bibliography entry:} Add an entry to referenceEntries.bi
 
 \subsubsection[Using the Index]{{\Large Using the Index}}
 \paragraph{Index requirements:}
-Compiling the index requires running the makeindex command either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by makeindex to create an .idx file.  After the .idx file is created, PDFLatex must be run again to insert the index at the \textbackslash printindex location. 
+Compiling the index requires running the makeindex command either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by makeindex to create an .idx file.  After the .idx file is created, PDFLatex must be run again to insert the index at the \textbackslash printindex location.
 
 \paragraph{Creating a new index entry}
 To \textbf{create a new index entry:} Add an entry to indexEntries.tex.  Save it there and then use the makeindex command to recompile the .idx file.
@@ -161,7 +162,7 @@ In place of the term, use code referencing the key (in the indexEntries file):
 
 \begin{itemize}
 \item \textbackslash index \{key\}
-\end{itemize} 
+\end{itemize}
 
 \subparagraph{To add the index to the subdocument:}
 \begin{itemize}
