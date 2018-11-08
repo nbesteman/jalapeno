@@ -2,7 +2,7 @@
 https://git-scm.com/docs/gitignore
 --->
 archive/
-
+temp/
 ## Vim edit files
 *.*~
 *.*swp
