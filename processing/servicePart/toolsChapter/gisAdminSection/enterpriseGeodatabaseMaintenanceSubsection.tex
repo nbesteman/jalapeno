@@ -21,70 +21,88 @@
 
 \subsubsection{Enterprise Geodatabase Compression Routine}
 
-\paragraph{Disconnect All Users}
-Stop the GIS Server to disconnect it.
+\paragraph[Disconnect Users]{Disconnect All Users\texorpdfstring{\\}{}}
+\noindent {\Large To disconnect the GIS Server, stop all services.}
+\begin{itemize}
+  \item In {\Large ArcGIS Server Manager $\Rightarrow$  Site $\Rightarrow$ GIS Server $\Rightarrow$ Machines $\Rightarrow$ Stop all Services}
+\end{itemize}
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.95\textwidth]{stopArcGisServer.png}
-\caption{Stop ArcGIS Server}
-\end{figure}
-Note 
-\clearpage
+    \includegraphics[width=1\textwidth]{stopArcGisServer.png}
 
-\paragraph*{}Note
-\begin{figure}[h!]
-\centering
-    \includegraphics[width=.95\textwidth]{findRebuildIndexesTool.png}
-\caption{Find Rebuild Indexes Tool}
-\end{figure}
-Note 
-\clearpage
+\vspace*{-10mm}\caption{Stop ArcGIS Server}
 
-\paragraph{Rebuild Indexes}
-Execute the geoprocessing tool
+\end{figure}
+%\clearpage
+\paragraph*{}Use the Search tool to find the Rebuild Indexes Tool
 \begin{figure}[h!]
 \centering
-	\includegraphics[width=.95\textwidth]{rebuildIndexesToolOperation.PNG}
+    \includegraphics[width=1\textwidth]{findRebuildIndexesTool.png}
+
+\vspace*{-10mm}\caption{Find Rebuild Indexes Tool}
+
+\end{figure}
+\clearpage
+%
+%
+%
+%
+\paragraph[Rebuild Indexes]{Rebuild Indexes\texorpdfstring{\\}{}}
+
+\noindent Select Connection $\Rightarrow$  Include System Tables $\Rightarrow$ Select All $\Rightarrow$ Press OK
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=.75\textwidth]{rebuildIndexesToolOperation.PNG}
 \caption{Rebuild Indexes Tool Operation}
 \end{figure}
-Note
-\clearpage
-
-\paragraph{Recalculate Statistics}
-Note
+%\clearpage
+\paragraph[Recalculate Statistics]{Recalculate Statistics\texorpdfstring{\\}{}}
+\noindent In the Analyze Datasets Tool:\\
+\noindent Select Connection $\Rightarrow$  Include System Tables $\Rightarrow$ Select All $\Rightarrow$ Press OK
 \begin{figure}[h!]
 \centering
-	\includegraphics[width=.95\textwidth]{recalculateStatistics.PNG}
+	\includegraphics[width=.75\textwidth]{recalculateStatistics.PNG}
 \caption{Recalculate Statistics}
 \end{figure}
-Note
 \clearpage
-\paragraph{Compress}
+%
+%
+%
+%
+\paragraph[Compress]{Compress\texorpdfstring{\\}{}}
+
+\noindent  Select Connection $\Rightarrow$  Press OK
 \begin{figure}[h!]
 \centering
-	\includegraphics[width=.95\textwidth]{compress.PNG}
+	\includegraphics[width=.75\textwidth]{compress.PNG}
 \caption{Compress}
 \end{figure}
-Note
-\clearpage
-\paragraph{Rebuild Indexes}
-Execute the geoprocessing tool
+%
+%
+\paragraph{Rebuild Indexes Again}
 \begin{figure}[h!]
 \centering
-	\includegraphics[width=.95\textwidth]{rebuildIndexesToolOperation.PNG}
+	\includegraphics[width=.75\textwidth]{rebuildIndexesToolOperation.PNG}
 \caption{Rebuild Indexes Tool Operation}
 \end{figure}
-Note
 \clearpage
-
-\paragraph{Recalculate Statistics}
-Note
+%
+%
+%
+%
+\paragraph[Recalculate Statistics]{Recalculate Statistics Again\texorpdfstring{\\}{}}
+\noindent In the Analyze Datasets Tool:\\
+\noindent Select Connection $\Rightarrow$  Include System Tables $\Rightarrow$ Select All $\Rightarrow$ Press OK
 \begin{figure}[h!]
 \centering
 	\includegraphics[width=.95\textwidth]{recalculateStatistics.PNG}
 \caption{Recalculate Statistics}
 \end{figure}
-Note
-\clearpage
 
+\clearpage
+%
+%
+%
+%
 \end{document}
