@@ -1,0 +1,122 @@
+\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+
+\input{../../../preamble}
+
+\def\titlename{Adding a Layer\\ \medskip\large to BSA GIS}
+
+\title{\input{../../../commonTitle}}  % inputs common title
+%\setcounter{tocdepth}{3}  % section and down
+\begin{document}% document begins
+
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+%\tableofcontents % creates TOC
+%\clearpage
+\fi
+
+\subsection{Adding a Layer to the BSA GIS}
+
+\subsubsection{Add an Imagery Layer}
+\vspace{.25in}
+
+\paragraph[Add imagery Layer]{To Add an Imagery Layer to a BSA Map:\texorpdfstring{\\}{}}
+
+%From within BSA Settings
+
+\subparagraph[BSA Program Setup ]{\Large Go To BSA Program Setup\texorpdfstring{\\}{}}
+(BSA Settings)
+\vspace{.5in}
+
+\noindent{\LARGE In \textbf{Program Setup} $\Rightarrow$ Select \textbf{GIS Settings...}}
+\vspace{.5in}
+
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=1\textwidth]{ProgramSetup.PNG}
+\caption{BSA Program Setup}
+\end{figure}
+\clearpage
+%
+%
+%
+\subparagraph[Setup Map Collections]{\Large Setup Map Collections\texorpdfstring{\\}{}}
+(BSA Settings)
+\vspace{.5in}
+
+\noindent{\LARGE In \textbf{GIS Settings} $\Rightarrow$ \textbf{Map Collections} $\Rightarrow$ \texorpdfstring{\\}{}}
+\vspace{.5in}
+
+\noindent \textbf{Double click on the map that you want to add a layer to}
+\vspace{.5in}
+
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=1\textwidth]{GIS_Setup.PNG}
+\caption{GIS Setup}
+\end{figure}
+\clearpage
+%
+%
+%
+\subparagraph[Layers Setup ]{\Large In Setup Layers\texorpdfstring{\\}{}}
+(BSA Settings)
+\vspace{.75in}
+
+
+\noindent{\LARGE \textbf{Setup Layers} $\Rightarrow$ \textbf{Add}}
+\vspace{.5in}
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=1\textwidth]{SetupLayers.PNG}
+\caption{Layers Setup}
+\end{figure}
+\clearpage
+%
+%
+%
+\subparagraph[Select Layer Type ]{\Large Select Layer Type\texorpdfstring{\\}{}}
+(BSA Settings)
+\vspace{.75in}
+
+\noindent{\LARGE \textbf{Setup Layers} $\Rightarrow$ \textbf{Select Image} $\Rightarrow$ \textbf{OK}}
+\vspace{.5in}
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=1\textwidth]{SelectLayerTypeImage.PNG}
+\caption{Select Layer Type}
+\end{figure}
+\clearpage
+%
+%
+%
+\subparagraph[Add Layer From Local Drive]{\Large Add Layer From Local Drive\texorpdfstring{\\}{}}
+(BSA Settings)
+\vspace{.75in}
+
+\noindent{\Large \textbf{Navigate to Image File} $\Rightarrow$ \textbf{Open}}
+\vspace{.5in}
+
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=1\textwidth]{AddFromLocalDrive.PNG}
+\caption{Add Layer From Drive}
+\end{figure}
+{\Large The new image is in the map}
+\clearpage
+\end{document}
