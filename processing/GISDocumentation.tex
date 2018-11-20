@@ -1,4 +1,5 @@
-\documentclass[openany]{book}  % Use a real document class for the main
+%\documentclass[openany]{book}  %
+\documentclass[twoside]{book}  %
 
 \input{preamble}
 \input{glossaryEntries}
@@ -7,8 +8,8 @@
 \usepackage{standalone} %
 
 %\setcounter{tocdepth}{5}  % subparagraph and down
-\setcounter{tocdepth}{4}  % paragraph and down
-%\setcounter{tocdepth}{3}  % subsubsection and down
+%\setcounter{tocdepth}{4}  % paragraph and down
+\setcounter{tocdepth}{3}  % subsubsection and down
 %\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
 %\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
 %\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
@@ -21,19 +22,23 @@
 %--------------------
 %		Front Section
 %--------------------
-\begin{document}% Document Begins
-
+\begin{document} % Document Begins
+\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for first part
+\pagestyle{empty} % Clear headers and footers for TOC
 \frontmatter % turns off chapter numbering and uses roman numerals for page numbers
 
-\maketitle % creates title page and blank page after title page
+\maketitle % creates title page and blank page??? after title page
 
 \tableofcontents % creates TOC
+
+\newgeometry{top=1.5in, bottom=1.5in, outer=2.5in, inner=1.25in, heightrounded, marginparwidth=1.5in, marginparsep=.25in} % https://en.wikibooks.org/wiki/LaTeX/Footnotes_and_Margin_Notes
 
 %-------------------
 %		Main Section
 %-------------------
-\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
 
+\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\pagestyle{fancy} % Sets Headers and Footers
 %\part*{Introduction} % * makes this part unnumbered
 
 \part{Brand} % Creates Book Part.  (Title page, blank page, then 1st chapter)

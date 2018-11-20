@@ -19,9 +19,85 @@
 \subsection{Control Points}
 \medskip
 \subsubsection[Editing Control Points]{Maintaining Cadastral Control Points}
+\vspace{.1in}
 
-\paragraph*{Steps}
+\paragraph[Fabric Point Move to Feature Addin]{}\textbf{{\Large Install the Fabric Point Move to Feature Addin}}
+\vspace{.1in}
+
+{\Large $\Rightarrow$ Push the Configure Button}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.6\textwidth]{fabricPointMoveToFeatureAddIn.png}
+
+\caption{Fabric Point Move to Feature Addin}
+\end{figure}
+%
+%
+%\paragraph[Configure Addin]{\Large Configure Addin\texorpdfstring{\\}{}}
+\paragraph[Configure Addin]{}\textbf{\Large Configure Addin}
+\vspace{.1in}
+
+\begin{itemize}
+
+\item Set Reference Feature Layer to TargetPoints
+\item Use point to point matching
+\item Use point layer field: PointID
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.75\textwidth]{FabricPointMoveToFeatureConfigMethod.png}
+\caption{Addin Configuration Method}
+\end{figure}
+%
+%
+\clearpage
+%
+%
+%
+
+
 \begin{verbatim}
+
+
+  2
+  Configure Fabric Point Move to Feature addin Selected Feature Options
+  Move Fabric Points of the Selected Parcels
+  Push OK
+  FabricPointMoveToFeatureConfigSelectedFeatures.png
+
+  3
+  Identify position of new control point
+  Select TargetPoints in Create Features Templates
+  Create Target Point at location for new Control Point
+  createTargetPoint.png
+
+  4
+  Use Identify tool to find ObjectID of Control Point that is to be moved
+  Select the Target point PointID of the point its moving to
+  Edit Target Point pointID attribute to match associated fabric control point OID
+  updateTargetPointPointID.png
+
+  4.5
+  Push move point button
+  moveControlPoint.png
+
+  5
+  Open maintain control point tool
+  Select control Point
+  push edit button
+  maintainControlPointTool.png
+
+  6
+  Use Identify Tool to View X and Y vals for the point
+  copy x and y value from point(attribute window) to Control (maintain control tool)
+  push update
+  Save Edits
+  transferCoordinates.png
+
+
+
 
 Identify position of new control point
 Place Taarget Point
@@ -31,7 +107,7 @@ Zoom to Control point
 Open maintain control point tool
 Select control Point
 edit button
-copy x and y value from 
+copy x and y value from
 identify tool x and y of points
 update button
 

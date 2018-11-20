@@ -15,12 +15,21 @@
 \usepackage{glossaries} % must be after hyperref
 \usepackage{blindtext} % enables ipsum loerem "dummy" text blocks
 \usepackage{enumitem} % enables control over enumerate, itemize, and description
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make the lines in the title page and elsewhere
+\usepackage{xcolor}
+\usepackage{marginnote}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make horizontal graphic lines
+%\usepackage{geometry}
 
-\graphicspath{{img/}{GIS_ChampionSection/img/}{awardsChapter/GIS_ChampionSection/img/}{brandPart/awardsChapter/GIS_ChampionSection/img/}{img/}{pairedProgSection/img/}{methodChapter/pairedProgSection/img/}{methodPart/methodChapter/pairedProgSection/img/}{documentationSection/img/}{methodChapter/documentationSection/img/}{methodPart/methodChapter/documentationSection/img/}{docStorageOrgSection/img/}{methodChapter/docStorageOrgSection/img/}{methodPart/methodChapter/docStorageOrgSection/img/}{QGisSection/img/}{toolsChapter/QGisSection/img/}{servicePart/toolsChapter/QGisSection/img/}{ESRISection/img/}{toolChapter/ESRISection/img/}{servicePart/toolChapter/ESRISection/img/}{../../../../source/}{../../source/}{servicePart/applicationsChapter/treasurerSection/img/}{servicePart/toolsChapter/gisAdminSection/img/}{gisAdminSection/img/}{servicePart/toolsChapter/bsaSupportSection/img/}}
+
+\usepackage[top=1.5in, bottom=1.5in, outer=2.5in, inner=1.25in, heightrounded, marginparwidth=1.5in, marginparsep=.25in]{geometry}
+
+
+\graphicspath{{img/}{GIS_ChampionSection/img/}{awardsChapter/GIS_ChampionSection/img/}{brandPart/awardsChapter/GIS_ChampionSection/img/}{img/}{pairedProgSection/img/}{methodChapter/pairedProgSection/img/}{methodPart/methodChapter/pairedProgSection/img/}{documentationSection/img/}{methodChapter/documentationSection/img/}{methodPart/methodChapter/documentationSection/img/}{docStorageOrgSection/img/}{methodChapter/docStorageOrgSection/img/}{methodPart/methodChapter/docStorageOrgSection/img/}{QGisSection/img/}{toolsChapter/QGisSection/img/}{servicePart/toolsChapter/QGisSection/img/}{ESRISection/img/}{toolChapter/ESRISection/img/}{servicePart/toolChapter/ESRISection/img/}{../../../../source/}{../../source/}{servicePart/applicationsChapter/treasurerSection/img/}{servicePart/toolsChapter/gisAdminSection/img/}{gisAdminSection/img/}{servicePart/toolsChapter/bsaSupportSection/img/}{servicePart/toolsChapter/coreDataSection/img/}}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{fancyhdr} % Adds control of headers and footers
-\pagestyle{fancy} % Set all pages to fancy
+%\pagestyle{fancy} % Set all pages to fancy
 %
 % Fancy Header book wide style
 %     Code Key: E : Even page, O : Odd page, L Left field,  C : Center field,
@@ -65,4 +74,13 @@
 
 %\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 
+
+%\newcommand{\marginText}{\fontfamily{qcr}\fontseries{m}\fontsize{9}{11}\fontshape{it}\selectfont}
+\newcommand{\marginText}{\fontfamily{cmr}\fontseries{sb}\color{red}\fontsize{9}{12}\selectfont}
+
 %%%%%
+%redefining paragraphs
+%\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+%                                    {3.25ex \@plus1ex \@minus.2ex}%
+%                                    {-1in}%
+%                                    {\normalfont\normalsize\bfseries}}
