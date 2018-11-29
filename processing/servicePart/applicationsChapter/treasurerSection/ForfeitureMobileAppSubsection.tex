@@ -1,21 +1,47 @@
-\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
-
+\documentclass[class=book , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+%
 \input{../../../preamble}
-
-\def\titlename{Forfeiture Data Collection\\ \medskip\large Mobile App with Collector for ArcGIS}
-
-\title{\input{../../../commonTitle}}  % inputs common title
+%
 \setcounter{tocdepth}{5}  % subparagraph and down
+%
+\def\titlename{Forfeiture Data Collection\\ \medskip\large Mobile App with Collector for ArcGIS}
+%
+\title{\input{../../../commonTitle}}  % inputs common title
+%
 \begin{document}% document begins
-
+%
+% Local Compile Conditionals begin
+%
 \ifstandalone
+%
+\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for first part
+%
+\pagestyle{empty} % Clear headers and footers for TOC
+%
+\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+%
 \maketitle % creates title page
+%
 \clearpage
+%
+\restoregeometry % reverts geometry back to original
+%
 \tableofcontents % creates TOC
+%
 \clearpage
+%
+\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+%
+\pagestyle{fancy} % Sets Headers and Footers
+%
 \fi
-
-\subsection{Forfeiture Data Collection}
+%
+% Local Compile Conditionals end
+%
+%
+%
+% \IfStandalone{<code for standalone mode>}{<code for main document>}
+\IfStandalone{\subsection{Forfeiture Data Collection}}{\subsection[Forfeiture Data Collector][Forfeiture Data Collection Application]{Forfeiture Data Collection}}
 
 \subsubsection{Problem and Analysis}
 
@@ -34,6 +60,7 @@ Tax Forfeiture Application, referred to here as: \textbf{Forfeiture App} will fa
 \begin{itemize} %2
 
 \item Mobile Interface will:
+
 
 \begin{itemize} %3
 
@@ -310,9 +337,9 @@ A new dataset for forfeiture parcels must be created each year.
 
 \begin{itemize}
 \item {\Large Use the Delete Feature Tools}
-\item {\Large In the tool:
+\item {\Large In the tool:}
 \begin{itemize}
-\item Select {\Large}ACPub.DBO.ForfeitureParcels}
+\item Select ACPub.DBO.ForfeitureParcels
 \end{itemize}
 \end{itemize}
 \vspace{.25in}
@@ -393,15 +420,17 @@ WHERE forf_year = 2019
 
 \begin{itemize}
 %
+\item Press Finish
 % Single Figure No Wrap
 %
+
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.95\textwidth]{ForfeitureQueryLayerUID.PNG}
 \caption{Query Layer Unique ID}
 \end{figure}
 %
-\item Press Finish
+%\item Press Finish
 %
 \end{itemize}
 %
@@ -464,7 +493,7 @@ Create new join to ACParcelsCombined of forfeitures based on parcel numbers
 \vspace{.25in}
 
 \begin{itemize}
-\item Right click on joined feature class in TOC and choose export
+\item Right click \ding{212} on joined feature class in TOC and choose export
 
 %
 % Single Figure No Wrap
@@ -475,7 +504,7 @@ Create new join to ACParcelsCombined of forfeitures based on parcel numbers
 \caption{Export Joined Features}
 \end{figure}
 \item choose location and press OK
-\end{itemize}  
+\end{itemize}
 \clearpage
 %
 %

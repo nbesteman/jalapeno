@@ -4,6 +4,8 @@
 %Calling the class with no options is equivalent to:
 %\documentclass[letterpaper,10pt,twoside,onecolumn,openright,final]{memoir}
 %
+\input{supplementalPreamble}
+%
 \input{preamble}
 %
 \input{glossaryEntries}
@@ -12,14 +14,14 @@
 %
 \usepackage{standalone} %
 %
-%\setcounter{tocdepth}{5}  % subparagraph and down
+\setcounter{tocdepth}{5}  % subparagraph and down
 %\setcounter{tocdepth}{4}  % paragraph and down
 %\setcounter{tocdepth}{3}  % subsubsection and down
-\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
+%\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
 %\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
 %\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
 %
-\def\titlename{What We Do} % Sets book title
+%\def\titlename{What We Do} % Sets book title
 %
 \title{\input{commonTitle}}  % Inputs common title page
 %
@@ -40,9 +42,12 @@
 %
 \maketitle % creates title page and blank page??? after title page
 \clearpage
-\tableofcontents % creates TOC
 %
 \restoregeometry % reverts geometry back to original
+%
+\tableofcontents % creates TOC
+%
+\clearpage
 %
 %-------------------
 %		Main Section
@@ -53,17 +58,22 @@
 %\part*{Introduction} % * makes this part unnumbered
 %
 %\part{Brand} % Creates Book Part.  (Title page, blank page, then 1st chapter)
-
+\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
 \part[Brand]{Brand\\{\includegraphics[scale=.45]{GIS_Logo_better.jpg}}}
+\restoregeometry % reverts geometry back to original
 %
-
 \subimport{brandPart/}{awardsChapter.tex}
 %
+%
+\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
 \part{Methods}
+\restoregeometry % reverts geometry back to original
 \subimport{methodPart/}{documentationChapter.tex}
 \subimport{methodPart/}{teamConceptChapter.tex}
 %
+\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
 \part{Service}
+\restoregeometry % reverts geometry back to original
 \subimport{servicePart/}{applicationsChapter.tex}
 \subimport{servicePart/}{toolsChapter.tex}
 %
@@ -71,8 +81,11 @@
 %		Back Section
 %-------------------
 %
+\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
 \part{Resources}
+\restoregeometry % reverts geometry back to original
 \subimport{resourcesPart/}{appendices.tex}
+%
 %
 \backmatter % does \clearpage
 %

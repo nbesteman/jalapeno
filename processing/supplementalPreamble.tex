@@ -1,0 +1,16 @@
+% Switches
+\renewcommand*{\bibname}{References} % renames the bibliography
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%These dont work in the lower level standalone book compiles
+\newcommand*{\shortcenter}[1]{%
+\sethangfrom{\noindent ##1}%
+\normalfont\boldmath\bfseries%\Largefont\boldmath\bfseries
+\centering
+\parbox{3in}{\centering #1}\par}
+%%%
+\setsubsubsecheadstyle{\shortcenter}
+\renewcommand{\setbeforesubsubsecskip}{-120pt plus -5pt minus -1pt}
+\renewcommand{\midchapskip}{10pt} % defines vspace bw <Chapter#> and <Chapter Title> default is 20pt
+\renewcommand{\afterchapskip}{20pt} % defines vspace bw <Chapter Title> and <Section Heading> defauklt uis 40pt
+\def\titlename{What We Do} % Sets book title
