@@ -295,47 +295,55 @@ phone screenshots
 \subsubsection{Administrative Manual}
 \vspace{.25in}
 
-\paragraph{Annual Setup}
+\paragraph[Annual Setup]{Annual Setup \texorpdfstring{\\}{}}
+
+A new dataset for forfeiture parcels must be created each year.
+
+\noindent The forfeiture information comes from BSA Forfeitures.net and the parcel geometry and other attributes comes from ACParcelsCombined.
 \vspace{.25in}
 
-\noindent{\Large To Create the  new ForfeitureParcels dataset}
+\noindent To get the BSA Forfeiture data, create a table query for a certain year.
 \vspace{.25in}
 
-\noindent {\Large Use the Delete Feature Tools}
+\noindent{\Large First, clear the features from the existing ForfeitureParcels dataset}
 \vspace{.25in}
 
-\noindent The tool will delete features in the feature class and attachments table}
-\vspace{.3in}
-
-\noindent In the tool: {\Large Select ACPub.DBO.ForfeitureParcels}
+\begin{itemize}
+\item {\Large Use the Delete Feature Tools}
+\item {\Large In the tool:
+\begin{itemize}
+\item Select {\Large}ACPub.DBO.ForfeitureParcels}
+\end{itemize}
+\end{itemize}
 \vspace{.25in}
-
-\noindent{\Large Press OK}
-\vspace{.5in}
 
 %
 % Single Figure No Wrap
 %
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=1\textwidth]{AnnualDeleteFeatures.png}
+    \includegraphics[width=.9\textwidth]{AnnualDeleteFeatures.png}
 \caption{Delete Features}
 \end{figure}
+\vspace{.25in}
+
+\noindent{\Large Press OK}
 \clearpage
 %
 %
 %
-\subparagraph[Add Query Layer ]{\Large Add Query Layer\texorpdfstring{\\}{}}
-\noindent {\Large In ArcMap:}
-\vspace{.3in}
+%
+%\subparagraph[Add Query Layer]{}
+{\LARGE Add Query Layer}
+\vspace{.25in}
 
-\noindent {\Large Open the New Query Layer Dialog}
-\vspace{.3in}
+\begin{itemize}
+\item In ArcMap $\Rightarrow$ {\Large Open the New Query Layer Dialog}
+\item {\Large File $\Rightarrow$ Add Data $\Rightarrow$ Add Query Layer}
+\item {\Large Select your connection}
+\end{itemize}
+\vspace{.25in}
 
-{\LARGE Go to $\Rightarrow$ File $\Rightarrow$ Add Data $\Rightarrow$ Add Query Layer}
-\vspace{.3in}
-
-\noindent In the connection dropdown, select your connection
 %
 % Single Figure No Wrap
 %
@@ -344,19 +352,25 @@ phone screenshots
     \includegraphics[width=.95\textwidth]{NewQueryLayerDialog.png}
 \caption{New Query Layer Dialog}
 \end{figure}
+\begin{verbatim}
+Query Text:
+SELECT [parcelnumber] FROM [D005ALLEGAN].[dbo].[Forfeitures]
+WHERE forf_year = 2019
+\end{verbatim}
 \clearpage
 %
 %
 %
-\subparagraph{Create Query in ArcGIS to SQL Database}
-\subparagraph[Details of the Query Layer]{\Large Details of the Query Layer}
-\subparagraph*{Enter into the tool}
+{\LARGE Details of the Query Layer}
+\vspace{.25in}
+
+{\Large Enter into the tool}
 \begin{itemize}
   \item Choose connection
   \item Name the query
   \item Enter SQl query
-  \item Press Next
-\end{itemize}
+%  \item Press Next
+%\end{itemize}
 %
 % Single Figure No Wrap
 %
@@ -365,12 +379,19 @@ phone screenshots
     \includegraphics[width=.75\textwidth]{ForfeitureQueryLayerDetails.PNG}
 \caption{Forfeiture Query Layer Details}
 \end{figure}
+%
+\item Press Next
+%
+\end{itemize}
+%
 \clearpage
 %
 %
 %
-\subparagraph[Unique Identifier]{\Large Select a Unique Identifier}
-\subparagraph*{}
+{\LARGE Select a Unique Identifier}
+\vspace{.25in}
+
+\begin{itemize}
 %
 % Single Figure No Wrap
 %
@@ -379,7 +400,182 @@ phone screenshots
     \includegraphics[width=.95\textwidth]{ForfeitureQueryLayerUID.PNG}
 \caption{Query Layer Unique ID}
 \end{figure}
+%
+\item Press Finish
+%
+\end{itemize}
+%
 \clearpage
+%
+%
+%
+{\LARGE Table is added to the map}
+\vspace{.25in}
+
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{forfeituresTableAdded.PNG}
+\caption{Forfeiture Table Added}
+\end{figure}
+\clearpage
+%
+%
+%
+{\LARGE Add Parcels Layer to the map}
+\vspace{.25in}
+
+\noindent Add ACParcelsCombined to the map to provide parcel geometry and attributes
+
+\vspace{.25in}
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{ParcelLayerAdded.PNG}
+\caption{Parcels Layer Added}
+\end{figure}
+\clearpage
+%
+%
+%
+{\LARGE Create Join}
+\vspace{.25in}
+
+Create new join to ACParcelsCombined of forfeitures based on parcel numbers
+\vspace{.25in}
+
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{joinToParcelsCombined.PNG}
+\caption{Join Parcels}
+\end{figure}
+\clearpage
+%
+%
+%
+{\LARGE Export Joined Features to a temp location}
+\vspace{.25in}
+
+\begin{itemize}
+\item Right click on joined feature class in TOC and choose export
+
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{exportJoinedFeatures.png}
+\caption{Export Joined Features}
+\end{figure}
+\item choose location and press OK
+\end{itemize}  
+\clearpage
+%
+%
+%
+\subparagraph[Load data to forfeitureParcels]{\Large Load data from temp location to forfeitureParcels}
+\subparagraph*{}
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{LoadData.PNG}
+\caption{Load Data 1}
+\end{figure}
+\clearpage
+%
+%
+%
+\subparagraph[push next]{\Large push next}
+\subparagraph*{}
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.95\textwidth]{LoadData2.PNG}
+\caption{Load Data 2}
+\end{figure}
+\clearpage
+%
+%
+%
+\subparagraph[Match these fields]{\Large Match these fields}
+\subparagraph*{}
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.5\textwidth]{fieldMatch1.PNG}
+\caption{Match Fields}
+\end{figure}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.5\textwidth]{fieldMatch2.PNG}
+\caption{Match Fields}
+\end{figure}
+\clearpage
+%
+%
+%
+\subparagraph[push next]{\Large push next}
+\subparagraph*{}
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.75\textwidth]{LoadData4.PNG}
+\caption{Load Data 3}
+\end{figure}
+push Finish
+\clearpage
+%
+%
+%
+\subparagraph[Data Setup]{\Large Data Setup}
+Register as versioned and Add Global IDs
+\subparagraph*{}
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.5\textwidth]{RegisterAsVersioned.PNG}
+\caption{Setup Data}
+\end{figure}
+push Finish
+\clearpage
+%
+%
+%
+\subparagraph[Create Attachments]{\Large Create Attachments\texorpdfstring{\\}{}}
+
+{\LARGE Right Click $\Rightarrow$ Manage $\Rightarrow$ Add Attachments}
+\vspace{.3in}
+
+\subparagraph*{}
+%
+% Single Figure No Wrap
+%
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.5\textwidth]{createAttachments.PNG}
+\caption{Create Attachments}
+\end{figure}
+\clearpage
+%
+%
+%
 %
 %
 %

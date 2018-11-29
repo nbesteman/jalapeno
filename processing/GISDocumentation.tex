@@ -1,5 +1,8 @@
 %\documentclass[openany]{book}  % Two sided without blank pages following the title pages
-\documentclass[twoside]{book}  % Two sided with blank pages following the title pages
+%\documentclass[twoside]{book}  % Two sided with blank pages following the title pages
+\documentclass[twoside]{memoir}  % Two sided without blank pages following the title pages
+%Calling the class with no options is equivalent to:
+%\documentclass[letterpaper,10pt,twoside,onecolumn,openright,final]{memoir}
 %
 \input{preamble}
 %
@@ -36,7 +39,7 @@
 \frontmatter % turns off chapter numbering and uses roman numerals for page numbers
 %
 \maketitle % creates title page and blank page??? after title page
-%
+\clearpage
 \tableofcontents % creates TOC
 %
 \restoregeometry % reverts geometry back to original
@@ -49,8 +52,11 @@
 \pagestyle{fancy} % Sets Headers and Footers
 %\part*{Introduction} % * makes this part unnumbered
 %
-\part{Brand} % Creates Book Part.  (Title page, blank page, then 1st chapter)
+%\part{Brand} % Creates Book Part.  (Title page, blank page, then 1st chapter)
+
+\part[Brand]{Brand\\{\includegraphics[scale=.45]{GIS_Logo_better.jpg}}}
 %
+
 \subimport{brandPart/}{awardsChapter.tex}
 %
 \part{Methods}
