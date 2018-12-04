@@ -1,16 +1,54 @@
-% Switches
+%
+% Preamble items for the main document
+%
+% Main document must be of doc class Memoir to use these options
+%
+%
 \renewcommand*{\bibname}{References} % renames the bibliography
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%These dont work in the lower level standalone book compiles
-\newcommand*{\shortcenter}[1]{%
-\sethangfrom{\noindent ##1}%
-\normalfont\boldmath\bfseries%\Largefont\boldmath\bfseries
-\centering
-\parbox{3in}{\centering #1}\par}
-%%%
-\setsubsubsecheadstyle{\shortcenter}
-\renewcommand{\setbeforesubsubsecskip}{-120pt plus -5pt minus -1pt}
+%  \newcommand{command}[arguments][optional]{definition}
+%  page 44 of Latex Beginners Guide
+
+%  Defines \shortcenter command %%%Page 98 Memoir Doc
+%\newcommand*{\shortcenter}% {command}
+%[1]% [arguments]
+%{\sethangfrom{\noindent ##1}%   {Definition...
+%\normalfont\boldmath\bfseries\large
+%\Largefont\boldmath\bfseries
+%\MakeUppercase
+%\centering
+%\parbox{3in}{\centering #1}\par}%  ...Definition}  \parbox[alignment]{width}{text}
+%
+%
+%\setsubsubsecheadstyle{\shortcenter}% pg 96 Memoir Documentation
+%
+%\setsubsubsecheadstyle{\large\centering\MakeUppercase\bfseries}% pg 96 Memoir Documentation
+%\setsecheadstyle{\color{violet}}%
+\setsubsecheadstyle{\texttt\Large}%
+\setsubsubsecheadstyle{\sffamily\Large\centering\color{blue}}%
+\setparaheadstyle{\large\color{teal}}%
+\setsubparaheadstyle{\color{magenta}}%
+%black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow.
+
+\setaftersecskip{5pt}
+\setaftersubsecskip{5pt}
+\setaftersubsubsecskip{5pt}
+\setafterparaskip{5pt}
+\setaftersubparaskip{5pt}
+
+\setbeforesecskip{3.5ex plus 1ex minus .2ex}
+\setbeforesubsecskip{3.25ex plus 1ex minus .2ex}
+\setbeforesubsubsecskip{3.25ex plus 1ex minus .2ex}
+\setbeforeparaskip{3.25ex plus 1ex minus .2ex}
+\setbeforesubparaskip{3.25ex plus 1ex minus .2ex}
+
+%\setsubsecheadstyle{\scshape\raggedright}
+
+%\renewcommand{\setbeforesubsubsecskip}{-120pt plus -5pt minus -1pt}
+%
 \renewcommand{\midchapskip}{10pt} % defines vspace bw <Chapter#> and <Chapter Title> default is 20pt
+%
 \renewcommand{\afterchapskip}{20pt} % defines vspace bw <Chapter Title> and <Section Heading> defauklt uis 40pt
+%
 \def\titlename{What We Do} % Sets book title

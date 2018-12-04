@@ -1,21 +1,4 @@
-% Switches
-%\renewcommand*{\bibname}{References} % renames the bibliography
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%These dont work in the lower level standalone book compiles
-%\newcommand*{\shortcenter}[1]{%
-%\sethangfrom{\noindent ##1}%
-%\normalfont\boldmath\bfseries
-%\Largefont\boldmath\bfseries
-%\centering
-%\parbox{3in}{\centering #1}\par}
-%%%
-%\setsubsubsecheadstyle{\shortcenter}
-%\renewcommand{\setbeforesubsubsecskip}{-120pt plus -5pt minus -1pt}
-%\renewcommand{\midchapskip}{10pt} % defines vspace bw <Chapter#> and <Chapter Title> default is 20pt
-%\renewcommand{\afterchapskip}{20pt} % defines vspace bw <Chapter Title> and <Section Heading> defauklt uis 40pt
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Tried and True Preamble Section
@@ -23,7 +6,6 @@
 \usepackage{float} % Required for specifying the exact location of a figure or table
 \usepackage{wrapfig} % Provides environment to wrap figures with text
 \usepackage{graphicx} % Required for including images
-\usepackage[pdftex,breaklinks,colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=red,linktocpage=false,pagebackref=true,filecolor=magenta]{hyperref}% http://www.tug.org/applications/hyperref/manual.html#x1-100003.6
 \usepackage{cite} % improves citation handling
 %\usepackage[toc,title,page]{appendix}
 \usepackage{pdfpages} % enables loading a pdf into the doc
@@ -31,10 +13,16 @@
 \usepackage{glossaries} % must be after hyperref
 \usepackage{blindtext} % enables ipsum loerem "dummy" text blocks
 \usepackage{enumitem} % enables control over enumerate, itemize, and description
-\usepackage{xcolor}
+\usepackage[dvipsnames]{xcolor}%black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow.
 \usepackage{marginnote}
 %\usepackage{geometry}
 \usepackage[top=1.5in, bottom=1.5in, outer=2.5in, inner=1.25in, heightrounded, marginparwidth=1.5in, marginparsep=.25in]{geometry} % Sets page geometry
+\usepackage{fancyhdr} % Adds control of headers and footers
+%%%%  Testing
+\usepackage{pifont}
+\usepackage{anyfontsize}
+%%%%%%%%%%%%%
+
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make horizontal graphic lines
 \newcommand{\marginText}{\fontfamily{cmr}\fontseries{b}\color{red}\fontsize{9}{12}\selectfont}
 \newcommand{\helv}{\fontfamily{phv}\fontseries{b}\fontsize{9}{11}\selectfont}
@@ -45,7 +33,7 @@
 \graphicspath{{img/}{GIS_ChampionSection/img/}{awardsChapter/GIS_ChampionSection/img/}{brandPart/awardsChapter/GIS_ChampionSection/img/}{img/}{pairedProgSection/img/}{methodChapter/pairedProgSection/img/}{methodPart/methodChapter/pairedProgSection/img/}{documentationSection/img/}{methodChapter/documentationSection/img/}{methodPart/methodChapter/documentationSection/img/}{docStorageOrgSection/img/}{methodChapter/docStorageOrgSection/img/}{methodPart/methodChapter/docStorageOrgSection/img/}{QGisSection/img/}{toolsChapter/QGisSection/img/}{servicePart/toolsChapter/QGisSection/img/}{ESRISection/img/}{toolChapter/ESRISection/img/}{servicePart/toolChapter/ESRISection/img/}{../../../../source/}{../../source/}{servicePart/applicationsChapter/treasurerSection/img/}{servicePart/toolsChapter/gisAdminSection/img/}{gisAdminSection/img/}{servicePart/toolsChapter/bsaSupportSection/img/}{servicePart/toolsChapter/coreDataSection/img/}{../img}}
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage{fancyhdr} % Adds control of headers and footers
+%\usepackage{fancyhdr} % Adds control of headers and footers
 %
 %     Code Key: E : Even page, O : Odd page, L Left field,  C : Center field,
 %               R : Right field, H : Header, F : Footer
@@ -89,5 +77,9 @@
 %\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 \newcommand{\titleGeometry}{\geometry{top=1in,bottom=1in,inner=1.5in,outer=1.5in}} % Sets geometry for first part}
 %\newcommand{\titleGeometry}{\geometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for first part}
-\usepackage{pifont}
-\usepackage{anyfontsize}
+
+\usepackage[pdftex,breaklinks,colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=red,linktocpage=false,pagebackref=true,filecolor=magenta]{hyperref}% http://www.tug.org/applications/hyperref/manual.html#x1-100003.6
+\hypersetup{pdfauthor={Allegan County GIS Services},% Page 248 in Latex Beinners Guide
+pdftitle={What We Do},
+pdfsubject={Documentation of everything},
+pdfkeywords={documentation,gis}}
