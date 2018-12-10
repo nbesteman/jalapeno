@@ -1,4 +1,4 @@
-\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+\documentclass[class=book , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
 
 \input{../../../preamble}
 
@@ -30,7 +30,7 @@
 \subsubsection[Fixing Damaged Services]{\Large Fixing Damaged Services}
 
 \paragraph[Remove Lock Files]{Removing Lock Files \texorpdfstring{\\}{}}
-A blog about it 
+A blog about it
 \href{https://community.esri.com/thread/103710}{https://community.esri.com/thread/103710}
 
 \begin{verbatim}
@@ -38,17 +38,109 @@ on juniper
 C:\arcgisserver\config-store\services\ParcelViewer2\
 PV2Adresses.MapServer\startup\JUNIPER.ALLEGANCOUNTY.ORG
 
-This method works. 
+This method works.
 
 Steps:
 
 1)stop arcgis server services.
 
-2)delete the lock files(*.glock and *.rlock ) 
+2)delete the lock files(*.glock and *.rlock )
     in arcgisserver\config-store.
 
 3) restart arcgis server service.
 
 4)stop the pending stopping service and then start it.
 \end{verbatim}
+
+\subsubsection[Running ArcGIS Server Account utility]{Running ArcGIS Server Account utility}
+
+\paragraph[Error:]{Error: \texorpdfstring{\\}{}}
+
+\textbf{Service is currently being configured by another administrative operation}
+
+
+Remedy:
+This tech support article applies:
+
+\begin{verbatim}
+
+https://support.esri.com/en/technical-article/000015549
+
+\end{verbatim}
+
+Our instuctions
+Log into Juniper
+windows R mstsc  juniper
+Use personal network credentials
+
+
+Launch the Configure ArcGIS Server account utility
+ArcGISServerAccountUtility.PNG
+
+
+Use these credentials
+\begin{verbatim}
+PW:  @lleganGIS2015
+\end{verbatim}
+in this:
+AccountUtilityLogin.PNG
+
+
+In the utility paste these paths:
+gisDirectoryLocations.PNG
+in this:
+
+
+\begin{verbatim}
+
+C:\arcgisserver\directories
+C:\arcgisserver\config-store
+C:\arcgisserver\logs
+\end{verbatim}
+like this:
+
+gisDirectoryLocationsEntered.PNG
+
+
+Do not export Config File
+doNotExportConfigFile.PNG
+
+
+press configure
+configureAccount.png
+
+
+Search For service Manger
+searchForServiceManager.PNG
+
+
+While the tool runs, open the service manager
+windows  search services
+openServicesManager.png
+
+
+When the tool completes, press finish
+then in services
+select the ArcGIS Server service and restart the service.  (Randy had to do this)
+arcGisServiceInServicesManager.png
+
+
+mapservices would not stop so I try this:
+\begin{verbatim}
+
+https://support.esri.com/en/technical-article/000012685
+\end{verbatim}
+
+Check permission levels for the arcGIS account
+ArcGisServerPermissions.PNG
+
+
+If necessary, add the arcgis user to the permissions on the folders
+ArcGisServerPermissionsAddUser.PNG
+
+
+
+
+
+
 \end{document}

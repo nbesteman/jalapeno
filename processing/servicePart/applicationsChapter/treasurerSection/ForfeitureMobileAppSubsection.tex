@@ -41,52 +41,58 @@
 %
 %
 % \IfStandalone{<code for standalone mode>}{<code for main document>}
-\IfStandalone{\subsection{Forfeiture Data Collection}}{\subsection[Forfeiture Data Collector][Forfeiture Data Collection Application]{Forfeiture Data Collection}}
-
+\IfStandalone{\subsection{Forfeiture Data Collection}}{\subsection[Forfeiture Data Collector][Forfeiture Data Collection Application]{Forfeiture Data Collector Application}}
+%
 \subsubsection{Problem and Analysis}
-
+%
+\begin{multicols}{2}
+  %
 \paragraph{Background}
-Treasurer department has an annual responsibility to properly document the tax forfeiture process.  The LIS Department built an application in MS Access and MapInfo that consumed a daily export from BSA and was deployed to the field on a laptop.  A digital camera was used for site photos and later imported into the laptop.
+%
+\noindent Treasurer department has an annual responsibility to properly document the tax forfeiture process.  The LIS Department built an application in MS Access and MapInfo that consumed a daily export from BSA and was deployed to the field on a laptop.  A digital camera was used for site photos and later imported into the laptop.
+%
 \paragraph{Statement of Problem}
-Current Tax Forfeiture workflow is built on MapInfo software which has been replaced by ESRI software.  The Forfeiture data collection application must be recreated in the ESRI framework.
-
+%
+\noindent The current Tax Forfeiture workflow is built on MapInfo software and MS Access amd executed on a laptop pc.  Both MapInfo and MS Access are no longer supported in county workflows.  ESRI software can be used to rebuild the workflow.  \textit{Forfeiture Data Collector Application}, (\textbf{Forfeiture App}) must be recreated in the ESRI framework.
+%
 \paragraph{Analysis}
-Tax Forfeiture Application, referred to here as: \textbf{Forfeiture App} will facilitate:
-
-\begin{itemize} %1
-
-\item Mobile data collection on handheld device, referred to here as: \textbf{Mobile Interface}
-
-\begin{itemize} %2
-
-\item Mobile Interface will:
-
-
-\begin{itemize} %3
-
+%
+\noindent \textbf{Forfeiture App} will facilitate: \textit{Mobile data collection on a handheld device},: (\textbf{Mobile Interface}) and an \textit{in office workflow to complete data processing}, (\textbf{Pre and PostProcessing})
+%
+\subparagraph*{Mobile Interface will:}
+%
+\begin{itemize} %
+%
 \item Synchronize with data in the office (online)
-\item Navigate to forfeiture sites (offline)
+%
 \item Collect data and photos of forfeiture sites (offline)
+%
 \item Synchronize the collected data with data in the office (online)
-\end{itemize} %3
-
-\end{itemize} %2
-
-\item Daily form production and printing for each site visited with required data and images
-
-\end{itemize} %1
-
+%
+\end{itemize} %
+%
+\subparagraph*{Pre and Post Processing will:}
+%
+\begin{itemize} %
+%
+\item Produce and print a form for each site visited with required data and images
+%
+\end{itemize} %
+%
+\end{multicols}
+%
 \clearpage
 %
+\restoregeometry % reverts geometry back to original
 %
+\setlength{\headwidth}{\textwidth} % Set header width to textwidth
+\setlength{\footwidth}{\textwidth} % Set footer width
 %
 \subsubsection{Design}
-\paragraph{Overview}
+\paragraph[Overview]{Overview}
+\vspace{.20in}
 
-The Forfeiture App documents the Tax Forfeiture process
-\vspace{.25in}
-
-The key data set, is referred to here as: \textbf{Forfeiture Parcels}
+\noindent The key data set, is referred to here as: {\color{graphicOrange}{\Huge\textbf{Forfeiture Parcels}}}
 %
 % Single Figure
 %
@@ -102,50 +108,57 @@ The key data set, is referred to here as: \textbf{Forfeiture Parcels}
 \paragraph{Forfeiture App Summary}
 \vspace{.25in}
 
-Three parts of the daily routine:
+There are three parts to the daily routine:
 \begin{enumerate}
 \item \Large Preprocessing \normalsize(in the office):
-
+%
 \begin{itemize}
 \item Export current forfeiture list from BSA
 \item Update Forfeiture Parcels with BSA export
 \item Update Forfeiture Parcels with contaminated sites information
 \item Synchronize Forfeiture Parcels to Mobile Interface
 \end{itemize}
-
+%
 \item \Large Field data collection \normalsize with Mobile Interface:
-
+%
 \begin{itemize}
 \item Aids in navigation
 \item Provides a Checklist of data points for each site
 \item Attaches photos for each site
 \item Save results for synchronization in post-processing
 \end{itemize}
-
+%
 \item \Large Post-processing \normalsize (in the office)
-
+%
 \begin{itemize}
 \item Synchronize data and images collected in Mobile Interface to Forfeiture Parcels
 \item Export form for each site
 \item Print form for each site
 \item Update BSA data
-
+%
 \end{itemize}
+%
 \end{enumerate}
+%
 \clearpage
 %
 %
 %
+\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for first part
+\setlength{\headwidth}{\textwidth} % Set header width
+\setlength{\footwidth}{\textwidth} % Set footer width
 \paragraph{Technologies Used in The Forfeiture App}
-\subparagraph{BSA Data}Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
+\begin{multicols}{2}
+\subparagraph{BSA Data}\noindent Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
 
-\subparagraph{ArcGIS Desktop}Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network.
+\subparagraph{ArcGIS Desktop}\noindent Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network.
 
-\subparagraph{ArcGIS Collector}A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork. The user collects the necessary information on each forfeiture parcel in the field disconnected, and then uploads the changes when reconnected.
+\subparagraph{ArcGIS Collector}\noindent A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork. The user collects the necessary information on each forfeiture parcel in the field disconnected, and then uploads the changes when reconnected.
 
-\subparagraph{ArcGIS Enterprise Geodatabse}Live data from a publishing geodatabase (ACPub), running on SQL Server database server (acintsql01) provides access to Forfeiture Parcels
+\subparagraph{Enterprise Geodatabse}\noindent Live data from a publishing geodatabase (ACPub), running on SQL Server database server (acintsql01) provides access to Forfeiture Parcels
 
-\subparagraph{ArcGIS Portal Webmaps and Apps} Forfeiture Parcels is served as a feature service (REST service)  named TaxReversionParcels.  A webmap on Portal, called the Forfeiture Field Map consumes the TaxReversionParcels exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.
+\subparagraph{ArcGIS Portal} \noindent Forfeiture Parcels is served as a feature service (REST service)  named TaxReversionParcels.  A webmap on Portal, called the Forfeiture Field Map consumes the TaxReversionParcels exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.
+\end{multicols}
 %
 % Single Figure
 %
@@ -156,11 +169,15 @@ Three parts of the daily routine:
 \end{figure}
 \clearpage
 %
+\restoregeometry
+\setlength{\headwidth}{\textwidth} % Set header width
+\setlength{\footwidth}{\textwidth} % Set footer width
 %
 %
-\paragraph{Data Details}
-\subparagraph*{Data Location}
+%\paragraph{Data Details}
+\subsubsection{Data Details\texorpdfstring{\\}{}}
 %
+\noindent The data is located in a geodatabase called ACPUB.  ACPUB is on SQL Server ACINTSQL01.
 % Two Figures Wrapped
 %
 \begin{wrapfigure}{r}{0.6\textwidth}
@@ -175,20 +192,18 @@ Three parts of the daily routine:
 \includegraphics[width=.4\textwidth]{contaminationFeatureClass.png}
 \caption{Contamination Feature Class}
 \end{wrapfigure}
-The data is located in ACPUB.  ACPUB is a geodatabase on ACINTSQL01.
-\vspace{.5in}
+%
+\vspace{1in}
 
 Forfeiture Parcels Data
-\vspace{4in}
+\vspace{3in}
 
 Contamination Data
 \clearpage
 %
 %
 %
-\vspace{.5in}
-
-\paragraph{ForfeitureParcels Feature Class}Data Details:
+\paragraph{ForfeitureParcels Feature Class}
 \vspace{.5in}
 
 \begin{table}[htbp]
@@ -359,9 +374,7 @@ A new dataset for forfeiture parcels must be created each year.
 %
 %
 %
-%
-%\subparagraph[Add Query Layer]{}
-{\LARGE Add Query Layer}
+\paragraph[Add Query Layer]{Add Query Layer \texorpdfstring{\\}{}}
 \vspace{.25in}
 
 \begin{itemize}
@@ -388,10 +401,8 @@ WHERE forf_year = 2019
 %
 %
 %
-{\LARGE Details of the Query Layer}
-\vspace{.25in}
-
-{\Large Enter into the tool}
+\paragraph[Details of the Query Layer]{Details of the Query Layer \texorpdfstring{\\}{}}
+%
 \begin{itemize}
   \item Choose connection
   \item Name the query
@@ -403,7 +414,7 @@ WHERE forf_year = 2019
 %
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.75\textwidth]{ForfeitureQueryLayerDetails.PNG}
+    \includegraphics[width=.85\textwidth]{ForfeitureQueryLayerDetails.PNG}
 \caption{Forfeiture Query Layer Details}
 \end{figure}
 %
@@ -415,15 +426,14 @@ WHERE forf_year = 2019
 %
 %
 %
-{\LARGE Select a Unique Identifier}
-\vspace{.25in}
+\paragraph[Select a Unique Identifier]{Select a Unique Identifier\texorpdfstring{\\}{}}
 
 \begin{itemize}
 %
 \item Press Finish
 % Single Figure No Wrap
 %
-
+%
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.95\textwidth]{ForfeitureQueryLayerUID.PNG}
@@ -438,9 +448,7 @@ WHERE forf_year = 2019
 %
 %
 %
-{\LARGE Table is added to the map}
-\vspace{.25in}
-
+\paragraph[Table is added to the map]{Table is added to the map\texorpdfstring{\\}{}}
 %
 % Single Figure No Wrap
 %
@@ -453,9 +461,8 @@ WHERE forf_year = 2019
 %
 %
 %
-{\LARGE Add Parcels Layer to the map}
-\vspace{.25in}
-
+\paragraph[Add Parcels Layer to the map]{Add Parcels Layer to the map\texorpdfstring{\\}{}}
+%
 \noindent Add ACParcelsCombined to the map to provide parcel geometry and attributes
 
 \vspace{.25in}
@@ -471,10 +478,10 @@ WHERE forf_year = 2019
 %
 %
 %
-{\LARGE Create Join}
-\vspace{.25in}
-
-Create new join to ACParcelsCombined of forfeitures based on parcel numbers
+\paragraph[Create Join]{Create Join\texorpdfstring{\\}{}}
+%
+\noindent Create new join to ACParcelsCombined of forfeitures based on parcel numbers
+%
 \vspace{.25in}
 
 %
@@ -489,12 +496,11 @@ Create new join to ACParcelsCombined of forfeitures based on parcel numbers
 %
 %
 %
-{\LARGE Export Joined Features to a temp location}
-\vspace{.25in}
-
+{\LARGE }
+\paragraph[Export Joined Features to a temp location]{Export Joined Features to a temp location \texorpdfstring{\\}{}}
+%
 \begin{itemize}
 \item Right click \ding{212} on joined feature class in TOC and choose export
-
 %
 % Single Figure No Wrap
 %
@@ -537,27 +543,27 @@ Create new join to ACParcelsCombined of forfeitures based on parcel numbers
 %
 %
 %
-\subparagraph[Match these fields]{\Large Match these fields}
+\paragraph[Match these fields]{\Large Match these fields}
 \subparagraph*{}
 %
 % Single Figure No Wrap
 %
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.5\textwidth]{fieldMatch1.PNG}
-\caption{Match Fields}
+    \includegraphics[width=.65\textwidth]{fieldMatch1.PNG}
+\caption{Match Fields 1}
 \end{figure}
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.5\textwidth]{fieldMatch2.PNG}
-\caption{Match Fields}
+    \includegraphics[width=.65\textwidth]{fieldMatch2.PNG}
+\caption{Match Fields 2}
 \end{figure}
 \clearpage
 %
 %
 %
-\subparagraph[push next]{\Large push next}
-\subparagraph*{}
+\paragraph*{\Large push next}
+%\subparagraph*{}
 %
 % Single Figure No Wrap
 %
@@ -566,14 +572,26 @@ Create new join to ACParcelsCombined of forfeitures based on parcel numbers
     \includegraphics[width=.75\textwidth]{LoadData4.PNG}
 \caption{Load Data 3}
 \end{figure}
-push Finish
+%
+\paragraph*{\Large Push Finish}
+%
 \clearpage
 %
 %
 %
-\subparagraph[Data Setup]{\Large Data Setup}
+\paragraph[Data Setup]{\Large Data Setup\texorpdfstring{\\}{}}
 Register as versioned and Add Global IDs
-\subparagraph*{}
+\vspace{.2in}
+
+{\large Right Click $\Rightarrow$ Manage $\Rightarrow$ Register as Versioned}
+\vspace{.2in}
+
+and
+\vspace{.2in}
+
+{\large Right Click $\Rightarrow$ Manage $\Rightarrow$ Add Global IDs}
+\vspace{.2in}
+
 %
 % Single Figure No Wrap
 %
@@ -582,14 +600,16 @@ Register as versioned and Add Global IDs
     \includegraphics[width=.5\textwidth]{RegisterAsVersioned.PNG}
 \caption{Setup Data}
 \end{figure}
-push Finish
+%
+%\paragraph*{\Large }
+%
 \clearpage
 %
 %
 %
-\subparagraph[Create Attachments]{\Large Create Attachments\texorpdfstring{\\}{}}
+\paragraph[Create Attachments]{\Large Create Attachments\texorpdfstring{\\}{}}
 
-{\LARGE Right Click $\Rightarrow$ Manage $\Rightarrow$ Add Attachments}
+\noindent{\large Right Click $\Rightarrow$ Manage $\Rightarrow$ Add Attachments}
 \vspace{.3in}
 
 \subparagraph*{}
@@ -606,8 +626,6 @@ push Finish
 %
 %
 %
-%
-%
 \paragraph[Setup Users in ArcGIS]{\Large Setup Users in ArcGIS\texorpdfstring{\\}{}}
 
 Users that will run Pre and Post processing scripts must be created and given priviliges on ACPub Treasurer Feature Data Set.
@@ -616,7 +634,7 @@ Users that will run Pre and Post processing scripts must be created and given pr
 \noindent For any new users of the geoprocessing tools, use the create Database User tool {\textbf or}
 \vspace{.5in}
 
-\noindent Go to $\Rightarrow$ Right click on ACpub $\Rightarrow$ Administration $\Rightarrow$ Add User
+\noindent In Catalog $\Rightarrow$ Right click on ACpub $\Rightarrow$ Administration $\Rightarrow$ Add User
 %
 % Single Figure No Wrap
 %
@@ -650,7 +668,7 @@ In Catalog, $\Rightarrow$ right click on Treasurer Feature Data Set $\Rightarrow
 \paragraph[Extend Priviliges for New User]{\Large Extend Priviliges for New User\texorpdfstring{\\}{}}
 \vspace{.5in}
 
-In Catalog$\Rightarrow$right click on Treasurer FDS $\Rightarrow$ Manage$\Rightarrow$ Priviliges$\Rightarrow$ check boxes
+In Catalog $\Rightarrow$ right click on Treasurer FDS $\Rightarrow$ Manage $\Rightarrow$ Priviliges $\Rightarrow$ check boxes
 \vspace{.5in}
 
 %
@@ -804,19 +822,20 @@ In Portal $\Rightarrow$ Go to groups $\Rightarrow$ Invite new user to the group
 \includegraphics[width=.3\textwidth]{EnterCredentials.png}
 \caption{Enter Credentials}
 \end{wrapfigure}
-for Organization Website, Type:
+for \textbf{Organization Website}, Type:
 \vspace{.5in}
 
 \begin{verbatim}
+{\textcolor{HeaderOrangeC}
 https://gis.allegancounty.org/
-portal_webadaptor
+portal_webadaptor}
 
 \end{verbatim}
 \large then:
 \vspace{.5in}
 
 \noindent Press \Large Continue
-\vspace{2in}
+\vspace{1.5in}
 
 \noindent Enter Credentials
 \vspace{.5in}
@@ -829,9 +848,9 @@ portal_webadaptor
 %
 %
 %
-\subparagraph{Download the Forfeiture Field Map}
+\subparagraph[Download the Forfeiture Field Map]{Download the Forfeiture Field Map \texorpdfstring{\\}{}}
+%
 \noindent There are 3 different versions of the map
-\subparagraph*{}
 %
 % Two Figures Wrapped
 %
@@ -839,46 +858,47 @@ portal_webadaptor
 \centering
 \includegraphics[width=.35\textwidth]{CollectorChooseMap.png}
 \caption{Collector Maps Menu}
-\vspace{.25in}
-
-\HRule \\[.4cm] % Horizontal Line added
-\vspace{.25in}
-
-\includegraphics[width=.35\textwidth]{ChooseWorkAreaLarge.png}
-\caption{Choose Work Area (large)}
 \end{wrapfigure}
 \begin{itemize}
 \item Forfeiture Field Map
 \item Forfeiture Field Map For Photos
 \item Forfeiture Field Map For Attributes
 \end{itemize}
-\vspace{.25in}
+%\vspace{.25in}
 
 \noindent {\footnotesize The Download option indicates it is not on the device but is available for offline use}
-\vspace{.25in}
+\vspace{.2in}
 
 \noindent {\large Choose a Map}
-\vspace{.25in}
+\vspace{.2in}
 
 \noindent {\large Press Download}
-\vspace{1in}
+\clearpage
+
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+\includegraphics[width=.35\textwidth]{ChooseWorkAreaLarge.png}
+\caption{Choose Work Area (large)}
+\end{wrapfigure}
 
 \noindent {\large Specify work area}
-\vspace{.25in}
+\vspace{.2in}
 
 and press
-\vspace{.25in}
+\vspace{.2in}
 
 map detail
 
-\vspace{.25in}
+\vspace{.2in}
 
 \noindent {\footnotesize Note that a larger area takes longer to download but the basemap only needs to be downloaded once}
 \clearpage
 %
 %
 %
-\subparagraph{Choose Map Detail}
+%\subparagraph{Choose Map Detail}
+\paragraph{Choose Map Detail\texorpdfstring{\\}{}}
 
 \subparagraph*{}
 %

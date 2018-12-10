@@ -9,43 +9,43 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  \newcommand{command}[arguments][optional]{definition}
 %  page 44 of Latex Beginners Guide
-
-%  Defines \shortcenter command %%%Page 98 Memoir Doc
-%\newcommand*{\shortcenter}% {command}
-%[1]% [arguments]
-%{\sethangfrom{\noindent ##1}%   {Definition...
-%\normalfont\boldmath\bfseries\large
-%\Largefont\boldmath\bfseries
-%\MakeUppercase
-%\centering
-%\parbox{3in}{\centering #1}\par}%  ...Definition}  \parbox[alignment]{width}{text}
+%
+% heading presets
+\headstyles{dowding}
+%
+% Modify the default heading presets
 %
 %
-%\setsubsubsecheadstyle{\shortcenter}% pg 96 Memoir Documentation
+\setsecheadstyle{\color{HeaderBlueC}}
+% Subsection
+\setsubsecheadstyle{\huge\centering\color{HeaderGoldC}}%
+% Subsubsection
+\setsubsubsecheadstyle{\LARGE\scshape\centering\color{HeaderBlueE}}%
+% Paragraph
+\setparaheadstyle{\Large\color{HeaderOrangeD}}%
+% Subparagraph
+\setsubparaheadstyle{\large\color{HeaderOrangeC}}%
 %
-%\setsubsubsecheadstyle{\large\centering\MakeUppercase\bfseries}% pg 96 Memoir Documentation
-%\setsecheadstyle{\color{violet}}%
-\setsubsecheadstyle{\texttt\Large}%
-\setsubsubsecheadstyle{\sffamily\Large\centering\color{blue}}%
-\setparaheadstyle{\large\color{teal}}%
-\setsubparaheadstyle{\color{magenta}}%
 %black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow.
-
+%
+% \setafterSskip{<skip>} pg.96
+% If the value of the <skip> length argument is positive it is the space to leave between the
+% display heading and the following text. If it is negative, then the heading will be runin
+% and the value is the horizontal space between the end of the heading and the following text.
 \setaftersecskip{5pt}
 \setaftersubsecskip{5pt}
 \setaftersubsubsecskip{5pt}
 \setafterparaskip{5pt}
-\setaftersubparaskip{5pt}
-
-\setbeforesecskip{3.5ex plus 1ex minus .2ex}
-\setbeforesubsecskip{3.25ex plus 1ex minus .2ex}
-\setbeforesubsubsecskip{3.25ex plus 1ex minus .2ex}
-\setbeforeparaskip{3.25ex plus 1ex minus .2ex}
-\setbeforesubparaskip{3.25ex plus 1ex minus .2ex}
-
-%\setsubsecheadstyle{\scshape\raggedright}
-
-%\renewcommand{\setbeforesubsubsecskip}{-120pt plus -5pt minus -1pt}
+\setaftersubparaskip{3pt}
+%
+% \setbeforeSskip{<skip>} pg .95
+% The absolute value of the <skip> length argument is the space to leave above the heading.
+% If the actual value is negative then the first line after the heading will not be indented.
+\setbeforesecskip{-3.5ex plus -1ex minus -.2ex}
+\setbeforesubsecskip{-3.25ex plus -1ex minus -.2ex}
+\setbeforesubsubsecskip{-3.25ex plus -1ex minus -.2ex}
+\setbeforeparaskip{-3.25ex plus -1ex minus -.2ex}
+\setbeforesubparaskip{-3.25ex plus -1ex minus -.2ex}
 %
 \renewcommand{\midchapskip}{10pt} % defines vspace bw <Chapter#> and <Chapter Title> default is 20pt
 %

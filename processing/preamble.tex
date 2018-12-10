@@ -14,6 +14,53 @@
 \usepackage{blindtext} % enables ipsum loerem "dummy" text blocks
 \usepackage{enumitem} % enables control over enumerate, itemize, and description
 \usepackage[dvipsnames]{xcolor}%black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow.
+%
+\definecolor{HeaderBlueA1}{RGB}{10, 91, 163}
+\definecolor{HeaderBlueA2}{RGB}{101, 98, 174}
+\definecolor{HeaderBlueA3}{RGB}{84, 125, 161}
+\definecolor{HeaderBlueB}{RGB}{53, 98, 138}
+\definecolor{HeaderBlueC}{RGB}{31,78,121}  % HeaderBlue1
+\definecolor{HeaderBlueD}{RGB}{16, 60, 99}
+\definecolor{HeaderBlueE}{RGB}{4, 40, 72 }
+
+\definecolor{HeaderOrangeA}{RGB}{249, 161, 121}
+\definecolor{HeaderOrangeB}{RGB}{214, 116, 72}
+\definecolor{HeaderOrangeC}{RGB}{187, 84, 37}
+\definecolor{HeaderOrangeD}{RGB}{152, 57, 14}
+\definecolor{HeaderOrangeE}{RGB}{111, 35, 0}
+
+\definecolor{HeaderGoldA}{RGB}{249, 218, 121}
+\definecolor{HeaderGoldB}{RGB}{214, 180, 72}
+\definecolor{HeaderGoldC}{RGB}{187, 151, 37}
+\definecolor{HeaderGoldD}{RGB}{152, 119, 14}
+\definecolor{HeaderGoldE}{RGB}{111, 84, 0}
+
+% Color triad based on HeaderBlue1
+% http://paletton.com/
+% Blues:
+% 84, 125, 161 lightest blue
+% 53, 98, 138 light blue
+% 31,78,121 HeaderBlue1
+% 16, 60, 99 darker blue
+% 4, 40, 72 darkest blue
+% Oranges:
+% 249, 161, 121 lightest orange
+% 214, 116, 72 light orange
+% 187, 84, 37 main orange
+% 152, 57, 14 darker orange
+% 111, 35, 0 dark orange
+% Golds:
+% 249, 218, 121 lightest goldenrod
+% 214, 180, 72 light goldenrod
+% 187, 151, 37 goldenrod
+% 152, 119, 14 dark goldenrod
+% 111, 84, 0 darkest goldenrod
+
+\definecolor{HyperlinkBlue1}{RGB}{64,172,209}
+\definecolor{graphicOrange}{RGB}{255,153,51}
+% Header1 is Arial(body)(Caps) 14pt
+% Header2 is Arial(body) 12pt
+% Body is arial 9pt
 \usepackage{marginnote}
 %\usepackage{geometry}
 \usepackage[top=1.5in, bottom=1.5in, outer=2.5in, inner=1.25in, heightrounded, marginparwidth=1.5in, marginparsep=.25in]{geometry} % Sets page geometry
@@ -21,7 +68,15 @@
 %%%%  Testing
 \usepackage{pifont}
 \usepackage{anyfontsize}
+\usepackage{multicol}
 %%%%%%%%%%%%%
+
+
+%\newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\raisebox{.45ex}{\rule{.6ex}{.6ex}}}}
+
+% ding characters specified in symbols-a4 pg12
+\newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\ding{227}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make horizontal graphic lines
 \newcommand{\marginText}{\fontfamily{cmr}\fontseries{b}\color{red}\fontsize{9}{12}\selectfont}
@@ -58,7 +113,13 @@
 %                               % (chapters from \renewcommand{\chaptermark}[1]... )
 \fancyhead[RE]{\helv \rightmark} % Right Even Headers
 %                                % (subsection from \renewcommand{\subsectionmark}[1]...)
+
+
+
+
+%\fancyheadoffset[RE,LO,RO,LE]{.5\textwidth}
 %
+
 % Alternate fancy header options
 %\renewcommand{\sectionmark}[1] % Redefinition of how section mark is displayed
 %{\markright{\MakeUppercase{\thesection.\ #1}}}
@@ -76,7 +137,6 @@
 
 %\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 \newcommand{\titleGeometry}{\geometry{top=1in,bottom=1in,inner=1.5in,outer=1.5in}} % Sets geometry for first part}
-%\newcommand{\titleGeometry}{\geometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for first part}
 
 \usepackage[pdftex,breaklinks,colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=red,linktocpage=false,pagebackref=true,filecolor=magenta]{hyperref}% http://www.tug.org/applications/hyperref/manual.html#x1-100003.6
 \hypersetup{pdfauthor={Allegan County GIS Services},% Page 248 in Latex Beinners Guide
