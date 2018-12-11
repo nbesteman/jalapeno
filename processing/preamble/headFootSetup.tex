@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{fancyhdr} % Adds control of headers and footers
+%
+%     Code Key: E : Even page, O : Odd page, L Left field,  C : Center field,
+%               R : Right field, H : Header, F : Footer
+%    \leftmark : Contains the Left argument of the last \markboth on the pages
+%    \rightmark : Contains the Right Argument of the first \markboth of the page OR:
+%                 the first /markright of the page
+%
+\renewcommand{\chaptermark}[1] % Redefinition of how chapter mark is displayed
+{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
+%
+\renewcommand{\subsectionmark}[1] % Redefinition of how subsection mark is displayed
+{\markright{\MakeUppercase{\thesubsection.\ #1}}}
+%
+\renewcommand{\headrulewidth}{0.5pt} % Line after header
+\renewcommand{\headrule}{\hbox to\headwidth{\color{HeaderOrangeE}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{0.5pt} % line before footer
+\renewcommand{\footrule}{\hbox to\headwidth{\color{HeaderOrangeE}\leaders\hrule height \footrulewidth\hfill}}
+%
+\fancyhf{} % clear all header and footer fields
+%
+\fancyhead[LE,RO]{\helv \thepage} % Left Even and Right Odd headers
+%                                 % \thepage macro displays the current page number
+\fancyhead[LO]{\helv \leftmark} % Left Odd headers are set to /markboth
+%                               % (chapters from \renewcommand{\chaptermark}[1]... )
+\fancyhead[RE]{\helv \rightmark} % Right Even Headers
+%                                % (subsection from \renewcommand{\subsectionmark}[1]...)
+
+% \renewcommand{\headrulewidth}{0.5pt}
+% \renewcommand{\headrule}{\hbox to\headwidth{\color{red}\leaders\hrule height \headrulewidth\hfill}}
+% \renewcommand{\footrulewidth}{0.5pt}
+% \renewcommand{\footrule}{\hbox to\headwidth{\color{red}\leaders\hrule height \footrulewidth\hfill}}
+
+
+
+%\fancyheadoffset[RE,LO,RO,LE]{.5\textwidth}
+%
+
+% Alternate fancy header options
+%\renewcommand{\sectionmark}[1] % Redefinition of how section mark is displayed
+%{\markright{\MakeUppercase{\thesection.\ #1}}}
+%
+% Alternate fancy footer options
+%\fancyfoot[C]{\textbf{\thepage}} % Page number on bottom center
+%\fancyfoot[EC,OC]{\helv \thesection} % Section number bottom center
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
