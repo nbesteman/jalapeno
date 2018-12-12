@@ -14,9 +14,10 @@
 %
 \usepackage{standalone} %
 %
-\setcounter{tocdepth}{5}  % subparagraph and down
+\chapterstyle{section}
+%\setcounter{tocdepth}{5}  % subparagraph and down
 %\setcounter{tocdepth}{4}  % paragraph and down
-%\setcounter{tocdepth}{3}  % subsubsection and down
+\setcounter{tocdepth}{3}  % subsubsection and down
 %\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
 %\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
 %\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
@@ -28,7 +29,7 @@ pdfkeywords={documentation,gis}} %
 %
 \def\titlename{What We Do} % Sets book title
 %
-\title{\input{commonTitle}}  % Inputs common title page
+\title{\input {commonTitle}}  % Inputs common title page
 %
 \makeglossaries % creates glo file
 %
@@ -59,6 +60,7 @@ pdfkeywords={documentation,gis}} %
 %		Main Section
 %-------------------------------------------------------------------------------
 \mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+\chapterstyle{customchpstyle}
 %
 \pagestyle{fancy} % Sets Headers and Footers
 %\part*{Introduction} % * makes this part unnumbered

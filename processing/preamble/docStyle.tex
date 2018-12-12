@@ -2,10 +2,10 @@
 \makechapterstyle{customchpstyle}{%
    \setlength{\afterchapskip}{20pt}
    \renewcommand*{\chapterheadstart}{\vspace*{10pt}}
-   \renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
-   \renewcommand*{\chapnamefont}{\normalfont\Large\flushleft}
+   \renewcommand*{\afterchapternum}{\par\nobreak\vskip -25pt}
+   \renewcommand*{\chapnamefont}{\normalfont\Large\flushright}
    \renewcommand*{\chapnumfont}{\slshape\huge}
-   \renewcommand*{\chaptitlefont}{\scshape\huge\bfseries\flushleft\color{chapColor}}
+   \renewcommand*{\chaptitlefont}{\scshape\huge\bfseries\flushright\color{chapColor}}
    \renewcommand*{\printchaptername}{} % sets the text in brackets before the number
    %\renewcommand*{\chapternamenum}{}
    \newcommand{\thickrulefill}{\leavevmode \leaders \hrule height \chapColorbarheight \hfill \kern \z@}
@@ -19,30 +19,23 @@
    }%
    \newlength{\chapColorbarheight}
    \setlength{\chapColorbarheight}{2.5pt}		% Setting the height of the bar
-
    \newlength{\chapnumboxlength}
    \setlength{\chapnumboxlength}{48pt}	% Setting the length of the box containing chapter number
-
+%
+   %\setlength{\midchapskip}{\textwidth}
+   %\addtolength{\midchapskip}{-\beforechapskip}
+   %\addtolength{\midchapskip}{-2.5in}
+%
    \newlength{\leftbarlength}
    \setlength{\leftbarlength}{36pt}  		% Setting length of the bar left to the chapter number
-
    \newlength{\rightbarlength}
    \setlength{\rightbarlength}{\textwidth}
    %
-   %\addtolength{\rightbarlength}{-\leftbarlength}
-   %\addtolength{\rightbarlength}{-\chapnumboxlength}	% Adjusting the right bar to fit the text margin
-   %\addtolength{\rightbarlength}{-0.5em} % "By eye" adjustment.. - shouldn't really be there :(
-
-    %\makeoddfoot{plain}{}{}{\thepage}
-    }%
-
-
-    %  \newcommand{command}[arguments][optional]{definition}
-    %  page 44 of Latex Beginners Guide
-    %
-    % heading presets
-    %\headstyles{dowding}
-
+   \addtolength{\rightbarlength}{-\leftbarlength}
+   \addtolength{\rightbarlength}{-20pt}
+    }
+    % End of customchpstyle
+%%%%%
 \setsecheadstyle{\scshape\color{HeaderOrangeB}}
     % Subsection
 \setsubsecheadstyle{\huge\centering\color{HeaderOrangeE}}%
@@ -71,9 +64,4 @@
 \setbeforeparaskip{-32.5pt plus -10pt minus -2pt}
 \setbeforesubparaskip{-15pt plus -3pt minus -1pt}
     %
-%\renewcommand{\midchapskip}{10pt} % defines vspace bw <Chapter#> and <Chapter Title> default is 20pt
-    %
-%\renewcommand{\afterchapskip}{20pt} % defines vspace bw <Chapter Title> and <Section Heading> defauklt uis 40pt
-    %
-
 \chapterstyle{customchpstyle}

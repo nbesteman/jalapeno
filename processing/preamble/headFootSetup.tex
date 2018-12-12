@@ -15,6 +15,7 @@
 %
 \renewcommand{\headrulewidth}{0.5pt} % Line after header
 \renewcommand{\headrule}{\hbox to\headwidth{\color{HeaderOrangeE}\leaders\hrule height \headrulewidth\hfill}}
+
 \renewcommand{\footrulewidth}{0.5pt} % line before footer
 \renewcommand{\footrule}{\hbox to\headwidth{\color{HeaderOrangeE}\leaders\hrule height \footrulewidth\hfill}}
 %
@@ -27,16 +28,10 @@
 \fancyhead[RE]{\helv \rightmark} % Right Even Headers
 %                                % (subsection from \renewcommand{\subsectionmark}[1]...)
 
-% \renewcommand{\headrulewidth}{0.5pt}
-% \renewcommand{\headrule}{\hbox to\headwidth{\color{red}\leaders\hrule height \headrulewidth\hfill}}
-% \renewcommand{\footrulewidth}{0.5pt}
-% \renewcommand{\footrule}{\hbox to\headwidth{\color{red}\leaders\hrule height \footrulewidth\hfill}}
-
-
-
+%\fancyheadoffset[leh,roh]{1in}
+%\fancyheadoffset[loh,reh]{1in}
 %\fancyheadoffset[RE,LO,RO,LE]{.5\textwidth}
 %
-
 % Alternate fancy header options
 %\renewcommand{\sectionmark}[1] % Redefinition of how section mark is displayed
 %{\markright{\MakeUppercase{\thesection.\ #1}}}
@@ -44,5 +39,3 @@
 % Alternate fancy footer options
 %\fancyfoot[C]{\textbf{\thepage}} % Page number on bottom center
 %\fancyfoot[EC,OC]{\helv \thesection} % Section number bottom center
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

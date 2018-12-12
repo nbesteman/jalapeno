@@ -10,13 +10,11 @@
 \usepackage{makeidx} % Enables index features
 \usepackage{glossaries} % must be after hyperref
 \usepackage{blindtext} % enables ipsum loerem "dummy" text blocks
-\usepackage{enumitem} % enables control over enumerate, itemize, and description
-%\usepackage[dvipsnames]{xcolor}%black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow.
-%
+\usepackage{enumitem} % enables control over enumerate, itemize, and
 \usepackage{xcolor}
 \usepackage{marginnote}
 %\usepackage{geometry}
-\usepackage[top=1.5in, bottom=1.5in, outer=2.5in, inner=1.25in, heightrounded, marginparwidth=1.5in, marginparsep=.25in]{geometry} % Sets page geometry
+\usepackage[top=1.5in, bottom=1.25in, outer=2.25in, inner=1.25in, heightrounded, marginparwidth=1.5in, marginparsep=.25in]{geometry} % Sets page geometry
 \usepackage{fancyhdr} % Adds control of headers and footers
 %
 %
@@ -34,6 +32,7 @@
 % ding characters specified in symbols-a4 pg12
 \newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\ding{227}}}
 \renewcommand{\labelitemi}{\localtextbulletone}
+%\newcommand{\HRule}{\rule{\linewidth}{0.5mm}\color{HeaderOrangeE}} % Command to make horizontal graphic lines
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make horizontal graphic lines
 \newcommand{\marginText}{\fontfamily{cmr}\fontseries{b}\color{red}\fontsize{9}{12}\selectfont}
 \newcommand{\helv}{\color{HeaderOrangeE}\fontfamily{phv}\fontseries{b}\fontsize{9}{11}\selectfont}
@@ -48,3 +47,4 @@
 
 %\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 \newcommand{\titleGeometry}{\geometry{top=1in,bottom=1in,inner=1.5in,outer=1.5in}} % Sets geometry for first part}
+\setlength\headheight{23pt}
