@@ -14,10 +14,10 @@
 %
 \usepackage{standalone} %
 %
-\chapterstyle{section}
-%\setcounter{tocdepth}{5}  % subparagraph and down
+\chapterstyle{section} % Style for TOC
+\setcounter{tocdepth}{5}  % subparagraph and down
 %\setcounter{tocdepth}{4}  % paragraph and down
-\setcounter{tocdepth}{3}  % subsubsection and down
+%\setcounter{tocdepth}{3}  % subsubsection and down
 %\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
 %\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
 %\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
@@ -60,12 +60,15 @@ pdfkeywords={documentation,gis}} %
 %		Main Section
 %-------------------------------------------------------------------------------
 \mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+%
 \chapterstyle{customchpstyle}
 %
 \pagestyle{fancy} % Sets Headers and Footers
+%
 %\part*{Introduction} % * makes this part unnumbered
 %
 \newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
+%
 \part[Brand]{Brand\\{\includegraphics[scale=.45]{GIS_Logo_better.jpg}}}
 %
 \restoregeometry % reverts geometry back to original
@@ -73,6 +76,7 @@ pdfkeywords={documentation,gis}} %
 \subimport{brandPart/}{awardsChapter.tex}
 %
 \newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
+%
 \part{Methods}
 %
 \restoregeometry % reverts geometry back to original
@@ -117,7 +121,7 @@ pdfkeywords={documentation,gis}} %
 %
 \printglossaries % Puts glossaries here
 %
-\addcontentsline{toc}{part}{Index} % Adds Index to TOC as a part
+%\addcontentsline{toc}{part}{Index} % Adds Index to TOC as a part
 %
 \printindex % Puts index here
 %

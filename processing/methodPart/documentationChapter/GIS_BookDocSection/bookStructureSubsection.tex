@@ -25,43 +25,43 @@
 %
 \paragraph[Blues]{Blues\texorpdfstring{\\}{}}
 \textcolor{HeaderBlueA1}{HeaderBlueA1}
-\noindent\textcolor{HeaderBlueA1}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderBlueA1}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderBlueA2}{HeaderBlueA2}
-\noindent\textcolor{HeaderBlueA2}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderBlueA2}{\rule{.5\textwidth}{.5mm}}\\
 %\textcolor{HeaderBlueA3}{HeaderBlueA3}
 %\noindent\textcolor{HeaderBlueA3}{\rule{.5\textwidth}{.5mm}}
 %\textcolor{HeaderBlueB}{HeaderBlueB}
 %\noindent\textcolor{HeaderBlueB}{\rule{.5\textwidth}{.5mm}}
 \textcolor{HeaderBlueC}{HeaderBlueC}
-\noindent\textcolor{HeaderBlueC}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderBlueC}{\rule{.5\textwidth}{.5mm}}\\
 %\textcolor{HeaderBlueD}{HeaderBlueD}
 %\noindent\textcolor{HeaderBlueD}{\rule{.5\textwidth}{.5mm}}
 \textcolor{HeaderBlueE}{HeaderBlueE}
-\noindent\textcolor{HeaderBlueE}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderBlueE}{\rule{.5\textwidth}{.5mm}}\\
 %
 \paragraph[Golds]{Golds\texorpdfstring{\\}{}}
 \textcolor{HeaderGoldA}{HeaderGoldA}
-\noindent\textcolor{HeaderGoldA}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderGoldA}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderGoldB}{HeaderGoldB}
-\noindent\textcolor{HeaderGoldB}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderGoldB}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderGoldC}{HeaderGoldC}
-\noindent\textcolor{HeaderGoldC}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderGoldC}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderGoldD}{HeaderGoldD}
-\noindent\textcolor{HeaderGoldD}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderGoldD}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderGoldE}{HeaderGoldE}
-\noindent\textcolor{HeaderGoldE}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderGoldE}{\rule{.5\textwidth}{.5mm}}\\
 %
 \paragraph[Oranges]{Oranges\texorpdfstring{\\}{}}
 \textcolor{HeaderOrangeA}{HeaderOrangeA}
-\noindent\textcolor{HeaderOrangeA}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderOrangeA}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderOrangeB}{HeaderOrangeB}
-\noindent\textcolor{HeaderOrangeB}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderOrangeB}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderOrangeC}{HeaderOrangeC}
-\noindent\textcolor{HeaderOrangeC}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderOrangeC}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderOrangeD}{HeaderOrangeD}
-\noindent\textcolor{HeaderOrangeD}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderOrangeD}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderOrangeE}{HeaderOrangeE}
-\noindent\textcolor{HeaderOrangeE}{\rule{.5\textwidth}{.5mm}}
+\noindent\textcolor{HeaderOrangeE}{\rule{.5\textwidth}{.5mm}}\\
 %
 
 \clearpage
@@ -75,7 +75,7 @@
 
 \end{itemize}
 
-\subsubsection{Project file structure:}
+\subsubsection{Project File Structure:}
 {\Large ...\textbackslash jalapeno\textbackslash..}\\
 \begin{tabular}{p{4cm}| p{7cm} }
 \footnotesize folder & {\footnotesize description} \\ \hline
@@ -110,8 +110,8 @@ preamble.tex & preamble code for all documents\\
 \paragraph*{*Note about referenceEntries.bib}
 {\footnotesize Any reference entries built here can be cited in any .tex document in the project.}
 
-\subsubsection[Using the glossary]{{\Large Using the glossary}}
-\paragraph{Glossary requirements:}
+\subsubsection[Using The Glossary]{{\Large Using The Glossary}}
+\paragraph{Glossary Requirements}
 Glossary commands require a Perl interpreter.  Activeperl is a free Perl interpreter and can be downloaded from:\\ \href{https://www.activestate.com/activeperl/downloads}{https://www.activestate.com/activeperl/downloads}
 {\tiny (A typical installation adds Perl to your path)}.  Compiling the glossary requires running the makeglossaries command either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by makeglossaries to create an .gls file.  After the .gls file is created, PDFLatex must be run again to insert the glossary at the \textbackslash printglossaries location.
 \paragraph{Creating a new glossary entry}
@@ -149,9 +149,10 @@ In place of the term, use code referencing the key (in the glossaryEntries file)
 
 
 
-\subsubsection[Using the bibliography(References)]{{\Large Using the bibliography(References)}}
-\paragraph{Bibliography requirements:}
-Compiling the bibliography requires running bibtex either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by bibtex to create a .bbl file.  After the .bbl file is created, PDFLatex must be run again to insert the bibliography at the \textbackslash bibliography location. \subparagraph{}
+\subsubsection[Using The Bibliography(References)]{{\Large Using The Bibliography(References)}}
+\paragraph{Bibliography requirements}
+Compiling the bibliography requires running bibtex either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by bibtex to create a .bbl file.  After the .bbl file is created, PDFLatex must be run again to insert the bibliography at the \textbackslash bibliography location.
+\subparagraph*{}
 For example, the command:...\textbackslash bibliography\{referenceEntries\}\\
 ...places the bibliography called referenceEntries.bib which must be in the same folder as the project .aux file.
 \paragraph{Creating a new bibliography entry}
@@ -162,20 +163,20 @@ To \textbf{create a new bibliography entry:} Add an entry to referenceEntries.bi
 \item Launch command prompt
 \item enter command: \textbf{{\large bibtex GISDocumentation}}
 \end{itemize}
-\subparagraph{*Note:} {\footnotesize This command reads the .aux file and creates the .bbl file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail.}
+\subparagraph*{*Note:} {\footnotesize This command reads the .aux file and creates the .bbl file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail.}
 
 \paragraph{To cite a bibliography source in a subdocument:}
 \subparagraph{}In the place that you want the citation:
 \begin{itemize}
 \item \begin{verbatim} ~\cite[pg.#]{key}\end{verbatim}
 \end{itemize}
-\subparagraph{To add the bibliography to the subdocument:}
+\subparagraph{Adding the bibliography to the subdocument}
 \begin{itemize}
 \item Similar to adding to the master document but not documented here.
 \end{itemize}
 
 
-\subsubsection[Using the Index]{{\Large Using the Index}}
+\subsubsection[Using The Index]{{\Large Using The Index}}
 \paragraph{Index requirements:}
 Compiling the index requires running the makeindex command either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by makeindex to create an .idx file.  After the .idx file is created, PDFLatex must be run again to insert the index at the \textbackslash printindex location.
 
@@ -183,14 +184,14 @@ Compiling the index requires running the makeindex command either in a \LaTeX{} 
 To \textbf{create a new index entry:} Add an entry to indexEntries.tex.  Save it there and then use the makeindex command to recompile the .idx file.
 
 \paragraph{Rebuilding the index}
-\subparagraph{}\textbf{To Recompile the .idx}In the (main document)build folder:
+\subparagraph*{}\textbf{To Recompile the .idx}In the (main document)build folder:
 \begin{itemize}
 \item Launch command prompt
 \item enter command: \textbf{{\large makeindex GISDocumentation*}}
 \end{itemize}
 \subparagraph{*Note:} {\footnotesize This command reads the .aux file and creates the .idx file.  The .aux file is created by compiling with PDFLatex.  If there is no .aux file the command will fail. Run PDFLatex first}
 
-\paragraph{Using index terms in a subdocument:}
+\paragraph{Access the index from a subdocument}
 In the subdocument you must add code to input the indexEntries file.  For example:\\
 After the line:
 \begin{verbatim}
@@ -201,7 +202,7 @@ Add the line:
 \input{../../../indexEntries}
 \end{verbatim}
 
-\subparagraph{To use a index term in the subdocument:\texorpdfstring{\\}{}}
+\subparagraph[Using an index term]{To use a index term in the subdocument:\texorpdfstring{\\}{}}
 In place of the term, use code referencing the key (in the indexEntries file):
 
 \begin{itemize}
