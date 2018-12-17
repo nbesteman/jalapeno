@@ -1,49 +1,8 @@
 \makeatletter
-\makechapterstyle{customchpstyle}{%
-   \setlength{\afterchapskip}{20pt}
-   \renewcommand*{\chapterheadstart}{\vspace*{10pt}}
-   \renewcommand*{\afterchapternum}{\par\nobreak\vskip -25pt}
-   \renewcommand*{\chapnamefont}{\normalfont\Large\flushright}
-   \renewcommand*{\chapnumfont}{\slshape\huge}
-   \renewcommand*{\chaptitlefont}{\scshape\huge\bfseries\flushright\color{chapColor}}
-   \renewcommand*{\printchaptername}{} % sets the text in brackets before the number
-   %\renewcommand*{\chapternamenum}{}
-   \newcommand{\thickrulefill}{\leavevmode \leaders \hrule height \chapColorbarheight \hfill \kern \z@}
 
-   \renewcommand*{\printchapternum}{%
-     \makebox[0pt][l]{%
-       \color{chapColor}\rule{\leftbarlength}{\chapColorbarheight}											% Left bar
-       \resizebox{\chapnumboxlength}{!}{\color{chapColor}\chapnumfont\thechapter}	% Chapter number
-       \color{chapColor}\rule{\rightbarlength}{\chapColorbarheight}											% Right bar
-     }%
-   }%
-   \newlength{\chapColorbarheight}
-   \setlength{\chapColorbarheight}{2.5pt}		% Setting the height of the bar
-   \newlength{\chapnumboxlength}
-   \setlength{\chapnumboxlength}{48pt}	% Setting the length of the box containing chapter number
-%
-   %\setlength{\midchapskip}{\textwidth}
-   %\addtolength{\midchapskip}{-\beforechapskip}
-   %\addtolength{\midchapskip}{-2.5in}
-%
-   \newlength{\leftbarlength}
-   \setlength{\leftbarlength}{36pt}  		% Setting length of the bar left to the chapter number
-   \newlength{\rightbarlength}
-   \setlength{\rightbarlength}{\textwidth}
-   %
-   \addtolength{\rightbarlength}{-\leftbarlength}
-   \addtolength{\rightbarlength}{-20pt}
-    }
-    % End of customchpstyle
-%%%%%
 \setsecheadstyle{\scshape\color{HeaderOrangeB}}
-
-
-
     % Subsection
-
 %\setsubsecheadstyle{\begin{mdframed}[backgroundcolor=HeaderGoldD]\huge\centering\color{HeaderOrangeE}}%
-
 \setsubsecheadstyle{\huge\centering\color{HeaderOrangeE}}%
     % Subsubsection
 \setsubsubsecheadstyle{\LARGE\scshape\centering\color{HeaderBlueC}}%
@@ -69,5 +28,46 @@
 \setbeforesubsubsecskip{-32.5pt plus -10pt minus -2pt}
 \setbeforeparaskip{-32.5pt plus -10pt minus -2pt}
 \setbeforesubparaskip{-15pt plus -3pt minus -1pt}
+
+\newlength{\chapColorbarheight}
+\setlength{\chapColorbarheight}{.08in}		% Setting the height of the bar
+%
+\newlength{\chapnumboxlength}
+\setlength{\chapnumboxlength}{.75in}	% Setting the length of the box containing chapter number
+%
+\newlength{\leftbarlength}
+\setlength{\leftbarlength}{.5in}  		% Setting length of the bar left to the chapter number
+%
+\newlength{\rightbarlength}          % Setting length of the bar right of the chapter number
+%\setlength{\rightbarlength}{\textwidth}
+\setlength{\rightbarlength}{3in}
+%\addtolength{\rightbarlength}{-\leftbarlength} % trimming it back to the margin
+%\addtolength{\rightbarlength}{-20pt}
+%
+\makechapterstyle{customchpstyle}{%
+   \setlength{\afterchapskip}{.5in}
+   \renewcommand*{\chapterheadstart}{\vspace*{.25in}} % vspace from top of page
+   \renewcommand*{\afterchapternum}{\vspace*{-1in}} % neg moves chapter title above chapter number
+   \renewcommand*{\chapnamefont}{\normalfont\Large\flushright} % Name Font
+   \renewcommand*{\chaptitlefont}{\scshape\huge\bfseries\flushright\color{chapColor}}
+   \renewcommand*{\printchaptername}{} % sets the text in brackets before the number
+   %
+   \newcommand{\thickrulefill}{\leavevmode \leaders \hrule height \chapColorbarheight \hfill \kern \z@}
+   \renewcommand*{\chapnumfont}{\slshape\huge} % Number Font
     %
+   \renewcommand*{\printchapternum}{%
+       %\makebox[0pt][l]{%
+       \color{chapColor}
+       \rule{\leftbarlength}{\chapColorbarheight} % Left bar
+       %\quad % vskip
+       \resizebox{!}{\chapnumboxlength}
+       {\chapnumfont \thechapter} % Chapter name and number
+       \quad % vskip
+       %\color{chapColor}
+       %\rule{\rightbarlength}{\chapColorbarheight}
+       \color{chapColor}\thickrulefill % implements thickrulefill
+     }%
+   }%
+}% End of customchpstyle
+
 \chapterstyle{customchpstyle}
