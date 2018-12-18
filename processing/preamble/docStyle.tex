@@ -1,25 +1,33 @@
 \makeatletter
-
-\setsecheadstyle{\scshape\color{HeaderOrangeB}}
+%
+%\setsecnumdepth{subsection} % turns on subsec numbering
+    %
+\setsecheadstyle{\scshape\color{HeaderOrangeA}} % default is \Large\bfseries
+%\setsecheadstyle{\scshape\color{HeaderOrangeB}}
+    %
     % Subsection
-%\setsubsecheadstyle{\begin{mdframed}[backgroundcolor=HeaderGoldD]\huge\centering\color{HeaderOrangeE}}%
-\setsubsecheadstyle{\huge\centering\color{HeaderOrangeE}}%
+\setsubsecheadstyle{\large\scshape\color{HeaderOrangeB}} % default is \large\bfseries
+%\setsubsecheadstyle{\huge\centering\color{HeaderOrangeE}}%
     % Subsubsection
-\setsubsubsecheadstyle{\LARGE\scshape\centering\color{HeaderBlueC}}%
+\setsubsubsecheadstyle{\Huge\scshape\centering\color{HeaderBlueE}} % default is \bfseries
+%\setsubsubsecheadstyle{\LARGE\scshape\centering\color{HeaderBlueC}}%   1
     % Paragraph
-\setparaheadstyle{\Large\color{HeaderBlueA1}}%
+\setparaheadstyle{\Large\color{HeaderBlueC}}%
+%\setparaheadstyle{\Large\color{HeaderBlueA}}%2
     % Subparagraph
+%\setsubparaheadstyle{\large\color{HeaderBlueB}}%
 \setsubparaheadstyle{\large\color{HeaderOrangeB}}%
     %
     % \setafterSskip{<skip>} pg.96
     % If the value of the <skip> length argument is positive it is the space to leave between the
     % display heading and the following text. If it is negative, then the heading will be runin
     % and the value is the horizontal space between the end of the heading and the following text.
-\setaftersecskip{5pt}
-\setaftersubsecskip{5pt}
-\setaftersubsubsecskip{5pt}
-\setafterparaskip{5pt}
-\setaftersubparaskip{3pt}
+\setaftersecskip{.05in}
+\setaftersubsecskip{.15in}
+\setaftersubsubsecskip{.1in}
+\setafterparaskip{.05in}
+\setaftersubparaskip{.05in}
+    %
     % \setbeforeSskip{<skip>} pg .95
     % The absolute value of the <skip> length argument is the space to leave above the heading.
     % If the actual value is negative then the first line after the heading will not be indented.
@@ -28,46 +36,35 @@
 \setbeforesubsubsecskip{-32.5pt plus -10pt minus -2pt}
 \setbeforeparaskip{-32.5pt plus -10pt minus -2pt}
 \setbeforesubparaskip{-15pt plus -3pt minus -1pt}
-
+    %
 \newlength{\chapColorbarheight}
-\setlength{\chapColorbarheight}{.08in}		% Setting the height of the bar
-%
+\setlength{\chapColorbarheight}{.06in}		% Setting the height of the bar
+    %
 \newlength{\chapnumboxlength}
 \setlength{\chapnumboxlength}{.75in}	% Setting the length of the box containing chapter number
-%
+    %
 \newlength{\leftbarlength}
 \setlength{\leftbarlength}{.5in}  		% Setting length of the bar left to the chapter number
-%
-\newlength{\rightbarlength}          % Setting length of the bar right of the chapter number
-%\setlength{\rightbarlength}{\textwidth}
-\setlength{\rightbarlength}{3in}
-%\addtolength{\rightbarlength}{-\leftbarlength} % trimming it back to the margin
-%\addtolength{\rightbarlength}{-20pt}
-%
+    %
 \makechapterstyle{customchpstyle}{%
    \setlength{\afterchapskip}{.5in}
    \renewcommand*{\chapterheadstart}{\vspace*{.25in}} % vspace from top of page
-   \renewcommand*{\afterchapternum}{\vspace*{-1in}} % neg moves chapter title above chapter number
-   \renewcommand*{\chapnamefont}{\normalfont\Large\flushright} % Name Font
-   \renewcommand*{\chaptitlefont}{\scshape\huge\bfseries\flushright\color{chapColor}}
+   \renewcommand*{\afterchapternum}{\vspace*{-.9in}} % neg moves chapter title above chapter number
+   \renewcommand*{\chapnumfont}{\slshape} % Number Font
+   \renewcommand*{\chaptitlefont}{\flushright\color{HeaderOrangeE}\slshape\huge}
    \renewcommand*{\printchaptername}{} % sets the text in brackets before the number
-   %
-   \newcommand{\thickrulefill}{\leavevmode \leaders \hrule height \chapColorbarheight \hfill \kern \z@}
-   \renewcommand*{\chapnumfont}{\slshape\huge} % Number Font
-    %
+   \newcommand{\thickrulefill}{\leavevmode \leaders \hrule height \chapColorbarheight \hfill \kern \z@} % rightbar length setter
    \renewcommand*{\printchapternum}{%
        %\makebox[0pt][l]{%
-       \color{chapColor}
+       \color{HeaderOrangeE}
        \rule{\leftbarlength}{\chapColorbarheight} % Left bar
-       %\quad % vskip
+       \quad % hspace
        \resizebox{!}{\chapnumboxlength}
        {\chapnumfont \thechapter} % Chapter name and number
-       \quad % vskip
-       %\color{chapColor}
-       %\rule{\rightbarlength}{\chapColorbarheight}
-       \color{chapColor}\thickrulefill % implements thickrulefill
-     }%
-   }%
-}% End of customchpstyle
-
+       \quad % hspace
+       \color{HeaderOrangeE}\thickrulefill % implements thickrulefill
+     } %
+   } %
+} % End of customchpstyle
+    %
 \chapterstyle{customchpstyle}
