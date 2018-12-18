@@ -1,6 +1,9 @@
 \documentclass[class=book , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
 %
-\input{../../../preamble}
+\input{../../../preamble/preamble}
+\input{../../../preamble/graphicsPath}
+\input{../../../preamble/headFootSetup}
+\input{../../../preamble/colorDefs}
 %
 \setcounter{tocdepth}{5}  % subparagraph and down
 %
@@ -84,8 +87,8 @@
 %
 \restoregeometry % reverts geometry back to original
 %
-\setlength{\headwidth}{\textwidth} % Set header width to textwidth
-\setlength{\footwidth}{\textwidth} % Set footer width
+%\setlength{\headwidth}{\textwidth} % Set header width to textwidth
+%\setlength{\footwidth}{\textwidth} % Set footer width
 %
 \subsubsection{Design}
 \paragraph[Overview]{Overview}
@@ -145,8 +148,8 @@ There are three parts to the daily routine:
 %
 %
 \newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for first part
-\setlength{\headwidth}{\textwidth} % Set header width
-\setlength{\footwidth}{\textwidth} % Set footer width
+%\setlength{\headwidth}{\textwidth} % Set header width
+%\setlength{\footwidth}{\textwidth} % Set footer width
 \paragraph{Technologies Used in The Forfeiture App}
 \begin{multicols}{2}
 \subparagraph{BSA Data}\noindent Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
@@ -170,8 +173,8 @@ There are three parts to the daily routine:
 \clearpage
 %
 \restoregeometry
-\setlength{\headwidth}{\textwidth} % Set header width
-\setlength{\footwidth}{\textwidth} % Set footer width
+%\setlength{\headwidth}{\textwidth} % Set header width
+%\setlength{\footwidth}{\textwidth} % Set footer width
 %
 %
 %\paragraph{Data Details}

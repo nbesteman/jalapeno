@@ -5,7 +5,6 @@
 \usepackage{wrapfig} % Provides environment to wrap figures with text
 \usepackage{graphicx} % Required for including images
 \usepackage{cite} % improves citation handling
-%\usepackage[toc,title,page]{appendix}
 \usepackage{pdfpages} % enables loading a pdf into the doc
 \usepackage{makeidx} % Enables index features
 \usepackage{glossaries} % must be after hyperref
@@ -13,26 +12,27 @@
 \usepackage{enumitem} % enables control over enumerate, itemize, and
 \usepackage{xcolor}
 \usepackage{marginnote}
-%\usepackage{geometry}
+\usepackage{pifont} % makes dingbats fonts avail
 \usepackage[top=1.5in, bottom=1.25in, outer=2.25in, inner=1.25in, heightrounded, marginparwidth=1.5in, marginparsep=.25in]{geometry} % Sets page geometry
 \usepackage{fancyhdr} % Adds control of headers and footers
 %
 %
 %%%%  Testing
-\usepackage{pifont}
-%\usepackage{mdframed}
+%\usepackage[toc,title,page]{appendix}
 \usepackage{anyfontsize}
 \usepackage{multicol}
+%\usepackage{mdframed}
+%\usepackage{caption}
+%
+%
+%%%%  Testing End
 \usepackage[pdftex,breaklinks,colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=red,linktocpage=false,pagebackref=true,filecolor=magenta]{hyperref}% http://www.tug.org/applications/hyperref/manual.html#x1-100003.6
-%
-%
-%
 %%%%%%%%%%%   Commands   %%%%%%%%%%%%%%%
 \renewcommand*{\bibname}{References} % renames the bibliography
 %\newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\raisebox{.45ex}{\rule{.6ex}{.6ex}}}}
 % ding characters specified in symbols-a4 pg12
-\newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\ding{227}}}
-\renewcommand{\labelitemi}{\localtextbulletone}
+%*\newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\ding{227}}}
+%*\renewcommand{\labelitemi}{\localtextbulletone}
 %\newcommand{\HRule}{\rule{\linewidth}{0.5mm}\color{HeaderOrangeE}} % Command to make horizontal graphic lines
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make horizontal graphic lines
 \newcommand{\marginText}{\fontfamily{cmr}\fontseries{b}\color{red}\fontsize{9}{12}\selectfont}
@@ -44,10 +44,10 @@
 %
 %\setlength\parindent{0pt} % eliminates indents
 %\tolerance=1500 % Number affects overfull and Underful box warnings
-%\usepackage{caption}
 %
 %\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
 %
 %\newcommand{\titleGeometry}{\geometry{top=1in,bottom=1in,inner=1.5in,outer=1.5in}} % Sets geometry for first part}
 %
-\setlength\headheight{23pt}
+\setlength\headheight{23pt} % This prevents an error
+%\input{graphicsPath.tex}

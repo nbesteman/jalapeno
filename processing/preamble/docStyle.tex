@@ -1,4 +1,11 @@
 \makeatletter
+
+%\newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\raisebox{.45ex}{\rule{.6ex}{.6ex}}}}
+% ding characters specified in symbols-a4 pg12
+\newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\ding{227}}}
+\renewcommand{\labelitemi}{\localtextbulletone}
+%\newcommand{\HRule}{\rule{\linewidth}{0.5mm}\color{HeaderOrangeE}} % Command to make horizontal graphic lines
+
 %
 %\setsecnumdepth{subsection} % turns on subsec numbering
     %
@@ -53,7 +60,7 @@
    \renewcommand*{\chapnumfont}{\slshape} % Number Font
    \renewcommand*{\chaptitlefont}{\flushright\color{HeaderOrangeE}\slshape\huge}
    \renewcommand*{\printchaptername}{} % sets the text in brackets before the number
-   \newcommand{\thickrulefill}{\leavevmode \leaders \hrule height \chapColorbarheight \hfill \kern \z@} % rightbar length setter
+   \newcommand*{\thickrulefill}{\leavevmode \leaders \hrule height \chapColorbarheight \hfill \kern \z@} % rightbar length setter
    \renewcommand*{\printchapternum}{%
        %\makebox[0pt][l]{%
        \color{HeaderOrangeE}
@@ -64,7 +71,6 @@
        \quad % hspace
        \color{HeaderOrangeE}\thickrulefill % implements thickrulefill
      } %
-   } %
-} % End of customchpstyle
+   } % End of customchpstyle
     %
 \chapterstyle{customchpstyle}
