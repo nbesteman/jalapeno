@@ -2,10 +2,11 @@
 %         Title page passing the graphic throws error noted below
 %         Glossaries doesnt work.  pg313 in Memoir Manual
 %        {\thickrulefill} error
-%%%%%%%
-\documentclass[twoside, 12pt]{memoir}  % Two sided without blank pages following the title pages
-%Calling the class with no options is equivalent to:
+%%%%%%%%%%
+%Calling the memoir class with no options is equivalent to:
 %\documentclass[letterpaper,10pt,twoside,onecolumn,openright,final]{memoir}
+%%%%%%%%%%
+\documentclass[twoside, 12pt]{memoir}  % Two sided without blank pages following the title pages
 %
 \input{preamble/preamble.tex}
 %
@@ -19,7 +20,8 @@
 %
 \usepackage{standalone} %
 %
-\chapterstyle{section} % Style for TOC
+\chapterstyle{default} % Style for TOC
+%
 \setcounter{tocdepth}{5}  % subparagraph and down
 %\setcounter{tocdepth}{4}  % paragraph and down
 %\setcounter{tocdepth}{3}  % subsubsection and down
@@ -45,7 +47,7 @@ pdfkeywords={documentation,gis}} %
 %-------------------------------------------------------------------------------
 \begin{document} % Document Begins
 %
-\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for first part
+%\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for first part
 %
 \pagestyle{empty} % Clear headers and footers for TOC
 %
@@ -55,7 +57,7 @@ pdfkeywords={documentation,gis}} %
 %
 \clearpage
 %
-\restoregeometry % reverts geometry back to original
+%\restoregeometry % reverts geometry back to original
 %
 \tableofcontents % creates TOC
 %
@@ -66,34 +68,35 @@ pdfkeywords={documentation,gis}} %
 %-------------------------------------------------------------------------------
 \mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
 %
+%\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
+%
 \chapterstyle{customchpstyle}
 %
 \pagestyle{fancy} % Sets Headers and Footers
 %
 %\part*{Introduction} % * makes this part unnumbered
 %
-\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
-%
 \part[Brand]{Brand\\{\includegraphics[scale=.45]{GIS_Logo_better.jpg}}}
 %
-\restoregeometry % reverts geometry back to original
+%\restoregeometry % reverts geometry back to original
 %
 \subimport{brandPart/}{awardsChapter.tex}
 %
-\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
+%\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
 %
 \part{Methods}
 %
-\restoregeometry % reverts geometry back to original
+%\restoregeometry % reverts geometry back to original
 %
 \subimport{methodPart/}{documentationChapter.tex}
 %
 \subimport{methodPart/}{teamConceptChapter.tex}
 %
-\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
+%\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
+%
 \part{Service}
 %
-\restoregeometry % reverts geometry back to original
+%\restoregeometry % reverts geometry back to original
 %
 \subimport{servicePart/}{applicationsChapter.tex}
 %
@@ -102,12 +105,11 @@ pdfkeywords={documentation,gis}} %
 %-------------------------------------------------------------------------------
 %		Back Section
 %-------------------------------------------------------------------------------
-%
-\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
+%\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for part title page
 %
 \part{Resources}
 %
-\restoregeometry % reverts geometry back to original
+%\restoregeometry % reverts geometry back to original
 %
 \subimport{resourcesPart/}{appendices.tex}
 %
