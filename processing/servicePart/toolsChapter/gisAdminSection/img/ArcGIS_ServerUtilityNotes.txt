@@ -1,0 +1,73 @@
+@Error: Service is currently being configured by another administrative operation
+
+
+Remedy:
+This tech support article applies:
+https://support.esri.com/en/technical-article/000015549
+
+
+Our instuctions
+Log into Juniper
+windows R mstsc  juniper
+Use personal network credentials
+
+
+Launch the Configure ArcGIS Server account utility
+ArcGIS_ServerAccountUtility.PNG
+
+
+Use these credentials
+UN:  arcgis
+PW:  @lleganGIS2015
+in this:
+AccountUtilityLogin.PNG
+
+
+In the utility paste these paths:
+gisDirectoryLocations.PNG
+in this:
+C:\arcgisserver\directories
+C:\arcgisserver\config-store
+
+
+@lleganGIS201
+like this:
+gisDirectoryLocationsEntered.PNG
+
+
+Do not export Config File
+doNotExportConfigFile.PNG
+
+
+press configure
+configureAccount.png
+
+
+Search For service Manger
+searchForServiceManager.PNG
+
+
+While the tool runs, open the service manager
+windows  search services
+openServicesManager.png
+
+
+When the tool completes, press finish
+then in services
+select the ArcGIS Server service and restart the service.  (Randy had to do this)
+arcGisServiceInServicesManager.png
+
+
+
+mapservices would not stop so I try this:
+https://support.esri.com/en/technical-article/000012685
+Check permission levels for the arcGIS account
+ArcGisServerPermissions.PNG
+
+
+If necessary, add the arcgis user to the permissions on the folders
+ArcGisServerPermissionsAddUser.PNG
+
+
+
+https://gis.allegancounty.org/gis/rest/services/Orthos/Ortho_2014_Detailed/MapServer

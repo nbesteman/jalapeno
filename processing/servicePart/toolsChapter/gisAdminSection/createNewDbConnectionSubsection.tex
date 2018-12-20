@@ -15,8 +15,6 @@
 %
 \ifstandalone
 %
-\newgeometry{top=1in,bottom=1in,right=1.5in,left=1.5in} % Sets geometry for first part
-%
 \pagestyle{empty} % Clear headers and footers for TOC
 %
 \frontmatter % turns off chapter numbering and uses roman numerals for page numbers
@@ -24,8 +22,6 @@
 \maketitle % creates title page
 %
 \clearpage
-%
-\restoregeometry % reverts geometry back to original
 %
 \tableofcontents % creates TOC
 %
@@ -62,9 +58,9 @@ For any machine to connect to the Enterprise Geodatabase, SQL Server Native Clie
 %
 \paragraph*{Select appropriate Version\texorpdfstring{\\}{}}
 \noindent Decide whether to get the 32bit or 64bit version
-%\marginnote{\marginText \color{red} $\Rightarrow$ margin note}[0cm]
-
+    %
 \vspace{.25in}
+
 \marginnote{\marginText $\Leftarrow$ margin note}[0cm]
 \begin{figure}[h!]
 \centering
