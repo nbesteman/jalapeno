@@ -2,6 +2,7 @@
 %         Title page passing the graphic throws error noted below
 %         Glossaries doesnt work.  pg313 in Memoir Manual
 %        {\thickrulefill} error
+%        Dev 2 page layouts for 2 cols and regular
 %%%%%%%%%%
 %Calling the memoir class with no options is equivalent to:
 %\documentclass[letterpaper,10pt,twoside,onecolumn,openright,final]{memoir}
@@ -70,8 +71,13 @@ pdfkeywords={documentation,gis}} %
     %
 %\part*{Introduction} % * makes this part unnumbered
     %
-\part[Brand]{Brand\\{\includegraphics[scale=.45]{GIS_Logo_better.jpg}}}
+%\part[Brand]{Brand\\{\includegraphics[scale=.45]{GIS_Logo_better.jpg}}}
+\part{Brand}
     %
+%\newgeometry{top=1.25in, bottom=1.25in, left=1.25in, right=1.25in}
+    %
+%\newgeometry {top=1.25in, bottom=1.25in, outer=1.5in, inner=1.5in}
+
 \subimport{brandPart/}{awardsChapter.tex}
     %
 \part{Methods}

@@ -18,35 +18,50 @@
 \fi
 
 \subsection{Managing Geodatabase Replicas}
-\medskip 
+\medskip
 \subsubsection[Adding A New Feature Class To A Replica]{\Large Adding A New Feature Class To A Replica}
-
+    %
 Source:
 \href{https://support.esri.com/en/technical-article/000010345}{https://support.esri.com/en/technical-article/000010345}
-
+    %
+\begin{multicols}{2}
+    %
 \paragraph[Summary]{Summary \texorpdfstring{\\}{}}
 Currently, there is no out-of-the-box tool to add a feature class to an existing replica. With ArcGIS Desktop, one must either recreate the replica or if the workflow allows, replicate the new feature class as a separate replica.
-
-A feature class or table can only be added to an existing replica (without recreating the replica) using ArcObjects code.
-
+    %
 \paragraph[Steps]{Steps:\texorpdfstring{\\}{}}
-
 The steps below outline how the recreate the replica using the Register Existing Data option in Desktop. These steps can be applied to both one-way and two-way replicas.
-
-
-Synchronize the changes between parent and child replica geodatabases using the existing replica so that the data is identical in each database, then Unregister the replica in both geodatabases. For two-way replicas, ensure that changes are synchronized in both directions and there are no outstanding edits before unregistering the replica.
-Create/import the new feature class into the parent geodatabase, and add the GlobalID.
-Register the newly added data as versioned.
-Copy and paste the new feature class to the child geodatabase using ArcCatalog. 
-Note:
- that the GlobalIDs must have already been added to the feature class.
-
-For two-way replica or one-way full model, register the newly added data in child geodatabase as versioned.
-Using the parent geodatabase, add all the data that is to be replicated to a map in ArcMap.
-Click the 'Create Replica' tool on the Distributed Geodatabase toolbar.
-Select 'One way replica' or 'Two way replica' and click Next.
-Select 'Register existing data only'.
-Select the child geodatabase and specify a replica name.
-Click Next and click Finish.
-A new replica is created that includes the new data.
+    %
+\begin{itemize}
+    %
+\item Synchronize the changes between parent and child replica geodatabases using the existing replica so that the data is identical in each database, then Unregister the replica in both geodatabases. For two-way replicas, ensure that changes are synchronized in both directions and there are no outstanding edits before unregistering the replica.
+    %
+\item Create or import the new feature class into the parent geodatabase, and add the GlobalID.
+    %
+\item Register the newly added data as versioned.
+    %
+\item Copy and paste the new feature class to the child geodatabase using ArcCatalog.
+    %
+\item Note: that the GlobalIDs must have already been added to the feature class.
+    %
+\item For two-way replica or one-way full model, register the newly added data in child geodatabase as versioned.
+    %
+\item Using the parent geodatabase, add all the data that is to be replicated to a map in ArcMap.
+    %
+\item Click the 'Create Replica' tool on the Distributed Geodatabase toolbar.
+    %
+\item Select 'One way replica' or 'Two way replica' and click Next.
+    %
+\item Select 'Register existing data only'.
+    %
+\item Select the child geodatabase and specify a replica name.
+    %
+\item Click Next and click Finish.
+    %
+\item A new replica is created that includes the new data.
+    %
+\end{itemize}
+    %
+\end{multicols}
+    %
 \end{document}
