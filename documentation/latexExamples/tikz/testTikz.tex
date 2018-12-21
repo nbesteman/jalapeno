@@ -1,0 +1,85 @@
+\documentclass[twoside, 12pt]{memoir}  % Two sided without blank pages following the title pages
+
+\usepackage[top=1.5in, bottom=1.5in, outer=2.5in, inner=1.25in, heightrounded, marginparwidth=1.5in, marginparsep=.25in]{geometry} % Sets page geometry
+\usepackage[all]{background}
+\usepackage{lipsum}
+\usepackage{tikz}
+
+\def\pictureOne{\begin{tikzpicture}\draw[red] (0,0)--(0,2)--(2,2)--(2,0)--cycle;\end{tikzpicture}}
+\def\pictureTwo{\begin{tikzpicture}\draw[blue] (0,0)--(0,2)--(2,2)--(2,0)--cycle;\end{tikzpicture}}
+\def\pictureThree{\begin{tikzpicture}\draw[blue] (10,0)--(10,-25)--cycle;\end{tikzpicture}}
+\def\pictureFour{\begin{tikzpicture}\draw[red] (0,0)--(20,0)--cycle;\end{tikzpicture}}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\def\headrulewidth{0pt}
+
+\newlength{\rulewidth}
+\setlength{\rulewidth}{\textwidth}
+\addtolength{\rulewidth}{20mm}
+
+\newlength{\ruleheight}
+\setlength{\ruleheight}{\textheight}
+\addtolength{\ruleheight}{20mm}
+
+\fancyhead{}
+
+
+\fancyhead[L]{%
+    \vbox to 0pt{%
+    \vskip 0mm \hbox{%
+        \hskip-5mm\vrule height\ruleheight%
+        \hskip-5mm\vbox to \ruleheight{\pictureFour\vss\pictureThree}}%
+        \vss}}
+
+
+
+
+%\fancyfoot{}
+%\fancyfoot[C]{\footnotesize\thepage}
+
+\begin{document}
+\lipsum
+\end{document}
+
+
+%\documentclass[twoside, 12pt]{memoir}  % Two sided without blank pages following the title pages
+%%
+%\usepackage[top=1.5in, bottom=1.5in, outer=2.5in, inner=1.25in, heightrounded, marginparwidth=1.5in, marginparsep=.25in]{geometry} % Sets page geometry
+%
+%%\documentclass[10pt,a4paper]{article}
+%\usepackage{lipsum}
+%\usepackage{graphicx}
+%\usepackage{eso-pic,picture}
+%
+%
+%
+%
+%\AddToShipoutPicture{% star form for add to next shipout only
+%  \AtPageLowerLeft{%
+%    \put(\dimexpr
+%    \oddsidemargin+1in-\marginparsep\relax,0){\rule{0.3pt}{\paperheight}}%
+%  }%
+%
+%
+%  \AtPageUpperLeft{%
+%    \put(\marginparsep,-\baselineskip){%
+%      \parbox[t]{\dimexpr \oddsidemargin+1in-3\marginparsep}{%
+%        Text here but with several lines}%
+%    }%
+%  }%
+%
+%
+%
+%  \AtPageLowerLeft{%
+%    \put(\marginparsep,-\baselineskip){%
+%      \makebox(\dimexpr \oddsidemargin+1in-3\marginparsep,5cm)[c]{%
+%        \includegraphics[width=2cm,height=3cm]{example-image}%
+%      }
+%    }
+%  }
+%}
+%
+%\begin{document}
+%\lipsum
+%\end{document}

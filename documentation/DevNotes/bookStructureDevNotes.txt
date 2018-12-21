@@ -1,0 +1,3 @@
+
+Good link for Modular book structure
+https://tex.stackexchange.com/questions/307891/how-to-combine-several-child-files-such-that-each-child-file-has-its-own-table-o/352459#352459
