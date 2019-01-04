@@ -1,0 +1,53 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %  Page Styles
+    %  In LATEX the page style refers to the part of the page building mechanism that
+    %   attaches the headers and footers to the actual page.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  This block defines jalapenoPageStyleA page style
+\makepagestyle{jalapenoPageStyleA}
+    % headers
+\makeheadrule {jalapenoPageStyleA}{\textwidth}{\normalrulethickness}
+\makeevenhead {jalapenoPageStyleA}{\helv \thepage}{} {\helv \rightmark}
+\makeoddhead {jalapenoPageStyleA}{\helv \leftmark}{}{\helv \thepage}
+    % footers
+\makefootrule {jalapenoPageStyleA}{\textwidth}{\normalrulethickness}{\footruleskip}
+\makeevenfoot {jalapenoPageStyleA}{}{} {}
+\makeoddfoot {jalapenoPageStyleA}{}{} {}
+    %
+%%%%%%%%%%
+    %
+%  This block defines marks for jalapenoPageStyleA page style
+    %  See page 11 of Page Styles in Memoir
+    %
+\makeatletter % because of \@chapapp
+%
+\makepsmarks {jalapenoPageStyleA}{
+%\nouppercaseheads
+\createmark {chapter} {both} {shownumber}{\@chapapp\ }{. \ } % set leftmark to chapter
+%\createmark {section} {right}{shownumber}{} {. \ }
+\createmark {subsection} {right}{shownumber}{} {. \ } % set rightmark to subsection
+%\createmark {subsubsection}{right}{shownumber}{} {. \ } % set rightmark to subsubsection
+\createplainmark {toc} {both} {\contentsname}
+\createplainmark {lof} {both} {\listfigurename}
+\createplainmark {lot} {both} {\listtablename}
+\createplainmark {bib} {both} {\bibname}
+\createplainmark {index} {both} {\indexname}
+\createplainmark {glossary} {both} {\glossaryname}
+
+}
+\makeatother
+%  End of jalapenoPageStyleA pagestyle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  This block defines emptyPageStyle page style
+\makepagestyle{emptyPageStyle}
+    % headers
+\makeevenhead {emptyPageStyle}{}{}{}
+\makeoddhead {emptyPageStyle}{}{}{}
+    % footers
+\makefootrule {emptyPageStyle}{}{}{}
+\makeevenfoot {emptyPageStyle}{}{}{}
+\makeoddfoot {emptyPageStyle}{}{}{}
+    %
+%%%%%%%%%%

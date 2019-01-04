@@ -1,0 +1,37 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  % beginning od customchpstyle
+    %
+\makeatletter % handler for @
+    %
+\makechapterstyle{jalapenoChapterStyle}{%
+    %
+    \newlength{\chapColorbarheight}
+    \setlength{\chapColorbarheight}{.06in}		% Setting the height of the bar
+    %
+    \newlength{\chapnumboxlength}
+    \setlength{\chapnumboxlength}{.75in}	% Setting the length of the box containing chapter number
+    %
+    \newlength{\leftbarlength}
+    \setlength{\leftbarlength}{.5in}  		% Setting length of the bar left to the chapter number
+    \setlength{\afterchapskip}{.5in}
+    \renewcommand*{\chapterheadstart}{\vspace*{.25in}} % vspace from top of page
+    \renewcommand*{\afterchapternum}{\vspace*{-.9in}} % neg moves chapter title above chapter number
+    \renewcommand*{\chapnumfont}{\slshape} % Number Font
+    \renewcommand*{\chaptitlefont}{\flushright\color{HeaderOrangeE}\slshape\huge}
+    \renewcommand*{\printchaptername}{} % sets the text in brackets before the number
+    %\makeatletter
+    \newcommand*{\thickrulefill}{\leavevmode \leaders \hrule height \chapColorbarheight \hfill \kern \z@} % rightbar length setter
+    %\makeatother
+    \renewcommand*{\printchapternum}{%
+        %\makebox[0pt][l]{%
+        \color{HeaderOrangeE}
+        \rule{\leftbarlength}{\chapColorbarheight} % Left bar
+        \quad % hspace
+        \resizebox{!}{\chapnumboxlength}
+        {\chapnumfont \thechapter} % Chapter name and number
+        \quad % hspace
+        \color{HeaderOrangeE}\thickrulefill % implements thickrulefill
+     } %
+     \makeatother % closes handler for @
+} % End of customchpstyle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
