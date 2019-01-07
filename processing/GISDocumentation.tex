@@ -9,15 +9,19 @@
     %
 \documentclass[letterpaper, 12pt]{memoir}  % Two sided
     % Set page on paper layout including margins
- \settrimmedsize{\stockheight}{\stockwidth}{*} % Set trimsize to same as doc option
+\settrimmedsize{\stockheight}{\stockwidth}{} % Set trimsize to same as doc option
 
- \setulmargins{1.75in}{1in}{*} % pg 19 in mem Doc
- \setlrmargins{1.25}{2in}{*}
- % \settypeblocksize{*}{*}{*}
+%%% PAGE LAYOUT
+%-------------------------------------------------------------------
+
+\setlrmarginsandblock{0.15\paperwidth}{*}{1} % Left right ratio \setulmarginsandblock{0.15\paperwidth}{*}{1}  % Upper and lower margin
+
+%\setulmargins{*}{*}{2} % pg 19 in mem Doc{upper}{lower}{ratio}
+%\settypeblocksize{8in}{5.75in}{*}
  % \setmarginnotes{*}{*}{*}
  % \setheadfoot{*}{*}{*}
  % \setheaderspaces{*}{*}{*}
- % \checkandfixthelayout
+ \checkandfixthelayout
     %
 \input{preamble/preamble.tex}
     %
@@ -35,11 +39,11 @@
     %
 %\chapterstyle{default} % Style for TOC
     %
-\setcounter{tocdepth}{5}  % subparagraph and down
+%\setcounter{tocdepth}{5}  % subparagraph and down
 %\setcounter{tocdepth}{4}  % paragraph and down
 %\setcounter{tocdepth}{3}  % subsubsection and down
 %\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
-%\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
+\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
 %\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
     %
     % Set pdf doc properties
@@ -90,42 +94,43 @@ pdfkeywords={documentation,gis}} %
     %
 \subimport{brandPart/}{awardsChapter.tex}
     %
-\part{Methods}
-    %
-\subimport{methodPart/}{documentationChapter.tex}
-    %
-\subimport{methodPart/}{teamConceptChapter.tex}
-    %
-\part{Service}
-    %
-\subimport{servicePart/}{applicationsChapter.tex}
-    %
-\subimport{servicePart/}{toolsChapter.tex}
+% \part{Methods}
+%     %
+% \subimport{methodPart/}{documentationChapter.tex}
+%     %
+% \subimport{methodPart/}{teamConceptChapter.tex}
+%     %
+
+ %\part{Service}
+%     %
+ %\subimport{servicePart/}{applicationsChapter.tex}
+%     %
+% \subimport{servicePart/}{toolsChapter.tex}
     %
 %-------------------------------------------------------------------------------
 %		Back Section
 %-------------------------------------------------------------------------------
-\part{Resources}
-    %
-\subimport{resourcesPart/}{appendices.tex}
-    %
-\backmatter % does \clearpage
-    %
-\addcontentsline{toc}{section}{References} % Adds references to TOC as a part
-    %
-\bibliographystyle{amsplain} % sets biblioigraphy style
-%\bibliographystyle{plain} % sets biblioigraphy style
-    %
-\bibliography{referenceEntries} % Puts bibliography here
-    %
-\addcontentsline{toc}{part}{Glossary} % add glassary to TOC as a Part
-    %
-\glsaddall % Includes all glossary entries whether they appear in the text or not
-    %
-\printglossaries % Puts glossaries here
-    %
-%\addcontentsline{toc}{part}{Index} % Adds Index to TOC as a part
-    %
-\printindex % Puts index here
+% \part{Resources}
+%     %
+% \subimport{resourcesPart/}{appendices.tex}
+%     %
+% \backmatter % does \clearpage
+%     %
+% \addcontentsline{toc}{section}{References} % Adds references to TOC as a part
+%     %
+% \bibliographystyle{amsplain} % sets biblioigraphy style
+% %\bibliographystyle{plain} % sets biblioigraphy style
+%     %
+% \bibliography{referenceEntries} % Puts bibliography here
+%     %
+% \addcontentsline{toc}{part}{Glossary} % add glassary to TOC as a Part
+%     %
+% \glsaddall % Includes all glossary entries whether they appear in the text or not
+%     %
+% \printglossaries % Puts glossaries here
+%     %
+% %\addcontentsline{toc}{part}{Index} % Adds Index to TOC as a part
+%     %
+% \printindex % Puts index here
     %
 \end{document} % Document Ends
