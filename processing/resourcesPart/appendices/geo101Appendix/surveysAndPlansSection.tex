@@ -1,0 +1,17 @@
+\documentclass[class=book]{standalone}
+
+\usepackage[subpreambles=false]{standalone}
+
+\begin{document}
+
+\ifstandalone
+\maketitle % creates title page
+\clearpage
+\tableofcontents % creates TOC and blank page
+\fi
+
+\section{Surveys and Plans}
+
+\subimport{surveysAndPlansSection/}{usingNorthingAndEastingSubsection.tex}
+
+\end{document}

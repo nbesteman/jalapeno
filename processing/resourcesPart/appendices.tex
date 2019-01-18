@@ -16,13 +16,16 @@
 \tableofcontents % creates TOC and blank page
 \fi
 
-\appendix
-\renewcommand{\thesection}{\Alph{section}.\arabic{section}}
-\setcounter{section}{0}
+% \appendix
+% \renewcommand{\thesection}{\Alph{section}.\arabic{section}}
+% \setcounter{section}{0}
 \begin{appendices}
 
-\subimport{appendices/}{geo101Section.tex}
-\subimport{appendices/}{ESRiSection.tex}
+%\chapter{Geography 101}
+
+%\subimport{appendices/geo101Appendix/surveysAndPlansSection/}{usingNorthingAndEastingSubsection.tex}
+\subimport{appendices/}{geo101Appendix.tex}
+%\subimport{appendices/}{ESRiSection.tex}
 
 \end{appendices}
 

@@ -13,15 +13,14 @@
 
 %%% PAGE LAYOUT
 %-------------------------------------------------------------------
+%\setlrmarginsandblock{0.15\paperwidth}{*}{1} % Left right ratio
+%
+% \settypeblocksize{8in}{5.75in}{*}
+% \setmarginnotes{*}{*}{*}
+% \setheadfoot{*}{*}{*}
+% \setheaderspaces{*}{*}{*}
 
-\setlrmarginsandblock{0.15\paperwidth}{*}{1} % Left right ratio \setulmarginsandblock{0.15\paperwidth}{*}{1}  % Upper and lower margin
-
-%\setulmargins{*}{*}{2} % pg 19 in mem Doc{upper}{lower}{ratio}
-%\settypeblocksize{8in}{5.75in}{*}
- % \setmarginnotes{*}{*}{*}
- % \setheadfoot{*}{*}{*}
- % \setheaderspaces{*}{*}{*}
- \checkandfixthelayout
+%\checkandfixthelayout
     %
 \input{preamble/preamble.tex}
     %
@@ -42,14 +41,14 @@
 %\setcounter{tocdepth}{5}  % subparagraph and down
 %\setcounter{tocdepth}{4}  % paragraph and down
 %\setcounter{tocdepth}{3}  % subsubsection and down
-%\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
-\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
+\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
+%\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
 %\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
     %
     % Set pdf doc properties
 \hypersetup{pdfauthor={Allegan County GIS Services},% Page 248 in Latex Beinners Guide
 pdftitle={What We Do}, %  Sets PDF properties
-pdfsubject={Documentation of everything}, %
+pdfsubject={Documentation of GIS Services Tasks}, %
 pdfkeywords={documentation,gis}} %
     %
 \def\titlename{What We Do} % Sets book title
@@ -60,6 +59,8 @@ pdfkeywords={documentation,gis}} %
 %     %
 % \makeindex % Creates idx file
     %
+
+
 %-------------------------------------------------------------------------------
 %		Front Section
 %-------------------------------------------------------------------------------
@@ -67,21 +68,31 @@ pdfkeywords={documentation,gis}} %
     %
 %\chapterstyle{default}
     %
-\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+\frontmatter % pg 75 class doc turns off chapter numbering and uses lower case roman numerals for page numbers
     %
-\pagestyle{emptyPageStyle} % custom from pageStyles.tex
-\maketitle % creates title page and blank page??? after title page
+%\pagestyle{title} %
+%\pagestyle{emptyPageStyle} % custom from pageStyles.tex
+\maketitle % creates title page
     %
-\clearpage
+%\thispagestyle{empty}
+\pagestyle{empty}
     %
 \tableofcontents % creates TOC
     %
 \clearpage
     %
-%-------------------------------------------------------------------------------
+%----------------------------------------------------------------------------
 %		Main Section
-%-------------------------------------------------------------------------------
-\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+%----------------------------------------------------------------------------
+\mainmatter % pg 75 class doc turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers starts at the next coming recto page
+    %
+\setmarginnotes{.1in}{.4in}{.1in}
+    %
+\setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
+    %
+\setulmarginsandblock{1in}{*}{*}
+    %
+\checkandfixthelayout
     %
 \chapterstyle{jalapenoChapterStyle} % custom from chapterStyles.tex
     %
@@ -94,27 +105,26 @@ pdfkeywords={documentation,gis}} %
     %
 \subimport{brandPart/}{awardsChapter.tex}
     %
-% \part{Methods}
+\part{Methods}
 %     %
-% \subimport{methodPart/}{documentationChapter.tex}
+\subimport{methodPart/}{documentationChapter.tex}
 %     %
-% \subimport{methodPart/}{teamConceptChapter.tex}
+\subimport{methodPart/}{teamConceptChapter.tex}
 %     %
-
- %\part{Service}
+\part{Service}
 %     %
- %\subimport{servicePart/}{applicationsChapter.tex}
+\subimport{servicePart/}{applicationsChapter.tex}
 %     %
-% \subimport{servicePart/}{toolsChapter.tex}
-    %
+\subimport{servicePart/}{toolsChapter.tex}
+%     %
 %-------------------------------------------------------------------------------
 %		Back Section
 %-------------------------------------------------------------------------------
-% \part{Resources}
+\part{Resources}
+
+\subimport{resourcesPart/}{appendices.tex}
 %     %
-% \subimport{resourcesPart/}{appendices.tex}
-%     %
-% \backmatter % does \clearpage
+% \backmatter % pg 75 class doc prohibits sectional division numbering, and captions, etc., will be numbered continuously.
 %     %
 % \addcontentsline{toc}{section}{References} % Adds references to TOC as a part
 %     %
