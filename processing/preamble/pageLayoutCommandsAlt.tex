@@ -1,0 +1,53 @@
+%   This script requires Memoir Class
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Sets sectioning Layout Properties
+    %
+    %
+    %\setsecnumdepth{subsection} % turns on subsec numbering
+    %
+\setsecheadstyle{\Large\scshape\color{HeaderBlueC}} % default is \Large\bfseries
+    %\setsecheadstyle{\scshape\color{HeaderOrangeB}}
+    %
+    % Subsection
+\setsubsecheadstyle{\large\scshape\color{HeaderOrangeB}} % default is \large\bfseries
+    %\setsubsecheadstyle{\huge\centering\color{HeaderOrangeE}}%
+    % Subsubsection
+\setsubsubsecheadstyle{\LARGE\scshape\centering\color{HeaderBlueE}} % default is \bfseries
+    %\setsubsubsecheadstyle{\LARGE\scshape\centering\color{HeaderBlueC}}%   1
+    % Paragraph
+\setparaheadstyle{\bfseries\Large\color{HeaderGreenA}}%
+     %\setparaheadstyle{\Large\color{HeaderBlueA}}%2
+     % Subparagraph
+     %\setsubparaheadstyle{\large\color{HeaderBlueB}}%
+\setsubparaheadstyle{\bfseries\large\color{HeaderGreenB}}%
+     %
+     % \setbeforeSskip{<skip>} pg .95
+     % The absolute value of the <skip> length argument is the space to leave above the heading.
+     % If the actual value is negative then the first line after the heading will not be indented.
+\setbeforesecskip{-15pt plus -10pt minus -2pt}
+\setbeforesubsecskip{-15pt plus -10pt minus -2pt}
+\setbeforesubsubsecskip{-32.5pt plus -10pt minus -2pt}
+\setbeforeparaskip{-32.5pt plus -10pt minus -2pt}
+\setbeforesubparaskip{-5pt plus -3pt minus -1pt}
+    %
+    % \setSindent{<length>}
+    % The value of the length argument is the indentation of the heading (number and
+    % title) from the lefthand margin. This is normally 0pt.
+\setsubparaindent{0pt}
+    % \setafterSskip{<skip>} pg.96
+    % If the value of the <skip> length argument is positive it is the space to leave between the
+    % display heading and the following text. If it is negative, then the heading will be runin
+    % and the value is the horizontal space between the end of the heading and the following text.
+    %
+\setaftersecskip{.05in}
+\setaftersubsecskip{.15in}
+\setaftersubsubsecskip{.1in}
+\setafterparaskip{.05in}
+\setaftersubparaskip{.05in}
+    %
+\renewcommand{\partnamefont}{\color{HeaderOrangeE}\Huge\normalfont}
+\renewcommand{\partnumfont}{\color{HeaderOrangeE}\Huge\normalfont}
+    %
+    % End of Setting sectioning Layout Properties
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\columnsep{.3in}

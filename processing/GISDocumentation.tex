@@ -9,18 +9,20 @@
     %
 \documentclass[letterpaper, 12pt]{memoir}  % Two sided
     % Set page on paper layout including margins
-\settrimmedsize{\stockheight}{\stockwidth}{} % Set trimsize to same as doc option
+%\settrimmedsize{\stockheight}{\stockwidth}{} % Set trimsize to same as doc option
 
 %%% PAGE LAYOUT
 %-------------------------------------------------------------------
-%\setlrmarginsandblock{0.15\paperwidth}{*}{1} % Left right ratio
-%
-% \settypeblocksize{8in}{5.75in}{*}
-% \setmarginnotes{*}{*}{*}
-% \setheadfoot{*}{*}{*}
-% \setheaderspaces{*}{*}{*}
-
-%\checkandfixthelayout
+\setmarginnotes{.1in}{.4in}{.1in}
+    %
+\setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
+    %
+\setulmarginsandblock{1in}{1in}{*}
+    %
+\checkandfixthelayout
+\makeatletter
+\ch@ngetext
+\makeatletter
     %
 \input{preamble/preamble.tex}
     %
@@ -33,10 +35,10 @@
 \input{preamble/pageStyles.tex}
     %
 \input{preamble/chapterStyles.tex}
+
+\input{glossaryEntries.tex}
     %
 \usepackage{standalone} %
-    %
-%\chapterstyle{default} % Style for TOC
     %
 %\setcounter{tocdepth}{5}  % subparagraph and down
 %\setcounter{tocdepth}{4}  % paragraph and down
@@ -55,26 +57,21 @@ pdfkeywords={documentation,gis}} %
     %
 \title{\input {commonTitle}}  % Inputs common title page
     %
-% \makeglossaries % creates glo file
+\makeglossary % creates glo file
 %     %
-% \makeindex % Creates idx file
+\makeindex % Creates idx file
     %
-
-
 %-------------------------------------------------------------------------------
 %		Front Section
 %-------------------------------------------------------------------------------
 \begin{document} % Document Begins
     %
-%\chapterstyle{default}
-    %
 \frontmatter % pg 75 class doc turns off chapter numbering and uses lower case roman numerals for page numbers
     %
-%\pagestyle{title} %
-%\pagestyle{emptyPageStyle} % custom from pageStyles.tex
 \maketitle % creates title page
     %
-%\thispagestyle{empty}
+\clearpage
+    %
 \pagestyle{empty}
     %
 \tableofcontents % creates TOC
@@ -85,14 +82,6 @@ pdfkeywords={documentation,gis}} %
 %		Main Section
 %----------------------------------------------------------------------------
 \mainmatter % pg 75 class doc turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers starts at the next coming recto page
-    %
-\setmarginnotes{.1in}{.4in}{.1in}
-    %
-\setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
-    %
-\setulmarginsandblock{1in}{*}{*}
-    %
-\checkandfixthelayout
     %
 \chapterstyle{jalapenoChapterStyle} % custom from chapterStyles.tex
     %
@@ -106,41 +95,51 @@ pdfkeywords={documentation,gis}} %
 \subimport{brandPart/}{awardsChapter.tex}
     %
 \part{Methods}
-%     %
+    %
 \subimport{methodPart/}{documentationChapter.tex}
-%     %
+    %
 \subimport{methodPart/}{teamConceptChapter.tex}
-%     %
+    %
 \part{Service}
-%     %
+    %
 \subimport{servicePart/}{applicationsChapter.tex}
-%     %
+    %
 \subimport{servicePart/}{toolsChapter.tex}
-%     %
+    %
 %-------------------------------------------------------------------------------
 %		Back Section
 %-------------------------------------------------------------------------------
 \part{Resources}
-
+%
+\chapterstyle{demo2}
+\pagestyle{plain}
+\input{preamble/pageLayoutCommandsAlt.tex}
+%
+\backmatter % pg 75 class doc prohibits sectional division numbering, and captions, etc., will be numbered continuously.
+%
+\begin{appendices}
+%
 \subimport{resourcesPart/}{appendices.tex}
+%
+\end{appendices}
+%
+\clearpage
+%
+%\addcontentsline{toc}{chapter}{References} % Adds references to TOC as a part
 %     %
-% \backmatter % pg 75 class doc prohibits sectional division numbering, and captions, etc., will be numbered continuously.
+%\bibliographystyle{amsplain} % sets biblioigraphy style
+\bibliographystyle{plain} % sets biblioigraphy style
 %     %
-% \addcontentsline{toc}{section}{References} % Adds references to TOC as a part
+\bibliography{referenceEntries} % Puts bibliography here
 %     %
-% \bibliographystyle{amsplain} % sets biblioigraphy style
-% %\bibliographystyle{plain} % sets biblioigraphy style
+\addcontentsline{toc}{chapter}{Glossary} % add glassary to TOC as a Part
 %     %
-% \bibliography{referenceEntries} % Puts bibliography here
+\glsaddall % Includes all glossary entries whether they appear in the text or not
 %     %
-% \addcontentsline{toc}{part}{Glossary} % add glassary to TOC as a Part
+\printglossary % Puts glossaries here
 %     %
-% \glsaddall % Includes all glossary entries whether they appear in the text or not
+%\addcontentsline{toc}{part}{Index} % Adds Index to TOC as a part
 %     %
-% \printglossaries % Puts glossaries here
-%     %
-% %\addcontentsline{toc}{part}{Index} % Adds Index to TOC as a part
-%     %
-% \printindex % Puts index here
+\printindex % Puts index here
     %
 \end{document} % Document Ends

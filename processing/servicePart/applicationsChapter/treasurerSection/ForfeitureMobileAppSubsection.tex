@@ -1,39 +1,39 @@
-\documentclass[class=book , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
-%
-\input{../../../preamble/preamble}
-\input{../../../preamble/graphicsPath}
-\input{../../../preamble/headFootSetup}
-\input{../../../preamble/colorDefs}
-%
-\setcounter{tocdepth}{5}  % subparagraph and down
-%
-\def\titlename{Forfeiture Data Collection\\ \medskip\large Mobile App with Collector for ArcGIS}
-%
-\title{\input{../../../commonTitle}}  % inputs common title
+% \documentclass[class=book , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
+% %
+% \input{../../../preamble/preamble}
+% \input{../../../preamble/graphicsPath}
+% \input{../../../preamble/headFootSetup}
+% \input{../../../preamble/colorDefs}
+% %
+% \setcounter{tocdepth}{5}  % subparagraph and down
+% %
+% \def\titlename{Forfeiture Data Collection\\ \medskip\large Mobile App with Collector for ArcGIS}
+% %
+% \title{\input{../../../commonTitle}}  % inputs common title
 %
 \begin{document}% document begins
 %
 % Local Compile Conditionals begin
 %
-\ifstandalone
-%
-\pagestyle{empty} % Clear headers and footers for TOC
-%
-\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-%
-\maketitle % creates title page
-%
-\clearpage
-%
-\tableofcontents % creates TOC
-%
-\clearpage
-%
-\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-%
-\pagestyle{fancy} % Sets Headers and Footers
-%
-\fi
+% \ifstandalone
+% %
+% \pagestyle{empty} % Clear headers and footers for TOC
+% %
+% \frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+% %
+% \maketitle % creates title page
+% %
+% \clearpage
+% %
+% \tableofcontents % creates TOC
+% %
+% \clearpage
+% %
+% \mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+% %
+% \pagestyle{fancy} % Sets Headers and Footers
+% %
+% \fi
 %
 % Local Compile Conditionals end
 %
@@ -43,7 +43,9 @@
 %
 \subsubsection{Problem and Analysis}
 %
-\begin{multicols}{2}
+%\begin{multicols}{2}
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+%\begin{adjmulticols}{2}{-.5in}{-.5in}
   %
 \paragraph{Background}
 %
@@ -77,20 +79,17 @@
 %
 \end{itemize} %
 %
-\end{multicols}
+%\end{multicols}
+\end{adjmulticols}
 %
+%\layout
 \clearpage
-    %
+%
+%
+%
 \subsubsection{Design}
-%\paragraph[Overview]{Overview} {\color{graphicOrange}{\Huge\textbf{Forfeiture Parcels}}}\\
-%is used through the workflow
+%
 \paragraph[Overview]{Overview}
-%{\color{graphicOrange}{\Huge\textbf{Forfeiture Parcels}}}\\
-%is used through the workflow
-%\vspace{.20in}
-
-%\noindent The key data set : {\color{graphicOrange}{\Huge\textbf{Forfeiture Parcels}}}\\
-%is used through the workflow
 %
 % Single Figure
 %
@@ -104,7 +103,7 @@
 
 \caption{Project Design}
 \end{figure}
-%\marginpar[]{$\Rightarrow$}
+%
 \clearpage
 %
 %
@@ -148,17 +147,23 @@ There are three parts to the daily routine:
 %
 %
 \paragraph{Technologies Used in The Forfeiture App}
-\begin{multicols}{2}
-\subparagraph{BSA Data}\noindent Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
-
+%
+%\begin{adjmulticols}{2}{-.5in}{-.5in}
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+%
+\subparagraph{BSA Data}
+%
+\noindent Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
+%
 \subparagraph{ArcGIS Desktop}\noindent Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network.
-
+%
 \subparagraph{ArcGIS Collector}\noindent A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork. The user collects the necessary information on each forfeiture parcel in the field disconnected, and then uploads the changes when reconnected.
-
+%
 \subparagraph{Enterprise Geodatabse}\noindent Live data from a publishing geodatabase (ACPub), running on SQL Server database server (acintsql01) provides access to Forfeiture Parcels
-
+%
 \subparagraph{ArcGIS Portal} \noindent Forfeiture Parcels is served as a feature service (REST service)  named TaxReversionParcels.  A webmap on Portal, called the Forfeiture Field Map consumes the TaxReversionParcels exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.
-\end{multicols}
+%
+\end{adjmulticols}
 %
 % Single Figure
 %

@@ -1,4 +1,4 @@
-%   This script doe not require Memoir Class
+%   This script does not require Memoir Class
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages Used
 \usepackage{import} % Required for importing other .tex docs.  (import uses everything bw Begin and End Doc)
@@ -8,19 +8,19 @@
 \usepackage{cite} % improves citation handling
 \usepackage{pdfpages} % enables loading a pdf into the doc
 \usepackage{makeidx} % Enables index features
-%\usepackage{glossaries} % must be after hyperref
-%\usepackage{blindtext} % enables ipsum loerem "dummy" text blocks
 \usepackage{enumitem} % enables control over enumerate, itemize, and
 \usepackage{xcolor}
-%\usepackage{marginnote}
 \usepackage{pifont} % makes dingbats fonts avail
-\usepackage{multicol}
-    %
+\usepackage{layout}
+\usepackage{anyfontsize}
+\usepackage{adjmulticol}
+
 %%%%%%%%%%%   Commands   %%%%%%%%%%%%%%%
+\newcommand{\innerMar}{-.5in}
+\newcommand{\outerMar}{-.5in}
 \renewcommand*{\bibname}{References} % renames the bibliography
 \newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\ding{227}}} % ding characters specified in symbols-a4 pg12
 \renewcommand{\labelitemi}{\localtextbulletone} % sets the ding char to bullets
-
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make horizontal graphic lines
 \newcommand{\marginText}{\fontfamily{cmr}\fontseries{b}\color{red}\fontsize{9}{12}\selectfont} % create new typeface for margins
 \newcommand{\helv}{\color{HeaderOrangeE}\fontfamily{phv}\fontseries{b}\fontsize{9}{11}\selectfont} % Create new typeface for headers
@@ -33,9 +33,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%  Testing
 %\usepackage[toc,title,page]{appendix}
-\usepackage{anyfontsize}
 
 %%%%  Testing End
     %
 \usepackage[pdftex,breaklinks,colorlinks=true,linkcolor=black,citecolor=blue,  % hyperref
 urlcolor=red,linktocpage=false,pagebackref=true,filecolor=magenta]{hyperref} % http://www.tug.org/applications/hyperref/manual.html#x1-100003.6
+\usepackage{glossaries}

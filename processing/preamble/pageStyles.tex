@@ -1,5 +1,7 @@
-%   This script requires Memoir Class
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HEADERS AND FOOTERS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+          %This script requires Memoir Class
     %  Page Styles
     %  In LATEX the page style refers to the part of the page building mechanism that
     %   attaches the headers and footers to the actual page.
@@ -53,3 +55,16 @@
 \makeoddfoot {emptyPageStyle}{}{}{}
     %
 %%%%%%%%%%
+\newcommand{\normPageLayout}{%
+\setmarginnotes{.2in}{.5in}{.1in}%
+\setlrmarginsandblock{*}{0.3\paperwidth}{.75}% Left right ratio
+\setulmarginsandblock{1in}{*}{*}%
+\checkandfixthelayout%
+\clearpage}
+
+\newcommand{\widePageLayout}{%
+\setmarginnotes{.1mm}{.1mm}{.1mm}%
+\setlrmarginsandblock{1in}{1in}{*}% Left right ratio
+\setulmarginsandblock{1in}{1in}{*}%
+\checkandfixthelayout%
+\clearpage}

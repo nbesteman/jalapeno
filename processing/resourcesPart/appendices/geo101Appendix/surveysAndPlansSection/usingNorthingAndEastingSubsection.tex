@@ -15,24 +15,22 @@
 \clearpage
 %\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
 \fi
-\clearpage
+%\clearpage
 \subsection{Northing And Easting}
 \medskip
+
 \subsubsection[How to use]{How to use Northing and Easting}
 \vspace{.1in}
-
+%
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+%
 \paragraph[Use a Spreadsheet]{}\textbf{{\Large Using a spreadsheet to convert the dimensions}}
 \vspace{.1in}
 
-%{\Large $\Rightarrow$ Push the Configure Button}
 %
-%
-\noindent To use Northing and Easting from survey plans:\\
+\noindent To use Northing and Easting from survey plans: In a spreadsheet, adjust the data to be relative to the 1st point\\
 \vspace{.1in}
-
-\noindent In a spreadsheet, adjust the data to be relative to the 1st point\\
-\vspace{.1in}
-
+\end{adjmulticols}
 \noindent So if a survey gives you:\\
 
 \begin{table}[htbp]
@@ -54,6 +52,7 @@ Pt&Northing&Easting\\ \hline
 }
 \caption{Survey Plan Northing and Easting}
 \end{table}
+
 \clearpage
 
 \noindent Calculate Relative North and Relative Easting of the points to Point 1 by subtracting the point 1 values from each of the other points.\\

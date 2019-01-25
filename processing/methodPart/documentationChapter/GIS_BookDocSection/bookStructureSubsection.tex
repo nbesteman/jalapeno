@@ -86,10 +86,12 @@
 \item Project is coded with relative paths and jalapeno can be located anywhere.
 
 \end{itemize}
-
+    %
+\begin{adjmulticols}{1}{\innerMar}{\outerMar}
+    %
 \subsubsection{Project File Structure:}
 {\Large ...\textbackslash jalapeno\textbackslash..}\\
-\begin{tabular}{p{4cm}| p{7cm} }
+\begin{tabular}{p{6cm}| p{9cm} }
 \footnotesize folder & {\footnotesize description} \\ \hline
 documentation & resources used in Jalape\~no\\
 processing & .tex douments and build folders\\
@@ -97,7 +99,7 @@ source & common image files\\
 \end{tabular}
 \bigskip\\
 {\Large ...\textbackslash jalapeno\textbackslash documentation\textbackslash..}\\
-\begin{tabular}{p{4cm} | p{7cm} }
+\begin{tabular}{p{6cm} | p{9cm} }
 \footnotesize folder or file & {\footnotesize description} \\ \hline
 moduleTemplates & .tex templates\\
 packageDocs & \LaTeX{} documentation\\
@@ -107,7 +109,7 @@ BookStructureMM.mm & A mindmap of jalapeno\\
 \end{tabular}
 \bigskip\\
 {\Large ...\textbackslash jalapeno\textbackslash processing\textbackslash..}\\
-\begin{tabular}{p{4cm}| p{7cm} }
+\begin{tabular}{p{6cm}| p{9cm} }
 \footnotesize folder or file & {\footnotesize description }\\ \hline
 ...Part & folders of book \textit{part}s\\
 build & \LaTeX{}folder for .pdf output and temp files \\
@@ -119,8 +121,13 @@ glossaryEntries.tex & entries that appear in glossary\\
 indexEntries.tex & entries that appear in the index\\
 preamble.tex & preamble code for all documents\\
 \end{tabular}
+    %
+\end{adjmulticols}
+    %
 \paragraph*{*Note about referenceEntries.bib}
 {\footnotesize Any reference entries built here can be cited in any .tex document in the project.}
+
+\clearpage
 
 \subsubsection[Using The Glossary]{{\Large Using The Glossary}}
 \paragraph{Glossary Requirements}
