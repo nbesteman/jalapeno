@@ -1,30 +1,31 @@
-%   This script requires Memoir Class
+%   Requires Memoir Class
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  % beginning od customchpstyle
-    %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  % Chapter Styles create the chapter title page style elements
+  % (SPACING, GRAPHIC, AND TYPEFACE PROPERTIES)
+    % beginning oF customchpstyle
 \makeatletter % handler for @
     %
 \makechapterstyle{jalapenoChapterStyle}{%
     %
     \newlength{\chapColorbarheight}
-    \setlength{\chapColorbarheight}{.06in}		% Setting the height of the bar
+    \setlength{\chapColorbarheight}{.06in}  % Setting the height of the bar
     %
     \newlength{\chapnumboxlength}
-    \setlength{\chapnumboxlength}{.75in}	% Setting the length of the box containing chapter number
+    \setlength{\chapnumboxlength}{.75in}  % Setting the length of the box containing chapter number
     %
     \newlength{\leftbarlength}
-    \setlength{\leftbarlength}{.5in}  		% Setting length of the bar left to the chapter number
+    \setlength{\leftbarlength}{.5in}  %  Setting length of the bar left to the chapter number
+    %
     \setlength{\afterchapskip}{.5in}
+    % COMMANDS
     \renewcommand*{\chapterheadstart}{\vspace*{.25in}} % vspace from top of page
     \renewcommand*{\afterchapternum}{\vspace*{-.9in}} % neg moves chapter title above chapter number
     \renewcommand*{\chapnumfont}{\slshape} % Number Font
     \renewcommand*{\chaptitlefont}{\flushright\color{HeaderOrangeE}\slshape\huge}
     \renewcommand*{\printchaptername}{} % sets the text in brackets before the number
-    %\makeatletter
     \newcommand*{\thickrulefill}{\leavevmode \leaders \hrule height \chapColorbarheight \hfill \kern \z@} % rightbar length setter
-    %\makeatother
-    \renewcommand*{\printchapternum}{%
-        %\makebox[0pt][l]{%
+    \renewcommand*{\printchapternum}{ %
         \color{HeaderOrangeE}
         \rule{\leftbarlength}{\chapColorbarheight} % Left bar
         \quad % hspace
@@ -35,5 +36,4 @@
      } %
      \makeatother % closes handler for @
 } % End of customchpstyle
- %\makeatother % closes handler for @
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------------------------------------------------

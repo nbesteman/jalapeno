@@ -1,32 +1,27 @@
+% Requires Memoir Class
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % HEADERS AND FOOTERS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-          %This script requires Memoir Class
     %  Page Styles
     %  In LATEX the page style refers to the part of the page building mechanism that
     %   attaches the headers and footers to the actual page.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  This block defines jalapenoPageStyleA page style
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%  DEFINE JALAPENO PAGE STYLE (JalapenopageStyleA page style)
 \makepagestyle{jalapenoPageStyleA}
-    % headers
+    % HEADERS
 \makeheadrule {jalapenoPageStyleA}{\textwidth}{\normalrulethickness}
 \makeheadfootruleprefix{jalapenoPageStyleA}{\color{HeaderOrangeE}}{\color{HeaderOrangeE}}
 \makeevenhead {jalapenoPageStyleA}{\helv \thepage}{} {\helv \rightmark}
 \makeoddhead {jalapenoPageStyleA}{\helv \leftmark}{}{\helv \thepage}
-    % footers
+    % FOOTERS
 \makefootrule {jalapenoPageStyleA}{\textwidth}{\normalrulethickness}{\footruleskip}
 \makeevenfoot {jalapenoPageStyleA}{}{} {}
 \makeoddfoot {jalapenoPageStyleA}{}{} {}
-    %
-%%%%%%%%%%
-    %
-%  This block defines marks for jalapenoPageStyleA page style
-    %  See page 11 of Page Styles in Memoir
-    %
+    % MARKS
+      % NOTE: See page 11 of Page Styles in Memoir
 \makeatletter % because of \@chapapp
-%
+  %
 \makepsmarks {jalapenoPageStyleA}{
-%\nouppercaseheads
+  %\nouppercaseheads
 \createmark {chapter} {both} {shownumber}{\@chapapp\ }{. \ } % set leftmark to chapter
 %\createmark {section} {right}{shownumber}{} {. \ }
 \createmark {subsection} {right}{shownumber}{} {. \ } % set rightmark to subsection
@@ -37,14 +32,12 @@
 \createplainmark {bib} {both} {\bibname}
 \createplainmark {index} {both} {\indexname}
 \createplainmark {glossary} {both} {\glossaryname}
-
 }
 \makeatother
-%  End of jalapenoPageStyleA pagestyle
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  This block defines emptyPageStyle page style
+%-------------------------------------------------------------------
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%  This block defines emptyPageStyle page style NEEDS WORK
 \makepagestyle{emptyPageStyle}
     % headers
 \makeevenhead {emptyPageStyle}{}{}{}
@@ -54,17 +47,16 @@
 \makeevenfoot {emptyPageStyle}{}{}{}
 \makeoddfoot {emptyPageStyle}{}{}{}
     %
-%%%%%%%%%%
-\newcommand{\normPageLayout}{%
-\setmarginnotes{.2in}{.5in}{.1in}%
-\setlrmarginsandblock{*}{0.3\paperwidth}{.75}% Left right ratio
-\setulmarginsandblock{1in}{*}{*}%
-\checkandfixthelayout%
-\clearpage}
-
-\newcommand{\widePageLayout}{%
-\setmarginnotes{.1mm}{.1mm}{.1mm}%
-\setlrmarginsandblock{1in}{1in}{*}% Left right ratio
-\setulmarginsandblock{1in}{1in}{*}%
-\checkandfixthelayout%
-\clearpage}
+% \newcommand{\normPageLayout}{%
+% \setmarginnotes{.2in}{.5in}{.1in}%
+% \setlrmarginsandblock{*}{0.3\paperwidth}{.75}% Left right ratio
+% \setulmarginsandblock{1in}{*}{*}%
+% \checkandfixthelayout%
+% \clearpage}
+%
+% \newcommand{\widePageLayout}{%
+% \setmarginnotes{.1mm}{.1mm}{.1mm}%
+% \setlrmarginsandblock{1in}{1in}{*}% Left right ratio
+% \setulmarginsandblock{1in}{1in}{*}%
+% \checkandfixthelayout%
+% \clearpage}

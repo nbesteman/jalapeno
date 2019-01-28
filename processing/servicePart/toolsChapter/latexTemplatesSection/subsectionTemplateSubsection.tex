@@ -1,41 +1,101 @@
-%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
-\documentclass[class=book , crop=false]{standalone}
-
-\input{../../../preamble}
-
-\def\titlename{Subsection Template}
-
-\title{\input{../../../commonTitle}}  % closing brace for title
-
-\begin{document}% Document Begins
-
-\ifstandalone
-\maketitle % creates title page
-\clearpage
-\tableofcontents % creates TOC
-\clearpage
-\fi
-
-\subsection{\LaTeX{} Subsection Template}
-\medskip 
-	
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+ %  This block uncommented only for standalone compile
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+% \documentclass[letterpaper, 12pt]{memoir}
+% \setmarginnotes{.1in}{.4in}{.1in}
+% \setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
+% \setulmarginsandblock{1in}{1in}{*}
+% \checkandfixthelayout
+% \makeatletter
+% \ch@ngetext
+% \makeatletter
+%    %
+% \input{../../../preamble/preamble.tex}
+%    %
+% \input{../../../preamble/graphicsPath.tex}
+%    %
+% \input{../../../preamble/colorDefs.tex}
+%    %
+% \input{../../../preamble/pageLayoutCommands.tex}
+%    %
+% \input{../../../preamble/pageStyles.tex}
+%    %
+% \input{../../../preamble/chapterStyles.tex}
+%    %
+% %\input{../../../glossaryEntries.tex}
+%    %
+%    %
+% %\setcounter{tocdepth}{5}  % subparagraph and down
+% %\setcounter{tocdepth}{4}  % paragraph and down
+% %\setcounter{tocdepth}{3}  % subsubsection and down
+% \setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
+% %\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
+% %\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
+%    %
+%    %
+% \def\titlename{Subsection Template\\ \medskip\large \LaTeX{} for Documentation}
+%    %
+% \title{\input{../../../commonTitle}}  % inputs common title
+%    %
+% \begin{document}% document begins
+%    %
+% \pagestyle{empty} % Clear headers and footers for TOC
+% \frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+% \maketitle % creates title page
+% \clearpage
+% \tableofcontents % creates TOC
+% \clearpage
+% \mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+ %--------------------------------------------------
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+ %  This block uncommented only for Main compile
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{document}% document begins
+ %
+ %--------------------------------------------------
+\subsection[\LaTeX{} Subsection Template]{\LaTeX{} Subsection Template}
+  %
 \begin{verbatim}
-
-\documentclass[class=book , crop=false]{standalone}
-
-\input{../../../preamble}
-
-\def\titlename{Subsection Template}
-
-\title{\input{../../../commonTitle}}  % closing brace for title
-
-\begin{document}% Document Begins
-
-\input{../../../commonFront} % provides standalone options
-
-% NEW INFO GOs HERE.
-\subsection{Subsection Template}
-\medskip 
+  %
+\subsubsection{Problem and Analysis}
+  %
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\paragraph{Background}
+  %
+\noindent
+  %
+\paragraph{Statement of Problem}
+  %
+\noindent
+  %
+\paragraph{Analysis}
+  %
+\noindent
+  %
+\subparagraph*{}
+  %
+\begin{itemize} %
+  %
+\item
+  %
+\item
+  %
+\item
+  %
+\end{itemize} %
+  %
+\subparagraph*{}
+  %
+\begin{itemize} %
+  %
+\item
+  %
+\end{itemize} %
+  %
+\end{adjmulticols}
+  %
+\clearpage
 
 \end{verbatim}
 

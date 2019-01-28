@@ -1,6 +1,7 @@
-%   This script does not require Memoir Class
+%   Does not require Memoir Class
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Packages Used
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% PACKAGE IMPORTS  %
 \usepackage{import} % Required for importing other .tex docs.  (import uses everything bw Begin and End Doc)
 \usepackage{float} % Required for specifying the exact location of a figure or table
 \usepackage{wrapfig} % Provides environment to wrap figures with text
@@ -14,30 +15,35 @@
 \usepackage{layout}
 \usepackage{anyfontsize}
 \usepackage{adjmulticol}
-
-%%%%%%%%%%%   Commands   %%%%%%%%%%%%%%%
-%\newcommand{\innerMar}{-.5in}
-%\newcommand{\outerMar}{-.5in}
-\newcommand{\innerMar}{-.35in}
-\newcommand{\outerMar}{-.35in}
+%-------------------------------------------------------------------
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  %  COMMANDS  %
 \renewcommand*{\bibname}{References} % renames the bibliography
+  %  CUSTOM COMMANDS  %
+\newcommand{\innerMar}{-.35in} % VAR FOR INNER MARGINS
+\newcommand{\outerMar}{-.35in} % VAR FOR OUTER MARGINS
 \newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\ding{227}}} % ding characters specified in symbols-a4 pg12
-%\newcommand{\HRule}{\color{HeaderOrangeE}{\rule{\linewidth}{0.5mm}}}% Command to make horizontal graphic lines
+%\newcommand{\HRule}{\color{HeaderOrangeE}{\rule{\linewidth}{0.5mm}}}% Command to make horizontal graphic lines ORANGE INTEAD OF BLACK
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make horizontal graphic lines
 \newcommand{\marginText}{\fontfamily{cmr}\fontseries{b}\color{red}\fontsize{9}{12}\selectfont} % create new typeface for margins
 \newcommand{\helv}{\color{HeaderOrangeE}\fontfamily{phv}\fontseries{b}\fontsize{9}{11}\selectfont} % Create new typeface for headers
+    % NOTES:
     % font has encoding, family,  series{b}(bold), shape, size{(size)}{(baselineskip)}
     % https://www.latex-project.org/help/documentation/fntguide.pdf
     % https://www.overleaf.com/learn/latex/Font_typefaces
-    %
-%%%%%%%%%%%   Lengths   %%%%%%%%%%%%%%%
+%-------------------------------------------------------------------
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  % TEST AREA  %
+  %
 %\setlength\headheight{23pt} % This prevents an error
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%  Testing
+  %
 %\usepackage[toc,title,page]{appendix}
-
-%%%%  Testing End
-    %
-\usepackage[pdftex,breaklinks,colorlinks=true,linkcolor=black,citecolor=blue,  % hyperref
-urlcolor=red,linktocpage=false,pagebackref=true,filecolor=magenta]{hyperref} % http://www.tug.org/applications/hyperref/manual.html#x1-100003.6
+  %
 \usepackage{glossaries}
+  %
+%-------------------------------------------------------------------
+  %
+\usepackage[pdftex,breaklinks,colorlinks=true,linkcolor=black,citecolor=blue,  % hyperref loads Last
+urlcolor=red,linktocpage=false,pagebackref=true,filecolor=magenta]{hyperref} % http://www.tug.org/applications/hyperref/manual.html#x1-100003.6
