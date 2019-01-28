@@ -1,1 +1,0 @@
-buildAppendices.sh will compile the appendices, however the links to docs will not work.  Links are configured to work at the section level and at the full compile level with a If Standalone switch. 

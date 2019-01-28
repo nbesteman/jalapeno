@@ -1,98 +1,108 @@
-% \documentclass[class=book , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
-% %
-% \input{../../../preamble/preamble}
-% \input{../../../preamble/graphicsPath}
-% \input{../../../preamble/headFootSetup}
-% \input{../../../preamble/colorDefs}
-% %
-% \setcounter{tocdepth}{5}  % subparagraph and down
-% %
-% \def\titlename{Forfeiture Data Collection\\ \medskip\large Mobile App with Collector for ArcGIS}
-% %
-% \title{\input{../../../commonTitle}}  % inputs common title
-%
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+ %  This block uncommented only for standalone compile
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+%\documentclass[letterpaper, 12pt]{memoir}
+%\setmarginnotes{.1in}{.4in}{.1in}
+%\setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
+%\setulmarginsandblock{1in}{1in}{*}
+%\checkandfixthelayout
+%\makeatletter
+%\ch@ngetext
+%\makeatletter
+%    %
+%\input{../../../preamble/preamble.tex}
+%    %
+%\input{../../../preamble/graphicsPath.tex}
+%    %
+%\input{../../../preamble/colorDefs.tex}
+%    %
+%\input{../../../preamble/pageLayoutCommands.tex}
+%    %
+%\input{../../../preamble/pageStyles.tex}
+%    %
+%\input{../../../preamble/chapterStyles.tex}
+%    %
+%%\input{../../../glossaryEntries.tex}
+%    %
+%    %
+%%\setcounter{tocdepth}{5}  % subparagraph and down
+%%\setcounter{tocdepth}{4}  % paragraph and down
+%%\setcounter{tocdepth}{3}  % subsubsection and down
+%\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
+%%\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
+%%\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
+%    %
+%    %
+%\def\titlename{Forfeiture Data Collection\\ \medskip\large Mobile App with Collector for ArcGIS}
+%    %
+%\title{\input{../../../commonTitle}}  % inputs common title
+%    %
+%\begin{document}% document begins
+%    %
+%\pagestyle{empty} % Clear headers and footers for TOC
+%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+%\maketitle % creates title page
+%\clearpage
+%\tableofcontents % creates TOC
+%\clearpage
+%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+%\pagestyle{fancy} % Sets Headers and Footers
+ %--------------------------------------------------
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+ %  This block uncommented only for Main compile
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
 \begin{document}% document begins
-%
-% Local Compile Conditionals begin
-%
-% \ifstandalone
-% %
-% \pagestyle{empty} % Clear headers and footers for TOC
-% %
-% \frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-% %
-% \maketitle % creates title page
-% %
-% \clearpage
-% %
-% \tableofcontents % creates TOC
-% %
-% \clearpage
-% %
-% \mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-% %
-% \pagestyle{fancy} % Sets Headers and Footers
-% %
-% \fi
-%
-% Local Compile Conditionals end
-%
-%
-% \IfStandalone{<code for standalone mode>}{<code for main document>}
-\IfStandalone{\subsection{Forfeiture Data Collection}}{\subsection[Forfeiture Data Collector][Forfeiture Data Collection Application]{Forfeiture Data Collector Application}}
-%
+ %
+ %--------------------------------------------------   
+\subsection{Forfeiture Data Collection}
+  %
 \subsubsection{Problem and Analysis}
-%
-%\begin{multicols}{2}
+  %
 \begin{adjmulticols}{2}{\innerMar}{\outerMar}
-%\begin{adjmulticols}{2}{-.5in}{-.5in}
   %
 \paragraph{Background}
-%
+  %
 \noindent Treasurer department has an annual responsibility to properly document the tax forfeiture process.  The LIS Department built an application in MS Access and MapInfo that consumed a daily export from BSA and was deployed to the field on a laptop.  A digital camera was used for site photos and later imported into the laptop.
-%
+  %
 \paragraph{Statement of Problem}
-%
+  %
 \noindent The current Tax Forfeiture workflow is built on MapInfo software and MS Access amd executed on a laptop pc.  Both MapInfo and MS Access are no longer supported in county workflows.  ESRI software can be used to rebuild the workflow.  \textit{Forfeiture Data Collector Application}, (\textbf{Forfeiture App}) must be recreated in the ESRI framework.
-%
+  %
 \paragraph{Analysis}
-%
-\noindent \textbf{Forfeiture App} will facilitate: \textit{Mobile data collection on a handheld device},: (\textbf{Mobile Interface}) and an \textit{in office workflow to complete data processing}, (\textbf{Pre and PostProcessing})
-%
+  %
+\noindent \textbf{Forfeiture App} will facilitate: \textit{Mobile data collection on a handheld device},: (\textbf{Mobile Interface}) and an 
+  %
+\textit{in office workflow to complete data processing}, (\textbf{Pre and PostProcessing})
+  %
 \subparagraph*{Mobile Interface}
-%
+  %
 \begin{itemize} %
-%
+  %
 \item Synchronize with data in the office (online)
-%
+  %
 \item Collect data and photos of forfeiture sites (offline)
-%
+  %
 \item Synchronize the collected data with data in the office (online)
-%
+  %
 \end{itemize} %
-%
+  %
 \subparagraph*{Pre \& Post Processing}
-%
+  %
 \begin{itemize} %
-%
+  %
 \item Produce and print a form for each site visited with required data and images
-%
+  %
 \end{itemize} %
-%
-%\end{multicols}
+  %
 \end{adjmulticols}
-%
-%\layout
+  %
 \clearpage
-%
-%
-%
-\subsubsection{Design}
-%
-\paragraph[Overview]{Overview}
-%
-% Single Figure
-%
+  %
+  %
+\subsubsection{Design Overview}
+  %
+  % Single Figure
+  %
 \marginpar{\color{graphicOrange}\textbf{Forfeiture Parcels} is used through the workflow}
 \vspace{-.2in}
 
@@ -103,70 +113,68 @@
 
 \caption{Project Design}
 \end{figure}
-%
+  %
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph{Forfeiture App Summary}
 \vspace{.25in}
 
 There are three parts to the daily routine:
 \begin{enumerate}
 \item \Large Preprocessing \normalsize(in the office):
-%
+  %
 \begin{itemize}
 \item Export current forfeiture list from BSA
 \item Update Forfeiture Parcels with BSA export
 \item Update Forfeiture Parcels with contaminated sites information
 \item Synchronize Forfeiture Parcels to Mobile Interface
 \end{itemize}
-%
+  %
 \item \Large Field data collection \normalsize with Mobile Interface:
-%
+  %
 \begin{itemize}
 \item Aids in navigation
 \item Provides a Checklist of data points for each site
 \item Attaches photos for each site
 \item Save results for synchronization in post-processing
 \end{itemize}
-%
+  %
 \item \Large Post-processing \normalsize (in the office)
-%
+  %
 \begin{itemize}
 \item Synchronize data and images collected in Mobile Interface to Forfeiture Parcels
 \item Export form for each site
 \item Print form for each site
 \item Update BSA data
-%
+  %
 \end{itemize}
-%
+  %
 \end{enumerate}
-%
+  %
 \clearpage
-%
-%
+  %
+  %
 \paragraph{Technologies Used in The Forfeiture App}
-%
-%\begin{adjmulticols}{2}{-.5in}{-.5in}
+  %
 \begin{adjmulticols}{2}{\innerMar}{\outerMar}
-%
+  %
 \subparagraph{BSA Data}
-%
+  %
 \noindent Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
-%
+  %
 \subparagraph{ArcGIS Desktop}\noindent Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network.
-%
+  %
 \subparagraph{ArcGIS Collector}\noindent A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork. The user collects the necessary information on each forfeiture parcel in the field disconnected, and then uploads the changes when reconnected.
-%
+  %
 \subparagraph{Enterprise Geodatabse}\noindent Live data from a publishing geodatabase (ACPub), running on SQL Server database server (acintsql01) provides access to Forfeiture Parcels
-%
+  %
 \subparagraph{ArcGIS Portal} \noindent Forfeiture Parcels is served as a feature service (REST service)  named TaxReversionParcels.  A webmap on Portal, called the Forfeiture Field Map consumes the TaxReversionParcels exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.
-%
+  %
 \end{adjmulticols}
-%
-% Single Figure
-%
+  %
+  % Single Figure
+  %
 \begin{figure}[H]
 \centering
     \includegraphics[width=1\textwidth]{TechFlowChart}
@@ -175,28 +183,27 @@ There are three parts to the daily routine:
 \caption{Technology Design}
 \end{figure}
 \clearpage
-%
-%
-%
-%\paragraph{Data Details}
+  %
+  %
 \subsubsection[Data Details]{Data Details\texorpdfstring{\\}{}}
-%
+  %
 \noindent The data is located in a geodatabase called ACPUB.  ACPUB is on SQL Server ACINTSQL01.
-% Two Figures Wrapped
-%
+  %  
+  % Two Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.6\textwidth}
 \centering
-\includegraphics[width=.5\textwidth]{LiveDataLocation}
+    \includegraphics[width=.5\textwidth]{LiveDataLocation}
 \caption{Live Data Location}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
-\includegraphics[width=.4\textwidth]{contaminationFeatureClass.png}
+    \includegraphics[width=.4\textwidth]{contaminationFeatureClass.png}
 \caption{Contamination Feature Class}
 \end{wrapfigure}
-%
+  %
 \vspace{1in}
 
 Forfeiture Parcels Data
@@ -204,9 +211,8 @@ Forfeiture Parcels Data
 
 Contamination Data
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph{ForfeitureParcels Feature Class}
 \vspace{.5in}
 
@@ -252,32 +258,30 @@ Class&Class&Prefilled&NA\\
 \caption{Dataset Details}
 \end{table}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph{Webmap Details}The Forfeiture Field Map is made up of a basemap and a feature layer.
-%
-% Double Figure No Wrap
-%
+  %
+  % Double Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
-\includegraphics[width=.5\textwidth]{webMapDetails}
+    \includegraphics[width=.5\textwidth]{webMapDetails}
 \caption{Web Map Details}
 \end{figure}
-
+  %
 \subparagraph{Feature Layer Details}TaxReversionParcels has been configured for offline use.
 \begin{figure}[h!]
 \centering
-\includegraphics[width=.5\textwidth]{layerDetails}
+    \includegraphics[width=.5\textwidth]{layerDetails}
 \caption{Feature Layer Details}
 \end{figure}
-
+  %
 \clearpage
-%
-%
-%
+  %
+  %
 %images of publishing the service and explanation of settings required for offline use
-%
+  %
 \subparagraph{Basemap Details}
 \begin{itemize}
   \setlength\itemsep{4em}
@@ -285,23 +289,22 @@ Class&Class&Prefilled&NA\\
   \item The infoserv user credentials are used for sharing
   \item The url for the shared service is:
 \end{itemize}
-
+  %
 \begin{verbatim}
 https://tiledbasemaps.arcgis.com/arcgis/rest/
    services/World_Street_Map/MapServer
 \end{verbatim}
-%
-% Single Figure
-%
+  %
+  % Single Figure
+  %
 \begin{figure}[h!]
 \centering
 \includegraphics[width=1\textwidth]{BasemapSourceDescription}
 \caption{Basemap Source Description}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 %Unplaced images
 %\subparagraph{unplaced images}
 %\begin{figure}[h!]
@@ -324,7 +327,6 @@ https://tiledbasemaps.arcgis.com/arcgis/rest/
 %\clearpage
 %
 %
-%
 \subsubsection{Hard Copy Record}
 screenshots:
 arcmap map
@@ -332,12 +334,11 @@ arcmap tools
 portal screenshots
 sql server mgt screen shots
 phone screenshots
-
+  %
 \paragraph{ArcGIS Server}
 \clearpage
-%
-%
-%
+  %
+  %
 \subsubsection{Administrative Manual}
 \vspace{.25in}
 
@@ -363,9 +364,9 @@ A new dataset for forfeiture parcels must be created each year.
 \end{itemize}
 \vspace{.25in}
 
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.9\textwidth]{AnnualDeleteFeatures.png}
@@ -386,124 +387,118 @@ A new dataset for forfeiture parcels must be created each year.
 \item {\Large Select your connection}
 \end{itemize}
 \vspace{.25in}
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.95\textwidth]{NewQueryLayerDialog.png}
 \caption{New Query Layer Dialog}
 \end{figure}
+  %
 \begin{verbatim}
 Query Text:
 SELECT [parcelnumber] FROM [D005ALLEGAN].[dbo].[Forfeitures]
 WHERE forf_year = 2019
 \end{verbatim}
+  %
 \clearpage
-    %
-    %
+  %
+  %
 \paragraph[Details of the Query Layer]{Details of the Query Layer \texorpdfstring{\\}{}}
-    %
+  %
 \begin{itemize}
-  \item Choose connection
-  \item Name the query
-  \item Enter SQl query
-%  \item Press Next
-%\end{itemize}
-%
-% Single Figure No Wrap
-%
+\item Choose connection
+\item Name the query
+\item Enter SQl query
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.85\textwidth]{ForfeitureQueryLayerDetails.PNG}
 \caption{Forfeiture Query Layer Details}
 \end{figure}
-%
+  %
 \item Press Next
-%
+  %
 \end{itemize}
-%
+  %
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Select a Unique Identifier]{Select a Unique Identifier\texorpdfstring{\\}{}}
-
+  %
 \begin{itemize}
-%
+  %
 \item Press Finish
-% Single Figure No Wrap
-%
-%
+  % 
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.95\textwidth]{ForfeitureQueryLayerUID.PNG}
 \caption{Query Layer Unique ID}
 \end{figure}
-%
-%\item Press Finish
-%
+  %
 \end{itemize}
-%
+  %
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph*{Table is added to the map\texorpdfstring{\\}{}}
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.95\textwidth]{forfeituresTableAdded.PNG}
 \caption{Forfeiture Table Added}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Add Parcels Layer to the map]{Add Parcels Layer to the map\texorpdfstring{\\}{}}
-%
+  %
 \noindent Add ACParcelsCombined to the map to provide parcel geometry and attributes
-
+  %
 \vspace{.25in}
-%
-% Single Figure No Wrap
-%
+
+  %  
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.95\textwidth]{ParcelLayerAdded.PNG}
 \caption{Parcels Layer Added}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Create Join]{Create Join\texorpdfstring{\\}{}}
-%
+  %
 \noindent Create new join to ACParcelsCombined of forfeitures based on parcel numbers
-%
+  %
 \vspace{.25in}
 
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.95\textwidth]{joinToParcelsCombined.PNG}
 \caption{Join Parcels}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Export Joined Features]{Export Joined Features to a temp location \texorpdfstring{\\}{}}
-%
+  %
 \begin{itemize}
 \item Right click \ding{212} on joined feature class in TOC and choose export
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.95\textwidth]{exportJoinedFeatures.png}
@@ -512,41 +507,38 @@ WHERE forf_year = 2019
 \item choose location and press OK
 \end{itemize}
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph[Load data to forfeitureParcels]{\Large Load data from temp location to forfeitureParcels}
 \subparagraph*{}
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.95\textwidth]{LoadData.PNG}
 \caption{Load Data 1}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph*{\Large push next}
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.95\textwidth]{LoadData2.PNG}
 \caption{Load Data 2}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Match these fields]{\Large Match these fields}
 \subparagraph*{}
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.65\textwidth]{fieldMatch1.PNG}
@@ -558,26 +550,23 @@ WHERE forf_year = 2019
 \caption{Match Fields 2}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph*{\Large push next}
-%\subparagraph*{}
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.75\textwidth]{LoadData4.PNG}
 \caption{Load Data 3}
 \end{figure}
-%
+  %
 \paragraph*{\Large Push Finish}
-%
+  %
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Data Setup]{\Large Data Setup\texorpdfstring{\\}{}}
 Register as versioned and Add Global IDs
 \vspace{.2in}
@@ -591,40 +580,35 @@ and
 {\large Right Click $\Rightarrow$ Manage $\Rightarrow$ Add Global IDs}
 \vspace{.2in}
 
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.5\textwidth]{RegisterAsVersioned.PNG}
 \caption{Setup Data}
 \end{figure}
-%
-%\paragraph*{\Large }
-%
+  %
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Create Attachments]{\Large Create Attachments\texorpdfstring{\\}{}}
 
 \noindent{\large Right Click $\Rightarrow$ Manage $\Rightarrow$ Add Attachments}
 \vspace{.3in}
 
 \subparagraph*{}
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.5\textwidth]{createAttachments.PNG}
 \caption{Create Attachments}
 \end{figure}
 \clearpage
-%
-%
-%
-%
+  %
+  %
 \paragraph[Setup Users in ArcGIS]{\Large Setup Users in ArcGIS\texorpdfstring{\\}{}}
 
 Users that will run Pre and Post processing scripts must be created and given priviliges on ACPub Treasurer Feature Data Set.
@@ -634,54 +618,51 @@ Users that will run Pre and Post processing scripts must be created and given pr
 \vspace{.5in}
 
 \noindent In Catalog $\Rightarrow$ Right click on ACpub $\Rightarrow$ Administration $\Rightarrow$ Add User
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.9\textwidth]{addDbUser.png}
 \caption{Add Db User}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Add New User to Feature Dataset]{\Large Add New User to Feature Dataset\texorpdfstring{\\}{}}
 \vspace{.5in}
 
 In Catalog, $\Rightarrow$ right click on Treasurer Feature Data Set $\Rightarrow$ Manage $\Rightarrow$ Priviliges $\Rightarrow$ Add $\Rightarrow$ Type new user $\Rightarrow$ ok
 \vspace{.5in}
 
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.9\textwidth]{AddFdsUser.png}
 \caption{Add Feature Dataset User}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Extend Priviliges for New User]{\Large Extend Priviliges for New User\texorpdfstring{\\}{}}
 \vspace{.5in}
 
 In Catalog $\Rightarrow$ right click on Treasurer FDS $\Rightarrow$ Manage $\Rightarrow$ Priviliges $\Rightarrow$ check boxes
 \vspace{.5in}
 
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.9\textwidth]{AddFdsUserPriviliges.png}
 \caption{Extend Feature Dataset Priviliges}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Setup Users in Portal for ArcGIS]{\Large Setup Users in Portal for ArcGIS\texorpdfstring{\\}{}}
 \vspace{.5in}
 
@@ -689,126 +670,116 @@ In Catalog $\Rightarrow$ right click on Treasurer FDS $\Rightarrow$ Manage $\Rig
 \vspace{.5in}
 
 In Portal go to My Organization
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.9\textwidth]{PortalAddUser1.png}
 \caption{Portal Add User 1}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Add Members to Portal]{\Large Add Members to Portal\texorpdfstring{\\}{}}
 \vspace{.5in}
 
 Push add members $\Rightarrow$ built in member
 \vspace{.5in}
 
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.9\textwidth]{PortalAddUser2.png}
 \caption{Portal Add User 2}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Enter required info]{\Large Enter required info\texorpdfstring{\\}{}}
-
+  %
 \vspace{.5in}
 
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.9\textwidth]{PortalAddUser3.png}
 \caption{Portal Add User 3}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Manage Treasurer Group]{\Large Manage Treasurer Group\texorpdfstring{\\}{}}
 \vspace{.5in}
 
 In Portal $\Rightarrow$ Go to groups $\Rightarrow$ Invite new user to the group
 \vspace{.5in}
 
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.9\textwidth]{PortalAddUser4.png}
 \caption{Portal Add User 4}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Share Portal Content]{\Large Share Content To The Group\texorpdfstring{\\}{}}
 \vspace{.5in}
 
 \noindent Any content used by the group needs to be shared to the group
 \vspace{.5in}
 
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.9\textwidth]{PortalAddUser5.png}
 \caption{Portal AddUser 5}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Schema Change Procedure]{\Large Schema Change Procedure}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Form Edits Procedure]{\Large Form Edits Procedure}
 \clearpage
-%
-%
-%
+  %
+  %
 \subsubsection[User Manual]{\Large User Manual}
-
+  %
 \paragraph{Collection Device Setup}
-
+  %
 \paragraph{Collector Application Setup Details}
-
+  %
 \subparagraph{Install Collector for ArcGIS}
 \begin{itemize}
 \item Available from the Google Play Store
 \end{itemize}
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.65\textwidth]{DownloadtheApp.png}
 \caption{Download the App}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph[Configure Collector]{\Large Configure Collector}
-
-%\subparagraph*{}
-%
-% Two Figures Wrapped
-%
+  %
+  % Two Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
 \includegraphics[width=.3\textwidth]{CollectorConnection}
@@ -818,7 +789,7 @@ In Portal $\Rightarrow$ Go to groups $\Rightarrow$ Invite new user to the group
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.25in}
 
-\includegraphics[width=.3\textwidth]{EnterCredentials.png}
+    \includegraphics[width=.3\textwidth]{EnterCredentials.png}
 \caption{Enter Credentials}
 \end{wrapfigure}
 for \textbf{Organization Website}, Type:
@@ -844,18 +815,17 @@ portal_webadaptor}
 
 \noindent Press \Large SIGN IN
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph[Download the Forfeiture Field Map]{Download the Forfeiture Field Map \texorpdfstring{\\}{}}
-%
+  %
 \noindent There are 3 different versions of the map
-%
-% Two Figures Wrapped
-%
+  %
+  % Two Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{CollectorChooseMap.png}
+    \includegraphics[width=.3\textwidth]{CollectorChooseMap.png}
 \caption{Collector Maps Menu}
 \end{wrapfigure}
 \begin{itemize}
@@ -863,8 +833,7 @@ portal_webadaptor}
 \item Forfeiture Field Map For Photos
 \item Forfeiture Field Map For Attributes
 \end{itemize}
-%\vspace{.25in}
-
+  %
 \noindent {\footnotesize The Download option indicates it is not on the device but is available for offline use}
 \vspace{.2in}
 
@@ -873,12 +842,11 @@ portal_webadaptor}
 
 \noindent {\large Press Download}
 \clearpage
-%
-%
-%
+  %
+  %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.35\textwidth]{ChooseWorkAreaLarge.png}
+    \includegraphics[width=.35\textwidth]{ChooseWorkAreaLarge.png}
 \caption{Choose Work Area (large)}
 \end{wrapfigure}
 
@@ -886,34 +854,31 @@ portal_webadaptor}
 \vspace{.2in}
 
 and press
+  %
 \vspace{.2in}
 
 map detail
-
+  %
 \vspace{.2in}
 
 \noindent {\footnotesize Note that a larger area takes longer to download but the basemap only needs to be downloaded once}
 \clearpage
-%
-%
-%
-%\subparagraph{Choose Map Detail}
+  %
+  %
 \paragraph[Choose Map Detail]{Choose Map Detail\texorpdfstring{\\}{}}
-
-%\subparagraph*{}
-%
-% Two Figures Wrapped
-%
+  %
+  % Two Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{ChooseMapDetail.png}
+    \includegraphics[width=.3\textwidth]{ChooseMapDetail.png}
 \caption{Choose Map Detail}
 \vspace{.25in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.25in}
 
-\includegraphics[width=.3\textwidth]{MaponDevice.png}
+    \includegraphics[width=.3\textwidth]{MaponDevice.png}
 \caption{Map on Device}
 \end{wrapfigure}
 Zoom into the level of detail desired.
@@ -924,48 +889,39 @@ Zoom into the level of detail desired.
 
 \noindent This area is ready for field data collection.
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph{Open Camera Application Setup Details}
-
+  %
 \subparagraph{Install Open Camera}
 \begin{itemize}
 \item Available from the Google Play Store
 \end{itemize}
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.6\textwidth]{openCameraAppStore.png}
 \caption{Open Camera from Google Play Store}
 \end{figure}
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph{Configure Open Camera}
-
-%\subparagraph*{}
-%
-% Two Figures Wrapped
-%
-
-
-
-
-
+  %
+  % Two Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{findSettings.png}
+    \includegraphics[width=.3\textwidth]{findSettings.png}
 \caption{Find Settings Menu}
 \vspace{.25in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.25in}
 
-\includegraphics[width=.3\textwidth]{settingsScreen.png}
+    \includegraphics[width=.3\textwidth]{settingsScreen.png}
 \caption{Setting Screen}
 \end{wrapfigure}
 In the Open Camera Application:
@@ -976,23 +932,22 @@ In the Open Camera Application:
 
 \noindent Press the \Large Photo Settings \normalsize button
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph*{Set Photo Resolution}
-%
-% Two Figures Wrapped
-%
+  %
+  % Two Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{photoSettings.png}
+    \includegraphics[width=.3\textwidth]{photoSettings.png}
 \caption{Photo Settings Menu}
 \vspace{.25in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.25in}
 
-\includegraphics[width=.3\textwidth]{cameraResolutionSetting.png}
+    \includegraphics[width=.3\textwidth]{cameraResolutionSetting.png}
 \caption{Camera Resolution Setting}
 \end{wrapfigure}
 In \Large photo settings:
@@ -1003,22 +958,24 @@ In \Large photo settings:
 
 \noindent Select \textbf{\LARGE 640 x 480}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph{Daily Preprocessing Routine}
+  %
 \subparagraph{Execute Preprocessing Script}A tool in ArcGIS that:
+  %
 \begin{itemize}
 \item Exports current forfeiture list from BSA
 \item Updates webmap layers with results from BSA export
 \end{itemize}
+  %
 \subparagraph*{\\}
 %
 % One Figure Wrapped
 %
 \begin{wrapfigure}{r}{0.75\textwidth}
 \centering
-\includegraphics[width=.65\textwidth]{preprocess.png}
+    \includegraphics[width=.65\textwidth]{preprocess.png}
 \caption{Processing Tools}
 \end{wrapfigure}
 In Catalog:
@@ -1029,25 +986,22 @@ In Catalog:
 
 \noindent Open tool 1
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph[Synchronize the Forfeiture Field Map]{\Large Synchronize the Forfeiture Field Map}
-
-%\subparagraph*{}
-%
-% Two Figures Wrapped
-%
+  %
+  % Two Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{MapDownloaded.png}
+    \includegraphics[width=.3\textwidth]{MapDownloaded.png}
 \caption{Map Downloaded}
 \vspace{.25in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.25in}
 
-\includegraphics[width=.3\textwidth]{MapSyncronized.png}
+    \includegraphics[width=.3\textwidth]{MapSyncronized.png}
 \caption{Map Synchronized}
 \end{wrapfigure}
 Note the date and time:
@@ -1061,9 +1015,8 @@ Note the date and time:
 
 {\Large Map is synchronized}
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph{Forfeiture Data Collection}
 \subparagraph{Forfeiture Parcels Data Details}
 
@@ -1076,61 +1029,55 @@ Attributes are of four entry types:
 \end{itemize}
 For each site visited, select the desired parcel, push the edit button and collect attributes.
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph[Device 1 Field Operation]{Device 1 Field Operation\texorpdfstring{\\}{}}
-%
-% Two Figures Wrapped
-%
+  %
+  % Two Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{selectParcel.png}
+    \includegraphics[width=.3\textwidth]{selectParcel.png}
 \caption {Select Parcel}
-
+  %
 \vspace{.25in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.25in}
 
 \centering
-\includegraphics[width=.3\textwidth]{parcelDetails.png}
+    \includegraphics[width=.3\textwidth]{parcelDetails.png}
 \caption{Parcel Details}
 \end{wrapfigure}
-
-%\vspace{2in}
-
-%{\Large Select a parcel}
+  %
 Select a parcel
-
 \vspace{4in}
 
 {\normalsize Push the} {\Large edit} {\normalsize button}
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph*{Device 1 Field Operation Cont.}
-%
-% Three Figures Wrapped
-%
+  %
+  % Three Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
-\includegraphics[width=.2\textwidth]{printToday.png}
+    \includegraphics[width=.2\textwidth]{printToday.png}
 \caption {Yes or No}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{enterDate.png}
+    \includegraphics[width=.2\textwidth]{enterDate.png}
 \caption{Enter Date}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{selectInspector.png}
+    \includegraphics[width=.2\textwidth]{selectInspector.png}
 \caption{Select Inspector}
 \end{wrapfigure}
 Select Yes for Print Today
@@ -1141,30 +1088,29 @@ Select Yes for Print Today
 
 \noindent Select Inspector From Dropdown
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph*{Device 1 Field Operation Cont.}
-%
-% Three Figures Wrapped
-%
+  %
+  % Three Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
-\includegraphics[width=.2\textwidth]{status.png}
+    \includegraphics[width=.2\textwidth]{status.png}
 \caption {Status}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{statusNotes.png}
+    \includegraphics[width=.2\textwidth]{statusNotes.png}
 \caption{Status Notes}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{roadFrontage.png}
+    \includegraphics[width=.2\textwidth]{roadFrontage.png}
 \caption{Road Frontage}
 \end{wrapfigure}
 %\vspace{.5in}
@@ -1177,35 +1123,32 @@ Select Occupied or Not Occupied
 
 \noindent Select Yes or No for Road Frontage
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph*{Device 1 Field Operation Cont.}
-%
-% Three Figures Wrapped
-%
+  %
+  % Three Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
-\includegraphics[width=.2\textwidth]{accessVia.png}
+    \includegraphics[width=.2\textwidth]{accessVia.png}
 \caption {Access Via}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{agent.png}
+    \includegraphics[width=.2\textwidth]{agent.png}
 \caption{Agent}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{agentContact.png}
+    \includegraphics[width=.2\textwidth]{agentContact.png}
 \caption{Agent Contact}
 \end{wrapfigure}
-%\vspace{.5in}
 Enter road used for access
-%\noindent Enter road used for access
 \vspace{2.5in}
 
 \noindent Enter Agent Name
@@ -1213,30 +1156,29 @@ Enter road used for access
 
 \noindent Enter Agent Contact Info
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph*{Device 1 Field Operation Cont.}
-%
-% Three Figures Wrapped
-%
+  %
+  % Three Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
-\includegraphics[width=.2\textwidth]{notes.png}
+    \includegraphics[width=.2\textwidth]{notes.png}
 \caption {Use Notes}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
-\includegraphics[width=.2\textwidth]{notes.png}
+    \includegraphics[width=.2\textwidth]{notes.png}
 \caption{Notes}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
-\includegraphics[width=.2\textwidth]{propertyForSale.png}
+    \includegraphics[width=.2\textwidth]{propertyForSale.png}
 \caption{Property for Sale}
 \end{wrapfigure}
 Enter  Use Notes up to 120 characters
@@ -1247,30 +1189,29 @@ Enter  Use Notes up to 120 characters
 
 \noindent Enter property for sale yes or no
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph*{Device 1 Field Operation Cont.}
-%
-% Three Figures Wrapped
-%
+  %
+  % Three Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
-\includegraphics[width=.2\textwidth]{propertyInUse.png}
+    \includegraphics[width=.2\textwidth]{propertyInUse.png}
 \caption {Property in Use}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
-\includegraphics[width=.2\textwidth]{adjPropertyContNotes.png}
+    \includegraphics[width=.2\textwidth]{adjPropertyContNotes.png}
 \caption{Placeholder}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
-\includegraphics[width=.2\textwidth]{notes.png}
+    \includegraphics[width=.2\textwidth]{notes.png}
 \caption{Property Contaminated}
 \end{wrapfigure}
 Property in Use Yes or No
@@ -1281,30 +1222,29 @@ Property in Use Yes or No
 
 \noindent prefilled
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph*{Device 1 Field Operation Cont.}
-%
-% Three Figures Wrapped
-%
+  %
+  % Three Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
-\includegraphics[width=.2\textwidth]{notes.png}
+    \includegraphics[width=.2\textwidth]{notes.png}
 \caption {Notes up to 120 characters}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{adjPropertyContNotes.png}
+    \includegraphics[width=.2\textwidth]{adjPropertyContNotes.png}
 \caption{Adjacent Property Contaminated}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{notes.png}
+    \includegraphics[width=.2\textwidth]{notes.png}
 \caption{Property Contaminated}
 \end{wrapfigure}
 Enter notes up to 120 characters
@@ -1315,30 +1255,29 @@ Enter notes up to 120 characters
 
 \noindent Property Contaminated notes prefilled
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph*{Device 1 Field Operation Cont.}
-%
-% Three Figures Wrapped
-%
+  %
+  % Three Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
-\includegraphics[width=.2\textwidth]{propertyMaintained.png}
+    \includegraphics[width=.2\textwidth]{propertyMaintained.png}
 \caption {Property Maintained}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
-\includegraphics[width=.2\textwidth]{pictureComments.png}
+    \includegraphics[width=.2\textwidth]{pictureComments.png}
 \caption{Picture Comments}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
-\includegraphics[width=.2\textwidth]{notes.png}
+    \includegraphics[width=.2\textwidth]{notes.png}
 \caption{Placeholder}
 \end{wrapfigure}
 Property Maintained Yes or No
@@ -1349,33 +1288,29 @@ Property Maintained Yes or No
 
 \noindent Placeholder
 \clearpage
-%
-%
-%
-%\subparagraph[Device 2 Field Operation]{Device 2 Field Operation\texorpdfstring{\\}{}}
+  %
+  %
 \subparagraph{Device 2 Field Operation}
-
-%Use photos taken with the Open Camera Application.
-%
-% Three Figures Wrapped
-%
+  %
+  % Three Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
-\includegraphics[width=.2\textwidth]{selectParcel.png}
+    \includegraphics[width=.2\textwidth]{selectParcel.png}
 \caption {Select Parcel}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
-\includegraphics[width=.2\textwidth]{pushAttachmentButton.png}
+    \includegraphics[width=.2\textwidth]{pushAttachmentButton.png}
 \caption{Push Attachment Button}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{addAttachmentFromGallery.png}
+    \includegraphics[width=.2\textwidth]{addAttachmentFromGallery.png}
 \caption{Add Attachment From Gallery}
 \end{wrapfigure}
 Select a parcel from the map
@@ -1386,30 +1321,29 @@ Select a parcel from the map
 
 \noindent Select Gallery
 \clearpage
-%
-%
-%
+  %
+  %
 \subparagraph*{Device 2 Field Operation Cont.}
-%
-% Three Figures Wrapped
-%
+  %
+  % Three Figures Wrapped
+  %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
-\includegraphics[width=.2\textwidth]{openCameraFolderInGallery.png}
+    \includegraphics[width=.2\textwidth]{openCameraFolderInGallery.png}
 \caption {Open Camera Folder}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{openCameraFolder.png}
+    \includegraphics[width=.2\textwidth]{openCameraFolder.png}
 \caption{In the Open Camera Folder}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
-\includegraphics[width=.2\textwidth]{imageInApp.png}
+    \includegraphics[width=.2\textwidth]{imageInApp.png}
 \caption{Image in the App}
 \end{wrapfigure}
 Navigate to the Open Camera Folder
@@ -1419,32 +1353,32 @@ Navigate to the Open Camera Folder
 \vspace{2in}
 
 \noindent Press the check button to save the image to the parcel
-
+  %
 \clearpage
-%
-%
-%
+  %
+  %
 \paragraph[Daily Postprocessing Routine]{Daily Postprocessing Routine\texorpdfstring{\\}{}}
-
+  %
 Back at the office
 \subparagraph[Synchronize Webmap]{Synchronize Webmap\texorpdfstring{\\}{}}
-
+  %
 In Collector for ArcGIS, push the sync button on the Forfeiture Field Map
 \subparagraph[Execute Postprocessing Script]{Execute Postprocessing Script\texorpdfstring{\\}{}}
-
+  %
 The Postprocessing Script is A tool in ArcGIS that:
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.4\textwidth]{PostprocessingTool1.png}
+    \includegraphics[width=.4\textwidth]{PostprocessingTool1.png}
 \caption{Reconcile Versions and Compress Tool}
 \vspace{.25in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.25in}
 
-\includegraphics[width=.4\textwidth]{PostprocessingTool2.png}
+    \includegraphics[width=.4\textwidth]{PostprocessingTool2.png}
 \caption{Export Report Tool}
 \end{wrapfigure}
+  %
 Reconciles geodatabase versions
 \vspace{1.5in}
 
@@ -1456,29 +1390,28 @@ Generates forms for each site visited
 
 Execute the Export Report Tool
 \clearpage
-%
-%
-%
+  %
+  %
 \begin{itemize}
 \item Reconciles geodatabase versions
 \begin{itemize}
 \item Execute the Reconcile Versions and Compress Tool
-%
-% Single Figure in itemize evnironment
-%
+  %
+  % Single Figure in itemize evnironment
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.4\textwidth]{PostprocessingTool1.png}
 \caption{Reconcile Versions and Compress Tool}
 \end{figure}
 \end{itemize}
-
+  %
 \item Generates forms for each site visited
 \begin{itemize}
 \item Execute the Export Report Tool
-%
-% Single Figure in itemize evnironment
-%
+  %
+  % Single Figure in itemize evnironment
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.4\textwidth]{PostprocessingTool2.png}
@@ -1487,27 +1420,28 @@ Execute the Export Report Tool
 \end{itemize}
 \end{itemize}
 \clearpage
-%
-%
-%
+  %
+  %
 \subsubsection{Software}
+  %
 \paragraph{ESRI Licensed Products}
+  %
 \subparagraph{ArcDesktop}Users of this application need a license to ArcGIS Standard level.
-
+  %
 \subparagraph{Enterprise ArcGIS Deployment}This app uses ArcGIS Server and ArcGIS Portal.
-
+  %
 \subparagraph{Collector for ArcGIS}Developed and tested on Android(7.0).  Collector is available at the Google Play Store.
-
+  %
 \paragraph{Other Software}
-
+  %
 \subparagraph{Open Camera for Android}
-%
-% Single Figure No Wrap
-%
+  %
+  % Single Figure No Wrap
+  %
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.2\textwidth]{openCameraAppStore.png}
 \caption{Open Camera from Google Play Store}
 \end{figure}
-
+  %
 \end{document}

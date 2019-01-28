@@ -1,28 +1,100 @@
-\documentclass[class=book , crop=false]{standalone}
 
-\input{../../../preamble}
-\input{../../../glossaryEntries}
-%\setcounter{tocdepth}{5}  % paragraph and down
-\setcounter{tocdepth}{4}  % subparagraph and down
-%\setcounter{tocdepth}{3}  % subsubsection and down
 
-\def\titlename{Jalape\~no\\ \medskip\LARGE How This Book Works}
 
-\title{\input{../../../commonTitle}}  % closing brace for title
-
-\begin{document}% Document Begins
-
-\ifstandalone
-\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-\maketitle % creates title page and blank page after title page
-\tableofcontents % creates TOC and blank page
-\clearpage
-\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-\fi
-
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+ %  This block uncommented only for standalone compile
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+%\documentclass[letterpaper, 12pt]{memoir}
+%\setmarginnotes{.1in}{.4in}{.1in}
+%\setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
+%\setulmarginsandblock{1in}{1in}{*}
+%\checkandfixthelayout
+%\makeatletter
+%\ch@ngetext
+%\makeatletter
+%   %
+%\input{../../../preamble/preamble.tex}
+%   %
+%\input{../../../preamble/graphicsPath.tex}
+%   %
+%\input{../../../preamble/colorDefs.tex}
+%   %
+%\input{../../../preamble/pageLayoutCommands.tex}
+%   %
+%\input{../../../preamble/pageStyles.tex}
+%   %
+%\input{../../../preamble/chapterStyles.tex}
+%   %
+%%\input{../../../glossaryEntries.tex}
+%   %
+%   %
+%%\setcounter{tocdepth}{5}  % subparagraph and down
+%\setcounter{tocdepth}{4}  % paragraph and down
+%%\setcounter{tocdepth}{3}  % subsubsection and down
+%%\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
+%%\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
+%%\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
+%   %
+%   %
+%\def\titlename{How The Jalape\~no Works}
+%   %
+%\title{\input{../../../commonTitle}}  % inputs common title
+%   %
+%\begin{document}% document begins
+%   %
+%\pagestyle{empty} % Clear headers and footers for TOC
+%  %
+%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+%  %
+%\maketitle % creates title page
+%  %
+%\clearpage
+%  %
+%\tableofcontents % creates TOC
+%  %
+%\clearpage
+%  %
+%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+%  %
+%\pagestyle{fancy} % Sets Headers and Footers
+ %--------------------------------------------------
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+ %  This block uncommented only for Main compile
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{document}% document begins
+ %
+ %-------------------------------------------------
+ %
 \subsection[How Jalape\~no Works]{How Jalape\~no Works}
+  %
+\subsubsection{Problem and Analysis}
+  %
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\paragraph{Background}
+  %
+\noindent GIS Services has complicated and evolving workflows and uses everchanging technologies
+  %
+\paragraph{Statement of Problem}
+  %
+\noindent GIS documentation has traditionally been done in different formats and stored in many different files and folders in the county network.  This has resulted in problems with:
+  %
+\begin{itemize}
+\item version control
+\item finding the documentation
+\item disseminating the documentation
+\end{itemize}
+  %
+\paragraph{Analysis}
+  %
+\noindent The Jalape\~no folder along with some opensource software provides a robust documentaion tool for GIS documentation.
+  %
+\end{adjmulticols}
+  %
+\clearpage
+  %
 \subsubsection{Colors}
-%
+  %
 \paragraph[Blues]{Blues\texorpdfstring{\\}{}}
 \textcolor{HeaderBlueA}{HeaderBlueA}
 \noindent\textcolor{HeaderBlueA}{\rule{.5\textwidth}{.5mm}}\\
@@ -34,7 +106,7 @@
 \noindent\textcolor{HeaderBlueD}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderBlueE}{HeaderBlueE}
 \noindent\textcolor{HeaderBlueE}{\rule{.5\textwidth}{.5mm}}\\
-%
+  %
 \paragraph[Golds]{Golds\texorpdfstring{\\}{}}
 \textcolor{HeaderGoldA}{HeaderGoldA}
 \noindent\textcolor{HeaderGoldA}{\rule{.5\textwidth}{.5mm}}\\
@@ -46,7 +118,7 @@
 \noindent\textcolor{HeaderGoldD}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderGoldE}{HeaderGoldE}
 \noindent\textcolor{HeaderGoldE}{\rule{.5\textwidth}{.5mm}}\\
-%
+  %
 \paragraph[Oranges]{Oranges\texorpdfstring{\\}{}}
 \textcolor{HeaderOrangeA}{HeaderOrangeA}
 \noindent\textcolor{HeaderOrangeA}{\rule{.5\textwidth}{.5mm}}\\
@@ -58,7 +130,7 @@
 \noindent\textcolor{HeaderOrangeD}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderOrangeE}{HeaderOrangeE}
 \noindent\textcolor{HeaderOrangeE}{\rule{.5\textwidth}{.5mm}}\\
-%
+  %
 \paragraph[Geens]{Greens\texorpdfstring{\\}{}}
 \textcolor{HeaderGreenA}{HeaderGreenA}
 \noindent\textcolor{HeaderGreenA}{\rule{.5\textwidth}{.5mm}}\\
@@ -70,21 +142,24 @@
 \noindent\textcolor{HeaderGreenD}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{HeaderGreenE}{HeaderGreenE}
 \noindent\textcolor{HeaderGreenE}{\rule{.5\textwidth}{.5mm}}\\
-%
+  %
 \paragraph[Others]{Others\texorpdfstring{\\}{}}
 \textcolor{HyperlinkBlue1}{HyperlinkBlue1}
 \noindent\textcolor{HyperlinkBlue1}{\rule{.5\textwidth}{.5mm}}\\
 \textcolor{graphicOrange}{graphicOrange}
 \noindent\textcolor{graphicOrange}{\rule{.5\textwidth}{.5mm}}\\
+  %
 \clearpage
+  %
 \subsubsection{General Notes:}
+  %
 \begin{itemize}
 \item jalapeno folder is a git package.
-
+  %
 \href{https://github.com/nbesteman/jalapeno}{https://github.com/nbesteman/jalapeno}
-
+  %
 \item Project is coded with relative paths and jalapeno can be located anywhere.
-
+  %
 \end{itemize}
     %
 \begin{adjmulticols}{1}{\innerMar}{\outerMar}
@@ -130,6 +205,7 @@ preamble.tex & preamble code for all documents\\
 \clearpage
 
 \subsubsection[Using The Glossary]{{\Large Using The Glossary}}
+  %
 \paragraph{Glossary Requirements}
 Glossary commands require a Perl interpreter.  Activeperl is a free Perl interpreter and can be downloaded from:\\ \href{https://www.activestate.com/activeperl/downloads}{https://www.activestate.com/activeperl/downloads}
 {\tiny (A typical installation adds Perl to your path)}.  Compiling the glossary requires running the makeglossaries command either in a \LaTeX{} IDE or in command line as described here.  PDFLatex must be run first to create a .aux file that is used by makeglossaries to create an .gls file.  After the .gls file is created, PDFLatex must be run again to insert the glossary at the \textbackslash printglossaries location.
@@ -164,8 +240,6 @@ In place of the term, use code referencing the key (in the glossaryEntries file)
 \item Add the line \textbackslash printglossaries to the subdocument.
 \item Run makeglossaries in command line on the subdocument similar to how is described above.
 \end{itemize}
-
-
 
 
 \subsubsection[Using The Bibliography(References)]{{\Large Using The Bibliography(References)}}
