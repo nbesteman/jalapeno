@@ -1,0 +1,28 @@
+% \begin{figure}[H] % included image
+% \begin{center}	% centered horizontally
+% \includegraphics[scale=.4]{noChickens.jpg}
+% \end{center}
+% \end{figure}
+
+\newlength\drop
+\makeatletter
+\newcommand*\titleM{\begingroup% Misericords, T&H p 153
+\setlength\drop{0.08\textheight}
+\centering
+\vspace*{\drop}
+{\Huge\bfseries\titlename}\\[\baselineskip]
+{\scshape the subtitle}\\[\baselineskip]
+%{\protect\color{HeaderOrangeE}\HRule}
+\begin{figure}[H] % included image
+\begin{center}	% centered horizontally
+\includegraphics[scale=.5]{GIS_Logo_better.jpg}
+\end{center}
+\end{figure}
+%{\protect\color{HeaderOrangeE}\HRule}
+\vfill
+{\small\scshape www.allegancounty.org/gis}\par
+\vfill
+{\small\scshape \@date}\par
+\vspace*{2\drop}
+\endgroup}
+\makeatother

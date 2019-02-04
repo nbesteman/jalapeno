@@ -3,7 +3,6 @@
 %         Title page passing the graphic throws error noted below
 %         Glossaries doesnt work.  pg313 in Memoir Manual
 %        {\thickrulefill} error
-%        Dev 2 page layouts for 2 cols and regular
 %-------------------------------------------------------------------
 \documentclass[letterpaper, 12pt]{memoir}  % Two sided
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -68,32 +67,59 @@ pdfkeywords={documentation,gis}} %
 % DEFINE THE TITLE PAGE  %
 \def\titlename{Policies and Procedures} % Sets book title
   %
-\title{\input {commonTitle}}  % Inputs common title page
+\input {commonTitle3}
 %-------------------------------------------------------------------
   %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 % CREATE THE GLO AND IDX FILES  %
-\makeglossary % creates glo file
+%\makeglossary % creates glo file
   %
-\makeindex % Creates idx file
+%\makeindex % Creates idx file
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    SET TEXT BLOCK AND MARGINS FOR COVER PAGE  %
+\setmarginnotes{.1in}{.4in}{.1in}
+  %
+\setlrmarginsandblock{*}{0.18\paperwidth}{1} % Left right ratio
+  %
+\setulmarginsandblock{1in}{1in}{*}
+  %
+\checkandfixthelayout
+\makeatletter
+\ch@ngetext
+\makeatletter
 %-------------------------------------------------------------------
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %		Front Section
 %-------------------------------------------------------------------
+  %
 \begin{document} % Document Begins
+  %
+\begin{titlingpage}
+\titleM  % Inputs titleM
+\end{titlingpage}
   %
 \frontmatter % pg 75 class doc turns off chapter numbering and uses lower case roman numerals for page numbers
   %
-\maketitle % creates title page
-  %
-\clearpage
-  %
 \pagestyle{empty} % No Headers and Footers
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    SET TEXT BLOCK AND MARGINS FOR MAIN DOCUMENT PAGES   %
+\setmarginnotes{.1in}{.4in}{.1in}
+  %
+\setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
+  %
+\setulmarginsandblock{1in}{1in}{*}
+  %
+\checkandfixthelayout
+\makeatletter
+\ch@ngetext
+\makeatletter
+%-------------------------------------------------------------------
   %
 \tableofcontents % creates TOC
   %
-\clearpage
-  %
-%-------------------------------------------------------------------
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %		Main Section
 %-------------------------------------------------------------------
 \mainmatter % pg 75 class doc turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers starts at the next coming recto page
@@ -120,7 +146,7 @@ pdfkeywords={documentation,gis}} %
 \subimport{servicePart/}{applicationsChapter.tex}
   %
 \subimport{servicePart/}{toolsChapter.tex}
-%-------------------------------------------------------------------
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %		Back Section
 %-------------------------------------------------------------------
 \part{Resources}
@@ -148,9 +174,9 @@ pdfkeywords={documentation,gis}} %
   %
 \glsaddall % Includes all glossary entries whether they appear in the text or not
   %
-\addcontentsline{toc}{chapter}{Glossary} % add glassary to TOC as a Part
-  %
 \printglossary % Puts glossaries here
+  %
+\addcontentsline{toc}{chapter}{Glossary} % add glassary to TOC as a Part
   %
 \printindex % Puts index here
   %
