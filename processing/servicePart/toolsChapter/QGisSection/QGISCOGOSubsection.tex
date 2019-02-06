@@ -1,24 +1,146 @@
-%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
-\documentclass[class=book , crop=false]{standalone}
-
-\input{../../../preamble}
-
-\def\titlename{Parcel Editing with COGO Tools in QGIS}
-
-\title{\input{../../../commonTitle}}  % closing brace for title
-
-\begin{document}% Document Begins
-
-\ifstandalone
+  %  This Script provides the Treasurer Dept
+  %  Forfeiture Data Collection Mobile App Subsection
+  %  Or Can compile alone with the commented texts toggled
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+% This block uncommented only for standalone compile
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+% PREAMBLE  %
+%  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+%\documentclass[letterpaper, 12pt]{memoir}
+%  %
+%\input{../../../preamble/preamble.tex}
+%  %
+%\input{../../../preamble/graphicsPath.tex}
+%  %
+%\input{../../../preamble/colorDefs.tex}
+%  %
+%\input{../../../preamble/pageLayoutCommands.tex}
+%  %
+%\input{../../../preamble/pageStyles.tex}
+%  %
+%\input{../../../preamble/chapterStyles.tex}
+%  %
+%%\input{../../../glossaryEntries.tex}
+%  %
+%\input{../../../commonTitle3}  % inputs common title
+%  %
+%\def\titlename{Parcel Editing with COGO Tools in QGIS}
+%%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%% SET PDF METADATA  %
+%\hypersetup{pdfauthor={Allegan County GIS Services},% Page 248 in Latex Beinners Guide
+%pdftitle={COGO Tools in QGIS}, %  Sets PDF properties
+%pdfsubject={GIS Tools}, %
+%pdfkeywords={mobile,gis}} %
+%%-------------------------------------------------------------------
+%% TOC DEPTH  %
+%\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
+%  %
+%%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%%    SET TEXT BLOCK AND MARGINS FOR COVER PAGE  %
+%\setmarginnotes{.1in}{.4in}{.1in}
+%  %
+%\setlrmarginsandblock{*}{0.18\paperwidth}{1} % Left right ratio
+%  %
+%\setulmarginsandblock{1in}{1in}{*}
+%  %
+%\checkandfixthelayout
+%\makeatletter
+%\ch@ngetext
+%\makeatletter
+%%-------------------------------------------------------------------
+%  %
+%%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%%		Front Section
+%%-------------------------------------------------------------------
+%\begin{document}% document begins
+%  %
 %\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-\maketitle % creates title page and blank page after title page
-\tableofcontents % creates TOC and blank page
-\clearpage
+%  %
+%\pagestyle{empty} % Clear headers and footers for TOC
+%  %
+%\begin{titlingpage}
+%  %
+%\titleM  % Inputs titleM
+%  %
+%\end{titlingpage}
+%  %
+%%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%%    SET TEXT BLOCK AND MARGINS FOR MAIN DOCUMENT PAGES   %
+%\setmarginnotes{.1in}{.4in}{.1in}
+% %
+%\setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
+% %
+%\setulmarginsandblock{1in}{1in}{*}
+% %
+%\checkandfixthelayout
+%\makeatletter
+%\ch@ngetext
+%\makeatletter
+%%-------------------------------------------------------------------
+%\tableofcontents % creates TOC
+%  %
+%%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%%		Main Section
+%%-------------------------------------------------------------------
 %\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-\fi
-
+%  %
+%\chapterstyle{jalapenoChapterStyle} % custom from chapterStyles.tex
+%  %
+%\pagestyle{jalapenoPageStyleA} % custom from pageStyles.tex
+%  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+ %--------------------------------------------------
+ %
+ %
+ %
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+ %  This block uncommented only for Main compile
+ %+++++++++++++++++++++++++++++++++++++++++++++++++++
+\begin{document}% document begins
+ %
+ %--------------------------------------------------
 \subsection{Using COGO Tools in QGIS}
-\medskip
+  %
+\subsubsection{Problem and Analysis}
+  %
+Transfers of real property typically involve a Metes and Bounds description like this:
+  %
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=1\textwidth]{Description1}
+\vspace{-.2in}
+
+\caption{Typical Deeded Description}
+\end{figure}
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\paragraph{Background}
+  %
+\noindent
+\textit{Coordinate Geometry} or \textbf{COGO} tools are GIS tools that assist the user in conversion of written descriptions of real property into digital map features.  Users in several departments of the county use COGO tools in their regular workflow.  In the past ACGIS provided COGO tools from the MapInfo Suite.  ArcGIS provides COGO tools at the advanced license level.
+  %
+\paragraph{Statement of Problem}
+  %
+\noindent A tool is needed to convert between written descriptions of real property and digital map data.  MapInfo is no longer supported within the county.  Without purchasing an advanced license for ArcGIS some users need a COGO Tool.
+
+  %
+\paragraph{Analysis}
+  %
+\noindent QGIS is an open source software that provides a COGO toolset.  QGIS works in shapefiles, a common GIS data type.
+  %
+%\subparagraph*{}
+  %
+\end{adjmulticols}
+  %
+\clearpage
+  %
+  %
 \subsubsection[Set up the Azimuth and Distance Plugin]{\Large Set up the Azimuth and Distance Plugin \\\small(Azd Plugin).}
 %\subparagraph{After starting QGIS in the basemap}
 \medskip

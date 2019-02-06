@@ -1,21 +1,28 @@
-%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
-\documentclass[class=book , crop=false]{standalone}
+  %
+  %
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%
+%
+%
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+%\def\titlename{GIS Champion Award}
+%\def\authorName{Allegan County GIS Services}
+%\def\pdfTitle{The GIS Award}
+%\def\pdfSubject{GIS Tools} %
+%\def\pdfKeywords{mobile,gis}
+%  %
+%\input{../../../preamble/subSectionPreamble.tex}
 
-\input{../../../preamble}
-
-\def\titlename{GIS Champion Award\\ \medskip\large the Code}
-
-\title{\input{../../../commonTitle}}  % closing brace for title
-
-\begin{document}% Document Begins
-
-\ifstandalone
-%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-\maketitle % creates title page and blank page after title page
-\tableofcontents % creates TOC and blank page
-\clearpage
-%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-\fi
+%-------------------------------------------------------------------
+    %
+\begin{document}% document begins
+    %
+    %
+%-------------------------------------------------------------------
     %
 \subsection{GIS Champion}
     %
@@ -23,12 +30,19 @@
     %
 \subsubsection{GIS Champion Award}
     %
-%\begin{adjmulticols}{2}{-.5in}{-.5in}
+ \begin{figure}[h!]
+\centering
+    \includegraphics[width=.6\textwidth]{gisChampionCertificate}
+\vspace{-.2in}
+
+\caption{Example GIS Champion Award}
+\end{figure}
+
 \begin{adjmulticols}{2}{\innerMar}{\outerMar}
     %
 \paragraph{Background}
     %
-\noindent Though Allegan County has had a formal GIS department for over 20 years, very few people in the government have learned to use it.
+\noindent Though Allegan County has had a formal GIS department for over 20 years, few people have learned to use it.
     %
 \paragraph{Statement of Problem}
     %
@@ -36,7 +50,14 @@
     %
 \paragraph{Analysis}
     %
-\noindent A simple method of recognizing those that promote GIS in the county is the idea behind the GIS Champion Award.  The award is a certificate created and presented by ACGIS Services to anyone for any reason.
+\noindent The GIS Champion Awardis a simple method of recognizing those that promote GIS in the county.
+    %
+\subparagraph*{Past GIS Award Recipients}
+\begin{itemize}
+\item Ian Hanes
+\item Karen
+\item Brian Redmon
+\end{itemize}
     %
 \end{adjmulticols}
     %
@@ -45,103 +66,103 @@
 \paragraph{GIS Champion Award Code}
     %
 \vspace{.2in}
-
-\begin{verbatim}
-\documentclass[landscape]{article}
-\usepackage{wallpaper}
-\usepackage{niceframe}
-\usepackage{xcolor}
-\usepackage{ulem}
-\usepackage{graphicx}
-\usepackage{geometry}
-%\geometry{tmargin=.75cm,bmargin=.25cm,
-%lmargin=.8cm,rmargin=.2cm}
-\geometry{tmargin=.25in,bmargin=.25in,
-  lmargin=.25in,rmargin=.25in}
-\usepackage{multicol}
-\setlength{\columnseprule}{0.4pt}
-\columnwidth=0.3\textwidth
-
-\begin{document}
-\centering
-\scalebox{2.9}{
-\color{green!30!black!60}
-\begin{minipage}{.33\textwidth}
-\font\border=umrandb
-\generalframe
-{\border \char113} % up left
-{\border \char109} % up
-{\border \char112} % up right
-{\border \char108} % left
-{\border \char110} % right
-{\border \char114} % lower left
-{\border \char111} % bottom
-{\border \char115} % lower right
-{\centering
-\includegraphics[height=1.5cm]{GIS_Logo_better.jpg}
-
-\vspace{-8mm}
-
-\curlyframe[.9\columnwidth]{
-
-\textcolor{green!10!black!90}
-{\small Allegan County GIS Services}
-\vspace{.005in}
-
-\textcolor{green!10!black!90}{
-\tiny Recognizes}\\
-%\smallskip
-\vspace{.005in}
-\uline{\textcolor{green!30!black!60}
-\textcolor{green!30!black!60}{Brian Redmond}}
-\\
-\smallskip
-\tiny Information Services Technician
-
-%\smallskip
-\textcolor{green!10!black!90}
-{
-\\
-\tiny for Excellence in
-}
-\smallskip
-\\
-\textcolor{black}{\normalsize \textsc{Enabling
- Employee Experiences}}
-\\
-\vspace{.1in}
-\textcolor{green!10!black!90}
-{
-\tiny on this day
-\itshape September 21, 2018
-}
-
-\vspace{.1in}
-
-{\color{green!10!black!90}
-\scalebox{.6}{
-\end{verbatim}
-
-\clearpage
-
-\begin{verbatim}
-\begin{tabular}{ccc}
-\cline{1-1}
-\cline{3-3}
-\\
-Neil Besteman  & &  Bryan May \\
-GIS Manager & & GIS Analyst \\
-\end{tabular}
-
-} % closes scalebox{.6} arg
-} % closes blue!40!black
-} % closes curlyframe arg
-} % closes centering
-\end{minipage}
-} % closes scalebox{2.8} arg
-
-\end{document}
-\end{verbatim}
-\clearpage
+%
+% \begin{verbatim}
+% \documentclass[landscape]{article}
+% \usepackage{wallpaper}
+% \usepackage{niceframe}
+% \usepackage{xcolor}
+% \usepackage{ulem}
+% \usepackage{graphicx}
+% \usepackage{geometry}
+% %\geometry{tmargin=.75cm,bmargin=.25cm,
+% %lmargin=.8cm,rmargin=.2cm}
+% \geometry{tmargin=.25in,bmargin=.25in,
+%   lmargin=.25in,rmargin=.25in}
+% \usepackage{multicol}
+% \setlength{\columnseprule}{0.4pt}
+% \columnwidth=0.3\textwidth
+%
+% \begin{document}
+% \centering
+% \scalebox{2.9}{
+% \color{green!30!black!60}
+% \begin{minipage}{.33\textwidth}
+% \font\border=umrandb
+% \generalframe
+% {\border \char113} % up left
+% {\border \char109} % up
+% {\border \char112} % up right
+% {\border \char108} % left
+% {\border \char110} % right
+% {\border \char114} % lower left
+% {\border \char111} % bottom
+% {\border \char115} % lower right
+% {\centering
+% \includegraphics[height=1.5cm]{GIS_Logo_better.jpg}
+%
+% \vspace{-8mm}
+%
+% \curlyframe[.9\columnwidth]{
+%
+% \textcolor{green!10!black!90}
+% {\small Allegan County GIS Services}
+% \vspace{.005in}
+%
+% \textcolor{green!10!black!90}{
+% \tiny Recognizes}\\
+% %\smallskip
+% \vspace{.005in}
+% \uline{\textcolor{green!30!black!60}
+% \textcolor{green!30!black!60}{Brian Redmond}}
+% \\
+% \smallskip
+% \tiny Information Services Technician
+%
+% %\smallskip
+% \textcolor{green!10!black!90}
+% {
+% \\
+% \tiny for Excellence in
+% }
+% \smallskip
+% \\
+% \textcolor{black}{\normalsize \textsc{Enabling
+%  Employee Experiences}}
+% \\
+% \vspace{.1in}
+% \textcolor{green!10!black!90}
+% {
+% \tiny on this day
+% \itshape September 21, 2018
+% }
+%
+% \vspace{.1in}
+%
+% {\color{green!10!black!90}
+% \scalebox{.6}{
+% \end{verbatim}
+%
+% \clearpage
+%
+% \begin{verbatim}
+% \begin{tabular}{ccc}
+% \cline{1-1}
+% \cline{3-3}
+% \\
+% Neil Besteman  & &  Bryan May \\
+% GIS Manager & & GIS Analyst \\
+% \end{tabular}
+%
+% } % closes scalebox{.6} arg
+% } % closes blue!40!black
+% } % closes curlyframe arg
+% } % closes centering
+% \end{minipage}
+% } % closes scalebox{2.8} arg
+%
+% \end{document}
+% \end{verbatim}
+% \clearpage
 
 \end{document}

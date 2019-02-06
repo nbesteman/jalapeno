@@ -1,23 +1,11 @@
-\documentclass[class=book , crop=false]{standalone}
-\usepackage[subpreambles=false]{standalone}
-
-\input{../../preamble}
-
-\def\titlename{\LaTeX{} Templates}
-
-\title{\input{../../commonTitle}}  % closing brace for title
-
+%\documentclass[letterpaper, 12pt]{memoir}
+  %
 \begin{document}
-
-\ifstandalone
-\maketitle % creates title page
-\clearpage
-\tableofcontents % creates TOC and blank page
-\fi
-
+  %
 \section{\LaTeX{} Templates}
-
+  %
 \subimport{latexTemplatesSection/}{sectionTemplateSubsection.tex}
+  %
 \subimport{latexTemplatesSection/}{subsectionTemplateSubsection.tex}
-
+  %
 \end{document}

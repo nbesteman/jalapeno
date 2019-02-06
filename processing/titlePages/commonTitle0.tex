@@ -1,0 +1,20 @@
+\newlength\drop
+\makeatletter
+\newcommand*\titleM{\begingroup% Misericords, T&H p 153
+\setlength\drop{0.08\textheight}
+\centering
+\vspace*{\drop}
+{\protect\color{HeaderOrangeE}\HRule}
+%\vspace*{\drop}
+\begin{figure}[H] % included image
+\begin{center}	% centered horizontally
+\includegraphics[scale=.5]{GIS_Logo_better.jpg}
+\end{center}
+\end{figure}
+{\Huge\bfseries\titlename}\\[\baselineskip]
+{\protect\color{HeaderOrangeE}\HRule}\\[\baselineskip]
+{\small\scshape www.allegancounty.org/gis}\\[\baselineskip]
+{\small\scshape \@date}\par
+\vspace*{2\drop}
+\endgroup}
+\makeatother

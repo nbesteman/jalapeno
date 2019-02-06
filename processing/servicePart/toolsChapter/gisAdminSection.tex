@@ -1,23 +1,7 @@
-\documentclass{book}
-%\documentclass[class=book , crop=false]{standalone}
-\usepackage[subpreambles=false]{standalone}
-
-\input{../../preamble}
-
-\setcounter{tocdepth}{3}  % Sets Table of Contents level to show sections
-
-\def\titlename{GIS Admin}
-
-\title{\input{../../commonTitle}}  % closing brace for title
-
+%\documentclass[letterpaper, 12pt]{memoir}
+  %
 \begin{document}
-\ifstandalone
-\maketitle % creates title page
-\clearpage
-\tableofcontents % creates TOC and blank page
-\clearpage
-\fi
-
+  %
 \section{GIS Administration}
 \subimport{gisAdminSection/}{createNewDbConnectionSubsection.tex}
 \clearpage

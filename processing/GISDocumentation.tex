@@ -1,7 +1,6 @@
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %    To Do:
-%         Title page passing the graphic throws error noted below
-%         Glossaries doesnt work.  pg313 in Memoir Manual
+%
 %        {\thickrulefill} error
 %-------------------------------------------------------------------
 \documentclass[letterpaper, 12pt]{memoir}  % Two sided
@@ -11,20 +10,6 @@
 %  \documentclass[letterpaper,10pt,twoside,onecolumn,openright,final]{memoir}
 %
 %
-%-------------------------------------------------------------------
-  %
-%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-%    SET TEXT BLOCK AND MARGINS    %
-\setmarginnotes{.1in}{.4in}{.1in}
-  %
-\setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
-  %
-\setulmarginsandblock{1in}{1in}{*}
-  %
-\checkandfixthelayout
-\makeatletter
-\ch@ngetext
-\makeatletter
 %-------------------------------------------------------------------
   %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -43,8 +28,11 @@
   %
 \input{glossaryEntries.tex}  %
   %
+\input{titlePages/commonTitle3.tex}  % Title Page definition
+  %
 \usepackage{standalone} %
   %
+\def\titlename{Policies and Procedures} % Sets book title
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 % TOC DEPTH  %
 %\setcounter{tocdepth}{5}  % subparagraph and down
@@ -62,18 +50,11 @@ pdftitle={What We Do}, %  Sets PDF properties
 pdfsubject={Documentation of GIS Services Tasks}, %
 pdfkeywords={documentation,gis}} %
 %-------------------------------------------------------------------
-  %
-%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-% DEFINE THE TITLE PAGE  %
-\def\titlename{Policies and Procedures} % Sets book title
-  %
-\input {commonTitle3}
-%-------------------------------------------------------------------
-  %
+ %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 % CREATE THE GLO AND IDX FILES  %
 \makeglossary % creates glo file
-  %
+
 \makeindex % Creates idx file
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %    SET TEXT BLOCK AND MARGINS FOR COVER PAGE  %
@@ -86,25 +67,26 @@ pdfkeywords={documentation,gis}} %
 \checkandfixthelayout
 \makeatletter
 \ch@ngetext
-\makeatletter
+\makeatother
 %-------------------------------------------------------------------
   %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %		Front Section
 %-------------------------------------------------------------------
-  %
 \begin{document} % Document Begins
-  %
-\begin{titlingpage}
-\titleM  % Inputs titleM
-\end{titlingpage}
   %
 \frontmatter % pg 75 class doc turns off chapter numbering and uses lower case roman numerals for page numbers
   %
 \pagestyle{empty} % No Headers and Footers
   %
-%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-%    SET TEXT BLOCK AND MARGINS FOR MAIN DOCUMENT PAGES   %
+\begin{titlingpage}
+  %
+\titleM  % Inputs titleM
+  %
+\end{titlingpage}
+%   %
+% %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% %    SET TEXT BLOCK AND MARGINS FOR MAIN DOCUMENT PAGES   %
 \setmarginnotes{.1in}{.4in}{.1in}
   %
 \setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
@@ -114,7 +96,7 @@ pdfkeywords={documentation,gis}} %
 \checkandfixthelayout
 \makeatletter
 \ch@ngetext
-\makeatletter
+\makeatother
 %-------------------------------------------------------------------
   %
 \tableofcontents % creates TOC
@@ -138,14 +120,15 @@ pdfkeywords={documentation,gis}} %
 \part{Methods}
   %
 \subimport{methodPart/}{documentationChapter.tex}
-  %
+%   %
 \subimport{methodPart/}{teamConceptChapter.tex}
-  %
+%
 \part{Service}
-  %
+
 \subimport{servicePart/}{applicationsChapter.tex}
-  %
+%
 \subimport{servicePart/}{toolsChapter.tex}
+
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %		Back Section
 %-------------------------------------------------------------------
@@ -164,8 +147,6 @@ pdfkeywords={documentation,gis}} %
 \subimport{resourcesPart/}{appendices.tex}
   %
 \end{appendices}
-  %
-\clearpage
   %
 %\bibliographystyle{amsplain} % sets biblioigraphy style
 \bibliographystyle{plain} % sets biblioigraphy style

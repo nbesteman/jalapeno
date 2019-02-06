@@ -1,21 +1,7 @@
-\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
-\usepackage[subpreambles=false]{standalone}
-
-\input{../../preamble}
-\setcounter{tocdepth}{3}  % Sets Table of Contents level to show sections
-\def\titlename{\LaTeX{} Packages}
-
-\title{\input{../../commonTitle}}  % inputs common title
-
+%\documentclass[letterpaper, 12pt]{memoir}
+  %
 \begin{document}
-
-\ifstandalone
-\maketitle % creates title page
-\clearpage
-\tableofcontents % creates TOC and blank page
-\clearpage
-\fi
-
+  %
 \section[\LaTeX{} Packages]{\LaTeX{} Packages used by AC GIS}
 \subimport{latexPackagesSection/}{commonLatexErrorsSubsection.tex}
 \subimport{latexPackagesSection/}{floatPackageSubsection.tex}
@@ -23,7 +9,7 @@
 \subimport{latexPackagesSection/}{graphicxPackageSubsection.tex}
 \subimport{latexPackagesSection/}{hyperrefSubsection.tex}
 \subimport{latexPackagesSection/}{importPackageSubsection.tex}
-\subimport{latexPackagesSection/}{standalonePackageSubsection.tex}
+%\subimport{latexPackagesSection/}{standalonePackageSubsection.tex}
 \subimport{latexPackagesSection/}{wrapfigPackageSubsection.tex}
-
+  %
 \end{document}

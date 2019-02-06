@@ -1,33 +1,39 @@
-\documentclass[class=report , crop=false, openany, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
-
-\usepackage[subpreambles=false]{standalone}
-
-\input{../../preamble}
-
-\def\titlename{Geography 101}
-
-\title{\input{../../commonTitle}}  % inputs common title
-
-\begin{document}
-
-\ifstandalone
-\maketitle % creates title page
-\clearpage
-\tableofcontents % creates TOC and blank page
-\fi
-
+  %
+  %  Or Can compile alone with the commented texts toggled
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+% \def\titlename{Geography 101}
+% \def\authorName{Allegan County GIS Services}
+% \def\pdfTitle{Geography 101}
+% \def\pdfSubject{GIS Tools} %
+% \def\pdfKeywords{mobile,gis}
+%
+% \input{../../../preamble/subSectionPreamble.tex}
+  %
+%-------------------------------------------------------------------
+    %
+    %
+\begin{document}% document begins
+   %
+ %--------------------------------------------------
+  %
 \section{Surveys and Plans}
-
-\subimport{geo101Appendix/surveysAndPlansSection/}{usingNorthingAndEastingSubsection.tex}
+  %
+\subimport{geo101Appendix/}{usingNorthingAndEastingSubsection.tex}
+  %
 \subsection[Coordinate Systems for Michigan]{A Primer on Coordinate Systems Commonly Used in Michigan}
-
-%\IfStandalone{\href{../../../../documentation/references/geo101/MiCoordinateSystems.pdf}{A Primer on Coordinate Systems Commonly Used in Michigan}}{\href{../../documentation/references/geo101/MiCoordinateSystems.pdf}{A Primer on Coordinate Systems Commonly Used in Michigan}}
-
+  %
 \href{../../../../documentation/references/geo101/MiCoordinateSystems.pdf}{Document Link}
-
-%\index{coordinate systems}
-%\index{Michigan}
-%\index{State Plane}
-%\index{georef}
-
+  %
+\index{coordinate systems}
+\index{Michigan}
+\index{State Plane}
+\index{georef}
+  %
 \end{document}

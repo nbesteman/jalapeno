@@ -1,22 +1,29 @@
-\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
-
-\input{../../../preamble}
-
-
-\def\titlename{The standalone Package\\ \medskip\large \LaTeX{} Packages }
-\title{\input{../../../commonTitle}}  % inputs common title
-
+  %
+  %
+  %  Or Can compile alone with the commented texts toggled
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+% \def\titlename{The standalone Package}
+% \def\authorName{Allegan County GIS Services}
+% \def\pdfTitle{The standalone Package}
+% \def\pdfSubject{GIS Tools} %
+% \def\pdfKeywords{mobile,gis}
+%
+% \input{../../../preamble/subSectionPreamble.tex}
+  %
+%-------------------------------------------------------------------
+    %
+    %
 \begin{document}% document begins
-
-\ifstandalone
-\maketitle % creates title page
-\clearpage
-\tableofcontents % creates TOC
-\clearpage
-\fi
-
-\clearpage
-
+ %
+ %--------------------------------------------------
+  %
 \subsection[standalone Package]{\LARGE standalone Package}
 
 \subsubsection[Introduction]{\Large Introduction}
@@ -43,7 +50,7 @@
 
 \end{itemize}
 
-\item the \emph{standalone} \textbf{class}:  
+\item the \emph{standalone} \textbf{class}:
 
 \begin{itemize}
 \item Is a document class
@@ -55,13 +62,13 @@
 
 \begin{itemize}
 \item behaves as an article when standalone
-\item makes document available for import into a master document 
+\item makes document available for import into a master document
 
 \end{itemize}
 
 \end{itemize}
 
-\end{itemize} 
+\end{itemize}
 
 \subsubsection[Simple Use]{\Large Simple Use}
 %\begin{verbatim} text \end{verbatim}
@@ -81,7 +88,7 @@
 
 \end{itemize}
 
-\item the \emph{standalone} \textbf{class}:  
+\item the \emph{standalone} \textbf{class}:
 
 \begin{itemize}
 \item In any subdocument:
@@ -93,7 +100,7 @@
 
 \end{itemize}
 
-\end{itemize} 
+\end{itemize}
 
 
 \subsubsection[Options]{\Large Options}
@@ -111,7 +118,7 @@
 
 \end{itemize}
 
-\item the \emph{standalone} \textbf{class}:  
+\item the \emph{standalone} \textbf{class}:
 \begin{itemize}
 \item \begin{large}\textbf{crop}\end{large}
 \item \begin{large}\textbf{titlepage}\end{large}
@@ -147,9 +154,9 @@
 \item the \emph{standalone} \textbf{class}:
 \begin{itemize}
 \item \begin{verbatim}
-\documentclass[class=article , crop=false, 
-    titlepage, twoside, 
-    multi={itemize, figure, verbatim}, 
+\documentclass[class=article , crop=false,
+    titlepage, twoside,
+    multi={itemize, figure, verbatim},
     float=false]{standalone}
 \end{verbatim}
 
@@ -162,8 +169,8 @@
 \end{document}
 
 %\begin{verbatim}
-%\documentclass[class=article , crop=false, 
-%    titlepage, twoside, 
-%    multi={itemize, figure, verbatim}, 
+%\documentclass[class=article , crop=false,
+%    titlepage, twoside,
+%    multi={itemize, figure, verbatim},
 %    float=false]{standalone}
 %\end{verbatim}

@@ -1,0 +1,75 @@
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%  Used in Subsections that are capable of being compiled alone
+%
+%
+%-------------------------------------------------------------------
+\documentclass[letterpaper, 12pt]{memoir}
+ %
+\input{../../../preamble/preamble.tex}
+ %
+\input{../../../preamble/graphicsPath.tex}
+ %
+\input{../../../preamble/colorDefs.tex}
+ %
+\input{../../../preamble/pageLayoutCommands.tex}
+ %
+\input{../../../preamble/pageStyles.tex}
+ %
+\input{../../../preamble/chapterStyles.tex}
+ %
+%\input{../../../glossaryEntries.tex}
+ %
+\input{../../../titlePages/commonTitle3}  % inputs common title
+  % SET PDF METADATA  %
+\hypersetup{pdfauthor={\authorName},
+pdftitle={\pdfTitle}, %  Sets PDF properties
+pdfsubject={\pdfSubject},
+pdfkeywords={\pdfKeywords}}
+%-------------------------------------------------------------------
+  % TOC DEPTH  %
+\setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
+ %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    SET TEXT BLOCK AND MARGINS FOR COVER PAGE  %
+\setmarginnotes{.1in}{.4in}{.1in}
+\setlrmarginsandblock{*}{0.18\paperwidth}{1} % Left right ratio
+\setulmarginsandblock{1in}{1in}{*}
+\checkandfixthelayout
+\makeatletter
+\ch@ngetext
+\makeatother
+  %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+	%  Front Section
+  %-------------------------------------------------------------------
+\begin{document}% document begins
+   %
+\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
+   %
+\pagestyle{empty} % Clear headers and footers for TOC
+   %
+\begin{titlingpage}
+   %
+\titleM  % Inputs titleM
+   %
+\end{titlingpage}
+   %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    SET TEXT BLOCK AND MARGINS FOR MAIN DOCUMENT PAGES   %
+\setmarginnotes{.1in}{.4in}{.1in}
+\setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
+\setulmarginsandblock{1in}{1in}{*}
+\checkandfixthelayout
+\makeatletter
+\ch@ngetext
+\makeatother
+%-------------------------------------------------------------------
+\tableofcontents % creates TOC
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%		Main Section
+%-------------------------------------------------------------------
+\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+  %
+\chapterstyle{jalapenoChapterStyle} % custom from chapterStyles.tex
+  %
+\pagestyle{jalapenoPageStyleA} % custom from pageStyles.tex

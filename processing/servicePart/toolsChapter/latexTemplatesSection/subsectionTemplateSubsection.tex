@@ -1,61 +1,112 @@
- %+++++++++++++++++++++++++++++++++++++++++++++++++++
- %  This block uncommented only for standalone compile
- %+++++++++++++++++++++++++++++++++++++++++++++++++++
+  %  This Script provides the
+  %
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+% This block uncommented only for standalone compile
+%+++++++++++++++++++++++++++++++++++++++++++++++++++
+% PREAMBLE  %
+%     %  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
 % \documentclass[letterpaper, 12pt]{memoir}
+%   %
+% \input{../../../preamble/preamble.tex}
+%   %
+% \input{../../../preamble/graphicsPath.tex}
+%   %
+% \input{../../../preamble/colorDefs.tex}
+%   %
+% \input{../../../preamble/pageLayoutCommands.tex}
+%   %
+% \input{../../../preamble/pageStyles.tex}
+%   %
+% \input{../../../preamble/chapterStyles.tex}
+%   %
+% %\input{../../../glossaryEntries.tex}
+%   %
+% \input{../../../commonTitle3}  % inputs common title
+%   %
+% \def\titlename{SUBSECTION TITLE}
+% %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% % SET PDF METADATA  %
+% \hypersetup{pdfauthor={Allegan County GIS Services},% Page 248 in Latex Beinners Guide
+% pdftitle={TITLE}, %  Sets PDF properties
+% pdfsubject={Documentation of GIS Services Tasks}, %
+% pdfkeywords={mobile,gis}} %
+% %-------------------------------------------------------------------
+% % TOC DEPTH  %
+% \setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
+%   %
+% %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% %    SET TEXT BLOCK AND MARGINS FOR COVER PAGE  %
 % \setmarginnotes{.1in}{.4in}{.1in}
-% \setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
+%   %
+% \setlrmarginsandblock{*}{0.18\paperwidth}{1} % Left right ratio
+%   %
 % \setulmarginsandblock{1in}{1in}{*}
+%   %
 % \checkandfixthelayout
 % \makeatletter
 % \ch@ngetext
 % \makeatletter
-%    %
-% \input{../../../preamble/preamble.tex}
-%    %
-% \input{../../../preamble/graphicsPath.tex}
-%    %
-% \input{../../../preamble/colorDefs.tex}
-%    %
-% \input{../../../preamble/pageLayoutCommands.tex}
-%    %
-% \input{../../../preamble/pageStyles.tex}
-%    %
-% \input{../../../preamble/chapterStyles.tex}
-%    %
-% %\input{../../../glossaryEntries.tex}
-%    %
-%    %
-% %\setcounter{tocdepth}{5}  % subparagraph and down
-% %\setcounter{tocdepth}{4}  % paragraph and down
-% %\setcounter{tocdepth}{3}  % subsubsection and down
-% \setcounter{tocdepth}{2}  % Sets Table of Contents level to show subsections, sections, chapters, and parts(DEFAULT)
-% %\setcounter{tocdepth}{1}  % Sets Table of Contents level to show sections, chapters, and parts
-% %\setcounter{tocdepth}{0}  % Sets Table of Contents level to show chapters, and parts
-%    %
-%    %
-% \def\titlename{Subsection Template\\ \medskip\large \LaTeX{} for Documentation}
-%    %
-% \title{\input{../../../commonTitle}}  % inputs common title
-%    %
+% %-------------------------------------------------------------------
+%   %
+% %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% %		Front Section
+% %-------------------------------------------------------------------
 % \begin{document}% document begins
-%    %
-% \pagestyle{empty} % Clear headers and footers for TOC
+%   %
 % \frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-% \maketitle % creates title page
-% \clearpage
+%   %
+% \pagestyle{empty} % Clear headers and footers for TOC
+%   %
+% \begin{titlingpage}
+%   %
+% \titleM  % Inputs titleM
+%   %
+% \end{titlingpage}
+%   %
+% %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% %    SET TEXT BLOCK AND MARGINS FOR MAIN DOCUMENT PAGES   %
+% \setmarginnotes{.1in}{.4in}{.1in}
+%  %
+% \setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
+%  %
+% \setulmarginsandblock{1in}{1in}{*}
+%  %
+% \checkandfixthelayout
+% \makeatletter
+% \ch@ngetext
+% \makeatletter
+% %-------------------------------------------------------------------
 % \tableofcontents % creates TOC
-% \clearpage
+%   %
+% %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% %		Main Section
+% %-------------------------------------------------------------------
 % \mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
+%   %
+% \chapterstyle{jalapenoChapterStyle} % custom from chapterStyles.tex
+%   %
+% \pagestyle{jalapenoPageStyleA} % custom from pageStyles.tex
+
+%  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
  %--------------------------------------------------
+ %
+ %
+ %
  %+++++++++++++++++++++++++++++++++++++++++++++++++++
  %  This block uncommented only for Main compile
  %+++++++++++++++++++++++++++++++++++++++++++++++++++
 \begin{document}% document begins
  %
  %--------------------------------------------------
-\subsection[\LaTeX{} Subsection Template]{\LaTeX{} Subsection Template}
-  %
-\begin{verbatim}
+\subsection{SUBSECTION TITLE}
   %
 \subsubsection{Problem and Analysis}
   %
@@ -63,40 +114,126 @@
   %
 \paragraph{Background}
   %
-\noindent
+\noindent The current Tax Forfeiture workflow is built on MapInfo software and MS Access amd executed on a laptop pc.  Both MapInfo and MS Access are no longer supported in county workflows.  ESRI software can be used to rebuild the workflow.  \textit{Forfeiture Data Collector Application}, (\textbf{Forfeiture App}) must be recreated in the ESRI framework.
   %
 \paragraph{Statement of Problem}
   %
-\noindent
+\noindent The current Tax Forfeiture workflow is built on MapInfo software and MS Access amd executed on a laptop pc.  Both MapInfo and MS Access are no longer supported in county workflows.  ESRI software can be used to rebuild the workflow.  \textit{Forfeiture Data Collector Application}, (\textbf{Forfeiture App}) must be recreated in the ESRI framework.
   %
 \paragraph{Analysis}
   %
-\noindent
+\noindent \textbf{Forfeiture App} will facilitate: \textit{Mobile data collection on a handheld device},: (\textbf{Mobile Interface}) and an
   %
-\subparagraph*{}
+\textit{in office workflow to complete data processing}, (\textbf{Pre and PostProcessing})
+  %
+\subparagraph*{Mobile Interface}
   %
 \begin{itemize} %
   %
-\item
+\item Synchronize with data in the office (online)
   %
-\item
+\item Collect data and photos of forfeiture sites (offline)
   %
-\item
+\item Synchronize the collected data with data in the office (online)
   %
 \end{itemize} %
   %
-\subparagraph*{}
+\subparagraph*{Pre \& Post Processing}
   %
 \begin{itemize} %
   %
-\item
+\item Produce and print a form for each site visited with required data and images
   %
 \end{itemize} %
   %
 \end{adjmulticols}
   %
 \clearpage
+  %
+  %
+\subsubsection{Design Overview}
+  %
+  % Single Figure
+  %
+\marginpar{\color{graphicOrange}\textbf{Forfeiture Parcels} is used through the workflow}
+\vspace{-.2in}
 
-\end{verbatim}
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=1\textwidth]{ProjectDesign}
+\vspace{-.2in}
+
+\caption{Design}
+\end{figure}
+  %
+\clearpage
+  %
+  %
+\paragraph{Summary}
+\vspace{.25in}
+
+TEXT:
+\begin{enumerate}
+\item \Large Preprocessing \normalsize(in the office):
+  %
+\begin{itemize}
+\item v
+\item x
+\item y
+\item z
+\end{itemize}
+  %
+\item \Large TEXT \normalsize TEXT:
+  %
+\begin{itemize}
+\item A
+\item B
+\item C
+\item D
+\end{itemize}
+  %
+\item \Large Post-processing \normalsize (in the office)
+  %
+\begin{itemize}
+\item A
+\item B
+\item Print form for each site
+\item C
+  %
+\end{itemize}
+  %
+\end{enumerate}
+  %
+\clearpage
+  %
+  %
+\paragraph{Technologies Used in The Forfeiture App}
+  %
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\subparagraph{BSA Data}
+  %
+\noindent Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
+  %
+\subparagraph{ArcGIS Desktop}\noindent Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool syncronizes data from the fieldwork with the live data on the Allegan County network.
+  %
+\subparagraph{ArcGIS Collector}\noindent A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork. The user collects the necessary information on each forfeiture parcel in the field disconnected, and then uploads the changes when reconnected.
+  %
+\subparagraph{Enterprise Geodatabse}\noindent Live data from a publishing geodatabase (ACPub), running on SQL Server database server (acintsql01) provides access to Forfeiture Parcels
+  %
+\subparagraph{ArcGIS Portal} \noindent Forfeiture Parcels is served as a feature service (REST service)  named TaxReversionParcels.  A webmap on Portal, called the Forfeiture Field Map consumes the TaxReversionParcels exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.
+  %
+\end{adjmulticols}
+  %
+  % Single Figure
+  %
+\begin{figure}[H]
+\centering
+    \includegraphics[width=1\textwidth]{IMAGE}
+\vspace{-.2in}
+
+\caption{IMAGE NAME}
+\end{figure}
+\clearpage
 
 \end{document}

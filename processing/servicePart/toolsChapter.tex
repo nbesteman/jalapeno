@@ -1,22 +1,11 @@
-\documentclass[class=report , crop=false, openany, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
-\usepackage[subpreambles=false]{standalone}
-
-\input{../../preamble}
-\setcounter{tocdepth}{3}  % Sets Table of Contents level to show sections
-\def\titlename{Tools}
-
-\title{\input{../commonTitle}}  % closing brace for title
-
+%\documentclass[letterpaper, 12pt]{memoir}
+  %
+%\input{../preamble}
+  %
 \begin{document}
-
-\ifstandalone
-\maketitle % creates title page
-\clearpage
-\tableofcontents % creates TOC
-\clearpage
-\fi
-
+  %
 \chapter{Tools}
+  %
 \subimport{toolsChapter/}{bsaSupportSection.tex}
 \clearpage
 \subimport{toolsChapter/}{coreDataEditsSection.tex}
@@ -34,5 +23,5 @@
 \subimport{toolsChapter/}{pdfToolsSection.tex}
 \clearpage
 \subimport{toolsChapter/}{QGISSection.tex}
-
+  %
 \end{document}

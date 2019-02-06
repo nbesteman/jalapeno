@@ -1,47 +1,34 @@
-%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
-\documentclass[class=book , crop=false]{standalone}
-
-\input{../../../preamble}
-
-\def\titlename{Section Template}
-
-\title{\input{../../../commonTitle}}  % closing brace for title
-
-\begin{document}% Document Begins
-
-\ifstandalone
-\maketitle % creates title page
-\clearpage
-\tableofcontents % creates TOC
-\clearpage
-\fi
-
+  %
+  %
+  %  Or Can compile alone with the commented texts toggled
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+% \def\titlename{Section Template}
+% \def\authorName{Allegan County GIS Services}
+% \def\pdfTitle{Section Template}
+% \def\pdfSubject{GIS Tools} %
+% \def\pdfKeywords{mobile,gis}
+%
+% \input{../../../preamble/subSectionPreamble.tex}
+  %
+%-------------------------------------------------------------------
+    %
+    %
+\begin{document}% document begins
+ %
+ %--------------------------------------------------
+  %
 \subsection{\LaTeX{} Section Template}
 
 \begin{verbatim}
 
-%\documentclass[class=report , crop=false, multi={itemize, figure}, float=false]{standalone}%Experimental
-\documentclass[class=book , crop=false]{standalone}
-
-\input{../../../preamble}
-
-\def\titlename{Section Template}
-
-\title{\input{../../../commonTitle}}  % closing brace for title
-
-\begin{document}% Document Begins
-
-\input{../../../commonFront} % provides standalone options
-
-\section{SECTION NAME HERE}
-
-\subimport{RELATIVE PATH TO NEW Section/}{NEW SUBSECTION Subsection.tex}
-
-%eg.
-%\subimport{latexTemplatesSection/}{subsectionTemplateSubsection.tex}
-% etc...
-
-\end{document}
+jjjj
 
 \end{verbatim}
 

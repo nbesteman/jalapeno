@@ -1,23 +1,34 @@
-\documentclass[class=article , crop=false, titlepage, twoside, multi={itemize, figure, verbatim}, float=false]{standalone}
-\input{../../../preamble}
-
-\def\titlename{Errors\\ \medskip\large Errors in \LaTeX{}}
-
-\title{\input{../../../commonTitle}}  % inputs common title
-\setcounter{tocdepth}{5}  % subparagraph and down
+  %
+  %
+  %  Or Can compile alone with the commented texts toggled
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+% \def\titlename{Errors in \LaTeX{}}
+% \def\authorName{Allegan County GIS Services}
+% \def\pdfTitle{Errors in \LaTeX{}}
+% \def\pdfSubject{GIS Tools} %
+% \def\pdfKeywords{mobile,gis}
+%
+% \input{../../../preamble/subSectionPreamble.tex}
+  %
+%-------------------------------------------------------------------
+    %
+    %
 \begin{document}% document begins
-\ifstandalone
-%\frontmatter % turns off chapter numbering and uses roman numerals for page numbers
-\maketitle % creates title page and blank page after title page
-\tableofcontents % creates TOC and blank page
-\clearpage
-%\mainmatter % turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers
-\fi
+ %
+ %--------------------------------------------------
 
 
 
-\chapter{Common Errors}
-\label{cha:common-errors}
+
+%\chapter{Common Errors}
+%\label{cha:common-errors}
 
 If you have every compiled a \LaTeX{} document, chances are high you
 have received a few error messages.  Sometimes they come from
@@ -554,9 +565,9 @@ not provided:
 To fix this error, you need to find where a number is expected so that
 you can provide the correct one.
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "reader"
-%%% End: 
+%%% End:
 
 \end{document}
