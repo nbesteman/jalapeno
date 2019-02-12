@@ -1,0 +1,14 @@
+Zoning update Procedure:
+
+When a local unit requests an update to thier zoning map:
+
+data update are done in AC_Pro
+
+style updates are done in Zoning_UnitName.mxd 
+
+Data updates are synchronized from AC_Pro to AC_Pub
+
+Style updates are copied from Zoning_UnitName.mxd to PV2Zoning.mxd
+
+PV2Zoning.mxd shared as a service to update the web map zoning layer
+
