@@ -1,0 +1,5 @@
+when the task author's pw changes the task will no longer work.
+Error:Logon failure: unknown user name or bad password. (0x8007052E)
+
+To fix:edit the task properties 
+on the general tab: Change to: Run only when user is logged in and test run
