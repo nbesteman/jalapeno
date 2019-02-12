@@ -1,0 +1,149 @@
+  %
+  %
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+  %
+  % OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+    %
+  % \def\titlename{QGIS Search Layers Plugin}
+  % \def\authorName{Allegan County GIS Services}
+  % \def\pdfTitle{QGIS Addins}
+  % \def\pdfSubject{QGIS Tools and AddIns} %
+  % \def\pdfKeywords{mobile,gis}
+  %  %
+  % \input{../../../preamble/subSectionPreamble.tex}
+
+  %-------------------------------------------------------------------
+      %
+\begin{document}% document begins
+      %
+      %
+  %-------------------------------------------------------------------
+      %
+\subsection{Search Layers Plugin}
+  %
+\subsubsection{Problem and Analysis}
+  %
+QGIS has some tools built in and others can be added via the Plugin architecture.
+  %
+%\begin{figure}[h!]
+%\centering
+%    \includegraphics[width=1\textwidth]{DescriptionFromDeed.PNG}
+%\vspace{-.2in}
+%
+%\caption{Description From Deed}
+%\end{figure}
+
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\paragraph{Background}
+  %
+QGIS is an open source GIS and search by feature attributes is needed.
+  %
+\paragraph{Statement of Problem}
+  %
+Users need a tool to search for features by attribute.
+  %
+\paragraph{Analysis}
+  %
+The Search Layers Plugin can be added to any installation of QGIS.
+  %
+\end{adjmulticols}
+  %
+\clearpage
+  %
+\subsubsection{Plugin Setup}
+\vspace{.2in}
+  %
+\paragraph{Install Search Layers Plugin}
+\vspace{.2in}
+
+  %
+\vspace{.2in}
+
+\begin{itemize}
+  %
+\item To install: Plugins $\Rightarrow$ \textbf{Search Layers} Plugin $\Rightarrow$ Install
+  %
+\end{itemize}
+  %
+\begin{figure}[H]
+\centering
+     \includegraphics[width=1\textwidth]{SearchLayersPluginInstall.PNG}
+
+\caption{Search Layers Plugin}
+\end{figure}
+
+\subparagraph{Search Layers Plugin Tool is Added to the Toolbar}
+  %
+\begin{figure}[H]
+\centering
+     \includegraphics[width=1\textwidth]{searchLayersIcon.PNG}
+
+\caption{Search Layer Icon}
+\end{figure}
+
+\clearpage
+
+\subsubsection{Using the Plugin}
+
+\paragraph*{Enter Parcel Search Data}
+\vspace{.2in}
+
+\subparagraph*{In The \textbf{Search Layers Plugin:}}
+\vspace{.15in}
+
+\begin{itemize}
+  %
+\item Enter \textbf{parcel number} {\tiny (with dashes)} into \emph{Search String}
+  %
+\item Select \textbf{Parcels} in \emph{Search Layers}
+  %
+\item Select \textbf{PARCELID} in \emph{Search Fields}
+  %
+\end{itemize}
+  %
+\begin{figure}[H]
+\centering
+    \includegraphics[width=1\textwidth]{searchLayersSetup.png}
+\vspace{-.1in}
+
+\caption{Search Layers Setup}
+\end{figure}
+
+\begin{itemize}
+
+\item click on result in table
+
+\end{itemize}
+
+\clearpage
+  %
+\subparagraph*{Screen zooms into the selection}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=.8\textwidth]{searchResult.png}
+\vspace{-.1in}
+
+\caption{Search Results}
+\end{figure}
+
+\subparagraph*{Zoom out far enough to find a reference point}
+
+\begin{figure}[H]
+\centering
+    \includegraphics[width=.5\textwidth]{searchResultZoomOut.png}
+\vspace{-.1in}
+
+\caption{Search Results Zoomed Out}
+\end{figure}
+  %
+\clearpage
+
+\end{document}

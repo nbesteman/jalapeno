@@ -10,17 +10,17 @@
   %
   % OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
     %
-%  \def\titlename{Parcel Editing with COGO Tools in QGIS}
-%  \def\authorName{Allegan County GIS Services}
-%  \def\pdfTitle{Parcel Editing with COGO Tools in QGIS}
-%  \def\pdfSubject{GIS Tools} %
-%  \def\pdfKeywords{mobile,gis}
-%   %
-%  \input{../../../preamble/subSectionPreamble.tex}
-
+  % \def\titlename{Parcel Editing with COGO Tools in QGIS}
+  % \def\authorName{Allegan County GIS Services}
+  % \def\pdfTitle{Parcel Editing with COGO Tools in QGIS}
+  % \def\pdfSubject{GIS Tools} %
+  % \def\pdfKeywords{mobile,gis}
+  %  %
+  % \input{../../../preamble/subSectionPreamble.tex}
+%\setlength{\parindent}{24pt}
   %-------------------------------------------------------------------
       %
- \begin{document}% document begins
+\begin{document}% document begins
       %
       %
   %-------------------------------------------------------------------
@@ -42,134 +42,76 @@ Transfers of real property typically involve a Metes and Bounds description:
   %
 \paragraph{Background}
   %
-\noindent\textit{Coordinate Geometry} or \textbf{COGO} tools are GIS tools that assist the user in conversion of written descriptions of real property into digital map features.  Users in several departments of the county use COGO tools in their regular workflow.  In the past ACGIS provided COGO tools from the MapInfo Suite.  ArcGIS provides COGO tools at the advanced license level.
+%\noindent
+In GIS, \textit{Coordinate Geometry} or \textbf{COGO} tools convert written descriptions of real property into digital map features.\\
+
+\noindent Users in several county departments use COGO tools in their regular workflow.\\
+
+\noindent In the past ACGIS provided COGO tools from the MapInfo Suite.
+
   %
 \paragraph{Statement of Problem}
   %
-\noindent A tool is needed to convert between written descriptions of real property and digital map data.  MapInfo is no longer supported within the county.  Without purchasing an advanced license for ArcGIS some users need a COGO Tool.
+A tool is needed to convert between written descriptions of real property and digital map data.\\
+
+\noindent MapInfo is no longer supported within the county.\\
+
+\noindent The COGO tools in ArcGIS require an advanced license.
   %
 \paragraph{Analysis}
   %
-\noindent QGIS is an open source software that provides a COGO toolset.  QGIS works in shapefiles, a common GIS data type.
+QGIS is an open source software that provides a COGO toolset.\\
+
+\noindent The Azimuth and Distance Plugin provides the COGO functionality in QGIS.\\
+
+\noindent QGIS works in shapefiles, a common GIS data type.\\
+
   %
 \end{adjmulticols}
   %
+\vspace{1in}
+
+\subparagraph{Following are instructions for using QGIS for COGO}
+
 \clearpage
   %
   %
-\paragraph{General QGIS Setup}
-  %
-\subparagraph{Set Snapping Properties}
-To avoid errors in editing, Snap settings can be used.
-
-\vspace{.2in}
-
-\noindent Settings $\Rightarrow$ Snapping Options
-\vspace{.2in}
-
-\noindent Enable snapping to:
-
-\begin{itemize}
-  %
-\item Sections
-  %
-\item Quarter Sections
-  %
-\item Parcels 
-  %
-\item etc.
-  %
-\end{itemize}
-  %
-\begin{figure}[H]
-\centering
-\includegraphics[width=1\textwidth]{configureEditingEnvironment.png}
-\vspace{-.1in}
-
-\caption{Configure Editing Environment}
-\end{figure}
-
-\clearpage  
-  %
-\paragraph{Azimuth and Distance Plugin Setup}
+\paragraph{To use COGO tools in QGIS, follow these steps}
   %
 \vspace{.2in}
 
-\subparagraph{Install Azimuth and Distance Plugin}
+\stepcounter{stepCount}
 
-\noindent Plugins \emph{(1)} $\Rightarrow$ Topography Group
-  %
-\vspace{.2in}
+\subparagraph*{{\LARGE Step \thestepCount:}\\Launch and Configure the Azimuth and Distance Plugin}
 
-\noindent Select the Azimuth and Distance Plugin \emph{(2)}
-  %
-\begin{figure}[H] % included image
-\centering
-    \includegraphics[width=1\textwidth]{launchPlugin.png}
-\vspace{-.1in}
-
-\caption{Launch Plugin}
-\end{figure}
-  %
-\vspace{.3in}
-
-\subparagraph{Launch Azimuth and Distance Plugin}
-  %
 \begin{figure}[H]
 \centering
      \includegraphics[width=1\textwidth]{cogoIcon.PNG}
+\vspace{-.2in}
 
 \caption{COGO Icon}
 \end{figure}
-
-\clearpage
-
-\subparagraph*{Note Active Layer in Plugin}
   %
-\vspace{.2in}
-  
-This tool can be used to draw in a temporary layer or in an active map layer.
-  %
-\vspace{.2in}
+%\vspace{.1in}
 
-\noindent Select traverse1 as active layer in the tool.
+\textasteriskcentered{\scriptsize This tool draws in a temporary layer or in an active map layer.}
   %
-\vspace{.2in}
+\vspace{.1in}
 
-  %
+\noindent {\large Select \textbf{traverse1} as active layer in the tool.}
+
 \begin{figure}[H] % included image
 \centering
     \includegraphics[width=1\textwidth]{checkActiveLayer.png}
-\vspace{-.2in}
+\vspace{-.3in}
 
 \caption{Check Active Layer}
 \end{figure}
-
+  %
 \clearpage
-\subparagraph*{Activate traverse layer in map}
   %
+\noindent\textbf{Configure Options in Plugin}
 \vspace{.2in}
-
-For a map layer to be editable, it must be activated in the Layers Panel.
-  %
-\vspace{.2in}
-
-\noindent{\footnotesize (If necessary)} left click the layer \textbf {\emph{traverse1}} in Layer Panel to activate it.
-  %
-\vspace{.2in}
-
-\begin{figure}[H] % Example of including images
-\centering
-    \includegraphics[width=1\textwidth]{activateLayer.png}
-\vspace{-.1in}
-
-\caption{activate layer}
-\end{figure}
-
-\clearpage
-
-\paragraph*{Configure Options in Plugin}
-\vspace{.5in}
 
 \large On the \textbf{Options Tab:} Select these radio buttons;
   %
@@ -192,25 +134,105 @@ For a map layer to be editable, it must be activated in the Layers Panel.
 
 \caption{Plugin Options}
 \end{figure}
+  %
 \clearpage
 
-\paragraph{Using the AZ and D Plugin}
+\stepcounter{stepCount}
+
+\subparagraph*{{\LARGE Step \thestepCount:} Activate traverse layer in map}
   %
-\vspace{.5in}
+\vspace{.2in}
+
+\textasteriskcentered{\scriptsize For a map layer to be editable, it must be activated in the Layers Panel.}
+  %
+\vspace{.2in}
+
+\noindent{\scriptsize (If necessary)} left click the layer \textbf {\emph{traverse1}} in Layer Panel to activate it.
+  %
+\vspace{.2in}
+
+\begin{figure}[H] % Example of including images
+\centering
+    \includegraphics[width=1\textwidth]{activateLayer.png}
+\vspace{-.1in}
+
+\caption{activate layer}
+\end{figure}
+
+\clearpage
+
+\stepcounter{stepCount}
+
+\subparagraph*{{\LARGE Step \thestepCount:} Locate the Point of Commencement}
+  %
+\vspace{.2in}
+
+\noindent To get to the Point of Commencement,
+\vspace{.2in}
+
+\noindent Use \textbf{any combination} of the following methods:
+  %
+\vspace{.2in}
+
+\begin{itemize}
+  %
+\item{Use Reference Layers such as Units, Sections, Quarter Sections, and Parcels.
+
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=.7\textwidth]{selectReferenceLayers.png}
+  \vspace{-.1in}
+
+  \caption{Select Reference Layers}
+  \end{figure}
+}
+  %
+\item{Use the Measuring Tool
+
+  \begin{figure}[H]
+  \centering
+      \includegraphics[width=1\textwidth]{measuringToolInToolbar.png}
+  \vspace{-.2in}
+
+  \caption{Measuring Tool}
+  \end{figure}
+}
+  %
+\vspace{.3in}
+
+\item{Search by Parcel Number \small(Search Layers Plugin)\\
+\begin{figure}[H]
+\centering
+    \includegraphics[width=1\textwidth]{searchLayersIcon.PNG}
+\caption{Search Layer Icon}
+\end{figure}
+}
+  %
+\item{Draw COGO lines \small(Azimuth and Distance Plugin)}
+  %
+\end{itemize}
+  %
+\clearpage
+
+\stepcounter{stepCount}
+
+\subparagraph*{{\LARGE Step \thestepCount:} Draw a Line With Azimuth and Distance}
+  %
+\vspace{.2in}
 
 On the \textbf{Drawing Tab:}
 \begin{itemize}
   %
 \item Azimuth (bearing): Enter Bearing in format:\emph{ N 2 30 37 W}
   %
-\item Distance: Enter Distance
+\item Distance: Enter Feet Distance in numbers only
   %
 \item Offset: Set to \emph{0}
   %
 \item Zenith: Set to \emph{90}
   %
 \end{itemize}
-  % 
+  %
 \begin{figure}[H]
   %
 \centering
@@ -221,154 +243,5 @@ On the \textbf{Drawing Tab:}
 \end{figure}
 
 \clearpage
-
-\paragraph{Locate Point of Commencement}
-  %
-\vspace{.4in}
-
-\noindent To get to the Point of Commencement,
-\vspace{.2in}
-
-\noindent Use \textbf{any combination} of the following methods:
-  %
-\begin{itemize}
-  %
-\item{Using Reference Layers}
-  %
-\item{Using Measuring Tool}
-  %
-\item{Search by Parcel Number \small(Search Layers Plugin)}
-  %
-\item{Draw COGO lines \small(Azd Plugin)}\small(as described earlier)
-  %
-\end{itemize}
-  %
-\vspace{.2in}
-
-\subparagraph{Using Reference Layers}
-  %
-\vspace{.2in}
-
-Use layers such as; Units, Quarter Sections, Sections, and Parcels.
-  %
-\noindent Toggle layers on and off in Layers Panel and zoom in and out with mouse wheel.
-  %
-\begin{figure}[H]
-\centering
-\includegraphics[width=.5\textwidth]{selectReferenceLayers.png}
-\vspace{-.1in}
-
-\caption{Select Reference Layers}
-\end{figure}
-  %
-\clearpage
-
-\subparagraph{Using The Measuring Tool}
-\vspace{.3in}
-
-\noindent Measuring can be used to estimate a point of beginning
-  %
-\begin{itemize}
-  %
-\item Use the Measure Line Tool
-  %
-\item Units must be in feet  
-  %
-\item To exit current measurement, right click
-  %
-\end{itemize}
-  %
-\begin{figure}[H]
-\centering
-    \includegraphics[width=1\textwidth]{measuringTool.png}
-\vspace{-.2in}
-
-\caption{Measuring Tool}
-\end{figure}
-\clearpage
-
-\subparagraph{Install Search Layers Plugin}
-\vspace{.2in}
- 
-\noindent To install: Plugins $\Rightarrow$ Search Layers Plugin
-  %  
-\vspace{.2in}
-
-\begin{itemize}
-  %
-\item Install or open the \textbf{Search Layers} Plugin
-  %
-\end{itemize}
-  % 
-\begin{figure}[H]
-\centering
-     \includegraphics[width=1\textwidth]{SearchLayersPluginInstall.PNG}
-
-\caption{Search Layers Plugin}
-\end{figure}
-
-\subparagraph{Launch Search Layers Plugin}
-  %
-\begin{figure}[H]
-\centering
-     \includegraphics[width=1\textwidth]{searchLayersIcon.PNG}
-
-\caption{Search Layer Icon}
-\end{figure}
-
-\clearpage
-
-\subparagraph*{Enter Parcel Search Data}
-\vspace{.2in}
-
-\noindent In The \textbf{Search Layers Plugin:}
-\vspace{.15in}
-
-\begin{itemize}
-  %
-\item Enter \textbf{parcel number} {\tiny (with dashes)} into \emph{Search String}
-  %
-\item Select \textbf{Parcels} in \emph{Search Layers}
-  %
-\item Select \textbf{PARCELID} in \emph{Search Fields}
-  %
-\end{itemize}
-  %
-\begin{figure}[H]
-\centering
-    \includegraphics[width=1\textwidth]{searchLayersSetup.png}
-\vspace{-.1in}
-
-\caption{Search Layers Setup}
-\end{figure}
-
-\begin{itemize}
-
-\item click on result in table
-
-\end{itemize}
-  %
-\begin{figure}[H]
-\centering
-    \includegraphics[width=.3\textwidth]{searchResult.png}
-\vspace{-.1in}
-
-\caption{Search Results}
-\end{figure}
-
-\clearpage
-
-\subparagraph*{Zoom Out}
-
-\noindent Zoom out far enough to find a reference point.
-\begin{figure}[H]
-\centering
-    \includegraphics[width=.5\textwidth]{searchResultZoomOut.png}
-\vspace{-.1in}
-
-\caption{Search Results Zoomed Out}
-\end{figure}
-
-
 
 \end{document}

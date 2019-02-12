@@ -451,6 +451,12 @@
 <font BOLD="true" NAME="Dialog" SIZE="20"/>
 <icon BUILTIN="full-7"/>
 </node>
+<node COLOR="#ff6666" CREATED="1550001013743" ID="ID_1650325751" MODIFIED="1550001073955" TEXT="QGIS Azimuth and Distance Plugin">
+<font NAME="Dialog" SIZE="20"/>
+</node>
+<node COLOR="#ff6666" CREATED="1550001081313" ID="ID_1704713893" MODIFIED="1550001103500" TEXT="QGIS Search Layers Plugin">
+<font NAME="Dialog" SIZE="20"/>
+</node>
 </node>
 <node COLOR="#00cc00" CREATED="1530206438686" HGAP="155" ID="ID_478399301" MODIFIED="1548260994984" TEXT="LaTex Packages" VSHIFT="87">
 <font BOLD="true" NAME="Dialog" SIZE="30"/>

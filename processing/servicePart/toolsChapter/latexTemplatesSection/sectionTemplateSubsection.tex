@@ -1,6 +1,5 @@
-  %
-  %
-  %  Or Can compile alone with the commented texts toggled
+  %  PURPOSE:  Maintain a section template for Jalapeno
+  %  Last edit 20190212
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %    To Do:
 %
@@ -28,7 +27,15 @@
 
 \begin{verbatim}
 
-jjjj
+\begin{document}
+  %
+\section{SECTION NAME}
+  %
+\subimport{THIS SECTION/}{SOMESubsection.tex}
+\subimport{THIS SECTION/}{SOMESubsection.tex}
+% etc...
+  %
+\end{document}
 
 \end{verbatim}
 
