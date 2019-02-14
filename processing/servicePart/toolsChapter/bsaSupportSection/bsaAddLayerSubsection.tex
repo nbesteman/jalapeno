@@ -1,6 +1,6 @@
-  %  This Script provides the Treasurer Dept
-  %  Forfeiture Data Collection Mobile App Subsection
-  %  Or Can compile alone with the commented texts toggled
+  %
+  %
+  %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %    To Do:
 %
@@ -14,7 +14,7 @@
 % \def\pdfTitle{Adding a Layer to BSA GIS}
 % \def\pdfSubject{GIS Tools} %
 % \def\pdfKeywords{mobile,gis}
-%
+
 % \input{../../../preamble/subSectionPreamble.tex}
   %
 %-------------------------------------------------------------------
@@ -25,19 +25,49 @@
  %--------------------------------------------------
   %
 \subsection{Adding a Layer to the BSA GIS}
+  %
+\subsubsection{Tool Summary}
+  %
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\paragraph{Background}
+  %
+B S And A features a GIS toolset that requires data layers to be added to map documents for visualization.\\
+
+\noindent B S AND A is used within Equalization and by local assessors throughout the county.
+  %
+\paragraph{Why the Tool is Needed}
+  %
+B S And A Users often ask ACGIS for data and assistance in using the data.
+  %
+\paragraph{Who the Tool is For}
+  %
+User knowledge of B S And A.\\
+
+\noindent B S And A installed.\\
+
+\noindent GIS data source files on the local machine.
+  %
+\paragraph{Takeaway}
+  %
+With the necessary data files, any B S And A user can add layers to a map within B S And A GIS
+  %
+\end{adjmulticols}
+  %
+\clearpage
+
 
 \subsubsection{Add an Imagery Layer}
 \vspace{.25in}
 
-%\paragraph[Add imagery Layer]{To Add an Imagery Layer to a BSA Map:\texorpdfstring{\\}{}}
+
+\stepcounter{stepCount}
+
+\subparagraph*{{\LARGE Step \thestepCount :} Edit GIS Settings}
 %
-%From within BSA Settings
-%
-\paragraph[BSA Program Setup ]{\Large BSA Program Setup\texorpdfstring{\\}{}}
-(BSA Settings)
 \vspace{.25in}
 
-\noindent{\Large In \textbf{Program Setup} $\Rightarrow$ Select \textbf{GIS Settings...}}
+\noindent{\Large In \textbf{\fbox{Program Setup}} $\Rightarrow$ Select \textbf{\fbox{GIS Settings...}}}
 \vspace{.15in}
 
 %
@@ -52,11 +82,14 @@
 %
 %
 %
-\subparagraph[Setup Map Collections]{\Large Setup Map Collections\texorpdfstring{\\}{}}
-(BSA Settings Cont.)
+\stepcounter{stepCount}
+
+\subparagraph*{{\LARGE Step \thestepCount :} Select Map To Edit}
+  %
+%(BSA Settings Cont.)
 \vspace{.5in}
 
-\noindent{\Large In \textbf{GIS Settings} $\Rightarrow$ \textbf{Map Collections} $\Rightarrow$ \texorpdfstring{\\}{}}
+\noindent{\Large In \textbf{\fbox{GIS Settings}} $\Rightarrow$ \textbf{\fbox{Map Collections}} $\Rightarrow$ \texorpdfstring{\\}{}}
 \vspace{.5in}
 
 \noindent \textbf{Double click on the map that you want to add a layer to}
@@ -74,11 +107,13 @@
 %
 %
 %
-\subparagraph[Layers Setup ]{\Large In Setup Layers\texorpdfstring{\\}{}}
-(BSA Settings Cont.)
+\stepcounter{stepCount}
+
+\subparagraph*{{\LARGE Step \thestepCount :} Add Layer}
+
 \vspace{.75in}
 
-\noindent{\Large \textbf{Setup Layers} $\Rightarrow$ \textbf{Add}}
+\noindent{\Large \textbf{Setup Layers} $\Rightarrow$ \textbf{\fbox{Add}}}
 \vspace{.5in}
 %
 % Single Figure No Wrap
@@ -92,11 +127,14 @@
 %
 %
 %
-\subparagraph[Select Layer Type ]{\Large Select Layer Type\texorpdfstring{\\}{}}
-(BSA Settings Cont.)
+\stepcounter{stepCount}
+
+\subparagraph*{{\LARGE Step \thestepCount :} Select Layer Type}
+  %
+%(BSA Settings Cont.)
 \vspace{.75in}
 
-\noindent{\Large \textbf{Setup Layers} $\Rightarrow$ \textbf{Select Image} $\Rightarrow$ \textbf{OK}}
+\noindent{\Large \textbf{Setup Layers} $\Rightarrow$ \textbf{\fbox{Image}} $\Rightarrow$ \textbf{\fbox{OK}}}
 \vspace{.5in}
 %
 % Single Figure No Wrap
@@ -110,12 +148,20 @@
 %
 %
 %
-\subparagraph[Add Layer From Local Drive]{\Large Add Layer From Local Drive\texorpdfstring{\\}{}}
-(BSA Settings Cont.)
+
+\stepcounter{stepCount}
+
+\subparagraph*{{\LARGE Step \thestepCount :} Add Layer From Local Drive}
+  %
+%(BSA Settings Cont.)
 \vspace{.75in}
 
-\noindent{\Large \textbf{Navigate to Image File} $\Rightarrow$ \textbf{Open}}
-\vspace{.5in}
+\noindent{\Large \textbf{Navigate to Image File} $\Rightarrow$ \textbf{\fbox{Open}}}\\
+
+\noindent \textasteriskcentered{\scriptsize image files are often file type .sid}\\
+\noindent\textasteriskcentered{\scriptsize layer files are often file type .shp}
+
+\vspace{.3in}
 
 %
 % Single Figure No Wrap
@@ -125,6 +171,6 @@
     \includegraphics[width=1\textwidth]{AddFromLocalDrive.PNG}
 \caption{Add Layer From Drive}
 \end{figure}
-{\Large The new image is in the map}
+{\Large The new image should now be in the map}
 \clearpage
 \end{document}

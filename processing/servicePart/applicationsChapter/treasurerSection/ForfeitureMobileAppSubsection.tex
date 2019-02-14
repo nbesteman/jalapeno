@@ -9,18 +9,18 @@
 %-------------------------------------------------------------------
 % OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
   %
-% \def\titlename{Forfeiture Mobile App}
-% \def\authorName{Allegan County GIS Services}
-% \def\pdfTitle{Forfeiture Mobile App}
-% \def\pdfSubject{GIS Tools} %
-% \def\pdfKeywords{mobile,gis}
-%
-% \input{../../../preamble/subSectionPreamble.tex}
+ \def\titlename{Forfeiture Mobile App}
+ \def\authorName{Allegan County GIS Services}
+ \def\pdfTitle{Forfeiture Mobile App}
+ \def\pdfSubject{GIS Tools} %
+ \def\pdfKeywords{mobile,gis}
+
+ \input{../../../preamble/subSectionPreamble.tex}
   %
 %-------------------------------------------------------------------
     %
     %
-\begin{document}% document begins
+%\begin{document}% document begins
  %
  %--------------------------------------------------
 \subsection{Forfeiture Data Collection}
@@ -750,38 +750,41 @@ In Portal $\Rightarrow$ Go to groups $\Rightarrow$ Invite new user to the group
   %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-\includegraphics[width=.3\textwidth]{CollectorConnection}
+\includegraphics[width=.35\textwidth]{CollectorConnection}
 \caption{Collector Connection}
-\vspace{.25in}
 
 \HRule \\[.4cm] % Horizontal Line added
-\vspace{.25in}
+\vspace{.1in}
 
-    \includegraphics[width=.3\textwidth]{EnterCredentials.png}
+    \includegraphics[width=.35\textwidth]{EnterCredentials.png}
+\vspace{-.1in}
+
 \caption{Enter Credentials}
 \end{wrapfigure}
+
+\vspace{.25in}
+
 for \textbf{Organization Website}, Type:
-\vspace{.5in}
+\vspace{.25in}
 
 \begin{verbatim}
-{\textcolor{HeaderOrangeC}
+
 https://gis.allegancounty.org/
-portal_webadaptor}
+portal_webadaptor
+
 
 \end{verbatim}
-\large then:
+
 \vspace{.5in}
 
-\noindent Press \Large Continue
-\vspace{1.5in}
+\noindent Press \Large \fbox{Continue}
+\vspace{2in}
 
 \noindent Enter Credentials
-\vspace{.5in}
+\vspace{1in}
 
-\noindent \large then:
-\vspace{.5in}
+\noindent Press \Large \fbox{SIGN IN}
 
-\noindent Press \Large SIGN IN
 \clearpage
   %
   %
@@ -789,26 +792,33 @@ portal_webadaptor}
   %
 \noindent There are 3 different versions of the map
   %
-  % Two Figures Wrapped
-  %
-\begin{wrapfigure}{r}{0.5\textwidth}
-\centering
-    \includegraphics[width=.3\textwidth]{CollectorChooseMap.png}
-\caption{Collector Maps Menu}
-\end{wrapfigure}
+\vspace{.05in}
+
 \begin{itemize}
 \item Forfeiture Field Map
 \item Forfeiture Field Map For Photos
 \item Forfeiture Field Map For Attributes
 \end{itemize}
   %
-\noindent {\footnotesize The Download option indicates it is not on the device but is available for offline use}
-\vspace{.2in}
+\noindent {\scriptsize The Download option indicates it is not on the device but is available for offline use}
+
+  %
+  % Two Figures Wrapped
+  %
+\begin{wrapfigure}{r}{0.5\textwidth}
+\centering
+    \includegraphics[width=.5\textwidth]{CollectorChooseMap.png}
+\caption{Collector Maps Menu}
+\end{wrapfigure}
+  %
+
+\vspace{.5in}
 
 \noindent {\large Choose a Map}
-\vspace{.2in}
+\vspace{1.25in}
 
-\noindent {\large Press Download}
+\noindent {\large \fbox{Press Download}}
+
 \clearpage
   %
   %
@@ -819,17 +829,14 @@ portal_webadaptor}
 \end{wrapfigure}
 
 \noindent {\large Specify work area}
-\vspace{.2in}
+\vspace{.5in}
 
-and press
+
+\fbox{Choose Map Detail}
   %
 \vspace{.2in}
 
-map detail
-  %
-\vspace{.2in}
-
-\noindent {\footnotesize Note that a larger area takes longer to download but the basemap only needs to be downloaded once}
+\noindent {\scriptsize Note that a larger area takes longer to download but the basemap only needs to be downloaded once}
 \clearpage
   %
   %
@@ -850,9 +857,9 @@ map detail
 \caption{Map on Device}
 \end{wrapfigure}
 Zoom into the level of detail desired.
-\vspace{.5in}
+\vspace{1in}
 
-\noindent Press Download
+\noindent Press \fbox{Download}
 \vspace{3.5in}
 
 \noindent This area is ready for field data collection.
@@ -873,12 +880,13 @@ Zoom into the level of detail desired.
     \includegraphics[width=.6\textwidth]{openCameraAppStore.png}
 \caption{Open Camera from Google Play Store}
 \end{figure}
+
 \clearpage
   %
-  %
+  %%%%%%%%%%%%%%%%%%%%
+  %This PAGE IS LAYED OUT GOOD
 \subparagraph{Configure Open Camera}
   %
-  % Two Figures Wrapped
   %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
@@ -892,41 +900,48 @@ Zoom into the level of detail desired.
     \includegraphics[width=.3\textwidth]{settingsScreen.png}
 \caption{Setting Screen}
 \end{wrapfigure}
-In the Open Camera Application:
-\vspace{1in}
+In the Open Camera App:
+\vspace{2.5in}
 
-\noindent Press the gear shaped \Large Settings \normalsize button to go into the settings menu
+{\LARGE\noindent\fbox{Settings}  $\Rightarrow$}
 \vspace{3in}
 
-\noindent Press the \Large Photo Settings \normalsize button
+{\LARGE\noindent\fbox{Photo Settings}  $\Rightarrow$}
+  %
 \clearpage
   %
-  %
+  %%%%%%%%%%%%%%%%%%%%
+  %This PAGE IS LAYED OUT GOOD
 \subparagraph*{Set Photo Resolution}
   %
   % Two Figures Wrapped
   %
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-    \includegraphics[width=.3\textwidth]{photoSettings.png}
+    \includegraphics[width=.36\textwidth]{photoSettings.png}
+\vspace{-.1in}
+
 \caption{Photo Settings Menu}
-\vspace{.25in}
 
-\HRule \\[.4cm] % Horizontal Line added
-\vspace{.25in}
+\vspace{-.1in}
 
-    \includegraphics[width=.3\textwidth]{cameraResolutionSetting.png}
+\HRule %\\[.4cm] % Horizontal Line added
+\vspace{.05in}
+
+    \includegraphics[width=.36\textwidth]{cameraResolutionSetting.png}
+\vspace{-.1in}
+
 \caption{Camera Resolution Setting}
 \end{wrapfigure}
-In \Large photo settings:
-\vspace{1in}
+In the Open Camera App:{\tiny (cont.)}
+\vspace{.2in}
 
-\noindent Press the \Large Camera resolution \normalsize button
-\vspace{3in}
+{\LARGE\noindent\fbox{Camera Resolution}  $\Rightarrow$}
+\vspace{6.5in}
 
-\noindent Select \textbf{\LARGE 640 x 480}
-\clearpage
+{\LARGE\noindent\fbox{640 x 480}  $\Rightarrow$}
   %
+\clearpage
   %
 \paragraph{Daily Preprocessing Routine}
   %
@@ -934,25 +949,34 @@ In \Large photo settings:
   %
 \begin{itemize}
 \item Exports current forfeiture list from BSA
+  %
 \item Updates webmap layers with results from BSA export
 \end{itemize}
   %
-\subparagraph*{\\}
+To use the preprocess tool:\\
+  %
+In the Catalog window, navigate to:
+  %
+
+{\scriptsize\path{J:\Departments\Treasury\Apps\Forfeiture\processing\ForfeitureToolbox.tbx}}
+%J:\textbackslash Departments
+
 %
-% One Figure Wrapped
 %
-\begin{wrapfigure}{r}{0.75\textwidth}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-    \includegraphics[width=.65\textwidth]{preprocess.png}
+    \includegraphics[width=.36\textwidth]{preprocess.png}
+\vspace{-.1in}
+
 \caption{Processing Tools}
 \end{wrapfigure}
-In Catalog:
-\vspace{1in}
+\vspace{.5in}
 
 \noindent Open the toolbox
-\vspace{1in}
+\vspace{.5in}
 
-\noindent Open tool 1
+\noindent\fbox{Open 1.Preprocess}
 \clearpage
   %
   %

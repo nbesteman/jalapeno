@@ -10,13 +10,13 @@
   %
   % OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
     %
-  % \def\titlename{Parcel Editing with COGO Tools in QGIS}
-  % \def\authorName{Allegan County GIS Services}
-  % \def\pdfTitle{Parcel Editing with COGO Tools in QGIS}
-  % \def\pdfSubject{GIS Tools} %
-  % \def\pdfKeywords{mobile,gis}
-  %  %
-  % \input{../../../preamble/subSectionPreamble.tex}
+%   \def\titlename{Parcel Editing with COGO Tools in QGIS}
+%   \def\authorName{Allegan County GIS Services}
+%   \def\pdfTitle{Parcel Editing with COGO Tools in QGIS}
+%   \def\pdfSubject{GIS Tools} %
+%   \def\pdfKeywords{mobile,gis}
+%    %
+%   \input{../../../preamble/subSectionPreamble.tex}
 %\setlength{\parindent}{24pt}
   %-------------------------------------------------------------------
       %
@@ -27,7 +27,9 @@
       %
 \subsection{COGO Tools in QGIS}
   %
-\subsubsection{Problem and Analysis}
+%\subsubsection{Problem and Analysis}
+
+\subsubsection{Tool Summary}
   %
 Transfers of real property typically involve a Metes and Bounds description:
   %
@@ -42,30 +44,26 @@ Transfers of real property typically involve a Metes and Bounds description:
   %
 \paragraph{Background}
   %
-%\noindent
+
 In GIS, \textit{Coordinate Geometry} or \textbf{COGO} tools convert written descriptions of real property into digital map features.\\
 
 \noindent Users in several county departments use COGO tools in their regular workflow.\\
 
-\noindent In the past ACGIS provided COGO tools from the MapInfo Suite.
-
-  %
-\paragraph{Statement of Problem}
+\paragraph{Why the Tool is Needed}
   %
 A tool is needed to convert between written descriptions of real property and digital map data.\\
 
-\noindent MapInfo is no longer supported within the county.\\
-
 \noindent The COGO tools in ArcGIS require an advanced license.
   %
-\paragraph{Analysis}
+\paragraph{Who the Tool is For}
   %
-QGIS is an open source software that provides a COGO toolset.\\
+A user with QGIS installed locally and the ability to make a basic map.
+  %
+\paragraph{Takeaways}
+  %
+QGIS is an open source GIS without a built in COGO toolset.\\
 
-\noindent The Azimuth and Distance Plugin provides the COGO functionality in QGIS.\\
-
-\noindent QGIS works in shapefiles, a common GIS data type.\\
-
+\noindent The Azimuth and Distance Plugin provides the COGO functionality in QGIS.
   %
 \end{adjmulticols}
   %
@@ -84,6 +82,8 @@ QGIS is an open source software that provides a COGO toolset.\\
 
 \subparagraph*{{\LARGE Step \thestepCount:}\\Launch and Configure the Azimuth and Distance Plugin}
 
+\textasteriskcentered{\scriptsize Plugin installation is covered in a separate document.}
+
 \begin{figure}[H]
 \centering
      \includegraphics[width=1\textwidth]{cogoIcon.PNG}
@@ -92,13 +92,12 @@ QGIS is an open source software that provides a COGO toolset.\\
 \caption{COGO Icon}
 \end{figure}
   %
-%\vspace{.1in}
 
 \textasteriskcentered{\scriptsize This tool draws in a temporary layer or in an active map layer.}
   %
 \vspace{.1in}
 
-\noindent {\large Select \textbf{traverse1} as active layer in the tool.}
+\noindent {\large Select \textbf{\fbox{traverse1}} as active layer in the tool.}
 
 \begin{figure}[H] % included image
 \centering
@@ -113,17 +112,17 @@ QGIS is an open source software that provides a COGO toolset.\\
 \noindent\textbf{Configure Options in Plugin}
 \vspace{.2in}
 
-\large On the \textbf{Options Tab:} Select these radio buttons;
+\large On the \textbf{\fbox{Options} Tab:} Select these radio buttons;
   %
 \begin{itemize}
   %
-\item Boundary
+\item \fbox{Boundary}
   %
-\item Bearing
+\item \fbox{Bearing}
   %
-\item Feet
+\item \fbox{Feet}
   %
-\item Degree
+\item \fbox{Degree}
   %
 \end{itemize}
   %
@@ -147,7 +146,7 @@ QGIS is an open source software that provides a COGO toolset.\\
   %
 \vspace{.2in}
 
-\noindent{\scriptsize (If necessary)} left click the layer \textbf {\emph{traverse1}} in Layer Panel to activate it.
+\noindent{\scriptsize (If necessary)} left click the layer \textbf {\fbox{traverse1}} in Layer Panel to activate it.
   %
 \vspace{.2in}
 
@@ -208,7 +207,7 @@ QGIS is an open source software that provides a COGO toolset.\\
 \end{figure}
 }
   %
-\item{Draw COGO lines \small(Azimuth and Distance Plugin)}
+\item{Draw COGO lines \small(Step 4)}
   %
 \end{itemize}
   %
@@ -217,19 +216,26 @@ QGIS is an open source software that provides a COGO toolset.\\
 \stepcounter{stepCount}
 
 \subparagraph*{{\LARGE Step \thestepCount:} Draw a Line With Azimuth and Distance}
-  %
-\vspace{.2in}
 
+\begin{figure}[H]
+  %
+\centering
+    \includegraphics[width=1\textwidth]{DescriptionFromDeedHighlighted.PNG}
+\vspace{-.1in}
+
+\caption{Description From Deed}
+\end{figure}
+  %
 On the \textbf{Drawing Tab:}
 \begin{itemize}
   %
-\item Azimuth (bearing): Enter Bearing in format:\emph{ N 2 30 37 W}
-  %
-\item Distance: Enter Feet Distance in numbers only
+\item Azimuth (bearing): Enter Bearing in format:\emph{N 88 32 05 W}
   %
 \item Offset: Set to \emph{0}
   %
 \item Zenith: Set to \emph{90}
+  %
+\item Distance: Enter Feet Distance in numbers only \emph{1338.44}
   %
 \end{itemize}
   %
@@ -242,6 +248,122 @@ On the \textbf{Drawing Tab:}
 \caption{Entering Bounds}
 \end{figure}
 
+\subparagraph*{Push \fbox {Add to Bottom}}
+
 \clearpage
 
+
+\subparagraph*{Line is added to the list}
+
+\begin{figure}[H]
+  %
+\centering
+    \includegraphics[width=1\textwidth]{lineAdded.png}
+\vspace{-.1in}
+
+\caption{Line Added}
+\end{figure}
+
+
+\subparagraph*{Add as many bounds as you can from the description}
+
+\begin{figure}[H]
+  %
+\centering
+    \includegraphics[width=1\textwidth]{threeLinesAdded.png}
+\vspace{-.1in}
+
+\caption{Three Lines Added}
+\end{figure}
+
+\clearpage
+
+\subparagraph*{Choose A Point to Start Drawing From\\}
+Push the \textbf{\fbox{From Map}} button.\\
+
+\noindent Align cursor with desired starting point and click.
+  %
+\begin{figure}[H]
+  %
+\centering
+    \includegraphics[width=1\textwidth]{fromMap.png}
+\vspace{-.1in}
+
+\caption{From Map}
+\end{figure}
+
+\clearpage
+
+\subparagraph*{Draw the Segments So Far}
+
+\begin{itemize}
+  %
+\item Push \textbf{\fbox{Draw}}
+  %
+\item Enter Attributes for the polyline to be created
+  %
+\item Press \textbf{\fbox{OK}}
+  %
+\end{itemize}
+
+\begin{figure}[H]
+  %
+\centering
+    \includegraphics[width=1\textwidth]{enterAttributes.PNG}
+\vspace{-.1in}
+
+\caption{Enter Attributes}
+\end{figure}
+
+\clearpage
+
+\subparagraph*{Use the sketch to identify the parcel\\}
+
+In this case, turn on ortho photo to verify the remaining bounds.
+
+\begin{figure}[H]
+  %
+\centering
+    \includegraphics[width=1\textwidth]{verifyRemainingBounds.PNG}
+\vspace{-.1in}
+
+\caption{Verify Remaining Bounds}
+\end{figure}
+
+\subparagraph*{(optionally) Save Input for Later Use\\}
+
+If you want to save the segments for later use, press \textbf{\fbox{Export}}.\\
+
+\noindent Name it and select a \textbf{save} location.
+
+\begin{figure}[H]
+  %
+\centering
+    \includegraphics[width=1\textwidth]{saveSegmentList.png}
+\vspace{-.2in}
+
+\caption{Save Segment List}
+\end{figure}
+
+\clearpage
+
+\subparagraph*{Verify Attributes\\}
+
+Right click on \emph{\fbox{Traverse1}} in the Layers Panel\\
+
+\noindent and select \textbf{\fbox{open attribute table}}.\\
+
+\noindent {\footnotesize The attributes you entered should be in the table.}
+
+\begin{figure}[H]
+  %
+\centering
+    \includegraphics[width=1\textwidth]{segmentsInTable.png}
+\vspace{-.1in}
+
+\caption{Segments In Table}
+\end{figure}
+  %
+\clearpage
+  %
 \end{document}
