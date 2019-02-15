@@ -9,18 +9,18 @@
 %-------------------------------------------------------------------
 % OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
   %
- \def\titlename{Forfeiture Mobile App}
- \def\authorName{Allegan County GIS Services}
- \def\pdfTitle{Forfeiture Mobile App}
- \def\pdfSubject{GIS Tools} %
- \def\pdfKeywords{mobile,gis}
-
- \input{../../../preamble/subSectionPreamble.tex}
+% \def\titlename{Forfeiture Mobile App}
+% \def\authorName{Allegan County GIS Services}
+% \def\pdfTitle{Forfeiture Mobile App}
+% \def\pdfSubject{GIS Tools} %
+% \def\pdfKeywords{mobile,gis}
+%
+% \input{../../../preamble/subSectionPreamble.tex}
   %
 %-------------------------------------------------------------------
     %
     %
-%\begin{document}% document begins
+\begin{document}% document begins
  %
  %--------------------------------------------------
 \subsection{Forfeiture Data Collection}
@@ -90,6 +90,8 @@
 \vspace{.25in}
 
 There are three parts to the daily routine:
+\vspace{.4in}
+
 \begin{enumerate}
 \item \Large Preprocessing \normalsize(in the office):
   %
@@ -177,7 +179,7 @@ There are three parts to the daily routine:
 \vspace{1in}
 
 Forfeiture Parcels Data
-\vspace{3in}
+\vspace{4in}
 
 Contamination Data
 \clearpage
@@ -236,14 +238,18 @@ Class&Class&Prefilled&NA\\
   %
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.5\textwidth]{webMapDetails}
+    \includegraphics[width=.6\textwidth]{webMapDetails}
+\vspace{-.2in}
+
 \caption{Web Map Details}
 \end{figure}
   %
 \subparagraph{Feature Layer Details}TaxReversionParcels has been configured for offline use.
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.5\textwidth]{layerDetails}
+    \includegraphics[width=.6\textwidth]{layerDetails}
+\vspace{-.15in}
+
 \caption{Feature Layer Details}
 \end{figure}
   %
@@ -254,7 +260,7 @@ Class&Class&Prefilled&NA\\
   %
 \subparagraph{Basemap Details}
 \begin{itemize}
-  \setlength\itemsep{4em}
+  \setlength\itemsep{.3in}
   \item A tiled basemap service is used
   \item The infoserv user credentials are used for sharing
   \item The url for the shared service is:
@@ -312,17 +318,23 @@ phone screenshots
 \subsubsection{Administrative Manual}
 \vspace{.25in}
 
-\paragraph[Annual Setup]{Annual Setup \texorpdfstring{\\}{}}
+\paragraph{Annual Setup}
 
 A new dataset for forfeiture parcels must be created each year.
+\vspace{.15in}
 
-\noindent The forfeiture information comes from BSA Forfeitures.net and the parcel geometry and other attributes comes from ACParcelsCombined.
+\noindent The forfeiture information comes from BSA Forfeitures.net
+\vspace{.15in}
+
+Parcel geometry and other attributes comes from ACParcelsCombined
 \vspace{.25in}
 
-\noindent To get the BSA Forfeiture data, create a table query for a certain year.
+\subparagraph{Get new forfeiture information}
+
+{\Large Create a table query for a certain year}
 \vspace{.25in}
 
-\noindent{\Large First, clear the features from the existing ForfeitureParcels dataset}
+\noindent{clear the features from the existing ForfeitureParcels dataset}
 \vspace{.25in}
 
 \begin{itemize}
@@ -339,30 +351,28 @@ A new dataset for forfeiture parcels must be created each year.
   %
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.9\textwidth]{AnnualDeleteFeatures.png}
+    \includegraphics[width=1\textwidth]{AnnualDeleteFeatures.png}
 \caption{Delete Features}
 \end{figure}
 \vspace{.25in}
 
-\noindent{\Large Press OK}
+\noindent{\Large Press \fbox{OK}}
 \clearpage
     %
     %
-\paragraph[Add Query Layer]{Add Query Layer \texorpdfstring{\\}{}}
+\paragraph{Add Query Layer}
 \vspace{.25in}
 
 \begin{itemize}
-\item In ArcMap $\Rightarrow$ {\Large Open the New Query Layer Dialog}
-\item {\Large File $\Rightarrow$ Add Data $\Rightarrow$ Add Query Layer}
+\item {\Large File \menuArrow Add Data \menuArrow Add Query Layer}
 \item {\Large Select your connection}
 \end{itemize}
-\vspace{.25in}
   %
   % Single Figure No Wrap
   %
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.95\textwidth]{NewQueryLayerDialog.png}
+    \includegraphics[width=1\textwidth]{NewQueryLayerDialog.png}
 \caption{New Query Layer Dialog}
 \end{figure}
   %
@@ -375,7 +385,7 @@ WHERE forf_year = 2019
 \clearpage
   %
   %
-\paragraph[Details of the Query Layer]{Details of the Query Layer \texorpdfstring{\\}{}}
+\paragraph{Details of the Query Layer}
   %
 \begin{itemize}
 \item Choose connection
@@ -386,22 +396,22 @@ WHERE forf_year = 2019
   %
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.85\textwidth]{ForfeitureQueryLayerDetails.PNG}
+    \includegraphics[width=.95\textwidth]{ForfeitureQueryLayerDetails.PNG}
 \caption{Forfeiture Query Layer Details}
 \end{figure}
   %
-\item Press Next
+\item Press \fbox{Next}
   %
 \end{itemize}
   %
 \clearpage
   %
   %
-\paragraph[Select a Unique Identifier]{Select a Unique Identifier\texorpdfstring{\\}{}}
+\paragraph{Select a Unique Identifier}
   %
 \begin{itemize}
   %
-\item Press Finish
+\item Press \fbox{Finish}
   %
   % Single Figure No Wrap
   %
@@ -416,7 +426,7 @@ WHERE forf_year = 2019
 \clearpage
   %
   %
-\paragraph*{Table is added to the map\texorpdfstring{\\}{}}
+\paragraph*{Table is added to the map}
   %
   % Single Figure No Wrap
   %
@@ -428,9 +438,10 @@ WHERE forf_year = 2019
 \clearpage
   %
   %
-\paragraph[Add Parcels Layer to the map]{Add Parcels Layer to the map\texorpdfstring{\\}{}}
-  %
-\noindent Add ACParcelsCombined to the map to provide parcel geometry and attributes
+\paragraph{Add Parcels Layer to the map}
+\vspace{.3in}
+
+Add ACParcelsCombined to the map to provide parcel geometry and attributes
   %
 \vspace{.25in}
 
@@ -445,9 +456,10 @@ WHERE forf_year = 2019
 \clearpage
   %
   %
-\paragraph[Create Join]{Create Join\texorpdfstring{\\}{}}
-  %
-\noindent Create new join to ACParcelsCombined of forfeitures based on parcel numbers
+\paragraph{Create Join}
+\vspace{.3in}
+
+Create new join to \emph{ACParcelsCombined} of forfeitures on parcel numbers
   %
 \vspace{.25in}
 
@@ -465,7 +477,8 @@ WHERE forf_year = 2019
 \paragraph[Export Joined Features]{Export Joined Features to a temp location \texorpdfstring{\\}{}}
   %
 \begin{itemize}
-\item Right click \ding{212} on joined feature class in TOC and choose export
+%\item Right click \ding{212} on joined feature class in TOC and choose export
+\item Right click \rtArrow  on joined feature class in TOC and choose export
   %
   % Single Figure No Wrap
   %
@@ -492,7 +505,7 @@ WHERE forf_year = 2019
 \clearpage
   %
   %
-\subparagraph*{\Large push next}
+\subparagraph*{\Large push \fbox{Next}}
   %
   % Single Figure No Wrap
   %
@@ -505,24 +518,28 @@ WHERE forf_year = 2019
   %
   %
 \paragraph[Match these fields]{\Large Match these fields}
-\subparagraph*{}
+
   %
   % Single Figure No Wrap
   %
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.65\textwidth]{fieldMatch1.PNG}
+    \includegraphics[width=.70\textwidth]{fieldMatch1.PNG}
+\vspace{-.2in}
+
 \caption{Match Fields 1}
 \end{figure}
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.65\textwidth]{fieldMatch2.PNG}
+\vspace{-.2in}
+
 \caption{Match Fields 2}
 \end{figure}
 \clearpage
   %
   %
-\paragraph*{\Large push next}
+\paragraph*{\Large push \fbox{next}}
   %
   % Single Figure No Wrap
   %
@@ -532,22 +549,24 @@ WHERE forf_year = 2019
 \caption{Load Data 3}
 \end{figure}
   %
-\paragraph*{\Large Push Finish}
+\paragraph*{\Large Push \fbox{Finish}}
   %
 \clearpage
   %
   %
-\paragraph[Data Setup]{\Large Data Setup\texorpdfstring{\\}{}}
+\paragraph{\Large Data Setup}
+\vspace{.2in}
+
 Register as versioned and Add Global IDs
 \vspace{.2in}
 
-{\large Right Click $\Rightarrow$ Manage $\Rightarrow$ Register as Versioned}
+\noindent{\large Right Click \rtArrow Manage \rtArrow Register as Versioned}
 \vspace{.2in}
 
 and
 \vspace{.2in}
 
-{\large Right Click $\Rightarrow$ Manage $\Rightarrow$ Add Global IDs}
+\noindent{\large Right Click \rtArrow Manage \rtArrow Add Global IDs}
 \vspace{.2in}
 
   %
@@ -564,7 +583,7 @@ and
   %
 \paragraph[Create Attachments]{\Large Create Attachments\texorpdfstring{\\}{}}
 
-\noindent{\large Right Click $\Rightarrow$ Manage $\Rightarrow$ Add Attachments}
+\noindent{\large Right Click \rtArrow Manage \rtArrow Add Attachments}
 \vspace{.3in}
 
 \subparagraph*{}
@@ -582,12 +601,14 @@ and
 \paragraph[Setup Users in ArcGIS]{\Large Setup Users in ArcGIS\texorpdfstring{\\}{}}
 
 Users that will run Pre and Post processing scripts must be created and given priviliges on ACPub Treasurer Feature Data Set.
-\vspace{.5in}
+\vspace{.35in}
 
-\noindent For any new users of the geoprocessing tools, use the create Database User tool {\textbf or}
-\vspace{.5in}
+\noindent For any new users of the geoprocessing tools,
 
-\noindent In Catalog $\Rightarrow$ Right click on ACpub $\Rightarrow$ Administration $\Rightarrow$ Add User
+use the create Database User tool {\textbf or}
+\vspace{.35in}
+
+\noindent In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add User
   %
   % Single Figure No Wrap
   %
@@ -602,7 +623,7 @@ Users that will run Pre and Post processing scripts must be created and given pr
 \paragraph[Add New User to Feature Dataset]{\Large Add New User to Feature Dataset\texorpdfstring{\\}{}}
 \vspace{.5in}
 
-In Catalog, $\Rightarrow$ right click on Treasurer Feature Data Set $\Rightarrow$ Manage $\Rightarrow$ Priviliges $\Rightarrow$ Add $\Rightarrow$ Type new user $\Rightarrow$ ok
+In Catalog, \rtArrow right click on Treasurer Feature Data Set \rtArrow Manage \rtArrow Priviliges \rtArrow Add \rtArrow Type new user \rtArrow ok
 \vspace{.5in}
 
   %
@@ -619,7 +640,7 @@ In Catalog, $\Rightarrow$ right click on Treasurer Feature Data Set $\Rightarrow
 \paragraph[Extend Priviliges for New User]{\Large Extend Priviliges for New User\texorpdfstring{\\}{}}
 \vspace{.5in}
 
-In Catalog $\Rightarrow$ right click on Treasurer FDS $\Rightarrow$ Manage $\Rightarrow$ Priviliges $\Rightarrow$ check boxes
+In Catalog \rtArrow right click on Treasurer FDS \rtArrow Manage \rtArrow Priviliges \rtArrow check boxes
 \vspace{.5in}
 
   %
@@ -654,7 +675,7 @@ In Portal go to My Organization
 \paragraph[Add Members to Portal]{\Large Add Members to Portal\texorpdfstring{\\}{}}
 \vspace{.5in}
 
-Push add members $\Rightarrow$ built in member
+Push add members \rtArrow built in member
 \vspace{.5in}
 
   %
@@ -686,7 +707,7 @@ Push add members $\Rightarrow$ built in member
 \paragraph[Manage Treasurer Group]{\Large Manage Treasurer Group\texorpdfstring{\\}{}}
 \vspace{.5in}
 
-In Portal $\Rightarrow$ Go to groups $\Rightarrow$ Invite new user to the group
+In Portal \rtArrow Go to groups \rtArrow Invite new user to the group
 \vspace{.5in}
 
   %
@@ -903,10 +924,10 @@ Zoom into the level of detail desired.
 In the Open Camera App:
 \vspace{2.5in}
 
-{\LARGE\noindent\fbox{Settings}  $\Rightarrow$}
+{\LARGE\noindent\fbox{Settings}  \lookArrow}
 \vspace{3in}
 
-{\LARGE\noindent\fbox{Photo Settings}  $\Rightarrow$}
+{\LARGE\noindent\fbox{Photo Settings}  \lookArrow}
   %
 \clearpage
   %
@@ -936,10 +957,10 @@ In the Open Camera App:
 In the Open Camera App:{\tiny (cont.)}
 \vspace{.2in}
 
-{\LARGE\noindent\fbox{Camera Resolution}  $\Rightarrow$}
+{\LARGE\noindent\fbox{Camera Resolution}  \lookArrow}
 \vspace{6.5in}
 
-{\LARGE\noindent\fbox{640 x 480}  $\Rightarrow$}
+{\LARGE\noindent\fbox{640 x 480}  \lookArrow}
   %
 \clearpage
   %
@@ -959,29 +980,30 @@ In the Catalog window, navigate to:
   %
 
 {\scriptsize\path{J:\Departments\Treasury\Apps\Forfeiture\processing\ForfeitureToolbox.tbx}}
-%J:\textbackslash Departments
 
 %
 %
-
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-    \includegraphics[width=.36\textwidth]{preprocess.png}
+    \includegraphics[width=.45\textwidth]{preprocess.png}
 \vspace{-.1in}
 
 \caption{Processing Tools}
 \end{wrapfigure}
-\vspace{.5in}
+\vspace{2in}
 
-\noindent Open the toolbox
-\vspace{.5in}
+{\LARGE\noindent\fbox{Open the toolbox}  \lookArrow}
+\vspace{2in}
 
-\noindent\fbox{Open 1.Preprocess}
+{\LARGE\noindent\fbox{1.Preprocess} \lookArrow}
+
+
+
 \clearpage
-  %
-  %
-\subparagraph[Synchronize the Forfeiture Field Map]{\Large Synchronize the Forfeiture Field Map}
-  %
+
+
+\subparagraph{Synchronize the Forfeiture Field Map}
+
   % Two Figures Wrapped
   %
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -996,21 +1018,22 @@ In the Catalog window, navigate to:
     \includegraphics[width=.3\textwidth]{MapSyncronized.png}
 \caption{Map Synchronized}
 \end{wrapfigure}
-Note the date and time:
-\vspace{1.5in}
+Note the date and time
+\vspace{1in}
 
-\noindent Press {\LARGE Sync}
-\vspace{2in}
+\noindent{\LARGE\fbox{Sync}  \lookArrow}
+\vspace{3in}
 
 \noindent Note the date and time
-\vspace{1.25in}
+\vspace{1in}
 
-{\Large Map is synchronized}
+\noindent{\Large Map is synchronized \lookArrow}
 \clearpage
   %
   %
-\paragraph{Forfeiture Data Collection}
-\subparagraph{Forfeiture Parcels Data Details}
+
+\paragraph{Field Data Collection}
+\subparagraph{Data Entry Details}
 
 Attributes are of four entry types:
 \begin{itemize}
@@ -1019,11 +1042,22 @@ Attributes are of four entry types:
 \item dropdown
 \item text box
 \end{itemize}
-For each site visited, select the desired parcel, push the edit button and collect attributes.
+
+\subparagraph{Mobile Device Summary}
+
+For each site visited,
+
+\begin{itemize}
+\item select the desired parcel
+\item push the edit button
+\item collect attributes.
+\end{itemize}
+
 \clearpage
   %
   %
-\subparagraph[Device 1 Field Operation]{Device 1 Field Operation\texorpdfstring{\\}{}}
+\subparagraph{Device 1 Field Operation}
+
   %
   % Two Figures Wrapped
   %
@@ -1042,14 +1076,18 @@ For each site visited, select the desired parcel, push the edit button and colle
 \caption{Parcel Details}
 \end{wrapfigure}
   %
-Select a parcel
-\vspace{4in}
 
-{\normalsize Push the} {\Large edit} {\normalsize button}
+.
+\vspace{2.5in}
+
+\noindent{\LARGE\fbox{Select a parcel} \lookArrow}
+\vspace{4.5in}
+
+\noindent{\LARGE\fbox{Edit} \lookArrow}
 \clearpage
   %
   %
-\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{Device 1 Field Operation}
   %
   % Three Figures Wrapped
   %
@@ -1072,125 +1110,140 @@ Select a parcel
     \includegraphics[width=.2\textwidth]{selectInspector.png}
 \caption{Select Inspector}
 \end{wrapfigure}
-Select Yes for Print Today
-\vspace{2.5in}
 
-\noindent Select Use Current or enter any date
+(cont.)
+\vspace{.8in}
+
+\noindent{\LARGE\fbox{Print Today} \lookArrow}
 \vspace{2in}
 
-\noindent Select Inspector From Dropdown
+\noindent{\LARGE \fbox{Date} \lookArrow}
+\vspace{3in}
+
+\noindent{\LARGE \fbox{Inspector} \lookArrow}
 \clearpage
   %
   %
-\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{Device 1 Field Operation}
   %
   % Three Figures Wrapped
   %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
     \includegraphics[width=.2\textwidth]{status.png}
-\caption {Status}
+\caption {Occupied or Not Occupied}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
     \includegraphics[width=.2\textwidth]{statusNotes.png}
-\caption{Status Notes}
+\caption{Enter Text}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
     \includegraphics[width=.2\textwidth]{roadFrontage.png}
-\caption{Road Frontage}
+\caption{Yes or No}
 \end{wrapfigure}
-%\vspace{.5in}
-Select Occupied or Not Occupied
-%\noindent Select Occupied or Not Occupied
+
+(cont.)
+\vspace{1in}
+
+\noindent{\LARGE\fbox{Status} \lookArrow}
+
 \vspace{2.5in}
 
-\noindent Enter status notes up to 120 characters
+\noindent{\LARGE\fbox{Status Notes} \lookArrow}
 \vspace{2.5in}
 
-\noindent Select Yes or No for Road Frontage
+\noindent{\LARGE\fbox{Road Frontage} \lookArrow}
 \clearpage
   %
   %
-\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{Device 1 Field Operation}
   %
   % Three Figures Wrapped
   %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
     \includegraphics[width=.2\textwidth]{accessVia.png}
-\caption {Access Via}
+\caption {Enter Text}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
     \includegraphics[width=.2\textwidth]{agent.png}
-\caption{Agent}
+\caption{Enter Text}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
     \includegraphics[width=.2\textwidth]{agentContact.png}
-\caption{Agent Contact}
+\caption{Enter Text}
 \end{wrapfigure}
-Enter road used for access
+
+(cont.)
+\vspace{1.5in}
+
+\noindent{\LARGE\fbox{Access Via} \lookArrow}
+\vspace{1.5in}
+
+\noindent{\LARGE\fbox{Agent} \lookArrow}
 \vspace{2.5in}
 
-\noindent Enter Agent Name
-\vspace{2.5in}
-
-\noindent Enter Agent Contact Info
+\noindent{\LARGE\fbox{Agent Contact Info} \lookArrow}
 \clearpage
   %
   %
-\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{Device 1 Field Operation}
   %
   % Three Figures Wrapped
   %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
     \includegraphics[width=.2\textwidth]{notes.png}
-\caption {Use Notes}
+\caption {Enter Text}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
     \includegraphics[width=.2\textwidth]{notes.png}
-\caption{Notes}
+\caption{Enter Text}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
     \includegraphics[width=.2\textwidth]{propertyForSale.png}
-\caption{Property for Sale}
+\caption{Yes or No}
 \end{wrapfigure}
-Enter  Use Notes up to 120 characters
-\vspace{2in}
 
-\noindent Enter Notes up to 120 characters
+(cont.)
+\vspace{.75in}
+
+\noindent{\LARGE\fbox{Use Notes} \lookArrow}
 \vspace{2.5in}
 
-\noindent Enter property for sale yes or no
+\noindent{\LARGE\fbox{Notes} \lookArrow}
+\vspace{2.6in}
+
+\noindent{\LARGE\fbox{Property for sale} \lookArrow}
 \clearpage
   %
   %
-\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{Device 1 Field Operation}
   %
   % Three Figures Wrapped
   %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
     \includegraphics[width=.2\textwidth]{propertyInUse.png}
-\caption {Property in Use}
+\caption {Yes or No}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
@@ -1204,66 +1257,74 @@ Enter  Use Notes up to 120 characters
 \vspace{.1in}
 
     \includegraphics[width=.2\textwidth]{notes.png}
-\caption{Property Contaminated}
+\caption{Prefilled}
 \end{wrapfigure}
-Property in Use Yes or No
-\vspace{2.5in}
+
+(cont.)
+\vspace{.5in}
+
+\noindent{\LARGE \fbox{Property in Use} \lookArrow}
+\vspace{3in}
 
 \noindent Placeholder
 \vspace{2.5in}
 
-\noindent prefilled
+\noindent{\LARGE \fbox{Property Contaminated} \lookArrow}
 \clearpage
   %
   %
-\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{Device 1 Field Operation}
   %
   % Three Figures Wrapped
   %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
     \includegraphics[width=.2\textwidth]{notes.png}
-\caption {Notes up to 120 characters}
+\caption {Enter Text}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
     \includegraphics[width=.2\textwidth]{adjPropertyContNotes.png}
-\caption{Adjacent Property Contaminated}
+\caption{Prefilled}
 \vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
     \includegraphics[width=.2\textwidth]{notes.png}
-\caption{Property Contaminated}
+\caption{Prefilled}
 \end{wrapfigure}
-Enter notes up to 120 characters
-\vspace{2in}
 
-\noindent Adjacent Property Contaminated prefilled
-\vspace{2in}
+(cont.)
+\vspace{.5in}
 
-\noindent Property Contaminated notes prefilled
+\noindent{\LARGE\fbox{Notes} \lookArrow}
+\vspace{3in}
+
+\noindent\fbox{{\normalsize Adjacent Property Contaminated}} {\LARGE\lookArrow}
+\vspace{2.5in}
+
+\noindent\fbox{Property Contaminated notes} {\LARGE\lookArrow}
 \clearpage
   %
   %
-\subparagraph*{Device 1 Field Operation Cont.}
+\subparagraph*{Device 1 Field Operation}
   %
   % Three Figures Wrapped
   %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
     \includegraphics[width=.2\textwidth]{propertyMaintained.png}
-\caption {Property Maintained}
+\caption {Yes or No}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.1in}
 
     \includegraphics[width=.2\textwidth]{pictureComments.png}
-\caption{Picture Comments}
+\caption{Enter Text}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
@@ -1272,17 +1333,22 @@ Enter notes up to 120 characters
     \includegraphics[width=.2\textwidth]{notes.png}
 \caption{Placeholder}
 \end{wrapfigure}
-Property Maintained Yes or No
-\vspace{2.5in}
 
-\noindent Picture Comments up to 120 characters
-\vspace{2.5in}
+(cont.)
+\vspace{.5in}
+
+\noindent{\Large\fbox{Property Maintained} \lookArrow}
+\vspace{2.75in}
+
+\noindent{\LARGE\fbox{Comments} \lookArrow}
+\vspace{3in}
 
 \noindent Placeholder
 \clearpage
   %
   %
 \subparagraph{Device 2 Field Operation}
+
   %
   % Three Figures Wrapped
   %
@@ -1296,32 +1362,40 @@ Property Maintained Yes or No
 \vspace{.1in}
 
     \includegraphics[width=.2\textwidth]{pushAttachmentButton.png}
-\caption{Push Attachment Button}
+\caption{Add Attachment}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
     \includegraphics[width=.2\textwidth]{addAttachmentFromGallery.png}
-\caption{Add Attachment From Gallery}
+\caption{From Gallery}
 \end{wrapfigure}
-Select a parcel from the map
-\vspace{2in}
 
-\noindent Push Attachment Button
-\vspace{2in}
+.
+%note
 
-\noindent Select Gallery
+\vspace{.5in}
+
+\noindent{\LARGE\fbox{Select a parcel} \lookArrow}
+\vspace{3in}
+
+\noindent{\LARGE\fbox{Attachment} \lookArrow}
+\vspace{3in}
+
+\noindent{\LARGE\fbox{Gallery} \lookArrow}
 \clearpage
   %
   %
-\subparagraph*{Device 2 Field Operation Cont.}
+\subparagraph*{Device 2 Field Operation}
   %
   % Three Figures Wrapped
   %
 \begin{wrapfigure}{r}{0.4\textwidth}
 \centering
     \includegraphics[width=.2\textwidth]{openCameraFolderInGallery.png}
+\vspace{-.1in}
+
 \caption {Open Camera Folder}
 \vspace{.05in}
 
@@ -1329,90 +1403,73 @@ Select a parcel from the map
 \vspace{.05in}
 
     \includegraphics[width=.2\textwidth]{openCameraFolder.png}
-\caption{In the Open Camera Folder}
+\vspace{-.1in}
+
+\caption{Open Camera Folder}
 \vspace{.1in}
 
 \HRule \\[.4cm] % Horizontal Line added
 \vspace{.05in}
 
     \includegraphics[width=.2\textwidth]{imageInApp.png}
+\vspace{-.1in}
+
 \caption{Image in the App}
 \end{wrapfigure}
-Navigate to the Open Camera Folder
-\vspace{2in}
 
-\noindent Select the appropriate image
-\vspace{2in}
+(cont.)
+\vspace{1in}
 
-\noindent Press the check button to save the image to the parcel
+\noindent{\LARGE\fbox{Open Camera Folder} \lookArrow}
+\vspace{2.5in}
+
+\noindent{\LARGE\fbox{Select image} \lookArrow}
+\vspace{2.25in}
+
+\noindent{\LARGE\fbox{Check Mark} \lookArrow}
   %
 \clearpage
   %
   %
-\paragraph[Daily Postprocessing Routine]{Daily Postprocessing Routine\texorpdfstring{\\}{}}
+\subsubsection{Daily Postprocessing Routine}
   %
-Back at the office
-\subparagraph[Synchronize Webmap]{Synchronize Webmap\texorpdfstring{\\}{}}
-  %
-In Collector for ArcGIS, push the sync button on the Forfeiture Field Map
-\subparagraph[Execute Postprocessing Script]{Execute Postprocessing Script\texorpdfstring{\\}{}}
-  %
-The Postprocessing Script is A tool in ArcGIS that:
+\paragraph{Syncronize Data and Print Report}
+
 \begin{wrapfigure}{r}{0.5\textwidth}
 \centering
-    \includegraphics[width=.4\textwidth]{PostprocessingTool1.png}
-\caption{Reconcile Versions and Compress Tool}
-\vspace{.25in}
+    \includegraphics[width=.4\textwidth]{Sync.png}
+\caption{Sync}
+\vspace{.05in}
 
 \HRule \\[.4cm] % Horizontal Line added
-\vspace{.25in}
+\vspace{.05in}
+    \includegraphics[width=.4\textwidth]{PostprocessingTool1.png}
+\caption{Double Click}
+\vspace{.05in}
+
+\HRule \\[.4cm] % Horizontal Line added
+\vspace{.15in}
+
 
     \includegraphics[width=.4\textwidth]{PostprocessingTool2.png}
-\caption{Export Report Tool}
+\caption{Double Click}
 \end{wrapfigure}
   %
-Reconciles geodatabase versions
-\vspace{1.5in}
+.
 
-Execute the Reconcile Versions and Compress Tool
-\vspace{2in}
-
-Generates forms for each site visited
 \vspace{1.25in}
 
-Execute the Export Report Tool
+\noindent{\LARGE\fbox{Sync} \lookArrow}
+
+\vspace{2.75in}
+
+\noindent{\normalsize\fbox{2.Reconcile Versions and Compress}} {\LARGE\lookArrow}
+
+\vspace{2.5in}
+
+\noindent{\Large\fbox{3.Export Report} {\LARGE\lookArrow}
 \clearpage
-  %
-  %
-\begin{itemize}
-\item Reconciles geodatabase versions
-\begin{itemize}
-\item Execute the Reconcile Versions and Compress Tool
-  %
-  % Single Figure in itemize evnironment
-  %
-\begin{figure}[h!]
-\centering
-    \includegraphics[width=.4\textwidth]{PostprocessingTool1.png}
-\caption{Reconcile Versions and Compress Tool}
-\end{figure}
-\end{itemize}
-  %
-\item Generates forms for each site visited
-\begin{itemize}
-\item Execute the Export Report Tool
-  %
-  % Single Figure in itemize evnironment
-  %
-\begin{figure}[h!]
-\centering
-    \includegraphics[width=.4\textwidth]{PostprocessingTool2.png}
-\caption{Export Report Tool}
-\end{figure}
-\end{itemize}
-\end{itemize}
-\clearpage
-  %
+
   %
 \subsubsection{Software}
   %
