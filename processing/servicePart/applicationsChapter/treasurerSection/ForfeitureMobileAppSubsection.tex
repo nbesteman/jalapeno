@@ -89,8 +89,8 @@
 \paragraph{Forfeiture App Summary}
 \vspace{.25in}
 
-There are three parts to the daily routine:
-\vspace{.4in}
+There are {\LARGE three parts} to the daily routine:
+\vspace{.25in}
 
 \begin{enumerate}
 \item \Large Preprocessing \normalsize(in the office):
@@ -301,24 +301,24 @@ There are three parts to the daily routine:
  A new dataset for forfeiture parcels must be created each year.
  \vspace{.1in}
 
- \noindent The forfeiture information comes from BSA Forfeitures.net
+ \noindent The forfeiture information comes from BSA Forfeitures.net.
  \vspace{.1in}
 
- \noindent Parcel geometry and other attributes comes from ACParcelsCombined
+ \noindent Parcel geometry and other attributes comes from ACParcelsCombined.
  \vspace{.25in}
 
  \subparagraph{Update the Forfeiture Dataset}
 
- \noindent{clear the features from the existing ForfeitureParcels dataset}
- \vspace{.25in}
+ \noindent{To clear the features from the existing dataset:}
+ \vspace{.15in}
 
  \begin{itemize}
  \item {\Large Use the Delete Feature Tools}
  \item {\Large For Input Features:}
  \begin{itemize}
- \item Select ACPub.DBO.ForfeitureParcels
+ \item {\Large ACPub.DBO.ForfeitureParcels}
  \end{itemize}
- \end{itemize}
+
  \vspace{.1in}
 
    %
@@ -331,11 +331,11 @@ There are three parts to the daily routine:
  \end{figure}
  \vspace{.15in}
 
- \noindent{\Large Press \fbox{OK}}
+ \item {\Large Push \fbox{OK}}
+ \end{itemize}
  \clearpage
      %
      %
- 
  \paragraph{Create a Table Query For the New Data}
  \vspace{.25in}
 
@@ -377,7 +377,7 @@ There are three parts to the daily routine:
  \caption{Forfeiture Query Layer Details}
  \end{figure}
    %
- \item Press \fbox{Next}
+ \item Push \fbox{Next}
    %
  \end{itemize}
    %
@@ -386,9 +386,6 @@ There are three parts to the daily routine:
    %
  \subparagraph{Select a Unique Identifier}
    %
- \begin{itemize}
-   %
- \item Press \fbox{Finish}
    %
    % Single Figure No Wrap
    %
@@ -398,6 +395,10 @@ There are three parts to the daily routine:
  \caption{Query Layer Unique ID}
  \end{figure}
    %
+ \begin{itemize}
+   %
+ \item Push \fbox{Finish}
+  %
  \end{itemize}
    %
  \clearpage
@@ -464,7 +465,7 @@ There are three parts to the daily routine:
      \includegraphics[width=.95\textwidth]{exportJoinedFeatures.png}
  \caption{Export Joined Features}
  \end{figure}
- \item choose location and press \fbox{OK}
+ \item choose location and Push \fbox{OK}
  \end{itemize}
  \clearpage
    %
@@ -482,7 +483,7 @@ There are three parts to the daily routine:
  \clearpage
    %
    %
- \paragraph*{\Large push \fbox{Next}}
+ \paragraph*{\Large Push \fbox{Next}}
    %
    % Single Figure No Wrap
    %
@@ -551,7 +552,7 @@ There are three parts to the daily routine:
    %
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.5\textwidth]{RegisterAsVersioned.PNG}
+     \includegraphics[width=.8\textwidth]{RegisterAsVersioned.PNG}
  \caption{Setup Data}
  \end{figure}
    %
@@ -569,7 +570,7 @@ There are three parts to the daily routine:
    %
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.5\textwidth]{createAttachments.PNG}
+     \includegraphics[width=.8\textwidth]{createAttachments.PNG}
  \caption{Create Attachments}
  \end{figure}
  \clearpage
@@ -581,20 +582,20 @@ There are three parts to the daily routine:
  \vspace{.35in}
 
  \noindent For any new users of the geoprocessing tools:
- 
+
  \vspace{.15in}
 
- Use the create Database User tool 
+ Use the create Database User tool
   \vspace{.15in}
-  
+
  {\textbf or}
- 
+
  \vspace{.15in}
 
 In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add User
- 
+
  \vspace{.35in}
- 
+
    %
    % Single Figure No Wrap
    %
@@ -611,7 +612,7 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
 
  In Catalog, \rtArrow right click on Treasurer Feature Data Set
  \vspace{.15in}
-  
+
  \rtArrow Manage \rtArrow Priviliges \rtArrow Add \rtArrow Type new user \rtArrow ok
  \vspace{.5in}
 
@@ -649,7 +650,12 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  \noindent Users that will use the Collector for ArcGIS must have profiles added to and managed in the Allegan County GIS Portal site.
  \vspace{.5in}
 
- In Portal go to My Organization
+ In Portal, \rtArrow \fbox{My Organization}
+
+\vspace{.2in}
+
+\paragraph*{\Large Push \fbox{Add Members}}
+
    %
    % Single Figure No Wrap
    %
@@ -662,10 +668,10 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
    %
    %
  \paragraph[Add Members to Portal]{\Large Add Members to Portal\texorpdfstring{\\}{}}
- \vspace{.5in}
+ \vspace{.4in}
 
- Push add members \rtArrow built in member
- \vspace{.5in}
+ {\Large Select Built in Member \rtArrow Push \fbox{Next}}
+ \vspace{.4in}
 
    %
    % Single Figure No Wrap
@@ -727,7 +733,9 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  \clearpage
    %
    %
- \paragraph[Schema Change Procedure]{\Large Schema Change Procedure}
+
+\paragraph{Schema Change Procedure}
+
  \clearpage
    %
    %
@@ -787,13 +795,13 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
 
  \vspace{.5in}
 
- \noindent Press \Large \fbox{Continue} \lookArrow
+ \noindent Push {\Large \fbox{Continue} \lookArrow}
  \vspace{2.75in}
 
- \noindent Enter Credentials
+ \noindent {\Large Enter Credentials}
  \vspace{1in}
 
- \noindent Press \Large \fbox{SIGN IN} \lookArrow
+ \noindent Push {\Large \fbox{SIGN IN} \lookArrow}
 
  \clearpage
    %
@@ -821,13 +829,13 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  \caption{Collector Maps Menu}
  \end{wrapfigure}
    %
-
+.
  \vspace{.5in}
 
  \noindent {\LARGE Choose a Map}
- \vspace{1.25in}
+ \vspace{1.75in}
 
- \noindent {\large \fbox{Press Download} \lookArrow}
+ \noindent {\large \fbox{Push Download} \lookArrow}
 
  \clearpage
    %
@@ -839,8 +847,7 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  \end{wrapfigure}
 
  \noindent {\large Specify work area}
- \vspace{.5in}
-
+ \vspace{1.5in}
 
  \fbox{Choose Map Detail} \lookArrow
    %
@@ -869,7 +876,7 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  Zoom into the level of detail desired.
  \vspace{1in}
 
- \noindent Press \fbox{Download} \lookArrow
+ \noindent Push \fbox{Download} \lookArrow
  \vspace{3.5in}
 
  \noindent This area is ready for field data collection \lookArrow
@@ -953,19 +960,19 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
    %
 \paragraph{Preprocessing Routine}
    %
-   
+
 \vspace{.4in}
 
 Each day the data must be prepared by executing the tool:
 \vspace{.2in}
 
-\textbf{1. Preprocess} 
-  
-\vspace{.2in} 
- 
+\textbf{1. Preprocess}
+
+\vspace{.2in}
+
  \subparagraph*{What the tool does:}
  \vspace{.15in}
- 
+
    %
  \begin{itemize}
  \item Exports current forfeiture list from BSA
@@ -973,13 +980,12 @@ Each day the data must be prepared by executing the tool:
  \item Updates webmap layers with results from BSA export
  \end{itemize}
    %
- To use the preprocess tool:\\
+ To use the preprocess tool:
    %
 \vspace{.15in}
 
- In the Catalog window, navigate to:
+\noindent In the Catalog window, navigate to:
    %
-
  {\scriptsize\path{J:\Departments\Treasury\Apps\Forfeiture\processing\ForfeitureToolbox.tbx}}
 
  %
@@ -991,10 +997,11 @@ Each day the data must be prepared by executing the tool:
 
  \caption{Processing Tools}
  \end{wrapfigure}
- \vspace{.5in}
+ .
+ \vspace{2in}
 
  {\LARGE\noindent\fbox{Open the toolbox}  \lookArrow}
- \vspace{2in}
+ \vspace{.5in}
 
  {\LARGE\noindent\fbox{1.Preprocess} \lookArrow}
 
@@ -1051,13 +1058,13 @@ Each day the data must be prepared by executing the tool:
 
  \begin{itemize}
  \item Select the desired parcel
- \item Push the edit button
+ \item Push \fbox{Edit}
  \item Collect attributes or photos
  \end{itemize}
 
  \clearpage
-  
-  
+
+
 \subparagraph{Device 1 Field Operation}
 
   %
@@ -1124,8 +1131,8 @@ Each day the data must be prepared by executing the tool:
 
 \noindent{\LARGE \fbox{Inspector} \lookArrow}
 \clearpage
-  
-  
+
+
 \subparagraph*{Device 1 Field Operation}
   %
   % Three Figures Wrapped
@@ -1416,7 +1423,7 @@ Each day the data must be prepared by executing the tool:
 \clearpage
   %
   %
-  
+
 
 \subsubsection{Daily Postprocessing Routine}
   %
@@ -1526,7 +1533,7 @@ Inspection reports are generated by running the tool:\\
   %
 \subparagraph{Collector for ArcGIS}ArcGIS Collector is available at the Google Play Store.
 
-\noindent{\normalsize (Developed and tested on Android(7.0)) } 
+\noindent{\normalsize (Developed and tested on Android(7.0)) }
   %
 \paragraph{Other Software}
   %
@@ -1536,7 +1543,7 @@ Inspection reports are generated by running the tool:\\
   %
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.2\textwidth]{openCameraAppStore.png}
+    \includegraphics[width=.7\textwidth]{openCameraAppStoreCropped.png}
 \caption{Open Camera from Google Play Store}
 \end{figure}
   %

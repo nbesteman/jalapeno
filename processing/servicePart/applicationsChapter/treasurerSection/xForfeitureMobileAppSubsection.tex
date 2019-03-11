@@ -1,0 +1,17 @@
+\documentclass[letterpaper, 12pt]{memoir}
+\usepackage{wrapfig} % Provides environment to wrap figures with text
+\usepackage{graphicx} % Required for including images
+\graphicspath{{img/}}
+  %
+\begin{document}% document begins
+  %
+\subparagraph{Download the Forfeiture Field Map}There are 3 different versions of the map
+
+.% With this line commented, The wrapped text and figure is spaced down 3 in.  But if its active, just the text is spaced down 3 in(This is the desired behaviour).
+\begin{wrapfigure}{r}{0.5\textwidth}
+\includegraphics[width=.5\textwidth]{CollectorChooseMap.png}
+\end{wrapfigure}
+\vspace{3in}
+
+Push Download
+\end{document}
