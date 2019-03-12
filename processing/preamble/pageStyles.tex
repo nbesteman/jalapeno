@@ -37,12 +37,6 @@
 %-------------------------------------------------------------------
   %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-%  This block defines emptyPageStyle page style NEEDS WORK
-\makepagestyle{emptyPageStyle}
-    % headers
-\makeevenhead {emptyPageStyle}{}{}{}
-\makeoddhead {emptyPageStyle}{}{}{}
-    % footers
-\makefootrule {emptyPageStyle}{}{}{}
-\makeevenfoot {emptyPageStyle}{}{}{}
-\makeoddfoot {emptyPageStyle}{}{}{}
+% set page number color for plain page
+\makeevenfoot {plain}{}{\helv \thepage} {}
+\makeoddfoot {plain}{}{\helv \thepage} {}

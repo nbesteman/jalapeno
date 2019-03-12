@@ -16,6 +16,7 @@
 \usepackage{anyfontsize}
 \usepackage{adjmulticol}
 \usepackage{url}
+
 %-------------------------------------------------------------------
   %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -36,6 +37,9 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make horizontal graphic lines
 \newcommand{\marginText}{\fontfamily{cmr}\fontseries{b}\color{red}\fontsize{9}{12}\selectfont} % create new typeface for margins
 \newcommand{\helv}{\color{HeaderOrangeE}\fontfamily{phv}\fontseries{b}\fontsize{9}{11}\selectfont} % Create new typeface for headers
+%\newcommand{\ag}{\fontfamily{pag}\fontseries{b}\color{HeaderBlueC}\fontsize{9}{11}\selectfont} % Create new typeface
+%\newcommand{\ag}{\fontfamily{pnc}\fontseries{c}\fontsize{9}{11}\selectfont} % Create new typeface
+%\newcommand{\chancery}{\fontfamily{pzc}\fontseries{b}\fontsize{9}{11}\selectfont} % Create new typeface
     % NOTES:
     % font has encoding, family,  series{b}(bold), shape, size{(size)}{(baselineskip)}
     % https://www.latex-project.org/help/documentation/fntguide.pdf
@@ -56,11 +60,30 @@
 
 \usepackage[tracking=true]{microtype}
 \SetTracking{encoding={*}, shape=sc}{240}
-
-
 % Tracking is spacing of character and kerning is space bw pairs of characters(kerning pairs)
+%\usepackage[T1]{fontenc}
 
+\renewcommand{\rmdefault}{bch} % bitstream charter
+%\renewcommand{\rmdefault}{pplx} % Palatino-Roman, Palatino-Italic, Palatino-SC
+%\renewcommand{\rmdefault}{pbk} % Bookman
+%\renewcommand{\rmdefault}{pnc} % Schoolbook
+%\renewcommand{\rmdefault}{pag} % AvanteGarde
+%\renewcommand{\rmdefault}{put} % Adobe Utopia
+%\renewcommand{\rmdefault}{ptm} % Adobe Times Roman
+%\renewcommand{\rmdefault}{phv} % Adobe Helvetica
+%\renewcommand{\rmdefault}{pcr} % Adobe Courier
+%\renewcommand{\ttdefault}{pzc} % Zapf Chancery
 
+%\renewcommand{\familydefault}{\rmdefault}
+%\renewcommand{\familydefault}{\sfdefault}
+%\renewcommand{\familydefault}{\ttdefault}
+
+%\rmfamily selects a roman (i.e., serifed) font family
+%\sffamily selects a sans serif font family
+%\ttfamily selects a monospaced (“typewriter”) font family
+\linespread{1.3}
+%\setlength{\baselineskip}{12.4pt plus 1pt minus 1pt}
+%\setlength{\baselineskip}{24.4pt}
 %-------------------------------------------------------------------
   %
 \usepackage[pdftex,breaklinks,colorlinks=true,linkcolor=black,citecolor=blue,  % hyperref loads Last
