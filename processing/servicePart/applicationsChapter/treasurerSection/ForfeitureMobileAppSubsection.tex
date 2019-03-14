@@ -148,8 +148,8 @@ There are {\LARGE three parts} to the daily routine:
    %
  \begin{figure}[H]
  \centering
-     \includegraphics[width=1\textwidth]{TechFlowChart}
- \vspace{-.2in}
+     \includegraphics[width=.9\textwidth]{TechFlowChart}
+ \vspace{-.25in}
 
  \caption{Technology Design}
  \end{figure}
@@ -166,14 +166,15 @@ There are {\LARGE three parts} to the daily routine:
  \centering
      \includegraphics[width=.5\textwidth]{LiveDataLocation}
  \caption{Live Data Location}
- \vspace{.1in}
+ %\vspace{.1in}
 
  \HRule
  %\\[.2cm] % Horizontal Line added
  \vspace{.2in}
 
      \includegraphics[width=.5\textwidth]{contaminationFeatureClass.png}
- \caption{Contamination Feature Class}
+\vspace{-.1in}
+\caption{Contamination Feature Class}
  \end{wrapfigure}
    %
  \vspace{1in}
@@ -238,8 +239,8 @@ There are {\LARGE three parts} to the daily routine:
    %
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.6\textwidth]{webMapDetails}
- \vspace{-.2in}
+     \includegraphics[width=.55\textwidth]{webMapDetails}
+ \vspace{-.25in}
 
  \caption{Web Map Details}
  \end{figure}
@@ -247,7 +248,7 @@ There are {\LARGE three parts} to the daily routine:
  \subparagraph{Feature Layer Details}TaxReversionParcels has been configured for offline use.
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.6\textwidth]{layerDetails}
+     \includegraphics[width=.55\textwidth]{layerDetails}
  \vspace{-.15in}
 
  \caption{Feature Layer Details}
@@ -294,29 +295,24 @@ There are {\LARGE three parts} to the daily routine:
    %
    %
  \subsubsection{Administrative Manual}
- \vspace{.25in}
 
  \paragraph{Annual Setup}
 
  A new dataset for forfeiture parcels must be created each year.
- \vspace{.1in}
 
  \noindent The forfeiture information comes from BSA Forfeitures.net.
- \vspace{.1in}
 
  \noindent Parcel geometry and other attributes comes from ACParcelsCombined.
- \vspace{.25in}
 
  \subparagraph{Update the Forfeiture Dataset}
 
  \noindent{To clear the features from the existing dataset:}
- \vspace{.15in}
-
  \begin{itemize}
  \item {\Large Use the Delete Feature Tools}
  \item {\Large For Input Features:}
  \begin{itemize}
  \item {\Large ACPub.DBO.ForfeitureParcels}
+ \end{itemize}
  \end{itemize}
 
  \vspace{.1in}
@@ -331,8 +327,9 @@ There are {\LARGE three parts} to the daily routine:
  \end{figure}
  \vspace{.15in}
 
- \item {\Large Push \fbox{OK}}
- \end{itemize}
+{\btn Push \fbox{OK}}
+%\item {\Large Push \fbox{OK}}
+% \end{itemize}
  \clearpage
      %
      %
@@ -368,6 +365,7 @@ There are {\LARGE three parts} to the daily routine:
  \item Choose connection
  \item Name the query
  \item Enter SQl query
+\end{itemize}
    %
    % Single Figure No Wrap
    %
@@ -377,9 +375,10 @@ There are {\LARGE three parts} to the daily routine:
  \caption{Forfeiture Query Layer Details}
  \end{figure}
    %
- \item Push \fbox{Next}
+{\btn Push \fbox{NEXT}}
+ %\item Push \fbox{Next}
    %
- \end{itemize}
+ %\end{itemize}
    %
  \clearpage
    %
@@ -395,11 +394,12 @@ There are {\LARGE three parts} to the daily routine:
  \caption{Query Layer Unique ID}
  \end{figure}
    %
- \begin{itemize}
+
    %
- \item Push \fbox{Finish}
+{\btn Push \fbox{Finish}}
+ %\item Push \fbox{Finish}
   %
- \end{itemize}
+
    %
  \clearpage
    %
@@ -457,6 +457,7 @@ There are {\LARGE three parts} to the daily routine:
  \begin{itemize}
  %\item Right click \ding{212} on joined feature class in TOC and choose export
  \item Right click \rtArrow  on joined feature class in TOC and choose export
+\end{itemize}
    %
    % Single Figure No Wrap
    %
@@ -465,8 +466,9 @@ There are {\LARGE three parts} to the daily routine:
      \includegraphics[width=.95\textwidth]{exportJoinedFeatures.png}
  \caption{Export Joined Features}
  \end{figure}
- \item choose location and Push \fbox{OK}
- \end{itemize}
+ {\btn choose location and Push \fbox{OK}}
+%\item choose location and Push \fbox{OK}
+ %\end{itemize}
  \clearpage
    %
    %
@@ -483,7 +485,9 @@ There are {\LARGE three parts} to the daily routine:
  \clearpage
    %
    %
- \paragraph*{\Large Push \fbox{Next}}
+
+{\btn Push \fbox{Next}}
+ %\paragraph*{\Large Push \fbox{Next}}
    %
    % Single Figure No Wrap
    %
@@ -517,7 +521,8 @@ There are {\LARGE three parts} to the daily routine:
  \clearpage
    %
    %
- \paragraph*{\Large Push \fbox{Next}}
+{\btn Push \fbox{Next}}
+% \paragraph*{\Large Push \fbox{Next}}
    %
    % Single Figure No Wrap
    %
@@ -527,7 +532,9 @@ There are {\LARGE three parts} to the daily routine:
  \caption{Load Data 3}
  \end{figure}
    %
- \paragraph*{\Large Push \fbox{Finish}}
+
+{\btn Push \fbox{Finish}}
+% \paragraph*{\Large Push \fbox{Finish}}
    %
  \clearpage
    %
@@ -654,7 +661,8 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
 
 \vspace{.2in}
 
-\paragraph*{\Large Push \fbox{Add Members}}
+{\btn Push \fbox{Add Members}}
+%\paragraph*{\Large Push \fbox{Add Members}}
 
    %
    % Single Figure No Wrap
@@ -670,7 +678,7 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  \paragraph[Add Members to Portal]{\Large Add Members to Portal\texorpdfstring{\\}{}}
  \vspace{.4in}
 
- {\Large Select Built in Member \rtArrow Push \fbox{Next}}
+ {\Large Select Built in Member \rtArrow}
  \vspace{.4in}
 
    %
@@ -681,6 +689,9 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
      \includegraphics[width=.9\textwidth]{PortalAddUser2.png}
  \caption{Portal Add User 2}
  \end{figure}
+
+{\btn Push \fbox{Next}}
+
  \clearpage
    %
    %
@@ -780,28 +791,29 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  \caption{Enter Credentials}
  \end{wrapfigure}
 
- \vspace{.25in}
+ %\vspace{.25in}
 
  for \textbf{Organization Website}, Type:
  \vspace{.25in}
 
- \begin{verbatim}
+\begin{verbatim}
 
- https://gis.allegancounty.org/
- portal_webadaptor
+https://gis.allegancounty.org/
+portal_webadaptor
 
-
- \end{verbatim}
+\end{verbatim}
 
  \vspace{.5in}
 
- \noindent Push {\Large \fbox{Continue} \lookArrow}
- \vspace{2.75in}
+ %\noindent Push {\Large \fbox{Continue} \lookArrow}
+\noindent {\btn Push \fbox{Continue} \lookArrow}
+\vspace{2.75in}
 
  \noindent {\Large Enter Credentials}
  \vspace{1in}
 
- \noindent Push {\Large \fbox{SIGN IN} \lookArrow}
+\noindent {\btn Push \fbox{SIGN IN} \lookArrow}
+ %\noindent Push {\Large \fbox{SIGN IN} \lookArrow}
 
  \clearpage
    %
@@ -835,7 +847,8 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  \noindent {\LARGE Choose a Map}
  \vspace{1.75in}
 
- \noindent {\large \fbox{Push Download} \lookArrow}
+%\noindent {\large \fbox{Push Download} \lookArrow}
+\noindent {\btn {Push }\fbox{DOWNLOAD} \lookArrow}
 
  \clearpage
    %
@@ -849,7 +862,7 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  \noindent {\large Specify work area}
  \vspace{1.5in}
 
- \fbox{Choose Map Detail} \lookArrow
+ {\btn\fbox{Choose Map Detail} \lookArrow}
    %
  \vspace{.2in}
 
@@ -876,10 +889,12 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  Zoom into the level of detail desired.
  \vspace{1in}
 
- \noindent Push \fbox{Download} \lookArrow
+\noindent {\btn {Push }\fbox{DOWNLOAD} \lookArrow}
+ %\noindent Push \fbox{Download} \lookArrow
  \vspace{3.5in}
 
- \noindent This area is ready for field data collection \lookArrow
+\noindent {\smallbtn This area is ready for field data collection \lookArrow}
+ %\noindent This area is ready for field data collection \lookArrow
  \clearpage
    %
    %
@@ -920,10 +935,12 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  In the Open Camera App:
  \vspace{2.5in}
 
- {\LARGE\noindent\fbox{Settings}  \lookArrow}
+\noindent{\bigbtn\fbox{Settings}  \lookArrow}
+ %{\LARGE\noindent\fbox{Settings}  \lookArrow}
  \vspace{3in}
 
- {\LARGE\noindent\fbox{Photo Settings}  \lookArrow}
+\noindent{\bigbtn\fbox{Photo Settings}  \lookArrow}
+ %{\LARGE\noindent\fbox{Photo Settings}  \lookArrow}
    %
  \clearpage
    %
@@ -951,10 +968,12 @@ In Catalog \rtArrow Right click on ACpub \rtArrow Administration \rtArrow Add Us
  In the Open Camera App:{\tiny (cont.)}
  \vspace{.2in}
 
- {\LARGE\noindent\fbox{Camera Resolution}  \lookArrow}
+\noindent{\bigbtn\fbox{Camera Resolution}  \lookArrow}
+ %{\LARGE\noindent\fbox{Camera Resolution}  \lookArrow}
  \vspace{6.5in}
 
- {\LARGE\noindent\fbox{640 x 480}  \lookArrow}
+ \noindent{\bigbtn\fbox{640 x 480}  \lookArrow}
+% {\LARGE\noindent\fbox{640 x 480}  \lookArrow}
    %
  \clearpage
    %
@@ -1000,10 +1019,12 @@ Each day the data must be prepared by executing the tool:
  .
  \vspace{2in}
 
- {\LARGE\noindent\fbox{Open the toolbox}  \lookArrow}
+\noindent{\bigbtn\fbox{Open the toolbox}  \lookArrow}
+% {\LARGE\noindent\fbox{Open the toolbox}  \lookArrow}
  \vspace{.5in}
 
- {\LARGE\noindent\fbox{1.Preprocess} \lookArrow}
+\noindent{\bigbtn\fbox{1.Preprocess} \lookArrow}
+%{\LARGE\noindent\fbox{1.Preprocess} \lookArrow}
 
 
  \clearpage
@@ -1028,13 +1049,15 @@ Each day the data must be prepared by executing the tool:
  Note the date and time
  \vspace{1in}
 
- \noindent{\LARGE\fbox{Sync}  \lookArrow}
+\noindent{\bigbtn\fbox{Sync}  \lookArrow}
+% \noindent{\LARGE\fbox{Sync}  \lookArrow}
  \vspace{3in}
 
- \noindent Note the date and time
+ \noindent{\smallbtn Note the date and time}
  \vspace{1in}
 
- \noindent{\Large Map is synchronized \lookArrow}
+\noindent{\btn Map is synchronized \lookArrow}
+% \noindent{\Large Map is synchronized \lookArrow}
  \clearpage
    %
    %
@@ -1089,10 +1112,12 @@ Each day the data must be prepared by executing the tool:
   %
 \vspace{2.5in}
 
-\noindent{\LARGE\fbox{Select a Parcel} \lookArrow}
+\noindent{\bigbtn\fbox{Select a Parcel} \lookArrow}
+%\noindent{\LARGE\fbox{Select a Parcel} \lookArrow}
 \vspace{4.5in}
 
-\noindent{\LARGE\fbox{Edit} \lookArrow}
+\noindent{\bigbtn\fbox{Edit} \lookArrow}
+%\noindent{\LARGE\fbox{Edit} \lookArrow}
 \clearpage
   %
   %
