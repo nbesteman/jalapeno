@@ -27,15 +27,18 @@
 \newcommand{\innerMar}{-.35in} % VAR FOR INNER MARGINS
 \newcommand{\outerMar}{-.35in} % VAR FOR OUTER MARGINS
 \newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\ding{227}}} % ding characters specified in symbols-a4 pg12
-\newcommand{\rtArrow}{\textcolor{HeaderOrangeC}{\ding{234} }}
-\newcommand{\lookArrow}{\textcolor{gisRed}{\ding{230} }}
+%\newcommand{\rtArrow}{\textcolor{HeaderOrangeC}{\ding{234} }}
+\newcommand{\rtArrow}{\LARGE\textcolor{HeaderOrangeC}{\ding{234} }}
+%\newcommand{\lookArrow}{\textcolor{gisRed}{\ding{230} }}
+\newcommand{\lookArrow}{\HUGE\textcolor{gisRed}{\ding{230} }}
 
   % Page 130 in symbols-a4 for ding arrows
-\newcommand{\menuArrow}{\textcolor{HeaderOrangeC}{$\Rightarrow$}}
+\newcommand{\menuArrow}{\HUGE\textcolor{HeaderOrangeC}{$\Rightarrow$}}
 \renewcommand{\labelitemi}{\localtextbulletone}
   %
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make horizontal graphic lines
-\newcommand{\marginText}{\fontfamily{cmr}\fontseries{b}\color{red}\fontsize{9}{12}\selectfont} % create new typeface for margins
+%\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Command to make horizontal graphic lines
+\newcommand{\HRule}{{\textcolor{HeaderOrangeE}{\rule{\linewidth}{\normalrulethickness}}}} % Command to make horizontal graphic lines
+\newcommand{\marginText}{\fontfamily{pcr}\fontseries{m}\color{red}\fontsize{7}{9}\selectfont} % create new typeface for margins
 \newcommand{\helv}{\color{HeaderOrangeE}\fontfamily{phv}\fontseries{b}\fontsize{9}{11}\selectfont} % Create new typeface for headers
 %\newcommand{\btn}{\fontfamily{pag}\fontseries{n}\color{HeaderBlueC}\fontsize{14}{15}\selectfont} % Create new typeface
 \newcommand{\btn}{\fontfamily{pag}\fontseries{m}\color{HeaderOrangeC}\fontsize{14}{15}\selectfont} % Create new typeface
@@ -62,7 +65,8 @@
 %\usepackage[protrusion=true,expansion=true]{microtype}
 
 \usepackage[tracking=true]{microtype}
-\SetTracking{encoding={*}, shape=sc}{240}
+%\SetTracking{encoding={*}, shape=sc}{240}
+\SetTracking{encoding={*}, shape=sc}{300}
 % Tracking is spacing of character and kerning is space bw pairs of characters(kerning pairs)
 %\usepackage[T1]{fontenc}
 
@@ -99,7 +103,8 @@
 %\renewcommand{\itemhook}{\setlength{\topsep}{0pt}%
 %\setlength{\itemsep}{0pt}}
 %\renewcommand{\itemhook}{\setlength{\topsep}{0pt}}
+
 %-------------------------------------------------------------------
   %
 \usepackage[pdftex,breaklinks,colorlinks=true,linkcolor=black,citecolor=blue,  % hyperref loads Last
-urlcolor=red,linktocpage=false,pagebackref=true,filecolor=magenta]{hyperref} % http://www.tug.org/applications/hyperref/manual.html#x1-100003.6
+urlcolor=HyperlinkBlue1,linktocpage=false,pagebackref=true,filecolor=magenta]{hyperref} % http://www.tug.org/applications/hyperref/manual.html#x1-100003.6
