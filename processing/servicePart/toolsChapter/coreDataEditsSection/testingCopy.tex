@@ -1,0 +1,141 @@
+  %  This Script provides the Treasurer Dept
+  %  Forfeiture Data Collection Mobile App Subsection
+  %  Or Can compile alone with the commented texts toggled
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+\def\titlename{Forfeiture Mobile App}
+\def\authorName{Allegan County GIS Services}
+\def\pdfTitle{Forfeiture Mobile App}
+\def\pdfSubject{GIS Tools} %
+\def\pdfKeywords{mobile,gis}
+
+\input{../../../preamble/subSectionPreamble.tex}
+  %
+%-------------------------------------------------------------------
+    %
+    %
+%\begin{document}% document begins
+ %
+ %--------------------------------------------------
+\chapter{Applications}
+\section{Treasurer}
+\subsection{Forfeiture Data Collection}
+  %
+\subsubsection{Problem and Analysis}
+  %
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\paragraph{Background}
+  %
+%\setlength{\baselineskip}{18pt}
+\noindent Treasurer department has an annual responsibility to properly document the tax forfeiture process.  The LIS Department built an application in MS Access and MapInfo that consumed a daily export from BSA and was deployed to the field on a laptop.  A digital camera was used for site photos and later imported into the laptop.
+  %
+\paragraph{Statement of Problem}
+  %
+\noindent The current Tax Forfeiture workflow is built on MapInfo software and MS Access amd executed on a laptop pc.  Both MapInfo and MS Access are no longer supported in county workflows.  ESRI software can be used to rebuild the workflow.  \textit{Forfeiture Data Collector Application}, (\textbf{Forfeiture App}) must be recreated in the ESRI framework.
+  %
+\paragraph{Analysis}
+  %
+\noindent \textbf{Forfeiture App} will facilitate: \textit{Mobile data collection on a handheld device},: (\textbf{Mobile Interface}) and an
+  %
+\textit{in office workflow to complete data processing}, (\textbf{Pre and PostProcessing})
+  %
+\subparagraph*{Mobile Interface}
+  %
+\begin{itemize} %
+  %
+\item Synchronize with data in the office (online)
+  %
+\item Collect data and photos of forfeiture sites (offline)
+  %
+\item Synchronize the collected data with data in the office (online)
+  %
+\end{itemize} %
+  %
+\subparagraph*{Pre \& Post Processing}
+  %
+\begin{itemize} %
+  %
+\item Produce and print a form for each site visited with required data and images
+  %
+\end{itemize} %
+  %
+\end{adjmulticols}
+  %
+\clearpage
+  %
+  %
+\paragraph{Forfeiture App Summary}
+\vspace{.25in}
+
+There are {\LARGE three parts} to the daily routine:
+%\vspace{.25in}
+
+\begin{enumerate}
+\item \Large Preprocessing \normalsize(in the office):
+  %
+\begin{itemize}
+\item Export current forfeiture list from BSA
+\item Update Forfeiture Parcels with BSA export
+\item Update Forfeiture Parcels with contaminated sites information
+\item Synchronize Forfeiture Parcels to Mobile Interface
+\end{itemize}
+  %
+\item \Large Field data collection \normalsize with Mobile Interface:
+  %
+\begin{itemize}
+\item Aids in navigation
+\item Provides a Checklist of data points for each site
+\item Attaches photos for each site
+\item Save results for synchronization in post-processing
+\end{itemize}
+  %
+\item \Large Post-processing \normalsize (in the office)
+  %
+\begin{itemize}
+\item Synchronize data and images collected in Mobile Interface to Forfeiture Parcels
+\item Export form for each site
+\item Print form for each site
+\item Update BSA data
+  %
+\end{itemize}
+  %
+\end{enumerate}
+  %
+ \clearpage
+   %
+   %
+ %\paragraph*{\Large Push \fbox{Next}}
+   %
+   % Single Figure No Wrap
+   %
+ {\btn Push \fbox{Next} }
+ \begin{figure}[h!]
+ \centering
+     \includegraphics[width=.75\textwidth]{LoadData4.PNG}
+ \caption{Load Data 3}
+ \end{figure}
+   %
+   
+  {\btn Push \fbox{Finish} }  
+ %\paragraph*{\Large Push \fbox{Finish}}
+   %
+\http{
+\begin{verbatim}
+
+https://gis.allegancounty.org/
+portal_webadaptor
+
+\end{verbatim}
+} 
+
+ \url{https://gis.allegancounty.org/portal_webadaptor}
+ \clearpage
+  %
+\end{document}
