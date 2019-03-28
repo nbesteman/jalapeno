@@ -1,0 +1,91 @@
+  %
+  %
+  %  Or Can compile alone with the commented texts toggled
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+% \def\titlename{ArcGIS Server Admin Directory}
+% \def\authorName{Allegan County GIS Services}
+% \def\pdfTitle{ArcGIS Server Admin Directory}
+% \def\pdfSubject{GIS Tools} %
+% \def\pdfKeywords{mobile,gis}
+%
+% \input{../../../preamble/subSectionPreamble.tex}
+  %
+%-------------------------------------------------------------------
+    %
+    %
+\begin{document}% document begins
+ %
+ %--------------------------------------------------
+%
+\subsection{Connecting to ArcGIS Server Admin Directory}
+
+\subsubsection{Generate a Portal Token}
+
+\paragraph{Run the Python Script}
+
+\begin{verbatim}
+
+import urllib, urllib2, json, ssl
+
+username ="bmayxxx"
+password = "gisRxxxxxxxx"
+
+tokenURL = 'https://gis.allegancounty.org/portal_webadaptor/sharing/#
+            rest/generateToken/'
+params = {'f': 'pjson', 'username': username, 'password': password, 'referer':#
+         'https://portal.allegancounty.org'}
+req = urllib2.Request(tokenURL, urllib.urlencode(params))
+try:
+    response = urllib2.urlopen(req)
+except:
+    gcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+    response = urllib2.urlopen(req, context=gcontext)
+data = json.load(response)
+token = data['token']
+print(token)
+
+\end{verbatim}
+
+{\bigbtn\fbox{Copy the Portal Token}}
+
+\clearpage
+
+\subsubsection{ArcGIS Server Admin Login}
+
+\paragraph{Login to Juniper}
+
+\noindent Windows R  {\rtArrow}  mstsc {\rtArrow} Juniper
+
+\paragraph{Connect to ArcGIS Server localhost}
+
+\noindent In a browser go to:
+
+\begin{verbatim}
+https://localhost:6443/arcgis/admin/services/System
+\end{verbatim} 
+UN: bmaxxxx\\
+PW: gisRxxxxxxxx\\
+{\bigbtn\fbox{Paste in the Portal Token}}
+   %
+   % Single Figure No Wrap
+   %
+ \begin{figure}[h!]
+ \centering
+     \includegraphics[width=.95\textwidth]{loginToServerAdminDirectory.png}
+\vspace{-.7in} 
+ \caption{Login to Server Admin Directory}
+ \end{figure}
+
+{\bigbtn Push \fbox{Login}}
+
+\clearpage
+%
+%
+\end{document}
