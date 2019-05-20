@@ -118,4 +118,100 @@
 \clearpage
     %
     %
+   
+    
+\subsubsection{Enterprise Geodatabase Performance Troubleshooting}
+    %
+\paragraph[Feature Dataset Editing Performance]{Editing Is Slow In a Specific Feature Dataset{\\}{}}
+    %
+
+This list of steps worked to improve performance in the ParcelEditing Feature Dataset.  Note the highlighted steps are suspected to be important and discussed further here.
+    %
+\begin{itemize}
+    %
+\item Compress GDB
+
+\item Analyze Dataset
+
+\item Unregister Replicas
+
+\item Compress GDB
+
+\item {\LARGE Unversion Dataset}
+
+\item {\LARGE Restart the SQL Server}
+
+\item Delete Topology
+
+\item Recreate Topology
+
+\item {\LARGE Register dataset as versioned}
+    %
+\end{itemize}
+
+\clearpage
+
+
+\subparagraph{Unregister As Versioned}
+
+\noindent With all users disconnected
+    %
+\begin{itemize}
+    %
+\item In Catalog $\Rightarrow$  ACPro $\Rightarrow$ Problem Dataset { \rtArrow} Manage $\Rightarrow$ Unregister As Versioned
+    %
+\end{itemize}
+    %
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.5\textwidth]{unregisterAsVersioned.png}
+    %
+\vspace*{-3mm}\caption{Unregister FDS as Versioned}
+
+\end{figure}
+  %
+\clearpage
+  %
+  
+  
+\subparagraph{Restart the SQL Server}
+
+\begin{itemize}
+    %
+\item In SQL Server Management Studio { \rtArrow}  Juniper $\Rightarrow$ restart
+    %
+\end{itemize}
+    %
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.5\textwidth]{restartSQLServer.png}
+    %
+\vspace*{-3mm}\caption{Restart SQL Server}
+
+\end{figure}
+\clearpage
+
+
+\subparagraph{Register the FDS as Versioned}
+    %
+%\noindent {\Large kk}
+    %
+\begin{itemize}
+    %
+\item In Catalog $\Rightarrow$  ACPro $\Rightarrow$ Problem Dataset  { \rtArrow} Manage $\Rightarrow$ Register As Versioned
+    %
+\end{itemize}
+    %
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.5\textwidth]{registerAsVersioned.PNG}
+    %
+\vspace*{-3mm}\caption{Register FDS as Versioned}
+
+\end{figure}
+  %
+\clearpage
+ 
+    
 \end{document}
