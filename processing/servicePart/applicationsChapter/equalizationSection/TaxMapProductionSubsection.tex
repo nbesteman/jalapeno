@@ -1,0 +1,298 @@
+  %  
+  %  
+  %  
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+%\def\titlename{Tax Map Production}
+%\def\authorName{Allegan County GIS Services}
+%\def\pdfTitle{Tax Map Production}
+%\def\pdfSubject{GIS Tools} %
+%\def\pdfKeywords{map production,gis}
+%
+%\input{../../../preamble/subSectionPreamble.tex}
+  %
+%-------------------------------------------------------------------
+    %
+    %
+\begin{document}% document begins
+ %
+ %--------------------------------------------------
+\subsection{Tax Map Production}
+  %
+\subsubsection{Problem and Analysis}
+  %
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\paragraph{Background}
+  %
+\noindent Equalization department (EQ) has an annual responsibility to produce a printed version of maps that show all of the tax parcels in the county for every tax year.  The GIS Services Department(GIS) has traditionally provided this as a service to Equalization.
+  %
+\paragraph{Statement of Problem}
+  %
+\noindent Annually, after March Board of Review, a tool is needed to create updated parcel maps for printing by Equalization and the local units.
+  %
+\paragraph{Analysis}
+  %
+\noindent \textbf{Tax Map Production Workflow} will facilitate: Creation of new tax maps for each new tax year.
+  %
+%\textit{in office workflow to complete data processing}, (\textbf{Pre and PostProcessing})
+  %
+\subparagraph{People Involved in the Workflow}
+  %
+\begin{itemize} %
+\item GIS Analyst
+\item EQ Mapper
+\end{itemize} %
+  %
+\subparagraph*{Stages of the Workflow}
+  %
+\begin{itemize} %
+\item Data Updates
+\item Map Production Testing
+\item Map Style Refinement
+\item Map Production
+\end{itemize} %
+  %
+\end{adjmulticols}
+  %
+\clearpage
+  %
+  %
+\paragraph{Tax Map Production Summary}
+\vspace{.25in}
+
+The {\LARGE Four Stages} of the workflow:
+\vspace{.25in}
+
+\begin{enumerate}
+\item {\Large Data Updates} {\normalsize Tax Roll Rollover}:
+  %
+\begin{itemize}
+\item Update ACParcelsPublishing FDS from ACParcelsEditing FDS
+\item Prepare ACParcelsEditing FDS for the next year of use 
+\item Add or delete quarter section index frames
+\end{itemize}
+  %
+\item {\Large Map Production Testing:}
+  %
+\begin{itemize}
+\item Execute Tax Map Builder ArcPy Script on test units
+\item QA QC to verify updates
+\end{itemize}
+  %
+\item {\Large Map Refinement}
+  %
+\begin{itemize}
+\item Symbols
+\item Labels
+\item Layer Order
+\end{itemize}
+  %
+\item {\Large Map Production:}
+  %
+\begin{itemize}
+\item Execute Tax Map Builder ArcPy Script on all units
+\item QA QC results
+\end{itemize}
+  %
+\end{enumerate}
+  %
+\clearpage
+  %
+  %
+\paragraph{Technologies Used in The Tax Map Workflow}
+  %
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\subparagraph{ArcGIS Enterprise}
+  %
+SQL Server Source Data:
+  %
+\begin{itemize}
+\item ACPro.SDE
+\end{itemize}
+   %
+\subparagraph{ArcGIS Desktop}\noindent ArcPy tools produce map pages using Data Driven Pages (DDP) functionality
+   %
+\subparagraph{Production Data}
+\begin{itemize}
+\item ACCadastral.gdb {\tiny (File GDB Created From ACPro.SDE)}
+\end{itemize}
+  %
+\subparagraph{Python}\noindent A Python interpreter to tune the TaxMapTool.py script  
+  
+  
+\subparagraph{Adobe Acrobat}\noindent Combine pdf pages into books by unit
+  %
+\end{adjmulticols}
+   %
+   % Single Figure
+   %
+% \begin{figure}[H]
+% \centering
+%     \includegraphics[width=.9\textwidth]{TechFlowChart}
+% \vspace{-.25in}
+
+%\caption{Technology Design}
+%\end{figure}
+
+
+\clearpage
+  %
+  %  
+\subsubsection{Data Udpate Procedure}
+  %
+  %
+\paragraph{Updates to AC\_ Pro.sde}
+  % 
+Datasets involved:
+
+\begin{itemize}
+\item ParcelEditing
+\item ParcelPublishing
+\item TaxMapIndexFrames
+\item TaxMapLayers
+\item TaxMapUnitBounds
+\end{itemize}
+   %
+\paragraph{Update Procedure}   
+   
+\subparagraph{Parcel Editing and Parcel Publishing}
+   %
+Annually, the ParcelEditing feature dataset (FDS) is used to update the ParcelPublishing FDS.  For each FC in ParcelPublishing:
+\begin{itemize}
+\item Delete all features
+\item Load all features from corresponding FCs
+\end{itemize}
+  %
+\begin{table}[htbp]
+\centering
+\resizebox{.8\linewidth}{!}{%
+\begin{tabular}{|c|c|}
+\hline
+\multicolumn{2}{|c|}{{Data Update Relation}}\\
+\hline
+FC in ParcelEditing&FC in ParcelPublishing\\
+\hline
+AC\_COGO\_LnEdits&AC\_COGO\_Ln\\
+\hline
+AC\_DimensionsEdits&AC\_Dimensions\\
+\hline
+AC\_PointsEdits&AC\_Points\\
+\hline
+AC\_Splits&AC\_Parcels\\ 
+\hline
+AC\_SubBlocksEdits&AC\_SubBlocks\\
+\hline
+AC\_SubdivisionsEdits&AC\_Subdivisions\\
+\hline
+AC\_SublotsEdits&AC\_Sublots\\
+\hline
+AC\_TiebarsEdits&AC\_Tiebars\\
+\hline
+  %
+\end{tabular}
+}
+
+\end{table}
+  %
+\clearpage
+  %
+  %
+\subparagraph{TaxMapIndexFrames}As this is the index layer for the DDP, Quarter Quarter Section frames must be added or removed to account for added or removed subdivision features.
+  %
+\subparagraph{TaxMapLayers}Layers that are derived from other fcs for cartography purposes
+\begin{itemize}
+\item AC\_M\_Rd\_Lbl is a subset of AC\_Roads used only for less busy labeling
+\item AC\_MapID\_RR is a subset of AC\_Parcels used only for Railroad Labeling
+\item AC\_Road\_ROWs\_Tax is an aggregation of AC\_Road\_ROWs by unit
+\end{itemize}
+  %
+\subparagraph{TaxMapUnitBounds}Layers extracted from AC\_Units for bounding polygons in the locator Data Frame
+  %
+\clearpage
+  %
+  %
+\paragraph{Workspace Folder Setup}Inside of J:{\menuArrow}Apps{\menuArrow}Python{\menuArrow}TaxMaps:
+
+\noindent Copy the folder: \textbf{TaxMapsWorkspaceTemplate}
+
+\noindent Into the years folder and rename to: \textbf{YYYY}
+
+
+\paragraph{Production Data Creation}In the source folder, create a new file GDB named AC\_Cadastral.  Import the following FDSs from AC\_Pro.sde:
+\begin{itemize}
+\item AdministrativeArea
+\item CadastralReference
+\item Hydrology
+\item ParcelPublishing
+\item Roads
+\item TaxMapIndexFrames
+\item TaxMapLayers
+\item TaxMapUnitBounds
+\end{itemize}
+  %
+\clearpage
+  %
+  %
+\paragraph{Map Production Setup} In the new workspace folder:
+
+\subparagraph{ArcGIS Desktop}
+
+Use ArcMap Catalog to navigate to:\\
+workspace folder{\menuArrow} processing {\menuArrow} Toolbox {\menuArrow} TaxMapTools.tbx\\
+Double click on the \textbf{TaxMapBuilder} script
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.9\textwidth]{TaxMapBuilder.png}
+ \caption{Tax Map Builder UI}
+ \end{figure}
+
+\noindent To execute the tool:
+
+\noindent Make selections in the tool from the appropriate locations in the workspace folder.
+  %
+\clearpage
+  %
+  %
+\paragraph{Map Refinement}Test groups of maps should be produced.  
+
+\noindent Any style improvements that can be made should be done at this time.
+
+\paragraph{Map Production}
+
+Use ArcMap Catalog to navigate to:\\
+workspace folder{\menuArrow} processing {\menuArrow} Toolbox {\menuArrow} TaxMapTools.tbx\\
+Double click on the \textbf{TaxMapBuilder} script
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.9\textwidth]{TaxMapBuilderAllUnits.png}
+ \caption{Tax Map Builder UI}
+ \end{figure}
+
+Select All Units and Press OK
+  %
+\clearpage
+  %
+  %
+\subparagraph{Create Books from Pages}
+
+For each unit, organize the pages into the TaxMapUnitFolders.
+
+\noindent Move the pages to the appropriate pdf folders inside the delivered folder of the workspace. 
+
+\noindent Combine all of the individual map pages into books using Adobe Acrobat and save to the PDF\_Book folder. 
+  
+\subparagraph{Share the map books with Equalization}
+
+Copy the entire TaxMapUnitsFolder to:\\
+J: {\menuArrow} Departments {\menuArrow} Equalization {\menuArrow} TaxMaps {\menuArrow} TaxMap Archive
+
+\end{document}
