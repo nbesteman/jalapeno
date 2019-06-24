@@ -1,0 +1,86 @@
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+%\def\titlename{File Renaming with Python}
+%\def\authorName{Allegan County GIS Services}
+%\def\pdfTitle{File Renaming with Python}
+%\def\pdfSubject{Python Scripts} %
+%\def\pdfKeywords{mobile,gis,python}
+%\input{../../../preamble/subSectionPreamble.tex}
+  %
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR GLOBAL COMPILE   %
+  %
+\begin{document}% document begins
+  %
+%-------------------------------------------------------------------
+  %
+\subsection{File Rename with Python}
+  %
+\subsubsection{Purpose and Summary}
+  %
+\paragraph{Purpose} Changing the file names within a directory
+  %
+\paragraph{Summary} This script creates a list of all files in a source folder and then iterates through the list editing the file names, in this case, replacing spaces with no spaces.
+  %
+\subsubsection{Requirements}
+  %
+\paragraph{Software}
+  %
+\begin{itemize}
+\item python 2.7 and a Python IDE
+\item A text editor
+\end{itemize}
+  %
+\subparagraph{Python(2.7)} This script was developed in python 2.7
+  %
+\subparagraph{The Python Script}
+  %
+{\begin{footnotesize}\color{orange}
+  %
+\begin{verbatim}
+#-------------------------------------------------------------------------------
+# Name:        RenameFiles.py
+#
+# Purpose:     Renames any number of files within a directory
+#
+# Notes:        This script creates a list of all files in a source folder and
+#                   then iterates through the list editing the file names,
+#                   in this case, replacing spaces with no spaces.
+# Author:      BMay
+#
+# Created:     20190620
+# Updated:	   20190621
+#-------------------------------------------------------------------------------
+################################################################################
+#   Imports and Relative path folder setup
+################################################################################
+import os, sys
+project = os.path.dirname(os.path.dirname(__file__))
+processing = os.path.join(project, 'processing')
+build = os.path.join(project,'build')
+
+################################################################################
+#   vars
+################################################################################
+renameSrc = os.path.join(processing, 'RenameSource')
+
+################################################################################
+#   Main
+################################################################################
+if __name__ == "__main__":
+
+    os.chdir(renameSrc)
+    for i in os.listdir(renameSrc):
+        print i
+        newName = i.replace(' ','')
+        print newName
+        os.rename(i, newName)
+\end{verbatim}
+  %
+\end{footnotesize}}
+  %
+\end{document}

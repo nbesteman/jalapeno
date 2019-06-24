@@ -9,11 +9,10 @@
 %  Calling the memoir class with no options is equivalent to:
 %  \documentclass[letterpaper,10pt,twoside,onecolumn,openright,final]{memoir}
 %
-%
 %-------------------------------------------------------------------
   %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-% PREAMBLE  %
+%  PREAMBLE  %
 \input{preamble/preamble.tex} % Package imports and custom commands
   %
 \input{preamble/graphicsPath.tex} % Graphics Path String
@@ -52,12 +51,12 @@ pdfkeywords={documentation,gis}} %
 %-------------------------------------------------------------------
  %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-% CREATE THE GLO AND IDX FILES  %
+%  CREATE THE GLO AND IDX FILES  %
 \makeglossary % creates glo file
 
 \makeindex % Creates idx file
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-%    SET TEXT BLOCK AND MARGINS FOR COVER PAGE  %
+%  SET TEXT BLOCK AND MARGINS FOR COVER PAGE  %
 \setmarginnotes{.1in}{.4in}{.1in}
   %
 \setlrmarginsandblock{*}{0.18\paperwidth}{1} % Left right ratio
@@ -75,7 +74,8 @@ pdfkeywords={documentation,gis}} %
 %-------------------------------------------------------------------
 \begin{document} % Document Begins
   %
-\frontmatter % pg 75 class doc turns off chapter numbering and uses lower case roman numerals for page numbers
+\frontmatter % pg 75 class doc turns off chapter numbering and uses
+  %                  lower case roman numerals for page numbers
   %
 \pagestyle{plain} % No Headers and Footers
   %
@@ -84,9 +84,9 @@ pdfkeywords={documentation,gis}} %
 \titleM  % Inputs titleM
   %
 \end{titlingpage}
-%   %
-% %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-% %    SET TEXT BLOCK AND MARGINS FOR MAIN DOCUMENT PAGES   %
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  %    SET TEXT BLOCK AND MARGINS FOR MAIN DOCUMENT PAGES   %
 \setmarginnotes{.1in}{.4in}{.1in}
   %
 \setlrmarginsandblock{*}{0.18\paperwidth}{.75} % Left right ratio
@@ -104,7 +104,9 @@ pdfkeywords={documentation,gis}} %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %		Main Section
 %-------------------------------------------------------------------
-\mainmatter % pg 75 class doc turns on chapter numbering, resets page numbering and uses arabic numerals for page numbers starts at the next coming recto page
+\mainmatter % pg 75 class doc turns on chapter numbering, resets page
+  %               numbering and uses arabic numerals for page numbers
+  %               starts at the next coming recto page.
   %
 \chapterstyle{jalapenoChapterStyle} % custom from chapterStyles.tex
   %
@@ -120,17 +122,17 @@ pdfkeywords={documentation,gis}} %
 \part{Methods}
   %
 \subimport{methodPart/}{documentationChapter.tex}
-%   %
+  %
 \subimport{methodPart/}{teamConceptChapter.tex}
-%
+  %
 \subimport{methodPart/}{learningChapter.tex}
-%
+  %
 \part{Service}
-
+  %
 \subimport{servicePart/}{applicationsChapter.tex}
-%
+  %
 \subimport{servicePart/}{toolsChapter.tex}
-
+  %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %		Back Section
 %-------------------------------------------------------------------
@@ -142,7 +144,8 @@ pdfkeywords={documentation,gis}} %
   %
 \input{preamble/pageLayoutCommandsAlt.tex} % Headings Spacing for the backmatter
   %
-\backmatter % pg 75 class doc prohibits sectional division numbering, and captions, etc., will be numbered continuously.
+\backmatter % pg 75 class doc prohibits sectional division numbering,
+  %                and captions, etc., will be numbered continuously.
   %
 \begin{appendices} % Appendix Environment
   %
@@ -150,7 +153,7 @@ pdfkeywords={documentation,gis}} %
   %
 \end{appendices}
   %
-%\bibliographystyle{amsplain} % sets biblioigraphy style
+\bibliographystyle{amsplain} % sets biblioigraphy style
 \bibliographystyle{plain} % sets biblioigraphy style
   %
 \bibliography{referenceEntries} % Puts bibliography here

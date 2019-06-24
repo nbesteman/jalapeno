@@ -1,11 +1,13 @@
-%\documentclass[letterpaper, 12pt]{memoir}
-  %
-%\input{../preamble}
+%\documentclass[class=book , crop=false]{standalone}
+%\usepackage[subpreambles=false]{standalone}
   %
 \begin{document}
   %
 \chapter{Tools}
   %
+  %
+\subimport{toolsChapter/}{bsaSupportSection.tex}
+\clearpage
 \subimport{toolsChapter/}{coreDataEditsSection.tex}
 \clearpage
 \subimport{toolsChapter/}{coreDataSchemaSection.tex}
@@ -14,14 +16,14 @@
 \clearpage
 \subimport{toolsChapter/}{gisAdminSection.tex}
 \clearpage
-\subimport{toolsChapter/}{bsaSupportSection.tex}
-\clearpage
 \subimport{toolsChapter/}{latexPackagesSection.tex}
 \clearpage
 \subimport{toolsChapter/}{latexTemplatesSection.tex}
 \clearpage
-\subimport{toolsChapter/}{pdfToolsSection.tex}
+\subimport{toolsChapter/}{pythonScriptsSection.tex}
 \clearpage
 \subimport{toolsChapter/}{QGISSection.tex}
+\clearpage
+  %
   %
 \end{document}
