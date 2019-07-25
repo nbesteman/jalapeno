@@ -1,0 +1,85 @@
+\begin{document}% document begins
+  %
+\subsection{Using Coordinates From Survey Plans}
+  %
+\subsubsection[How to use]{How to use Northing and Easting Coordinates Table}
+  %
+\paragraph[Use a Spreadsheet]{}\textbf{{\Large Using a spreadsheet to convert the dimensions}}
+  %
+\noindent To use Northing and Easting from survey plans: In a spreadsheet, adjust the data to be relative to the 1st point\\
+  %
+\noindent So if a survey gives you:\\
+
+\begin{table}[htbp]
+\centering
+\resizebox{.5\linewidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Pt&Northing&Easting\\ \hline
+1&995.9952&9766.6\\
+2&994.3049&9112\\
+3&989.234&7150\\
+4&1194.3099&9114\\
+5&1193.266&8710.2059\\
+6&1193.0954&8644.2016\\
+...&...&...\\
+32&1617.7856&8827.4296\\
+\hline
+\end{tabular}
+}
+\caption{Survey Plan Northing and Easting}
+\end{table}
+
+\clearpage
+
+\noindent Calculate Relative North and Relative Easting of the points to Point 1 by subtracting the point 1 values from each of the other points.\\
+%vspace{.1in}
+
+\noindent Use formulas:
+
+\begin{table}[htbp]
+\centering
+\resizebox{.75\linewidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+
+ &A&B&C&D&E\\\hline
+1&Pt&Northing&Easting&Relative NS&Relative EW\\
+2&1&995.9952&9766.6&0&0\\
+3&2&994.3049&9112&=B3-B\textdollar2&=C3-C\textdollar2\\
+4&3&989.234&7150&=B4-B\textdollar2&=C4-C\textdollar2\\
+...&...&...&...&...&...\\
+6&32&1617.7856&8827.4296&=B9-B\textdollar2&=C9-C\textdollar2\\
+\hline
+\end{tabular}
+}
+\caption{Survey Plan Northing and Easting}
+\end{table}
+
+Giving you:
+
+\begin{table}[htbp]
+\centering
+\resizebox{.75\linewidth}{!}{%
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+ &A&B&C&D&E\\\hline
+1&Pt&Northing&Easting&Relative NS&Relative EW\\
+2&1&995.9952&9766.6&0&0\\
+3&2&994.3049&9112&-1.6903&-654.6\\
+4&3&989.234&7150&-6.7612&-2616.6\\
+...&...&...&...&...&...\\
+6&32&1617.7856&8827.4296&621.7904&-939.1704\\
+\hline
+\end{tabular}
+}
+\caption{Relative Northing and Easting}
+\end{table}
+
+So to place pt 32:\\
+
+From pt 1:\\
+
+Use distances 621.7904' N and 939.1704'W
+
+\end{document}
