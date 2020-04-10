@@ -3,8 +3,8 @@
   %  Or Can compile alone with the commented texts toggled
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %    To Do:
-%
-%
+%  20200410 Notes
+% Around line 519 Editing Admin manual
 %
 %-------------------------------------------------------------------
 % OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
@@ -423,12 +423,14 @@ There are {\LARGE three parts} to the daily routine:
    %
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=1\textwidth]{ForfeitureQueryLayerDetails.PNG}
+     \includegraphics[width=.9\textwidth]{ForfeitureQueryLayerDetails.PNG}
  \caption{New Query Layer Dialog}
  \end{figure}
    %
+\vspace{.1in}
+Edit Query Text for current Year:
+\vspace{.1in}
  \begin{verbatim}
- Query Text:
  SELECT [parcelnumber] FROM [D005ALLEGAN].[dbo].[Forfeitures]
  WHERE forf_year = 2019
  \end{verbatim}
@@ -468,8 +470,12 @@ There are {\LARGE three parts} to the daily routine:
  \paragraph{Add Parcels Layer to the Map}
 %\vspace{.3in}
 
- Add ACParcelsCombined to the map to provide parcel geometry and attributes
-   %
+ \begin{itemize}
+ \item {Parcels are added to the map to provide parcel geometry and attributes}
+ \item {Parcel year is = current year - 3}
+ \item {I.E. Use ACParcelsCombHistoric2017 in 2020}
+ \end{itemize}
+
  \vspace{.25in}
 
    %
@@ -477,10 +483,85 @@ There are {\LARGE three parts} to the daily routine:
    %
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.95\textwidth]{ParcelLayerAdded.PNG}
+     \includegraphics[width=.75\textwidth]{ParcelLayerAdded.PNG}
  \caption{Parcels Layer Added}
  \end{figure}
  \clearpage
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  \paragraph{Check for any Forfeiture Parcel that will be missing spatial data}
+%\vspace{.3in}
+
+ \begin{itemize}
+ \item {Join Parcels to Forfeiture table}
+
+ \end{itemize}
+
+ \vspace{.25in}
+
+   %
+   % Single Figure No Wrap
+   %
+ \begin{figure}[h!]
+ \centering
+     \includegraphics[width=.75\textwidth]{joinToForfTable.PNG}
+ \caption{Join to Forfeiture Table}
+ \end{figure}
+ \clearpage
+ 
+ 
+ 
+   \paragraph{Select Any records that are missing spatial}
+%\vspace{.3in}
+
+ \begin{itemize}
+ \item {Select and export Parcels missing spatial}
+
+ \end{itemize}
+
+ \vspace{.25in}
+
+   %
+   % Single Figure No Wrap
+   %
+ \begin{figure}[h!]
+ \centering
+     \includegraphics[width=.5\textwidth]{selectForMissingSpatial.PNG}
+ \caption{Select for Missing Spatial}
+ \end{figure}
+ 
+ 
+ \begin{figure}[h!]
+ \centering
+     \includegraphics[width=.5\textwidth]{exportMissingSpatial.PNG}
+ \caption{Export Missing Spatial}
+ \end{figure}
+  \clearpage
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
    %
    %
  \paragraph{Create Join}
