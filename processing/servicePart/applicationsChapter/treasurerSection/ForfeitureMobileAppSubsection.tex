@@ -371,6 +371,26 @@ There are {\LARGE three parts} to the daily routine:
  \clearpage
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \paragraph{Create new connection to BSA server}
 
  A connection to BSA is used to get the latest forfeiture information.
@@ -432,7 +452,7 @@ Edit Query Text for current Year:
 \vspace{.1in}
  \begin{verbatim}
  SELECT [parcelnumber] FROM [D005ALLEGAN].[dbo].[Forfeitures]
- WHERE forf_year = 2019
+ WHERE forf_year = 2020
  \end{verbatim}
    %
    %
@@ -472,8 +492,8 @@ Edit Query Text for current Year:
 
  \begin{itemize}
  \item {Parcels are added to the map to provide parcel geometry and attributes}
- \item {Parcel year is = current year - 3}
- \item {I.E. Use ACParcelsCombHistoric2017 in 2020}
+ \item {Parcel year is = current year - 2}
+ \item {I.E. Use ACParcelsCombHistoric2018 in 2020}
  \end{itemize}
 
  \vspace{.25in}
@@ -483,7 +503,7 @@ Edit Query Text for current Year:
    %
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.75\textwidth]{ParcelLayerAdded.PNG}
+     \includegraphics[width=.95\textwidth]{ParcelLayerAdded.PNG}
  \caption{Parcels Layer Added}
  \end{figure}
  \clearpage
@@ -494,80 +514,73 @@ Edit Query Text for current Year:
  
  
  
-  \paragraph{Check for any Forfeiture Parcel that will be missing spatial data}
-%\vspace{.3in}
+  \paragraph{Forfeiture parcel missing spatial data}
+  
+  \subparagraph*{A temporary join, selection, and export will save these}
+  
+  \vspace{.3in}
 
  \begin{itemize}
  \item {Join Parcels to Forfeiture table}
 
- \end{itemize}
+ %\end{itemize}
 
- \vspace{.25in}
+ %\vspace{.25in}
 
    %
    % Single Figure No Wrap
    %
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.75\textwidth]{joinToForfTable.PNG}
+     \includegraphics[width=1\textwidth]{joinToForfTable.PNG}
  \caption{Join to Forfeiture Table}
  \end{figure}
  \clearpage
  
- 
- 
-   \paragraph{Select Any records that are missing spatial}
-%\vspace{.3in}
 
- \begin{itemize}
- \item {Select and export Parcels missing spatial}
 
- \end{itemize}
+ %\begin{itemize}
+ \item {Select any parcels missing spatial data}
 
- \vspace{.25in}
+ %\end{itemize}
+
+% \vspace{.25in}
 
    %
    % Single Figure No Wrap
    %
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.5\textwidth]{selectForMissingSpatial.PNG}
+     \includegraphics[width=.65\textwidth]{selectForMissingSpatial.PNG}
  \caption{Select for Missing Spatial}
  \end{figure}
+
+ %\begin{itemize}
+ \item {Export Parcels missing spatial to a table in the GDB}
+
+ \end{itemize}
  
  
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.5\textwidth]{exportMissingSpatial.PNG}
+     \includegraphics[width=.75\textwidth]{exportMissingSpatial.PNG}
  \caption{Export Missing Spatial}
  \end{figure}
-  \clearpage
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ \clearpage
    %
    %
- \paragraph{Create Join}
+   
+\paragraph{Create current year Forfeiture dataset}
+ \subparagraph{Create Join}
  \vspace{.3in}
 
- Create new join to \emph{ACParcelsCombined} of forfeitures on parcel numbers
+\begin{itemize}
+
+\item{Create new join to \emph{ACParcelsCombHistoricXXXX} of forfeitures on parcel numbers}
+
+\end{itemize}
+
    %
  \vspace{.25in}
 
@@ -582,7 +595,7 @@ Edit Query Text for current Year:
  \clearpage
    %
    %
- \paragraph[Export Joined Features]{Export Joined Features to a temp location \texorpdfstring{\\}{}}
+ \subparagraph[Export Joined Features]{Export Joined Features to a temp location \texorpdfstring{\\}{}}
    %
  \begin{itemize}
  %\item Right click \ding{212} on joined feature class in TOC and choose export
@@ -603,7 +616,7 @@ Edit Query Text for current Year:
    %
    %
  \subparagraph[Load data to forfeitureParcels]{\Large Load data from temp location to forfeitureParcels}
- \subparagraph*{}
+ %\subparagraph*{}
    %
    % Single Figure No Wrap
    %
@@ -612,12 +625,14 @@ Edit Query Text for current Year:
      \includegraphics[width=.95\textwidth]{LoadData.PNG}
  \caption{Load Data 1}
  \end{figure}
- \clearpage
-   %
-   %
-
-{\bigbtn Push \fbox{Next}}
- %\paragraph*{\Large Push \fbox{Next}}
+ 
+ {\bigbtn choose features from a temp location}
+ 
+\vspace{.2in} 
+ 
+ {\bigbtn Push \fbox{Next}} 
+ 
+ 
    %
    % Single Figure No Wrap
    %
@@ -626,9 +641,9 @@ Edit Query Text for current Year:
      \includegraphics[width=.65\textwidth]{LoadData2.PNG}
  \caption{Load Data 2}
  \end{figure}
- \clearpage
-   %
-   %
+ 
+\clearpage
+
  \paragraph[Match these fields]{\Large Match these fields}
 
    %
@@ -658,21 +673,65 @@ Edit Query Text for current Year:
    %
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.75\textwidth]{LoadData4.PNG}
+     \includegraphics[width=.95\textwidth]{LoadData4.PNG}
  \caption{Load Data 3}
  \end{figure}
    %
 
 {\bigbtn Push \fbox{Finish}}
-% \paragraph*{\Large Push \fbox{Finish}}
+
    %
  \clearpage
    %
    %
+   
+   
+\paragraph{Calculate Initial Values}
+
+
+\subparagraph{Calculate In List value}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.5\textwidth]{InListToYes.PNG}
+ \caption{Calculate In List}
+ \end{figure}
+
+\subparagraph{Calculate Posted Value}   
+   
+  \begin{figure}[h!]
+ \centering
+     \includegraphics[width=.5\textwidth]{PostedToNo.PNG}
+ \caption{Calculated Posted}
+ \end{figure} 
+   
+   
+\subparagraph{Calculate Posted InList Value}   
+   
+  \begin{figure}[h!]
+ \centering
+     \includegraphics[width=.5\textwidth]{PostedAndInList.PNG}
+ \caption{Calculate Posted in List}
+ \end{figure} 
+   
+   
+\clearpage
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
  \paragraph{Data Setup}
  \vspace{.2in}
 
- Register as versioned and Add Global IDs
+\subparagraph{Register as versioned and Add Global IDs} 
+ 
+
  \vspace{.2in}
 
  \noindent{\large Right Click {\rtArrow} Manage {\rtArrow} Register as Versioned}
@@ -697,6 +756,7 @@ Edit Query Text for current Year:
    %
    %
  \paragraph[Create Attachments]{\Large Create Attachments\texorpdfstring{\\}{}}
+Attachments is for storing the photos for each feature.
 
  \noindent{\large Right Click {\rtArrow} Manage {\rtArrow} Add Attachments}
  \vspace{.3in}
@@ -710,21 +770,20 @@ Edit Query Text for current Year:
      \includegraphics[width=.8\textwidth]{createAttachments.PNG}
  \caption{Create Attachments}
  \end{figure}
+ 
+ 
+  \subparagraph{Calculate Acres in ForfeitureParcels}
+
+\noindent{\large Right Click {\rtArrow} Acres Column {\rtArrow}Calculate geometry (acres)}
+
  \clearpage
- 
- 
- 
- 
- 
- 
- 
  
  
    %
    %
  \paragraph[Setup Users in ArcGIS]{\Large Setup Users in ArcGIS\texorpdfstring{\\}{}}
 
- Users that will run Pre and Post processing scripts must be created and given priviliges on ACPub Treasurer Feature Data Set.
+ Users that will run Pre and Post processing scripts must be created and given priviliges on Treasurer Feature Data Set.
  \vspace{.35in}
 
  \noindent For any new users of the geoprocessing tools:
@@ -738,7 +797,7 @@ Edit Query Text for current Year:
 
  \vspace{.15in}
 
-In Catalog {\rtArrow} Right click on ACpub {\rtArrow} Administration {\rtArrow} Add User
+In Catalog {\rtArrow} Right click on ForfeituresFieldwork {\rtArrow} Administration {\rtArrow} Add User
 
  \vspace{.35in}
 
@@ -794,7 +853,9 @@ In Catalog {\rtArrow} Right click on ACpub {\rtArrow} Administration {\rtArrow} 
  \clearpage
    %
    %
- \paragraph[Setup Users in Portal for ArcGIS]{\Large Setup Users in Portal for ArcGIS\texorpdfstring{\\}{}}
+\paragraph{Portal Setup}
+ 
+\subparagraph{Setup Users in Portal for ArcGIS}
  \vspace{.5in}
 
  \noindent Users that will use the Collector for ArcGIS must have profiles added to and managed in the Allegan County GIS Portal site.
@@ -818,7 +879,9 @@ In Catalog {\rtArrow} Right click on ACpub {\rtArrow} Administration {\rtArrow} 
  \clearpage
    %
    %
- \paragraph[Add Members to Portal]{\Large Add Members to Portal\texorpdfstring{\\}{}}
+
+ \subparagraph{Add Members to Portal}
+ 
  \vspace{.4in}
 
  {\Large Select Built in Member {\rtArrow}}
@@ -838,7 +901,7 @@ In Catalog {\rtArrow} Right click on ACpub {\rtArrow} Administration {\rtArrow} 
  \clearpage
    %
    %
- \paragraph[Enter required info]{\Large Enter required info\texorpdfstring{\\}{}}
+ \subparagraph{Enter required info for new member}
    %
  \vspace{.5in}
 
@@ -847,13 +910,13 @@ In Catalog {\rtArrow} Right click on ACpub {\rtArrow} Administration {\rtArrow} 
    %
  \begin{figure}[h!]
  \centering
-     \includegraphics[width=.9\textwidth]{PortalAddUser3.png}
+     \includegraphics[width=.95\textwidth]{PortalAddUser3.png}
  \caption{Portal Add User 3}
  \end{figure}
  \clearpage
    %
    %
- \paragraph[Manage Treasurer Group]{\Large Manage Treasurer Group\texorpdfstring{\\}{}}
+ \subparagraph{Manage Treasurer Group}
  \vspace{.5in}
 
  In Portal {\rtArrow} Go to groups {\rtArrow} Invite new user to the group
@@ -870,7 +933,7 @@ In Catalog {\rtArrow} Right click on ACpub {\rtArrow} Administration {\rtArrow} 
  \clearpage
    %
    %
- \paragraph[Share Portal Content]{\Large Share Content To The Group\texorpdfstring{\\}{}}
+ \subparagraph{Share Portal Content with the group}
  \vspace{.5in}
 
  \noindent Any content used by the group needs to be shared to the group
@@ -887,6 +950,63 @@ In Catalog {\rtArrow} Right click on ACpub {\rtArrow} Administration {\rtArrow} 
  \clearpage
    %
    %
+
+
+\paragraph{Start services and webmap}
+
+\subparagraph{Find published MXD}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.9\textwidth]{publishedMxd.png}
+ \caption{Published Mxd}
+ \end{figure}
+ \clearpage
+
+
+
+
+
+\paragraph{Publish Forfeiture Parcels Map Service}
+
+\subparagraph{General}
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.5\textwidth]{General.png}
+ \caption{General}
+ \end{figure}
+ %\clearpage
+
+\subparagraph{Capabilities}
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.5\textwidth]{Capabilities.png}
+ \caption{Capabilities}
+ \end{figure}
+ 
+ %\clearpage
+
+
+\subparagraph{Feature Access}
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.5\textwidth]{FeatureAccessProperties.png}
+ \caption{Feature Access}
+ \end{figure}
+ \clearpage
+
+\subparagraph{Publish Service}
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.5\textwidth]{PublishService.png}
+ \caption{Publish Service}
+ \end{figure}
+
+
+
+
+
+
 
 \paragraph{Schema Change Procedure}
 
@@ -1665,7 +1785,16 @@ So, if two devices were used:
 
 \clearpage
 
+
+
+
+
+
+
+
+
 \paragraph{Reconcile Versions and Print Report}
+
 
 \vspace{.5in}
 
@@ -1673,25 +1802,77 @@ Each device that is synchronized corresponds to a version within the geodatabase
 
 \noindent The versions must be reconciled with the tool:\\
 
-\textbf{2. Reconcile Versions and Compress}
+\noindent{\bigbtn\fbox{Windows Search} \lookArrow}
+
+
+Reconcile Versions tool
+
+
+%\textbf{2. Reconcile Versions and Compress}
 
 \vspace{1in}
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 
 \centering
-    \includegraphics[width=.4\textwidth]{PostprocessingTool1.png}
-\caption{Double Click}
+    \includegraphics[width=.4\textwidth]{reconcileToolSearch.PNG}
+\caption{Search for Reconcile tool}
+
+%\centering
+    %\includegraphics[width=.4\textwidth]{PostprocessingTool1.png}
+%\caption{Double Click}
 
 \end{wrapfigure}
   %
-\subparagraph{Reconcile}
-\vspace{1.5in}
+%\subparagraph{Reconcile}
+%\vspace{1.5in}
 
-\noindent{\smallbtn\fbox{2. Reconcile Versions and Compress} \lookArrow}
+%\noindent{\smallbtn\fbox{2. Reconcile Versions and Compress} \lookArrow}
 %\noindent{\normalsize\fbox{2. Reconcile Versions and Compress}\lookArrow}
 
+
+
 \clearpage
+
+
+Setuop tool like
+
+
+\paragraph{Reconcile Tool Setup}
+
+
+\vspace{.5in}
+
+
+\noindent{\bigbtn\fbox{ The tool uses these settings"} \lookArrow}
+
+
+
+\vspace{1in}
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+
+\centering
+    \includegraphics[width=.4\textwidth]{ReconcileFieldVersionsInTool.PNG}
+\caption{Reconcile Settings}
+
+
+
+\end{wrapfigure}
+
+
+
+\clearpage
+
+
+
+
+
+
+
+
+
+
 
 \paragraph*{Reconcile Versions and Print Report {\footnotesize (cont.)}}
 
@@ -1717,6 +1898,20 @@ Inspection reports are generated by running the tool:\\
 %\noindent{\Large\fbox{3. Export Report} {\LARGE\lookArrow}
 
 \clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   %
 \subsubsection{Software}
   %
