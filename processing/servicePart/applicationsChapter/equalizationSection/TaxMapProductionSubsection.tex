@@ -9,18 +9,18 @@
 %-------------------------------------------------------------------
 % OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
   %
-%\def\titlename{Tax Map Production}
-%\def\authorName{Allegan County GIS Services}
-%\def\pdfTitle{Tax Map Production}
-%\def\pdfSubject{GIS Tools} %
-%\def\pdfKeywords{map production,gis}
-%
-%\input{../../../preamble/subSectionPreamble.tex}
+\def\titlename{Tax Map Production}
+\def\authorName{Allegan County GIS Services}
+\def\pdfTitle{Tax Map Production}
+\def\pdfSubject{GIS Tools} %
+\def\pdfKeywords{map production,gis}
+
+\input{../../../preamble/subSectionPreamble.tex}
   %
 %-------------------------------------------------------------------
     %
     %
-\begin{document}% document begins
+%\begin{document}% document begins
  %
  %--------------------------------------------------
 \subsection{Tax Map Production}
@@ -149,6 +149,9 @@ SQL Server Source Data:
 \subsubsection{Data Udpate Procedure}
   %
   %
+%\paragraph{Run DB maintenance routine on AC\_ Pro.sde}
+Run DB maintenance routine on AC\_ Pro.sde first
+
 \paragraph{Updates to AC\_ Pro.sde}
   % 
 Datasets involved:
@@ -161,51 +164,61 @@ Datasets involved:
 \item TaxMapUnitBounds
 \end{itemize}
    %
+\clearpage
+
 \paragraph{Update Procedure}   
    
 \subparagraph{Parcel Editing and Parcel Publishing}
    %
-Annually, the ParcelEditing feature dataset (FDS) is used to update the ParcelPublishing FDS.  For each FC in ParcelPublishing:
-\begin{itemize}
-\item Delete all features
-\item Load all features from corresponding FCs
-\end{itemize}
+Annually, the ParcelEditing feature dataset (FDS) is used to update the ParcelPublishing FDS.  
+
+%\vspace{.5in}
+
+\subparagraph{For each FC in ParcelPublishing}
+
+\noindent \textbf{Append and Clear}:load from Editing to Publishing and delete all from Editing
+
+\noindent \textbf{Replace Pub}: Delete all in Publishing and load all from Editing and leave all in Editing 
+
   %
 \begin{table}[htbp]
 \centering
-\resizebox{.8\linewidth}{!}{%
-\begin{tabular}{|c|c|}
+\resizebox{.95\linewidth}{!}{%
+
+\begin{tabular}{|c|c|c|}
 \hline
-\multicolumn{2}{|c|}{{Data Update Relation}}\\
+\multicolumn{3}{|c|}{{\textbf{Data Update Relation}}}\\
 \hline
-FC in ParcelEditing&FC in ParcelPublishing\\
+\textbf{FC in ParcelEditing}&\textbf{FC in ParcelPublishing}&\textbf{Update Procedure}\\
 \hline
-AC\_COGO\_LnEdits&AC\_COGO\_Ln\\
+AC\_COGO\_LnEdits&AC\_COGO\_Ln&Append and clear\\
 \hline
-AC\_DimensionsEdits&AC\_Dimensions\\
+AC\_DimensionsEdits&AC\_Dimensions&Replace Pub\\
 \hline
-AC\_PointsEdits&AC\_Points\\
+AC\_Gap\_OverlapEdits&AC\_Gap\_Overlap&Replace Pub\\
 \hline
-AC\_Splits&AC\_Parcels\\ 
+AC\_PointsEdits&AC\_Points&Replace Pub\\
 \hline
-AC\_SubBlocksEdits&AC\_SubBlocks\\
+AC\_Splits&AC\_Parcels&Replace Pub\\ 
 \hline
-AC\_SubdivisionsEdits&AC\_Subdivisions\\
+AC\_SubBlocksEdits&AC\_SubBlocks&Replace Pub\\
 \hline
-AC\_SublotsEdits&AC\_Sublots\\
+AC\_SubdivisionsEdits&AC\_Subdivisions&Replace Pub\\
 \hline
-AC\_TiebarsEdits&AC\_Tiebars\\
+AC\_SublotsEdits&AC\_Sublots&Replace Pub\\
+\hline
+AC\_TiebarsEdits&AC\_Tiebars&Replace Pub\\
 \hline
   %
 \end{tabular}
 }
-
+%
 \end{table}
   %
 \clearpage
   %
   %
-\subparagraph{TaxMapIndexFrames}As this is the index layer for the DDP, Quarter Quarter Section frames must be added or removed to account for added or removed subdivision features.
+\subparagraph{TaxMapIndexFrames}As this is the index layer for the DDP, Quarter Section frames must be added or removed to account for added or removed subdivision features at this time.
   %
 \subparagraph{TaxMapLayers}Layers that are derived from other fcs for cartography purposes
 \begin{itemize}
@@ -226,7 +239,7 @@ AC\_TiebarsEdits&AC\_Tiebars\\
 \noindent Into the years folder and rename to: \textbf{YYYY}
 
 
-\paragraph{Production Data Creation}In the source folder, create a new file GDB named AC\_Cadastral.  Import the following FDSs from AC\_Pro.sde:
+\paragraph{Production Data Creation}In the source folder, create a new file GDB named AC\_Cadastral.  Copy the following FDSs from AC\_Pro.sde:
 \begin{itemize}
 \item AdministrativeArea
 \item CadastralReference
@@ -241,12 +254,38 @@ AC\_TiebarsEdits&AC\_Tiebars\\
 \clearpage
   %
   %
-\paragraph{Map Production Setup} In the new workspace folder:
+\paragraph{Map Production Setup} (In the new workspace folder)\\
+\noindent Add a field to AC\_Parcels InUnit text 1 characters\\
+\noindent Add a field to AC\_Subdivisions InUnit text 1 character
 
-\subparagraph{ArcGIS Desktop}
+\noindent Add a field UnitText text 2 characters and calculate as 1st two digits of the unit number to:
+\begin{itemize}
+\item AC\_Parcels
+\item AC\_Road\_ROWs\_Tax
+\item AC\_Subdivisions
+\item AC\_Units
+\end{itemize}
+
+\noindent Update the tax year in the 2 .mxd s
+\subparagraph{In ArcGIS Desktop}
 
 Use ArcMap Catalog to navigate to:\\
 workspace folder{\menuArrow} processing {\menuArrow} Toolbox {\menuArrow} TaxMapTools.tbx\\
+\vspace{.25in}
+
+\noindent Right Click on the tool in Catalog and select properties.\\
+Set the path to the script file in the tool for the current year.
+
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=1\textwidth]{pathToScriptTool.png}
+ \caption{Set Path to Script}
+ \end{figure}
+
+\clearpage
+
+\subparagraph{Launch the Tax Map Builder Tool}
 Double click on the \textbf{TaxMapBuilder} script
 
 \begin{figure}[h!]
@@ -255,9 +294,16 @@ Double click on the \textbf{TaxMapBuilder} script
  \caption{Tax Map Builder UI}
  \end{figure}
 
-\noindent To execute the tool:
+
+\subparagraph{Execute the tool}
 
 \noindent Make selections in the tool from the appropriate locations in the workspace folder.
+
+\begin{itemize}
+\item Choose any combination of units to produce
+\item Select output location
+\item Choose aerial or linework type maps
+\end{itemize}
   %
 \clearpage
   %
