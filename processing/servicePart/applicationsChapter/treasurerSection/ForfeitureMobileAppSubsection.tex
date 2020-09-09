@@ -9,1015 +9,1015 @@
 %-------------------------------------------------------------------
 % OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
   %
-\def\titlename{Forfeiture Mobile App}
-\def\authorName{Allegan County GIS Services}
-\def\pdfTitle{Forfeiture Mobile App}
-\def\pdfSubject{GIS Tools} %
-\def\pdfKeywords{mobile,gis}
-
-\input{../../../preamble/subSectionPreamble.tex}
+%\def\titlename{Forfeiture Mobile App}
+%\def\authorName{Allegan County GIS Services}
+%\def\pdfTitle{Forfeiture Mobile App}
+%\def\pdfSubject{GIS Tools} %
+%\def\pdfKeywords{mobile,gis}
+%
+%\input{../../../preamble/subSectionPreamble.tex}
   %
 %-------------------------------------------------------------------
     %
     %
-%\begin{document}% document begins
+\begin{document}% document begins
  %
  %--------------------------------------------------
 \subsection{Forfeiture Data Collection}
   %
-%\subsubsection{Problem and Analysis}
-%  %
-%\begin{adjmulticols}{2}{\innerMar}{\outerMar}
-%  %
-%\paragraph{Background}
-%  %
-%\noindent Treasurer department has an annual responsibility to properly document the tax forfeiture process.  The LIS Department built an application in MS Access and MapInfo that consumed a daily export from BSA and was deployed to the field on a laptop.  A digital camera was used for site photos and later imported into the laptop.
-%  %
-%\paragraph{Statement of Problem}
-%  %
-%\noindent The current Tax Forfeiture workflow is built on MapInfo software and MS Access amd executed on a laptop pc.  Both MapInfo and MS Access are no longer supported in county workflows.  ESRI software can be used to rebuild the workflow.  \textit{Forfeiture Data Collector Application}, (\textbf{Forfeiture App}) must be recreated in the ESRI framework.
-%  %
-%\paragraph{Analysis}
-%  %
-%\noindent \textbf{Forfeiture App} will facilitate: \textit{Mobile data collection on a handheld device},: (\textbf{Mobile Interface}) and an
-%  %
-%\textit{in office workflow to complete data processing}, (\textbf{Pre and PostProcessing})
-%  %
-%\subparagraph*{Mobile Interface}
-%  %
-%\begin{itemize} %
-%  %
-%\item Synchronize with data in the office (online)
-%  %
-%\item Collect data and photos of forfeiture sites (offline)
-%  %
-%\item Synchronize the collected data with data in the office (online)
-%  %
-%\end{itemize} %
-%  %
-%\subparagraph*{Pre \& Post Processing}
-%  %
-%\begin{itemize} %
-%  %
-%\item Produce and print a form for each site visited with required data and images
-%  %
-%\end{itemize} %
-%  %
-%\end{adjmulticols}
-%  %
-%\clearpage
-%   %
-%   %
-% \subsubsection{Design Overview}
-%   %
-%   % Single Figure
-%   %
-% \marginpar{\marginText Forfeiture Parcels is used through the workflow}
-% %\marginpar{\color{graphicOrange}\textbf{Forfeiture Parcels} is used through the workflow}
-% \vspace{-.2in}
-%
-% \begin{figure}[h!]
-% \centering
-%     \includegraphics[width=1\textwidth]{ProjectDesign}
-% \vspace{-.2in}
-%
-% \caption{Project Design}
-% \end{figure}
-%   %
-% \clearpage
-%   %
-%   %
-% \paragraph{Forfeiture App Summary}
-% \vspace{.25in}
-%
-% There are {\LARGE three parts} to the daily routine:
-% \vspace{.25in}
-%
-% \begin{enumerate}
-% \item \Large Preprocessing \normalsize(in the office):
-%   %
-% \begin{itemize}
-% \item Export current forfeiture list from BSA
-% \item Update Forfeiture Parcels with BSA export
-% \item Update Forfeiture Parcels with contaminated sites information
-% \item Synchronize Forfeiture Parcels to Mobile Interface
-% \end{itemize}
-%   %
-% \item \Large Field data collection \normalsize with Mobile Interface:
-%   %
-% \begin{itemize}
-% \item Aids in navigation
-% \item Provides a Checklist of data points for each site
-% \item Attaches photos for each site
-% \item Save results for synchronization in post-processing
-% \end{itemize}
-%   %
-% \item \Large Post-processing \normalsize (in the office)
-%   %
-% \begin{itemize}
-% \item Synchronize data and images collected in Mobile Interface to Forfeiture Parcels
-% \item Export form for each site
-% \item Print form for each site
-% \item Update BSA data
-%   %
-% \end{itemize}
-%   %
-% \end{enumerate}
-%   %
-% \clearpage
-%    %
-%    %
-%  \paragraph{Technologies Used in The Forfeiture App}
-%    %
-%  \begin{adjmulticols}{2}{\innerMar}{\outerMar}
-%    %
-%  \subparagraph{BSA Data}
-%    %
-%  \noindent Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
-%    %
-%  \subparagraph{ArcGIS Desktop}\noindent Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool synchronizes data from the fieldwork with the live data on the Allegan County network.
-%    %
-%  \subparagraph{ArcGIS Collector}\noindent A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork. The user collects the necessary information on each forfeiture parcel in the field disconnected, and then uploads the changes when reconnected.
-%    %
-%  \subparagraph{Enterprise Geodatabse}\noindent Live data from a publishing geodatabase (ACPub), running on SQL Server database server (acintsql01) provides access to Forfeiture Parcels
-%    %
-%  \subparagraph{ArcGIS Portal} \noindent Forfeiture Parcels is served as a feature service (REST service)  named TaxReversionParcels.  A webmap on Portal, called the Forfeiture Field Map consumes the TaxReversionParcels exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.
-%    %
-%  \end{adjmulticols}
-%    %
-%    % Single Figure
-%    %
-%  \begin{figure}[H]
-%  \centering
-%      \includegraphics[width=.9\textwidth]{TechFlowChart}
-%  \vspace{-.25in}
-%
-%  \caption{Technology Design}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-%  \subsubsection[Data Details]{Data Details\texorpdfstring{\\}{}}
-%    %
-%  \noindent The data is located in a geodatabase called ACPUB.  ACPUB is on SQL Server ACINTSQL01.
-%    %
-%    % Two Figures Wrapped
-%    %
-%  \begin{wrapfigure}{r}{0.6\textwidth}
-%  \centering
-%      \includegraphics[width=.5\textwidth]{LiveDataLocation}
-%  \caption{Live Data Location}
-%  \vspace{1in}
-%
-%  \HRule
-%  %\\[.2cm] % Horizontal Line added
-%  \vspace{1in}
-%
-%      \includegraphics[width=.5\textwidth]{contaminationFeatureClass.png}
-% \vspace{-.1in}
-% \caption{Contamination Feature Class}
-%  \end{wrapfigure}
-%    %
-%  \vspace{1in}
-%
-%  Forfeiture Parcels Data
-%  \vspace{4in}
-%
-%  Contamination Data
-%  \clearpage
-%    %
-%    %
-%  \paragraph{ForfeitureParcels Feature Class Details}
-%  \vspace{.5in}
-%
-%  \begin{table}[htbp]
-%  \centering
-%  \resizebox{\linewidth}{!}{%
-%  \begin{tabular}{|l|l|c|r|}
-%  \hline
-%  \multicolumn{4}{|c|}{{\LARGE Attribute Details}} \\
-%  \hline
-%  Field Name&Field Alias&Entry Type&Note\\ \hline
-%  PropertyNumber&Property Number&Prefilled&NA\\
-%  Need2Print&Print Today&Dropdown&{\tiny Yes or No}\\
-%  InspectionDate&Inspection Date&{\tiny Autofill or Dropdown}&NA\\
-%  Inspector&Inspector&Dropdown&NA\\
-%  Address&Address&Prefilled&NA\\
-%  Status&Status&Dropdown&NA\\
-%  StatusNotes&Status Notes&Open Entry&120Char\\
-%  Roadfrontage&Road Frontage&Dropdown&{\tiny Yes or No}\\
-%  AccessVia&Access Via&Open Entry&30Char\\
-%  Agent&Agent&Open Entry&30Char\\
-%  AgentContact&Agent Contact&Open Entry&30Char\\
-%  PictureComments&Picture Comments&Open Entry&50Char\\
-%  PropertyInUse&Property In Use&Dropdown&{\tiny Yes or No}\\
-%  UseNotes&Use Notes&Open Entry&120Char\\
-%  {\tiny PropertyMaintained}&{\tiny Property Maintained}&Dropdown&{\tiny Yes or No}\\
-%  PropMaintNotes&{\tiny Property Maintained Notes}&Open Entry&120Char\\
-%  {\tiny PropertyContaminated}&{\tiny Property Contaminated}&Prefilled&{\tiny Preprocessing}\\
-%  {\tiny PropertyContaminatedNotes}&{\tiny PropertyContaminatedNotes}&Prefilled&{\tiny Preprocessing}\\
-%  {\tiny AdjacentPropertyContaminated}&{\tiny Adjacent Property Contaminated}&Prefilled&{\tiny Preprocessing}\\
-%  {\tiny AdjPropertyContaminatedNotes}&{\tiny Adj Property Contaminated Notes}&Prefilled&{\tiny Preprocessing}\\
-%  PropertyForSale&Property For Sale&Dropdown&{\tiny Yes or No}\\
-%  GlobalID&GlobalID&NA&NA\\
-%  PostedDate&Posted Date&Dropdown&Date\\
-%  Posted&Posted&Prefilled&NA\\
-%  InList&In List&Prefilled&{\tiny Preprocessing}\\
-%  PostedInList&Posted In List&Prefilled&{\tiny Preprocessing}\\
-%  Acres&Acres&Prefilled&NA\\
-%  Class&Class&Prefilled&NA\\
-%  \hline
-%  \end{tabular}
-%  }
-%  \caption{Dataset Details}
-%  \end{table}
-%  \clearpage
-%    %
-%    %
-%  \paragraph{Webmap Details}The Forfeiture Field Map is made up of a feature layer and a basemap.
-%    %
-%    % Double Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.55\textwidth]{webMapDetails}
-%  \vspace{-.25in}
-%
-%  \caption{Web Map Details}
-%  \end{figure}
-%    %
-%  \subparagraph{Feature Layer Details}TaxReversionParcels has been configured for offline use.
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.55\textwidth]{layerDetails}
-%  \vspace{-.15in}
-%
-%  \caption{Feature Layer Details}
-%  \end{figure}
-%    %
-%  \clearpage
-%    %
-%    %
-%  %images of publishing the service and explanation of settings required for offline use
-%    %
-%  \subparagraph{Basemap Details}
-%  \begin{itemize}
-%    \setlength\itemsep{.3in}
-%    \item A tiled basemap service is used
-%    \item The infoserv user credentials are used for sharing
-%    \item The url for the shared service is:
-%  \end{itemize}
-%    %
-%
-% \noindent \textcolor{HyperlinkBlue1}{\scriptsize\path{https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Street_Map/MapServer}}
-% \vspace{.5in}
-%
-%    %
-%    % Single Figure
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%  \includegraphics[width=1\textwidth]{BasemapSourceDescription}
-%  \caption{Basemap Source Description}
-%  \end{figure}
-%  \clearpage
-%    %
-%      %
-%  \subsubsection{Hard Copy Record}
-%  screenshots:
-%  arcmap map
-%  arcmap tools
-%  portal screenshots
-%  sql server mgt screen shots
-%  phone screenshots
-%    %
-%  \paragraph{ArcGIS Server}
-%  \clearpage
-%    %
-%    %
-%  \subsubsection{Administrative Manual}
-%
-%  \paragraph{Annual Setup}
-%
-%  A new dataset for forfeiture parcels must be created each year.
-%
-%  \noindent The forfeiture information comes from BSA Forfeitures.net.
-%
-%  \noindent Parcel geometry and other attributes comes from ACParcelsCombined.
-%
-%
-%
-% \subparagraph{To Connect to the Forfeiture Dataset}
-%
-%  \noindent{To Add a new database connection:}
-%  \begin{itemize}
-%  \item {\Large Right Click on Add Database Connection}
-%
-%  \begin{itemize}
-%  \item {\Large Enter these values into the tool}
-%  \end{itemize}
-%  \end{itemize}
-%
-%  \vspace{.1in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.8\textwidth]{newConnection.PNG}
-%  \caption{Add New Connection}
-%  \end{figure}
-%  \vspace{.15in}
-%
-% {\bigbtn Push \fbox{OK}}
-%
-% \clearpage
-%
-%
-%  \subparagraph{Update the Forfeiture Dataset}
-%
-%  \noindent{To clear the features from the existing dataset:}
-%  \begin{itemize}
-%  \item {\Large Use the Delete Feature Tools}
-%  \item {\Large For Input Features:}
-%  \begin{itemize}
-%  \item {\Large ForfeituresFieldwork.DBO.ForfeitureParcels}
-%  \end{itemize}
-%  \end{itemize}
-%
-%  \vspace{.1in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.7\textwidth]{AnnualDeleteFeatures.png}
-%  \caption{Annual Delete Features}
-%  \end{figure}
-%  \vspace{.15in}
-%
-% {\bigbtn Push \fbox{OK}}
-%
-%
-% \subparagraph{Delete the attached table}
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.4\textwidth]{deleteAttachedTable.PNG}
-%  \caption{Delete Attached Table}
-%  \end{figure}
-%
-%  \clearpage
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-% \paragraph{Create new connection to BSA server}
-%
-%  A connection to BSA is used to get the latest forfeiture information.
-%
-% \subparagraph{To Connect to the BSA Server}
-%
-%  \noindent{To Add a new database connection:}
-%  \begin{itemize}
-%  \item {\Large Right Click on Add Database Connection}
-%
-%  \begin{itemize}
-%  \item {\Large Enter these values into the tool}
-%  \end{itemize}
-%  \end{itemize}
-%
-%  \vspace{.1in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%
-%
-% \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.8\textwidth]{shagbarkBsaConnection.PNG}
-%  \caption{Connect to BSA Server}
-%  \end{figure}
-%
-%  \vspace{.15in}
-%
-% {\bigbtn Push \fbox{OK}}
-%
-% \clearpage
-%
-%
-%
-%
-%
-%      %
-%      %
-%  \paragraph{Create a Table Query For the New Data}
-%  %\vspace{.25in}
-%
-%  \begin{itemize}
-%  \item {File {\menuArrow} Add Data {\menuArrow} Add Query Layer}
-%  \item {{ Select your connection} (\textit{shagbark\_D005ALLEGAN.sde})}
-%  \end{itemize}
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.9\textwidth]{ForfeitureQueryLayerDetails.PNG}
-%  \caption{New Query Layer Dialog}
-%  \end{figure}
-%    %
-% \vspace{.1in}
-% Edit Query Text for current Year:
-% \vspace{.1in}
-%  \begin{verbatim}
-%  SELECT [parcelnumber] FROM [D005ALLEGAN].[dbo].[Forfeitures]
-%  WHERE forf_year = 2020
-%  \end{verbatim}
-%    %
-%    %
-%  %\clearpage
-%    %
-%    %
-%  \subparagraph{Select a Unique Identifier}
-%    %
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.95\textwidth]{ForfeitureQueryLayerUID.PNG}
-%  \caption{Query Layer Unique ID}
-%  \end{figure}
-%    %
-% {\bigbtn Push \fbox{Finish}}
-%
-%  \clearpage
-%    %
-%    %
-%  \subparagraph*{Table is added to the map}
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.95\textwidth]{forfeituresTableAdded.PNG}
-%  \caption{Forfeiture Table Added}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-%  \paragraph{Add Parcels Layer to the Map}
-% %\vspace{.3in}
-%
-%  \begin{itemize}
-%  \item {Parcels are added to the map to provide parcel geometry and attributes}
-%  \item {Parcel year is = current year - 2}
-%  \item {I.E. Use ACParcelsCombHistoric2018 in 2020}
-%  \end{itemize}
-%
-%  \vspace{.25in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.95\textwidth]{ParcelLayerAdded.PNG}
-%  \caption{Parcels Layer Added}
-%  \end{figure}
-%  \clearpage
-%
-%
-%
-%
-%
-%
-%
-%   \paragraph{Forfeiture parcel missing spatial data}
-%
-%   \subparagraph*{A temporary join, selection, and export will save these}
-%
-%   \vspace{.3in}
-%
-%  \begin{itemize}
-%  \item {Join Parcels to Forfeiture table}
-%
-%  %\end{itemize}
-%
-%  %\vspace{.25in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=1\textwidth]{joinToForfTable.PNG}
-%  \caption{Join to Forfeiture Table}
-%  \end{figure}
-%  \clearpage
-%
-%
-%
-%  %\begin{itemize}
-%  \item {Select any parcels missing spatial data}
-%
-%  %\end{itemize}
-%
-% % \vspace{.25in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.65\textwidth]{selectForMissingSpatial.PNG}
-%  \caption{Select for Missing Spatial}
-%  \end{figure}
-%
-%  %\begin{itemize}
-%  \item {Export Parcels missing spatial to a table in the GDB}
-%
-%  \end{itemize}
-%
-%
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.75\textwidth]{exportMissingSpatial.PNG}
-%  \caption{Export Missing Spatial}
-%  \end{figure}
-%
-%  \clearpage
-%    %
-%    %
-%
-% \paragraph{Create current year Forfeiture dataset}
-%  \subparagraph{Create Join}
-%  \vspace{.3in}
-%
-% \begin{itemize}
-%
-% \item{Create new join to \emph{ACParcelsCombHistoricXXXX} of forfeitures on parcel numbers}
-%
-% \end{itemize}
-%
-%    %
-%  \vspace{.25in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.95\textwidth]{joinToParcelsCombined.PNG}
-%  \caption{Join Parcels}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-%  \subparagraph[Export Joined Features]{Export Joined Features to a temp location \texorpdfstring{\\}{}}
-%    %
-%  \begin{itemize}
-%  %\item Right click \ding{212} on joined feature class in TOC and choose export
-%  \item Right click {{\rtArrow}}  on joined feature class in TOC and choose export
-% \end{itemize}
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.95\textwidth]{exportJoinedFeatures.png}
-%  \caption{Export Joined Features}
-%  \end{figure}
-%  {\bigbtn choose location and Push \fbox{OK}}
-% %\item choose location and Push \fbox{OK}
-%  %\end{itemize}
-%  \clearpage
-%    %
-%    %
-%  \subparagraph[Load data to forfeitureParcels]{\Large Load data from temp location to forfeitureParcels}
-%  %\subparagraph*{}
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.95\textwidth]{LoadData.PNG}
-%  \caption{Load Data 1}
-%  \end{figure}
-%
-%  {\bigbtn choose features from a temp location}
-%
-% \vspace{.2in}
-%
-%  {\bigbtn Push \fbox{Next}}
-%
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.65\textwidth]{LoadData2.PNG}
-%  \caption{Load Data 2}
-%  \end{figure}
-%
-% \clearpage
-%
-%  \paragraph[Match these fields]{\Large Match these fields}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.70\textwidth]{fieldMatch1.PNG}
-%  \vspace{-.2in}
-%
-%  \caption{Match Fields 1}
-%  \end{figure}
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.65\textwidth]{fieldMatch2.PNG}
-%  \vspace{-.2in}
-%
-%  \caption{Match Fields 2}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-% {\bigbtn Push \fbox{Next}}
-% % \paragraph*{\Large Push \fbox{Next}}
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.95\textwidth]{LoadData4.PNG}
-%  \caption{Load Data 3}
-%  \end{figure}
-%    %
-%
-% {\bigbtn Push \fbox{Finish}}
-%
-%    %
-%  \clearpage
-%    %
-%    %
-%
-%
-% \paragraph{Calculate Initial Values}
-%
-%
-% \subparagraph{Calculate In List value}
-%
-% \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.5\textwidth]{InListToYes.PNG}
-%  \caption{Calculate In List}
-%  \end{figure}
-%
-% \subparagraph{Calculate Posted Value}
-%
-%   \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.5\textwidth]{PostedToNo.PNG}
-%  \caption{Calculated Posted}
-%  \end{figure}
-%
-%
-% \subparagraph{Calculate Posted InList Value}
-%
-%   \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.5\textwidth]{PostedAndInList.PNG}
-%  \caption{Calculate Posted in List}
-%  \end{figure}
-%
-%
-% \clearpage
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%
-%  \paragraph{Data Setup}
-%  \vspace{.2in}
-%
-% \subparagraph{Register as versioned and Add Global IDs}
-%
-%
-%  \vspace{.2in}
-%
-%  \noindent{\large Right Click {\rtArrow} Manage {\rtArrow} Register as Versioned}
-%  \vspace{.2in}
-%
-%  and
-%  \vspace{.2in}
-%
-%  \noindent{\large Right Click {\rtArrow} Manage {\rtArrow} Add Global IDs}
-%  \vspace{.2in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.8\textwidth]{RegisterAsVersioned.PNG}
-%  \caption{Setup Data}
-%  \end{figure}
-%    %
-%  \clearpage
-%    %
-%    %
-%  \paragraph[Create Attachments]{\Large Create Attachments\texorpdfstring{\\}{}}
-% Attachments is for storing the photos for each feature.
-%
-%  \noindent{\large Right Click {\rtArrow} Manage {\rtArrow} Add Attachments}
-%  \vspace{.3in}
-%
-%  \subparagraph*{}
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.8\textwidth]{createAttachments.PNG}
-%  \caption{Create Attachments}
-%  \end{figure}
-%
-%
-%   \subparagraph{Calculate Acres in ForfeitureParcels}
-%
-% \noindent{\large Right Click {\rtArrow} Acres Column {\rtArrow}Calculate geometry (acres)}
-%
-%  \clearpage
-%
-%
-%    %
-%    %
-%  \paragraph[Setup Users in ArcGIS]{\Large Setup Users in ArcGIS\texorpdfstring{\\}{}}
-%
-%  Users that will run Pre and Post processing scripts must be created and given priviliges on Treasurer Feature Data Set.
-%  \vspace{.35in}
-%
-%  \noindent For any new users of the geoprocessing tools:
-%
-%  \vspace{.15in}
-%
-%  Use the create Database User tool
-%   \vspace{.15in}
-%
-%  {\textbf or}
-%
-%  \vspace{.15in}
-%
-% In Catalog {\rtArrow} Right click on ForfeituresFieldwork {\rtArrow} Administration {\rtArrow} Add User
-%
-%  \vspace{.35in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=1\textwidth]{addDbUser.png}
-%  \caption{Add Db User}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-%  \paragraph[Add New User to Feature Dataset]{\Large Add New User to Feature Dataset\texorpdfstring{\\}{}}
-%  \vspace{.35in}
-%
-%  In Catalog, { \rtArrow} right click on Treasurer Feature Data Set
-%  \vspace{.15in}
-%
-%  {\rtArrow} Manage { \rtArrow} Priviliges { \rtArrow} Add { \rtArrow} Type new user { \rtArrow}
-%
-% \vspace{.25in}
-%
-% {\btn Push \fbox{OK}}
-%  \vspace{.25in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.9\textwidth]{AddFdsUser.png}
-%  \caption{Add Feature Dataset User}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-%  \paragraph[Extend Priviliges for New User]{\Large Extend Priviliges for New User\texorpdfstring{\\}{}}
-%  \vspace{.5in}
-%
-%  In Catalog {\rtArrow} right click on Treasurer FDS {\rtArrow} Manage {\rtArrow} Priviliges {\rtArrow} check boxes
-%  \vspace{.5in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.9\textwidth]{AddFdsUserPriviliges.png}
-%  \caption{Extend Feature Dataset Priviliges}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-% \paragraph{Portal Setup}
-%
-% \subparagraph{Setup Users in Portal for ArcGIS}
-%  \vspace{.5in}
-%
-%  \noindent Users that will use the Collector for ArcGIS must have profiles added to and managed in the Allegan County GIS Portal site.
-%  \vspace{.5in}
-%
-%  In Portal, {\rtArrow} \fbox{My Organization}
-%
-% \vspace{.2in}
-%
-% {\btn Push \fbox{Add Members}}
-% %\paragraph*{\Large Push \fbox{Add Members}}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.9\textwidth]{PortalAddUser1.png}
-%  \caption{Portal Add User 1}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-%
-%  \subparagraph{Add Members to Portal}
-%
-%  \vspace{.4in}
-%
-%  {\Large Select Built in Member {\rtArrow}}
-%  \vspace{.4in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.9\textwidth]{PortalAddUser2.png}
-%  \caption{Portal Add User 2}
-%  \end{figure}
-%
-% {\bigbtn Push \fbox{Next}}
-%
-%  \clearpage
-%    %
-%    %
-%  \subparagraph{Enter required info for new member}
-%    %
-%  \vspace{.5in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.95\textwidth]{PortalAddUser3.png}
-%  \caption{Portal Add User 3}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-%  \subparagraph{Manage Treasurer Group}
-%  \vspace{.5in}
-%
-%  In Portal {\rtArrow} Go to groups {\rtArrow} Invite new user to the group
-%  \vspace{.5in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.9\textwidth]{PortalAddUser4.png}
-%  \caption{Portal Add User 4}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-%  \subparagraph{Share Portal Content with the group}
-%  \vspace{.5in}
-%
-%  \noindent Any content used by the group needs to be shared to the group
-%  \vspace{.5in}
-%
-%    %
-%    % Single Figure No Wrap
-%    %
-%  \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.9\textwidth]{PortalAddUser5.png}
-%  \caption{Portal AddUser 5}
-%  \end{figure}
-%  \clearpage
-%    %
-%    %
-%
-%
-% \paragraph{Start services and webmap}
-%
-% \subparagraph{Find published MXD}
-%
-% \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.9\textwidth]{publishedMxd.png}
-%  \caption{Published Mxd}
-%  \end{figure}
-%  \clearpage
-%
-%
-%
-%
-%
-% \paragraph{Publish Forfeiture Parcels Map Service}
-%
-% \subparagraph{General}
-% \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.5\textwidth]{General.png}
-%  \caption{General}
-%  \end{figure}
-%  %\clearpage
-%
-% \subparagraph{Capabilities}
-% \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.5\textwidth]{Capabilities.png}
-%  \caption{Capabilities}
-%  \end{figure}
-%
-%  %\clearpage
-%
-%
-% \subparagraph{Feature Access}
-% \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.5\textwidth]{FeatureAccessProperties.png}
-%  \caption{Feature Access}
-%  \end{figure}
-%  \clearpage
-%
-% \subparagraph{Publish Service}
-% \begin{figure}[h!]
-%  \centering
-%      \includegraphics[width=.5\textwidth]{PublishService.png}
-%  \caption{Publish Service}
-%  \end{figure}
-%
-%
-%
-%
-%
-%
-%
-% \paragraph{Schema Change Procedure}
-%
-%  \clearpage
-%    %
-%    %
-%  \paragraph[Form Edits Procedure]{\Large Form Edits Procedure}
-%  
-%
-%  
-%  \clearpage
+\subsubsection{Problem and Analysis}
+  %
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\paragraph{Background}
+  %
+\noindent Treasurer department has an annual responsibility to properly document the tax forfeiture process.  The LIS Department built an application in MS Access and MapInfo that consumed a daily export from BSA and was deployed to the field on a laptop.  A digital camera was used for site photos and later imported into the laptop.
+  %
+\paragraph{Statement of Problem}
+  %
+\noindent The current Tax Forfeiture workflow is built on MapInfo software and MS Access amd executed on a laptop pc.  Both MapInfo and MS Access are no longer supported in county workflows.  ESRI software can be used to rebuild the workflow.  \textit{Forfeiture Data Collector Application}, (\textbf{Forfeiture App}) must be recreated in the ESRI framework.
+  %
+\paragraph{Analysis}
+  %
+\noindent \textbf{Forfeiture App} will facilitate: \textit{Mobile data collection on a handheld device},: (\textbf{Mobile Interface}) and an
+  %
+\textit{in office workflow to complete data processing}, (\textbf{Pre and PostProcessing})
+  %
+\subparagraph*{Mobile Interface}
+  %
+\begin{itemize} %
+  %
+\item Synchronize with data in the office (online)
+  %
+\item Collect data and photos of forfeiture sites (offline)
+  %
+\item Synchronize the collected data with data in the office (online)
+  %
+\end{itemize} %
+  %
+\subparagraph*{Pre \& Post Processing}
+  %
+\begin{itemize} %
+  %
+\item Produce and print a form for each site visited with required data and images
+  %
+\end{itemize} %
+  %
+\end{adjmulticols}
+  %
+\clearpage
+   %
+   %
+ \subsubsection{Design Overview}
+   %
+   % Single Figure
+   %
+ \marginpar{\marginText Forfeiture Parcels is used through the workflow}
+ %\marginpar{\color{graphicOrange}\textbf{Forfeiture Parcels} is used through the workflow}
+ \vspace{-.2in}
+
+ \begin{figure}[h!]
+ \centering
+     \includegraphics[width=1\textwidth]{ProjectDesign}
+ \vspace{-.2in}
+
+ \caption{Project Design}
+ \end{figure}
+   %
+ \clearpage
+   %
+   %
+ \paragraph{Forfeiture App Summary}
+ \vspace{.25in}
+
+ There are {\LARGE three parts} to the daily routine:
+ \vspace{.25in}
+
+ \begin{enumerate}
+ \item \Large Preprocessing \normalsize(in the office):
+   %
+ \begin{itemize}
+ \item Export current forfeiture list from BSA
+ \item Update Forfeiture Parcels with BSA export
+ \item Update Forfeiture Parcels with contaminated sites information
+ \item Synchronize Forfeiture Parcels to Mobile Interface
+ \end{itemize}
+   %
+ \item \Large Field data collection \normalsize with Mobile Interface:
+   %
+ \begin{itemize}
+ \item Aids in navigation
+ \item Provides a Checklist of data points for each site
+ \item Attaches photos for each site
+ \item Save results for synchronization in post-processing
+ \end{itemize}
+   %
+ \item \Large Post-processing \normalsize (in the office)
+   %
+ \begin{itemize}
+ \item Synchronize data and images collected in Mobile Interface to Forfeiture Parcels
+ \item Export form for each site
+ \item Print form for each site
+ \item Update BSA data
+   %
+ \end{itemize}
+   %
+ \end{enumerate}
+   %
+ \clearpage
+    %
+    %
+  \paragraph{Technologies Used in The Forfeiture App}
+    %
+  \begin{adjmulticols}{2}{\innerMar}{\outerMar}
+    %
+  \subparagraph{BSA Data}
+    %
+  \noindent Details of parcels in the forfeiture process are managed in BSA Delinquent Tax.net.  The Treasurer office does a BSA export of the parcels in need of a site visit in the preprocessing.
+    %
+  \subparagraph{ArcGIS Desktop}\noindent Tools are designed to preprocess and postprocess forfeiture parcel data for fieldwork.  The user will execute a preprocess script tool that prepares the data for field deployment.  After fieldwork, a post process script tool synchronizes data from the fieldwork with the live data on the Allegan County network.
+    %
+  \subparagraph{ArcGIS Collector}\noindent A free mobile application developed and tested on Android is deployed to the field for data collection.  The application is configured to work offline(without an internet or cellular connection) by syncronizing before and after fieldwork. The user collects the necessary information on each forfeiture parcel in the field disconnected, and then uploads the changes when reconnected.
+    %
+  \subparagraph{Enterprise Geodatabse}\noindent Live data from a publishing geodatabase (ACPub), running on SQL Server database server (acintsql01) provides access to Forfeiture Parcels
+    %
+  \subparagraph{ArcGIS Portal} \noindent Forfeiture Parcels is served as a feature service (REST service)  named TaxReversionParcels.  A webmap on Portal, called the Forfeiture Field Map consumes the TaxReversionParcels exposing the data to editing.  The Forfeiture Field Map is configured to work in the ArcGIS Collector App.
+    %
+  \end{adjmulticols}
+    %
+    % Single Figure
+    %
+  \begin{figure}[H]
+  \centering
+      \includegraphics[width=.9\textwidth]{TechFlowChart}
+  \vspace{-.25in}
+
+  \caption{Technology Design}
+  \end{figure}
+  \clearpage
+    %
+    %
+  \subsubsection[Data Details]{Data Details\texorpdfstring{\\}{}}
+    %
+  \noindent The data is located in a geodatabase called ACPUB.  ACPUB is on SQL Server ACINTSQL01.
+    %
+    % Two Figures Wrapped
+    %
+  \begin{wrapfigure}{r}{0.6\textwidth}
+  \centering
+      \includegraphics[width=.5\textwidth]{LiveDataLocation}
+  \caption{Live Data Location}
+  \vspace{1in}
+
+  \HRule
+  %\\[.2cm] % Horizontal Line added
+  \vspace{1in}
+
+      \includegraphics[width=.5\textwidth]{contaminationFeatureClass.png}
+ \vspace{-.1in}
+ \caption{Contamination Feature Class}
+  \end{wrapfigure}
+    %
+  \vspace{1in}
+
+  Forfeiture Parcels Data
+  \vspace{4in}
+
+  Contamination Data
+  \clearpage
+    %
+    %
+  \paragraph{ForfeitureParcels Feature Class Details}
+  \vspace{.5in}
+
+  \begin{table}[htbp]
+  \centering
+  \resizebox{\linewidth}{!}{%
+  \begin{tabular}{|l|l|c|r|}
+  \hline
+  \multicolumn{4}{|c|}{{\LARGE Attribute Details}} \\
+  \hline
+  Field Name&Field Alias&Entry Type&Note\\ \hline
+  PropertyNumber&Property Number&Prefilled&NA\\
+  Need2Print&Print Today&Dropdown&{\tiny Yes or No}\\
+  InspectionDate&Inspection Date&{\tiny Autofill or Dropdown}&NA\\
+  Inspector&Inspector&Dropdown&NA\\
+  Address&Address&Prefilled&NA\\
+  Status&Status&Dropdown&NA\\
+  StatusNotes&Status Notes&Open Entry&120Char\\
+  Roadfrontage&Road Frontage&Dropdown&{\tiny Yes or No}\\
+  AccessVia&Access Via&Open Entry&30Char\\
+  Agent&Agent&Open Entry&30Char\\
+  AgentContact&Agent Contact&Open Entry&30Char\\
+  PictureComments&Picture Comments&Open Entry&50Char\\
+  PropertyInUse&Property In Use&Dropdown&{\tiny Yes or No}\\
+  UseNotes&Use Notes&Open Entry&120Char\\
+  {\tiny PropertyMaintained}&{\tiny Property Maintained}&Dropdown&{\tiny Yes or No}\\
+  PropMaintNotes&{\tiny Property Maintained Notes}&Open Entry&120Char\\
+  {\tiny PropertyContaminated}&{\tiny Property Contaminated}&Prefilled&{\tiny Preprocessing}\\
+  {\tiny PropertyContaminatedNotes}&{\tiny PropertyContaminatedNotes}&Prefilled&{\tiny Preprocessing}\\
+  {\tiny AdjacentPropertyContaminated}&{\tiny Adjacent Property Contaminated}&Prefilled&{\tiny Preprocessing}\\
+  {\tiny AdjPropertyContaminatedNotes}&{\tiny Adj Property Contaminated Notes}&Prefilled&{\tiny Preprocessing}\\
+  PropertyForSale&Property For Sale&Dropdown&{\tiny Yes or No}\\
+  GlobalID&GlobalID&NA&NA\\
+  PostedDate&Posted Date&Dropdown&Date\\
+  Posted&Posted&Prefilled&NA\\
+  InList&In List&Prefilled&{\tiny Preprocessing}\\
+  PostedInList&Posted In List&Prefilled&{\tiny Preprocessing}\\
+  Acres&Acres&Prefilled&NA\\
+  Class&Class&Prefilled&NA\\
+  \hline
+  \end{tabular}
+  }
+  \caption{Dataset Details}
+  \end{table}
+  \clearpage
+    %
+    %
+  \paragraph{Webmap Details}The Forfeiture Field Map is made up of a feature layer and a basemap.
+    %
+    % Double Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.55\textwidth]{webMapDetails}
+  \vspace{-.25in}
+
+  \caption{Web Map Details}
+  \end{figure}
+    %
+  \subparagraph{Feature Layer Details}TaxReversionParcels has been configured for offline use.
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.55\textwidth]{layerDetails}
+  \vspace{-.15in}
+
+  \caption{Feature Layer Details}
+  \end{figure}
+    %
+  \clearpage
+    %
+    %
+  %images of publishing the service and explanation of settings required for offline use
+    %
+  \subparagraph{Basemap Details}
+  \begin{itemize}
+    \setlength\itemsep{.3in}
+    \item A tiled basemap service is used
+    \item The infoserv user credentials are used for sharing
+    \item The url for the shared service is:
+  \end{itemize}
+    %
+
+ \noindent \textcolor{HyperlinkBlue1}{\scriptsize\path{https://tiledbasemaps.arcgis.com/arcgis/rest/services/World_Street_Map/MapServer}}
+ \vspace{.5in}
+
+    %
+    % Single Figure
+    %
+  \begin{figure}[h!]
+  \centering
+  \includegraphics[width=1\textwidth]{BasemapSourceDescription}
+  \caption{Basemap Source Description}
+  \end{figure}
+  \clearpage
+    %
+      %
+  \subsubsection{Hard Copy Record}
+  screenshots:
+  arcmap map
+  arcmap tools
+  portal screenshots
+  sql server mgt screen shots
+  phone screenshots
+    %
+  \paragraph{ArcGIS Server}
+  \clearpage
+    %
+    %
+  \subsubsection{Administrative Manual}
+
+  \paragraph{Annual Setup}
+
+  A new dataset for forfeiture parcels must be created each year.
+
+  \noindent The forfeiture information comes from BSA Forfeitures.net.
+
+  \noindent Parcel geometry and other attributes comes from ACParcelsCombined.
+
+
+
+ \subparagraph{To Connect to the Forfeiture Dataset}
+
+  \noindent{To Add a new database connection:}
+  \begin{itemize}
+  \item {\Large Right Click on Add Database Connection}
+
+  \begin{itemize}
+  \item {\Large Enter these values into the tool}
+  \end{itemize}
+  \end{itemize}
+
+  \vspace{.1in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.8\textwidth]{newConnection.PNG}
+  \caption{Add New Connection}
+  \end{figure}
+  \vspace{.15in}
+
+ {\bigbtn Push \fbox{OK}}
+
+ \clearpage
+
+
+  \subparagraph{Update the Forfeiture Dataset}
+
+  \noindent{To clear the features from the existing dataset:}
+  \begin{itemize}
+  \item {\Large Use the Delete Feature Tools}
+  \item {\Large For Input Features:}
+  \begin{itemize}
+  \item {\Large ForfeituresFieldwork.DBO.ForfeitureParcels}
+  \end{itemize}
+  \end{itemize}
+
+  \vspace{.1in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.7\textwidth]{AnnualDeleteFeatures.png}
+  \caption{Annual Delete Features}
+  \end{figure}
+  \vspace{.15in}
+
+ {\bigbtn Push \fbox{OK}}
+
+
+ \subparagraph{Delete the attached table}
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.4\textwidth]{deleteAttachedTable.PNG}
+  \caption{Delete Attached Table}
+  \end{figure}
+
+  \clearpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ \paragraph{Create new connection to BSA server}
+
+  A connection to BSA is used to get the latest forfeiture information.
+
+ \subparagraph{To Connect to the BSA Server}
+
+  \noindent{To Add a new database connection:}
+  \begin{itemize}
+  \item {\Large Right Click on Add Database Connection}
+
+  \begin{itemize}
+  \item {\Large Enter these values into the tool}
+  \end{itemize}
+  \end{itemize}
+
+  \vspace{.1in}
+
+    %
+    % Single Figure No Wrap
+    %
+
+
+ \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.8\textwidth]{shagbarkBsaConnection.PNG}
+  \caption{Connect to BSA Server}
+  \end{figure}
+
+  \vspace{.15in}
+
+ {\bigbtn Push \fbox{OK}}
+
+ \clearpage
+
+
+
+
+
+      %
+      %
+  \paragraph{Create a Table Query For the New Data}
+  %\vspace{.25in}
+
+  \begin{itemize}
+  \item {File {\menuArrow} Add Data {\menuArrow} Add Query Layer}
+  \item {{ Select your connection} (\textit{shagbark\_D005ALLEGAN.sde})}
+  \end{itemize}
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.9\textwidth]{ForfeitureQueryLayerDetails.PNG}
+  \caption{New Query Layer Dialog}
+  \end{figure}
+    %
+ \vspace{.1in}
+ Edit Query Text for current Year:
+ \vspace{.1in}
+  \begin{verbatim}
+  SELECT [parcelnumber] FROM [D005ALLEGAN].[dbo].[Forfeitures]
+  WHERE forf_year = 2020
+  \end{verbatim}
+    %
+    %
+  %\clearpage
+    %
+    %
+  \subparagraph{Select a Unique Identifier}
+    %
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.95\textwidth]{ForfeitureQueryLayerUID.PNG}
+  \caption{Query Layer Unique ID}
+  \end{figure}
+    %
+ {\bigbtn Push \fbox{Finish}}
+
+  \clearpage
+    %
+    %
+  \subparagraph*{Table is added to the map}
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.95\textwidth]{forfeituresTableAdded.PNG}
+  \caption{Forfeiture Table Added}
+  \end{figure}
+  \clearpage
+    %
+    %
+  \paragraph{Add Parcels Layer to the Map}
+ %\vspace{.3in}
+
+  \begin{itemize}
+  \item {Parcels are added to the map to provide parcel geometry and attributes}
+  \item {Parcel year is = current year - 2}
+  \item {I.E. Use ACParcelsCombHistoric2018 in 2020}
+  \end{itemize}
+
+  \vspace{.25in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.95\textwidth]{ParcelLayerAdded.PNG}
+  \caption{Parcels Layer Added}
+  \end{figure}
+  \clearpage
+
+
+
+
+
+
+
+   \paragraph{Forfeiture parcel missing spatial data}
+
+   \subparagraph*{A temporary join, selection, and export will save these}
+
+   \vspace{.3in}
+
+  \begin{itemize}
+  \item {Join Parcels to Forfeiture table}
+
+  %\end{itemize}
+
+  %\vspace{.25in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=1\textwidth]{joinToForfTable.PNG}
+  \caption{Join to Forfeiture Table}
+  \end{figure}
+  \clearpage
+
+
+
+  %\begin{itemize}
+  \item {Select any parcels missing spatial data}
+
+  %\end{itemize}
+
+ % \vspace{.25in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.65\textwidth]{selectForMissingSpatial.PNG}
+  \caption{Select for Missing Spatial}
+  \end{figure}
+
+  %\begin{itemize}
+  \item {Export Parcels missing spatial to a table in the GDB}
+
+  \end{itemize}
+
+
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.75\textwidth]{exportMissingSpatial.PNG}
+  \caption{Export Missing Spatial}
+  \end{figure}
+
+  \clearpage
+    %
+    %
+
+ \paragraph{Create current year Forfeiture dataset}
+  \subparagraph{Create Join}
+  \vspace{.3in}
+
+ \begin{itemize}
+
+ \item{Create new join to \emph{ACParcelsCombHistoricXXXX} of forfeitures on parcel numbers}
+
+ \end{itemize}
+
+    %
+  \vspace{.25in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.95\textwidth]{joinToParcelsCombined.PNG}
+  \caption{Join Parcels}
+  \end{figure}
+  \clearpage
+    %
+    %
+  \subparagraph[Export Joined Features]{Export Joined Features to a temp location \texorpdfstring{\\}{}}
+    %
+  \begin{itemize}
+  %\item Right click \ding{212} on joined feature class in TOC and choose export
+  \item Right click {{\rtArrow}}  on joined feature class in TOC and choose export
+ \end{itemize}
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.95\textwidth]{exportJoinedFeatures.png}
+  \caption{Export Joined Features}
+  \end{figure}
+  {\bigbtn choose location and Push \fbox{OK}}
+ %\item choose location and Push \fbox{OK}
+  %\end{itemize}
+  \clearpage
+    %
+    %
+  \subparagraph[Load data to forfeitureParcels]{\Large Load data from temp location to forfeitureParcels}
+  %\subparagraph*{}
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.95\textwidth]{LoadData.PNG}
+  \caption{Load Data 1}
+  \end{figure}
+
+  {\bigbtn choose features from a temp location}
+
+ \vspace{.2in}
+
+  {\bigbtn Push \fbox{Next}}
+
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.65\textwidth]{LoadData2.PNG}
+  \caption{Load Data 2}
+  \end{figure}
+
+ \clearpage
+
+  \paragraph[Match these fields]{\Large Match these fields}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.70\textwidth]{fieldMatch1.PNG}
+  \vspace{-.2in}
+
+  \caption{Match Fields 1}
+  \end{figure}
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.65\textwidth]{fieldMatch2.PNG}
+  \vspace{-.2in}
+
+  \caption{Match Fields 2}
+  \end{figure}
+  \clearpage
+    %
+    %
+ {\bigbtn Push \fbox{Next}}
+ % \paragraph*{\Large Push \fbox{Next}}
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.95\textwidth]{LoadData4.PNG}
+  \caption{Load Data 3}
+  \end{figure}
+    %
+
+ {\bigbtn Push \fbox{Finish}}
+
+    %
+  \clearpage
+    %
+    %
+
+
+ \paragraph{Calculate Initial Values}
+
+
+ \subparagraph{Calculate In List value}
+
+ \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.5\textwidth]{InListToYes.PNG}
+  \caption{Calculate In List}
+  \end{figure}
+
+ \subparagraph{Calculate Posted Value}
+
+   \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.5\textwidth]{PostedToNo.PNG}
+  \caption{Calculated Posted}
+  \end{figure}
+
+
+ \subparagraph{Calculate Posted InList Value}
+
+   \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.5\textwidth]{PostedAndInList.PNG}
+  \caption{Calculate Posted in List}
+  \end{figure}
+
+
+ \clearpage
+
+
+
+
+
+
+
+
+
+
+  \paragraph{Data Setup}
+  \vspace{.2in}
+
+ \subparagraph{Register as versioned and Add Global IDs}
+
+
+  \vspace{.2in}
+
+  \noindent{\large Right Click {\rtArrow} Manage {\rtArrow} Register as Versioned}
+  \vspace{.2in}
+
+  and
+  \vspace{.2in}
+
+  \noindent{\large Right Click {\rtArrow} Manage {\rtArrow} Add Global IDs}
+  \vspace{.2in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.8\textwidth]{RegisterAsVersioned.PNG}
+  \caption{Setup Data}
+  \end{figure}
+    %
+  \clearpage
+    %
+    %
+  \paragraph[Create Attachments]{\Large Create Attachments\texorpdfstring{\\}{}}
+ Attachments is for storing the photos for each feature.
+
+  \noindent{\large Right Click {\rtArrow} Manage {\rtArrow} Add Attachments}
+  \vspace{.3in}
+
+  \subparagraph*{}
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.8\textwidth]{createAttachments.PNG}
+  \caption{Create Attachments}
+  \end{figure}
+
+
+   \subparagraph{Calculate Acres in ForfeitureParcels}
+
+ \noindent{\large Right Click {\rtArrow} Acres Column {\rtArrow}Calculate geometry (acres)}
+
+  \clearpage
+
+
+    %
+    %
+  \paragraph[Setup Users in ArcGIS]{\Large Setup Users in ArcGIS\texorpdfstring{\\}{}}
+
+  Users that will run Pre and Post processing scripts must be created and given priviliges on Treasurer Feature Data Set.
+  \vspace{.35in}
+
+  \noindent For any new users of the geoprocessing tools:
+
+  \vspace{.15in}
+
+  Use the create Database User tool
+   \vspace{.15in}
+
+  {\textbf or}
+
+  \vspace{.15in}
+
+ In Catalog {\rtArrow} Right click on ForfeituresFieldwork {\rtArrow} Administration {\rtArrow} Add User
+
+  \vspace{.35in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=1\textwidth]{addDbUser.png}
+  \caption{Add Db User}
+  \end{figure}
+  \clearpage
+    %
+    %
+  \paragraph[Add New User to Feature Dataset]{\Large Add New User to Feature Dataset\texorpdfstring{\\}{}}
+  \vspace{.35in}
+
+  In Catalog, { \rtArrow} right click on Treasurer Feature Data Set
+  \vspace{.15in}
+
+  {\rtArrow} Manage { \rtArrow} Priviliges { \rtArrow} Add { \rtArrow} Type new user { \rtArrow}
+
+ \vspace{.25in}
+
+ {\btn Push \fbox{OK}}
+  \vspace{.25in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.9\textwidth]{AddFdsUser.png}
+  \caption{Add Feature Dataset User}
+  \end{figure}
+  \clearpage
+    %
+    %
+  \paragraph[Extend Priviliges for New User]{\Large Extend Priviliges for New User\texorpdfstring{\\}{}}
+  \vspace{.5in}
+
+  In Catalog {\rtArrow} right click on Treasurer FDS {\rtArrow} Manage {\rtArrow} Priviliges {\rtArrow} check boxes
+  \vspace{.5in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.9\textwidth]{AddFdsUserPriviliges.png}
+  \caption{Extend Feature Dataset Priviliges}
+  \end{figure}
+  \clearpage
+    %
+    %
+ \paragraph{Portal Setup}
+
+ \subparagraph{Setup Users in Portal for ArcGIS}
+  \vspace{.5in}
+
+  \noindent Users that will use the Collector for ArcGIS must have profiles added to and managed in the Allegan County GIS Portal site.
+  \vspace{.5in}
+
+  In Portal, {\rtArrow} \fbox{My Organization}
+
+ \vspace{.2in}
+
+ {\btn Push \fbox{Add Members}}
+ %\paragraph*{\Large Push \fbox{Add Members}}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.9\textwidth]{PortalAddUser1.png}
+  \caption{Portal Add User 1}
+  \end{figure}
+  \clearpage
+    %
+    %
+
+  \subparagraph{Add Members to Portal}
+
+  \vspace{.4in}
+
+  {\Large Select Built in Member {\rtArrow}}
+  \vspace{.4in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.9\textwidth]{PortalAddUser2.png}
+  \caption{Portal Add User 2}
+  \end{figure}
+
+ {\bigbtn Push \fbox{Next}}
+
+  \clearpage
+    %
+    %
+  \subparagraph{Enter required info for new member}
+    %
+  \vspace{.5in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.95\textwidth]{PortalAddUser3.png}
+  \caption{Portal Add User 3}
+  \end{figure}
+  \clearpage
+    %
+    %
+  \subparagraph{Manage Treasurer Group}
+  \vspace{.5in}
+
+  In Portal {\rtArrow} Go to groups {\rtArrow} Invite new user to the group
+  \vspace{.5in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.9\textwidth]{PortalAddUser4.png}
+  \caption{Portal Add User 4}
+  \end{figure}
+  \clearpage
+    %
+    %
+  \subparagraph{Share Portal Content with the group}
+  \vspace{.5in}
+
+  \noindent Any content used by the group needs to be shared to the group
+  \vspace{.5in}
+
+    %
+    % Single Figure No Wrap
+    %
+  \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.9\textwidth]{PortalAddUser5.png}
+  \caption{Portal AddUser 5}
+  \end{figure}
+  \clearpage
+    %
+    %
+
+
+ \paragraph{Start services and webmap}
+
+ \subparagraph{Find published MXD}
+
+ \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.9\textwidth]{publishedMxd.png}
+  \caption{Published Mxd}
+  \end{figure}
+  \clearpage
+
+
+
+
+
+ \paragraph{Publish Forfeiture Parcels Map Service}
+
+ \subparagraph{General}
+ \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.5\textwidth]{General.png}
+  \caption{General}
+  \end{figure}
+  %\clearpage
+
+ \subparagraph{Capabilities}
+ \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.5\textwidth]{Capabilities.png}
+  \caption{Capabilities}
+  \end{figure}
+
+  %\clearpage
+
+
+ \subparagraph{Feature Access}
+ \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.5\textwidth]{FeatureAccessProperties.png}
+  \caption{Feature Access}
+  \end{figure}
+  \clearpage
+
+ \subparagraph{Publish Service}
+ \begin{figure}[h!]
+  \centering
+      \includegraphics[width=.5\textwidth]{PublishService.png}
+  \caption{Publish Service}
+  \end{figure}
+
+
+
+
+
+
+
+ \paragraph{Schema Change Procedure}
+
+  \clearpage
+    %
+    %
+  \paragraph[Form Edits Procedure]{\Large Form Edits Procedure}
+  
+
+  
+  \clearpage
     %
     %
   \subsubsection[User Manual]{\Large User Manual}
