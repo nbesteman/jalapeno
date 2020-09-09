@@ -1,0 +1,103 @@
+  %
+  %
+  %  Or Can compile alone with the commented texts toggled
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+% \def\titlename{Batch PDF Optimization}
+% \def\authorName{Allegan County GIS Services}
+% \def\pdfTitle{Batch PDF Optimization}
+% \def\pdfSubject{GIS Tools} %
+% \def\pdfKeywords{mobile,gis}
+%
+% \input{../../../preamble/subSectionPreamble.tex}
+  %
+%-------------------------------------------------------------------
+    %
+    %
+\begin{document}% document begins
+ %
+ %--------------------------------------------------
+  %
+\subsection{PDF Optimizer}
+\subsubsection{Purpose and Summary}
+\textbf{Workflow Purpose:} Optimization of a large number of pdf docs.\\
+\textbf{Workflow Summary:} Uses Python to create a list of .pdf docs in a folder and creates a batch file to optimize the pdfs in the list to another location.  The batch process calls ghost script for the optimization.
+
+\subsubsection{requirements}
+Opensource software:
+\begin{itemize}
+\item ghostscript
+\item python 2.7 and a Python IDE
+\item A text editor
+\end{itemize}
+paragraph{Python(2.7)}
+
+\paragraph*{Note:} The output of this script is bdoc.txt, Save as a .bat to execute the optimize.
+
+\paragraph*{Script that creates a batch file}
+\begin{verbatim}
+import os, sys
+
+project = os.path.dirname(os.path.dirname(__file__))
+processing = os.path.join(project, 'processing')
+#source = os.path.join(project,'source')
+build = os.path.join(project,'build')
+sourcepdf = os.path.join(build, '20180716')
+
+inString1 = "gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4
+-dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH
+-sOutputFile=J:\\Projects\\2018ParcelAtlas\\build\\optimized\\"
+
+inString2 = " J:\\Projects\\2018ParcelAtlas\\build\\20180716\\"
+
+batchdoc = os.path.join(processing,"bDoc.txt")
+
+#   Main
+################################################
+
+if __name__ == "__main__":
+
+    list1 = os.listdir(sourcepdf)
+    l = open(batchdoc,'w')
+    for i in list1:
+        newi = i[1:]
+        print newi
+        t = inString1 + newi + inString2 + i + "\n"
+        print t
+        l.write(t)
+
+    l.close()
+
+\end{verbatim}
+
+\subsubsection{ghostscript}
+
+\paragraph{About}
+ghostscript is used for the optimization. ghostscript is an interpreter for the PostScript language and for PDF~\cite{ghostscript1}.
+\paragraph{Licensing}
+ghostscript is available opensource under AGPL conditions.  more information can be found \href{https://www.ghostscript.com/license.html}{here}.
+\paragraph{Download}
+ghostscript can be downloladed \href{https://www.ghostscript.com/download/gsdnld.html}{here}.
+
+
+\subsubsection{Windows batch files}
+A line from the batch file looks like:\\
+\begin{verbatim}
+
+
+
+gswin32 -sDEVICE=pdfwrite -dCompatibilityLevel=1.4
+ -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH
+ -sOutputFile=J:\Project\2018ParcelAtlas\build\optimized\
+ 02-001-001-00.pdf J:\Projects\2018ParcelAtlas\build\20180716
+ \_02-001-001-00.pdf
+
+\end{verbatim}
+
+\end{document}
