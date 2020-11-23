@@ -21,30 +21,28 @@
     %
     %
 %\begin{document}% document begins
- %
- %--------------------------------------------------
-  %
-  
+    %
+%--------------------------------------------------
   
 \subsubsection[COGO Tools in ArcGIS]{COGO Tools in ArcGIS}
 \vspace{.1in}
 
-\paragraph[Navigate to COGO MXD ]{\textbf{Navigate to COGO MXD}}
+\paragraph{COGO Workspace Setup}
+
+\subparagraph[The COGO Mapping Document(mxd)]{\textbf{Navigate to the COGO Mapping document (MXD)}}
  \begin{verbatim}
 J:\Departments\Treasury\gis\COGO
 \end{verbatim}
 
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.9\textwidth]{CogoMxd.png}
+    \includegraphics[width=.8\textwidth]{CogoMxd.png}
 
 \caption{COGO Map File}
 \end{figure}
 %
-\clearpage  
 
-
-copy it to personal WS
+\subparagraph*{Copy the file to your personal workspace}
 
 \begin{figure}[h!]
 \centering
@@ -55,21 +53,137 @@ copy it to personal WS
 %
 \clearpage  
 
-
-
-Double click on the mxd
+{\textbf{Double click on COGOWorkSpace.mxd to open it}}
 
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.9\textwidth]{firstScreen.png}
+    \includegraphics[width=.8\textwidth]{firstScreen.png}
 
 \caption{First Screen}
 \end{figure}
 %
+
+\subparagraph[Full Extent Button]{Zooms out to show all features in the broadest layer}
+
+{\bigbtn Push \fbox{Full Extent Tool}}
+
+
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.8\textwidth]{fullExtentResult.png}
+
+\caption{Full Extent Tool Result}
+\end{figure}
+
 \clearpage 
 
+\paragraph[Editor Setup for COGO]{\textbf{Set up editor options for COGO:}}
 
-Use the find tool to get to a starting area.
+{\bigbtn Push \fbox{Editor} Toolbar Button to get the dropdown}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=1\textwidth]{editorToolbarDropdown.png}
+
+\caption{Editor Toolbar Button}
+\end{figure}
+
+%\vspace{.25in}
+\noindent Set units for COGO:
+
+{\bigbtn
+\noindent \fbox{Editor}$\Rightarrow$\fbox{Options} $\Rightarrow$\fbox{Units}
+}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.7\textwidth]{editorOptions.png}
+
+\caption{Editor Options}
+\end{figure}
+%
+
+\clearpage
+
+\paragraph{Snapping Setup}
+
+\textbf{Snapping settings} are important for accuracy and precision in editing GIS data
+
+\subparagraph{Enable Classic Snapping}
+{\bigbtn
+\fbox{Editor}$\Rightarrow$\fbox{Options}$\Rightarrow$\fbox{General}$\Rightarrow$\fbox{Use Classic Snapping}
+}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.4\textwidth]{enableClassicSnapping.png}
+
+\caption{Enable Classic Snapping}
+\end{figure}
+
+%\clearpage
+
+\subparagraph{Enable Snap Tips}
+
+Snap Tips are text that show what you are snapping to
+
+
+{\bigbtn
+\noindent \fbox{Editor Dropdown}$\Rightarrow$\fbox{Snapping}$\Rightarrow$ \fbox{Options}
+}
+
+
+\begin{itemize}
+\item Check the box for Show Snap Tips
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.4\textwidth]{enableSnapTips.png}
+
+\caption{Enable Snap Tips}
+\end{figure}
+
+\clearpage
+
+\subparagraph{Configure Snapping Window}
+
+For each feature layer in the map there are 3 options for snapping:
+
+\noindent{\bigbtn Vertex}, {\bigbtn Edge},and {\bigbtn End} Snapping
+
+\vspace{.5in}
+
+\noindent Open the Snapping Window
+
+{\bigbtn
+\noindent \fbox{Editor}$\Rightarrow$\fbox{Snapping}$\Rightarrow$\fbox{Snapping Window}
+}
+
+\noindent These settings are a good start:
+
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.7\textwidth]{snappingWindow.png}
+
+\caption{Snapping Window}
+\end{figure}
+
+{\bigbtn For more information on Snapping:}
+
+\href{https://desktop.arcgis.com/en/arcmap/10.5/manage-data/editing-fundamentals/enabling-snapping-classic-snapping-.htm}{Link to Documentation on Classic Snapping}
+
+
+\clearpage
+
+\paragraph{Find starting point for COGO sketch}
+
+\subparagraph{Using the Find Tool}
+
+If you have a parcel number near your area of interest, you can use the find tool to get there.
+
 \begin{figure}[h!]
 \centering
     \includegraphics[width=.9\textwidth]{findTool.png}
@@ -77,10 +191,19 @@ Use the find tool to get to a starting area.
 \caption{Find Tool}
 \end{figure}
 %
-\clearpage 
 
+\clearpage
 
-Enter a parcel number into the find tool
+\subparagraph*{Enter a parcel number into the Find Tool}
+
+Input the:
+\begin{itemize}
+\item Parcel Number
+\item Layer to search
+\item Field to search
+\end{itemize} 
+
+{\bigbtn Push \fbox{Find}}
 
 \begin{figure}[h!]
 \centering
@@ -91,8 +214,8 @@ Enter a parcel number into the find tool
 %
 \clearpage
 
-If find tool finds a match: 
-right click on it and select zoom to
+\noindent If find tool finds a match:\\
+\noindent right click on it and select zoom to
 
 \begin{figure}[h!]
 \centering
@@ -103,7 +226,13 @@ right click on it and select zoom to
 %
 \clearpage
 
-Zoom in or out and toggle layers on or off in table of contents to find the point where you would like to start mapping.
+Find a starting point for mapping by:
+\begin{itemize}
+
+\item Using the mouse wheel to zoom in or out
+\item Toggle layers on or off in the table of contents
+
+\end{itemize}
 
 \begin{figure}[h!]
 \centering
@@ -114,22 +243,43 @@ Zoom in or out and toggle layers on or off in table of contents to find the poin
 %
 \clearpage
 
+\paragraph{Begin COGO Sketch}
 
-in the editor toolbar click editor dropdown and select start editing.
+\subparagraph{Start Editing}
+
+{\bigbtn
+\noindent \fbox{Editor}$\Rightarrow$\fbox{Start Editing}
+}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.7\textwidth]{EditorToolbar.png}
+\vspace{-.1in}
+
+\caption{Editor Toolbar}
+\end{figure}
 
 In the start editing box, under source, select the Shareddata connection
 
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.9\textwidth]{startEditingBox.png}
+    \includegraphics[width=.7\textwidth]{startEditingBox.png}
 
 \caption{Start Editing}
 \end{figure}
 %
 \clearpage
 
-Once you have your starting point, click the traverse button on the COGO toolbar,
-push template button, and select CogoLines
+\subparagraph{Use the Traverse Tool on the COGO Toolbar}
+
+Once you have your starting point:
+\vspace{.5in}
+
+\noindent {\bigbtn Push \fbox{Traverse} on the COGO toolbar}
+\vspace{.5in}
+
+\noindent {\bigbtn Push \fbox{Template} and select CogoLines}
+
 
 \begin{figure}[h!]
 \centering
@@ -140,48 +290,133 @@ push template button, and select CogoLines
 %
 \clearpage
 
-To the right of the Start box click the arrow+ button
+\subparagraph{Example Legal Description}
+
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.9\textwidth]{startCogo.png}
+    \includegraphics[width=1\textwidth]{sampleDescription.png}
+
+\caption{Sample Description}
+\end{figure}
+
+\noindent For this parcel, you can use the find tool to get to a nearby parcel or navigate to Lee Twp Section 17.
+\vspace{.1in}
+
+\noindent Once there, locate the South Quarter Post for the starting point for sketching.
+
+\subparagraph{Select Starting Point for the Sketch}
+
+To the right of the Start box: {\bigbtn Push \fbox{arrow+}}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.8\textwidth]{startCogo.png}
 
 \caption{Start COGO}
 \end{figure}
 %
+
 \clearpage
 
 
-Click a starting point
+\noindent{\bigbtn Click a starting point in the map}
+
 \begin{figure}[h!]
 \centering
-    \includegraphics[width=.9\textwidth]{clickAPoint.png}
+    \includegraphics[width=.95\textwidth]{clickAPoint.png}
 
 \caption{Click Starting Point}
 \end{figure}
 %
+
+\vspace{.5in}
+
+\noindent{\btn \textit{Note: The cursor should snap to points specified in the Snapping Window.}}
+
 \clearpage
 
+\subparagraph{Enter COGO Inputs}
 
+Enter {\btn Direction and Distance}
 
+\vspace{.25in}
 
-Enter direction and distance and push add
+\textbf{\textit{i.e.}}
 
+\vspace{.15in}
 
+\noindent {\btn From the South Quarter post of Section 17}
+\vspace{.5in}
 
+\noindent\textbf{One Direction Distance} can be entered or the \textbf{entire traverse} can be entered at one time.
 
-%{\Large $\Rightarrow$ Push the     Button}
-%
-%\begin{figure}[h!]
-%\centering
-%    \includegraphics[width=.6\textwidth]{fabricPointMoveToFeatureAddIn.png}
-%
-%\caption{Fabric Point Move to Feature Addin}
-%\end{figure}
-%%
-%\clearpage  
-%  
-%  
-%\subsection{COGO Tools in ArcGIS}
-%TEXT
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.9\textwidth]{sampleTraverse.png}
 
+\caption{Sample Traverse}
+\end{figure}
+
+\noindent{\bigbtn Push \fbox{Finish} and the lines are added to the data}
+
+\clearpage
+
+\subparagraph{More Examples of Direction Distance Inputs}
+
+\noindent{\textbf{To go straight North:}}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.7\textwidth]{northDirectionDistance.png}
+
+\caption{North Direction Distance}
+\end{figure}
+
+\noindent{\bigbtn Push \fbox{Add} and the line is added to the sketch}
+ 
+\vspace{.5in}
+
+\noindent{\btn \textit{Note: the sketch is only temporary at this point, lines can be reordered added and removed.}}
+ 
+\clearpage 
+ 
+\noindent{\textbf{To go straight West:}}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.7\textwidth]{westDirectionDistance.png}
+
+\caption{West Direction Distance}
+\end{figure}
+
+%\clearpage
+
+\noindent{\textbf{To go straight South:}}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.7\textwidth]{southDirectionDistance.png}
+
+\caption{South Direction Distance}
+\end{figure}
+
+\clearpage
+
+\noindent{\textbf{To go straight East:}}
+
+\begin{figure}[h!]
+\centering
+    \includegraphics[width=.7\textwidth]{eastDirectionDistance.png}
+
+\caption{East Direction Distance}
+\end{figure}
+
+\vspace{.7in}
+
+\noindent{\btn \textit{Note: anytime before you push finish you can add or remove lines and reorder lines.}}
+
+\vspace{.5in}
+
+\noindent{\bigbtn Push \fbox{Finish} and the lines are added to the data}
+ 
 \end{document}

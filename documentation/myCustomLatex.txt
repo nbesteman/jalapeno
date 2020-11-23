@@ -1,0 +1,40 @@
+
+
+\newcommand{\btn}{\fontfamily{pag}\fontseries{m}\color{HeaderOrangeC}\fontsize{14}{15}\selectfont} % Create new typeface
+
+\newcommand{\smallbtn}{\fontfamily{pag}\fontseries{m}\color{HeaderOrangeC}\fontsize{9}{11}\selectfont} % Create new typeface
+
+Large orange type:
+{\bigbtn Push etc}
+\newcommand{\bigbtn}{\fontfamily{pag}\fontseries{m}\color{HeaderOrangeC}\fontsize{18}{20}\selectfont} % Create new typeface
+
+\newcommand{\localtextbulletone}{\textcolor{HeaderOrangeC}{\ding{227}}} % ding characters specified in symbols-a4 pg12
+
+box around text:
+\fbox{Find}
+
+Right arrow symbol:
+$\Rightarrow$
+
+right click arrow:
+{\rtArrow}
+\newcommand{\rtArrow}{\LARGE\textcolor{HeaderOrangeC}{\ding{234} }}
+
+red look arrow
+\lookArrow
+\newcommand{\lookArrow}{\HUGE\textcolor{gisRed}{\ding{230} }}
+
+\newcommand{\menuArrow}{\HUGE\textcolor{HeaderOrangeC}{$\Rightarrow$}}
+
+
+
+red text in the margin
+\marginpar{\marginText Forfeiture Parcels is used through the workflow}
+\newcommand{\marginText}{\fontfamily{pcr}\fontseries{m}\color{red}\fontsize{7}{9}\selectfont} % create new typeface for margins
+
+include URL:
+\href{https://desktop.arcgis.com/en/arcmap/10.5/manage-data/editing-fundamentals/enabling-snapping-classic-snapping-.htm}{Link to Documentation on Classic Snapping}
+\newcommand{\http}{\fontfamily{pcr}\fontseries{m}\color{HyperlinkBlue1}\fontsize{8}{10}\selectfont} % Create new typeface
+
+
+\newcommand{\helv}{\color{HeaderOrangeE}\fontfamily{phv}\fontseries{b}\fontsize{9}{11}\selectfont} % Create new typeface for headers

@@ -1,0 +1,42 @@
+% This is page styles for Standalone compile of subsections
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HEADERS AND FOOTERS
+    %  Page Styles
+    %  In LATEX the page style refers to the part of the page building mechanism that
+    %   attaches the headers and footers to the actual page.
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%  DEFINE JALAPENO PAGE STYLE (JalapenopageStyleB page style)
+\makepagestyle{jalapenoPageStyleB}
+    % HEADERS
+\makeheadrule {jalapenoPageStyleB}{\textwidth}{\normalrulethickness}
+\makeheadfootruleprefix{jalapenoPageStyleB}{\color{HeaderOrangeE}}{\color{HeaderOrangeE}}
+\makeevenhead {jalapenoPageStyleB}{\helv \thepage}{}{}
+\makeoddhead {jalapenoPageStyleB}{}{}{\helv \thepage}
+    % FOOTERS
+\makefootrule {jalapenoPageStyleB}{\textwidth}{\normalrulethickness}{\footruleskip}
+%\makeevenfoot {jalapenoPageStyleB}{}{\thepage} {}
+%\makeoddfoot {jalapenoPageStyleB}{}{\thepage} {}
+    % MARKS
+      % NOTE: See page 11 of Page Styles in Memoir
+\makeatletter % because of \@chapapp
+  %
+\makepsmarks {jalapenoPageStyleB}{
+  %\nouppercaseheads
+\createmark {chapter} {both} {shownumber}{\@chapapp\ }{. \ } % set leftmark to chapter
+%\createmark {section} {right}{shownumber}{} {. \ }
+\createmark {subsection} {right}{shownumber}{} {. \ } % set rightmark to subsection
+%\createmark {subsubsection}{right}{shownumber}{} {. \ } % set rightmark to subsubsection
+\createplainmark {toc} {both} {\contentsname}
+\createplainmark {lof} {both} {\listfigurename}
+\createplainmark {lot} {both} {\listtablename}
+\createplainmark {bib} {both} {\bibname}
+\createplainmark {index} {both} {\indexname}
+\createplainmark {glossary} {both} {\glossaryname}
+}
+\makeatother
+%-------------------------------------------------------------------
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+% set page number color for plain page
+\makeevenfoot {plain}{}{\helv \thepage} {}
+\makeoddfoot {plain}{}{\helv \thepage} {}

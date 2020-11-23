@@ -1,6 +1,6 @@
-  %  
-  %  
-  %  
+  %
+  %
+  %
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %    To Do:
 %
@@ -9,18 +9,18 @@
 %-------------------------------------------------------------------
 % OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
   %
-\def\titlename{Tax Map Production}
-\def\authorName{Allegan County GIS Services}
-\def\pdfTitle{Tax Map Production}
-\def\pdfSubject{GIS Tools} %
-\def\pdfKeywords{map production,gis}
-
-\input{../../../preamble/subSectionPreamble.tex}
+% \def\titlename{Tax Map Production}
+% \def\authorName{Allegan County GIS Services}
+% \def\pdfTitle{Tax Map Production}
+% \def\pdfSubject{GIS Tools} %
+% \def\pdfKeywords{map production,gis}
+%
+% \input{../../../preamble/subSectionPreamble.tex}
   %
 %-------------------------------------------------------------------
     %
     %
-%\begin{document}% document begins
+\begin{document}% document begins
  %
  %--------------------------------------------------
 \subsection{Tax Map Production}
@@ -75,7 +75,7 @@ The {\LARGE Four Stages} of the workflow:
   %
 \begin{itemize}
 \item Update ACParcelsPublishing FDS from ACParcelsEditing FDS
-\item Prepare ACParcelsEditing FDS for the next year of use 
+\item Prepare ACParcelsEditing FDS for the next year of use
 \item Add or delete quarter section index frames
 \end{itemize}
   %
@@ -125,9 +125,9 @@ SQL Server Source Data:
 \item ACCadastral.gdb {\tiny (File GDB Created From ACPro.SDE)}
 \end{itemize}
   %
-\subparagraph{Python}\noindent A Python interpreter to tune the TaxMapTool.py script  
-  
-  
+\subparagraph{Python}\noindent A Python interpreter to tune the TaxMapTool.py script
+
+
 \subparagraph{Adobe Acrobat}\noindent Combine pdf pages into books by unit
   %
 \end{adjmulticols}
@@ -145,7 +145,7 @@ SQL Server Source Data:
 
 \clearpage
   %
-  %  
+  %
 \subsubsection{Data Udpate Procedure}
   %
   %
@@ -153,7 +153,7 @@ SQL Server Source Data:
 Run DB maintenance routine on AC\_ Pro.sde first
 
 \paragraph{Updates to AC\_ Pro.sde}
-  % 
+  %
 Datasets involved:
 
 \begin{itemize}
@@ -166,11 +166,11 @@ Datasets involved:
    %
 \clearpage
 
-\paragraph{Update Procedure}   
-   
+\paragraph{Update Procedure}
+
 \subparagraph{Parcel Editing and Parcel Publishing}
    %
-Annually, the ParcelEditing feature dataset (FDS) is used to update the ParcelPublishing FDS.  
+Annually, the ParcelEditing feature dataset (FDS) is used to update the ParcelPublishing FDS.
 
 %\vspace{.5in}
 
@@ -178,7 +178,7 @@ Annually, the ParcelEditing feature dataset (FDS) is used to update the ParcelPu
 
 \noindent \textbf{Append and Clear}:load from Editing to Publishing and delete all from Editing
 
-\noindent \textbf{Replace Pub}: Delete all in Publishing and load all from Editing and leave all in Editing 
+\noindent \textbf{Replace Pub}: Delete all in Publishing and load all from Editing and leave all in Editing
 
   %
 \begin{table}[htbp]
@@ -199,7 +199,7 @@ AC\_Gap\_OverlapEdits&AC\_Gap\_Overlap&Replace Pub\\
 \hline
 AC\_PointsEdits&AC\_Points&Replace Pub\\
 \hline
-AC\_Splits&AC\_Parcels&Replace Pub\\ 
+AC\_Splits&AC\_Parcels&Replace Pub\\
 \hline
 AC\_SubBlocksEdits&AC\_SubBlocks&Replace Pub\\
 \hline
@@ -308,7 +308,7 @@ Double click on the \textbf{TaxMapBuilder} script
 \clearpage
   %
   %
-\paragraph{Map Refinement}Test groups of maps should be produced.  
+\paragraph{Map Refinement}Test groups of maps should be produced.
 
 \noindent Any style improvements that can be made should be done at this time.
 
@@ -332,10 +332,10 @@ Select All Units and Press OK
 
 For each unit, organize the pages into the TaxMapUnitFolders.
 
-\noindent Move the pages to the appropriate pdf folders inside the delivered folder of the workspace. 
+\noindent Move the pages to the appropriate pdf folders inside the delivered folder of the workspace.
 
-\noindent Combine all of the individual map pages into books using Adobe Acrobat and save to the PDF\_Book folder. 
-  
+\noindent Combine all of the individual map pages into books using Adobe Acrobat and save to the PDF\_Book folder.
+
 \subparagraph{Share the map books with Equalization}
 
 Copy the entire TaxMapUnitsFolder to:\\
