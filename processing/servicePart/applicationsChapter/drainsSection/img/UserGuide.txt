@@ -1,0 +1,38 @@
+Open ArcGISPro
+Select Project(1)
+Tour of WS(2)
+Catalog Tour(3)
+
+
+To Find a drain:
+
+Push green arrow in tasks for Traverse Notices Letter
+
+Task opens(4)
+
+Click Layer Search and from dropdown select match any part(4)
+
+Enter partial drain name and push enter(5)
+
+Selected drain is highlighted in the map(6)
+
+Right click on drain name for options, zoom to selected(7)
+
+Use the mouse wheel to zoom in or out.
+
+Push next step in the task(7)
+
+NOw the select by rectangle tool is enabled.  left click and hold to draw a box around the drain.  (8)To add to the selection hold shift and select more drains.  To deselect, click away from the selection in the map.  To see a list of selected drains, in the table push the button for Show selected records(9)
+
+When your selection is complete, press next step in the task(10).
+
+Tool processes the drains and selects all intersecting parcels(11)
+
+
+
+
+
+
+
+
+

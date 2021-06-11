@@ -1,0 +1,582 @@
+  %
+  %
+  %
+%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%    To Do:
+%
+%
+%
+%-------------------------------------------------------------------
+% OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
+  %
+ \def\titlename{Traverse Notices}
+ \def\authorName{Allegan County GIS Services}
+ \def\pdfTitle{Traverse Notices}
+ \def\pdfSubject{GIS Tools} %
+ \def\pdfKeywords{drains,gis}
+
+ \input{../../../preamble/subSectionPreamble.tex}
+  %
+%-------------------------------------------------------------------
+    %
+    %
+%\begin{document}% document begins
+ %
+ %--------------------------------------------------
+\subsection{Traverse Notices Production}
+  %
+\subsubsection{Problem and Analysis}
+  %
+\begin{adjmulticols}{2}{\innerMar}{\outerMar}
+  %
+\paragraph{Background}
+  %
+\noindent This tool replaces a mapInfo toolset to produce the different notification documents needed for drain maintenance.
+  %
+\paragraph{Statement of Problem}
+  %
+\noindent Drains Department must notify property owners affected by drain maintenance. 
+  %
+\paragraph{Analysis}
+  %
+\noindent \textbf{Traverse Notification Workflow} will facilitate: generation of notification documents based on a drain selected in a map.  From a selected drain this workflow selects affected parcels and assembles letters and lists with needed information.
+  %
+\subparagraph{People Involved in the Workflow}
+  %
+\begin{itemize} %
+\item GIS Analyst
+\item Drains Staff
+\end{itemize} %
+  %
+\subparagraph*{Stages of the Workflow}
+  %
+\begin{itemize} %
+\item Use the Traverse Notices Letter Task
+\item Create a Map
+\item Export reports for parcels intersecting selected drains
+\end{itemize} %
+  %
+\end{adjmulticols}
+  %
+\clearpage
+  %
+  %
+\paragraph{Traverse Notices Workflow Summary}
+\vspace{.25in}
+
+The {\LARGE Three Stages} of the workflow \textit{in ArGIS Pro}:
+
+\begin{enumerate}
+\item Traverse Notices Letter Task
+  %
+\begin{itemize}
+
+\item Search for drain
+\item Select drain
+\item Process data for selected drain
+
+\end{itemize}
+
+\item Create Maps 
+\begin{itemize}
+\item Set area and zoom level of map
+\item Markup map as desired
+\item Export map to PDF
+\end{itemize}
+  %
+\item Export Letters
+  %
+\begin{itemize} %
+\item Export individual reports from the Export Report Pane to PDF
+\end{itemize} %
+\end{enumerate}
+  %
+\clearpage
+  %
+  
+\paragraph{Technologies Used in The Workflow}
+  %
+\subparagraph{ArcGIS Pro}
+  %
+\begin{itemize}
+\item SQL Server Source Data(ACPro.SDE)
+
+\item An ArcGIS Pro Task is used to execute geoprocessing 
+
+\item Map creation in ArcGIS Pro
+
+\item Report creation(letters) in ArcGIS Pro
+
+  %
+\end{itemize}
+   %
+   
+\subparagraph{Other Software}
+
+\begin{itemize}
+
+\item PDF document printer
+
+\end{itemize}
+
+\subparagraph{Hardware}
+
+\begin{itemize}
+
+\item Printer
+
+\end{itemize}
+
+\clearpage
+
+
+\subsubsection{Running the task}
+
+
+\paragraph{Open ArcGISPro}
+
+\begin{itemize}
+
+\item Navigate to: \begin{verbatim}J:\Departments\Drains\Apps\TraverseNotices\Processing\end{verbatim}
+
+\item Click the Project: \textbf{TraverseNoticesTool.aprx}
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.9\textwidth]{SelectProject1.png}
+ \caption{Select Project}
+ \end{figure}
+
+\end{itemize}
+\clearpage
+
+\paragraph{Workspace Overview}
+
+%\noindent {\btn {Within ArcGisPro: }\fbox{xxx}}
+\noindent {\btn {Within ArcGIS Pro:}}
+
+%\subparagraph{Within ArcGisPro:}
+\noindent Panes and windows can be placed in any way.\\
+\noindent The default layout is depicted below. \\ 
+\noindent The important elements for this workflow are:
+
+\begin{itemize}
+\item Contents Pane
+\item Catalog Pane
+\item Tasks Pane
+\item Map Pane
+\item Attribute Tables
+\item Layout Panes
+\item Report Panes
+\item Geoprocessing Tool Boxes
+\end{itemize}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=1.2\textwidth]{WS_Desc2.png}
+ \caption{Workspace Overview}
+ \end{figure}
+
+\clearpage
+
+\paragraph{Begin the Traverse Notices Letter Task}
+If needed, click on the the task in catalog and choose {\bigbtn\fbox{Open}}
+\begin{itemize}
+
+\item Left click on the task name in Tasks Pane
+\item Push green arrow in tasks for Traverse Notices Letter
+
+\end{itemize}
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.9\textwidth]{CatalogTour3.png}
+ \caption{Open the Task}
+ \end{figure}
+
+
+\clearpage
+
+\paragraph{Search for a drain}
+
+\begin{itemize}
+
+\item In Task Pane, {\bigbtn Click \fbox{Layer Search}} 
+\item From dropdown select {\menuArrow}{\bigbtn \fbox{match any part}}
+\item Enter partial drain name {\menuArrow}{\bigbtn Push \fbox{enter}}
+
+\end{itemize}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.9\textwidth]{StepOne4a.png}
+ \caption{Drain Search}
+ \end{figure}
+
+\clearpage
+
+ \begin{wrapfigure}{r}{0.5\textwidth}
+ \centering
+     \includegraphics[width=.35\textwidth]{ListOfDrains.png}
+ \caption{Drains List}
+   \end{wrapfigure}
+.
+
+\vspace{1.5in}
+
+\noindent{\bigbtn Right click a drain \lookArrow}
+\vspace{.5in}
+ 
+\noindent{\bigbtn \fbox{zoom to selected}\lookArrow}
+
+
+\clearpage
+
+\subparagraph[Map of Drain]{Navigate the map to the correct area:}
+
+\begin{itemize}
+
+\item Click and hold to pan
+
+\item Use the mouse wheel to zoom in or out
+
+\item Push next step in the task
+
+\end{itemize}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.9\textwidth]{zoomTo7.png}
+ \caption{Drain Zoomed}
+
+
+ \end{figure}
+
+\subparagraph[x]{If the map is in the correct area:}
+
+\begin{itemize}
+
+\item Push \bigbtn \fbox{Next Step}
+
+\end{itemize}
+
+\clearpage
+
+\subparagraph{Select Drains of interest}
+
+\begin{itemize}
+
+\item The select by rectangle tool is enabled
+
+\item Left click and hold to draw a box around the drain
+
+\item To deselect, click away from the selection in the map
+
+\item To add to the selection hold shift and select more drains
+
+\end{itemize}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=1\textwidth]{drainSelected8.png}
+ \caption{Select Drain}
+
+
+ \end{figure}
+
+\clearpage
+     
+  
+\subparagraph{Highlight Selected Drains}
+
+\noindent To see a list of selected drains:
+
+\begin{itemize}
+
+\item In the Drains table, Push the button for Show selected records
+
+\end{itemize}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=1\textwidth]{showSelectedRecords9.png}
+ \caption{Show Selected Drains}
+
+
+ \end{figure}
+
+\clearpage
+
+\subparagraph{Process Selected Drains}
+
+  \begin{wrapfigure}{r}{0.6\textwidth}
+  \centering
+      \includegraphics[width=.5\textwidth]{NextStep10.PNG}
+  \caption{Process Selected Drains}
+  \end{wrapfigure}
+.
+
+  \vspace{1.75in}
+
+ \noindent {\btn {Push }\fbox{Next Step}}
+
+
+\clearpage
+
+\subparagraph{Parcel Selection Process Runs}
+\vspace{.5in}
+
+\noindent A selection of parcels is created based on intersection with the selected drains.
+
+\vspace{.5in}
+
+\noindent If the selection of parcels looks correct:
+
+\noindent {\btn {Push }\fbox{Finish}}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.8\textwidth]{ToolProcesses11.PNG}
+ \caption{Traverse Notice Processing}
+
+
+ \end{figure}
+ 
+\noindent The data is now ready for exporting reports (letters).
+
+\clearpage
+
+
+\paragraph{Create Reports}
+
+\subparagraph{Select a report to create}
+\vspace{.5in}
+
+\noindent Click on tab of desired report
+
+\vspace{1in}
+
+%\noindent {\btn {Push }\fbox{Finish}}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.8\textwidth]{ReportPane12.PNG}
+ \caption{Select Report}
+
+
+ \end{figure}
+
+
+\clearpage
+
+\subparagraph{Produce the letters}
+\vspace{.5in}
+
+\noindent {\btn {Push }\fbox{Export Report} from the Share Tab}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.8\textwidth]{ShareTab13.PNG}
+ \caption{Export Report}
+
+
+ \end{figure} 
+
+
+\clearpage
+
+\subparagraph{Export Reports}
+
+\begin{itemize}
+
+\item Share each report for all the letters
+
+\item Enter a name and output location for each report
+
+\end{itemize}
+
+
+\noindent {\btn {Push }\fbox{Export}}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.6\textwidth]{ExportReport14.PNG}
+ \caption{Export Report}
+
+
+ \end{figure} 
+
+
+\clearpage
+
+\paragraph{Layouts}
+Layouts are used to assemble a map document for printing.  To zoom and move around within the layout it must be activated
+
+\subparagraph{Activate Layout Frame}
+
+To activate the Layout Frame:
+
+\vspace{.25in}
+
+
+\noindent {\btn {Right Click in the Layout and select }\fbox{Activate}}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.8\textwidth]{19SelectLayoutAndActivate.PNG}
+ \caption{Activate Layout}
+
+
+ \end{figure}  
+
+\noindent {\btn {Right click in the layout choose \fbox{Pan (or zoom) to selected}}}
+
+\vspace{.25in}
+
+\noindent {\btn {To pan, hold left click and roll the mouse wheel to zoom }}
+
+
+\clearpage
+
+\paragraph{Using Map Graphic Elements}
+
+\subparagraph{Graphic Elements} 
+
+\begin{itemize}
+
+\item Can be used to add notes, text, arrows, etc to the map.  
+
+\item Map graphics stay in geographic position.
+
+\end{itemize}
+
+\noindent To create graphic elements:
+
+\noindent {\btn {click }\fbox{Graphics Layer} in Contents Pane}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.6\textwidth]{15sELECTEDgRAPHICSlAYERCapture.PNG}
+ \caption{Click on Graphics Layer}
+
+ \end{figure} 
+
+
+\clearpage
+
+\subparagraph{Set Target Graphics Layer}
+
+To get to graphics options:
+
+\noindent{\btn Map Tab {\lookArrow} \fbox{Graphics}}
+
+\noindent {\btn set \fbox{Target Layer} to Graphics Layer}
+
+ 
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.8\textwidth]{16ClickOnGraphicsTab.PNG}
+ \caption{Graphics Tab}
+
+
+ \end{figure} 
+
+
+\clearpage
+
+\subparagraph{Create a graphics element}
+
+
+\noindent {\btn Select a graphics type}
+
+\noindent Graphic types are chosen from this menu
+
+ 
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.8\textwidth]{21GraphicsElement.PNG}
+ \caption{Insert Graphic}
+
+
+ \end{figure} 
+\clearpage
+
+\subparagraph{Using graphics from the Symbol Gallery}
+
+\noindent Select any graphic element to change its style.
+
+\noindent {\btn {Premade symbols can be accessed in the Symbol Gallery}}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.6\textwidth]{17GraphicsSymbolsAvailable.PNG}
+ \caption{Symbol Gallery}
+
+
+ \end{figure} 
+
+
+
+\clearpage
+
+
+\subparagraph{Custom Graphics}
+Format the Selected Graphic as desired  
+
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.25\textwidth]{18FormatSymbol.PNG}
+ \caption{Format Symbol}
+
+
+ \end{figure} 
+
+
+
+\clearpage
+
+
+
+
+\subparagraph{Deactivate Layout Frame}
+
+To go back to editing the map frame, deactivate the Layout frame
+
+
+\noindent {\btn {Click }\fbox{Arrow}}
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.3\textwidth]{20CloseActivatedLayout.PNG}
+ \caption{Deactivate}
+
+
+ \end{figure} 
+
+\clearpage
+
+
+\subparagraph{Turning labels on and off}
+
+In the Contents Pane, Right Click on the layer
+
+\begin{itemize}
+
+\item Select Label to turn labels on
+
+\item Select Label again to turn labels off
+
+\item Labels can be customized in Labeling Properties
+
+\end{itemize}
+
+
+\begin{figure}[h!]
+ \centering
+     \includegraphics[width=.5\textwidth]{22LabelsOnOff.PNG}
+ \caption{Labels On and Off}
+
+ \end{figure}
+ 
+
+\end{document}
+
