@@ -9,18 +9,18 @@
 %-------------------------------------------------------------------
 % OPTIONAL PREAMBLE FOR LOCAL COMPILE  %
   %
- \def\titlename{Traverse Notices}
- \def\authorName{Allegan County GIS Services}
- \def\pdfTitle{Traverse Notices}
- \def\pdfSubject{GIS Tools} %
- \def\pdfKeywords{drains,gis}
-
- \input{../../../preamble/subSectionPreamble.tex}
+% \def\titlename{Traverse Notices}
+% \def\authorName{Allegan County GIS Services}
+% \def\pdfTitle{Traverse Notices}
+% \def\pdfSubject{GIS Tools} %
+% \def\pdfKeywords{drains,gis}
+%
+% \input{../../../preamble/subSectionPreamble.tex}
   %
 %-------------------------------------------------------------------
     %
     %
-%\begin{document}% document begins
+\begin{document}% document begins
  %
  %--------------------------------------------------
 \subsection{Traverse Notices Production}
@@ -130,7 +130,7 @@ The {\LARGE Three Stages} of the workflow \textit{in ArGIS Pro}:
 \clearpage
 
 
-\subsubsection{Running the task}
+\subsubsection{Traverse Notices Letters Task}
 
 
 \paragraph{Open ArcGISPro}
@@ -151,10 +151,7 @@ The {\LARGE Three Stages} of the workflow \textit{in ArGIS Pro}:
 
 \paragraph{Workspace Overview}
 
-%\noindent {\btn {Within ArcGisPro: }\fbox{xxx}}
 \noindent {\btn {Within ArcGIS Pro:}}
-
-%\subparagraph{Within ArcGisPro:}
 \noindent Panes and windows can be placed in any way.\\
 \noindent The default layout is depicted below. \\ 
 \noindent The important elements for this workflow are:
@@ -195,7 +192,7 @@ If needed, click on the the task in catalog and choose {\bigbtn\fbox{Open}}
 
 \clearpage
 
-\paragraph{Search for a drain}
+\paragraph{Search for a Drain}
 
 \begin{itemize}
 
@@ -230,7 +227,7 @@ If needed, click on the the task in catalog and choose {\bigbtn\fbox{Open}}
 
 \clearpage
 
-\subparagraph[Map of Drain]{Navigate the map to the correct area:}
+\subparagraph{Map the Drain}
 
 \begin{itemize}
 
@@ -250,7 +247,7 @@ If needed, click on the the task in catalog and choose {\bigbtn\fbox{Open}}
 
  \end{figure}
 
-\subparagraph[x]{If the map is in the correct area:}
+If the map is in the correct area:
 
 \begin{itemize}
 
@@ -300,7 +297,6 @@ If needed, click on the the task in catalog and choose {\bigbtn\fbox{Open}}
      \includegraphics[width=1\textwidth]{showSelectedRecords9.png}
  \caption{Show Selected Drains}
 
-
  \end{figure}
 
 \clearpage
@@ -345,16 +341,14 @@ If needed, click on the the task in catalog and choose {\bigbtn\fbox{Open}}
 \clearpage
 
 
-\paragraph{Create Reports}
+\subsubsection{Create Reports (Letters)}
 
-\subparagraph{Select a report to create}
+\paragraph{Select a Report}
 \vspace{.5in}
 
 \noindent Click on tab of desired report
 
 \vspace{1in}
-
-%\noindent {\btn {Push }\fbox{Finish}}
 
 \begin{figure}[h!]
  \centering
@@ -364,10 +358,9 @@ If needed, click on the the task in catalog and choose {\bigbtn\fbox{Open}}
 
  \end{figure}
 
-
 \clearpage
 
-\subparagraph{Produce the letters}
+\paragraph{Export Reports(Letters)}
 \vspace{.5in}
 
 \noindent {\btn {Push }\fbox{Export Report} from the Share Tab}
@@ -408,7 +401,7 @@ If needed, click on the the task in catalog and choose {\bigbtn\fbox{Open}}
 \clearpage
 
 \paragraph{Layouts}
-Layouts are used to assemble a map document for printing.  To zoom and move around within the layout it must be activated
+Layouts are used to assemble a map document for printing.  To zoom and move around within the layout, it must be activated.
 
 \subparagraph{Activate Layout Frame}
 
@@ -465,8 +458,10 @@ To activate the Layout Frame:
 \subparagraph{Set Target Graphics Layer}
 
 To get to graphics options:
+\vspace{.25in}
 
 \noindent{\btn Map Tab {\lookArrow} \fbox{Graphics}}
+\vspace{.25in}
 
 \noindent {\btn set \fbox{Target Layer} to Graphics Layer}
 
@@ -530,11 +525,7 @@ Format the Selected Graphic as desired
 
  \end{figure} 
 
-
-
 \clearpage
-
-
 
 
 \subparagraph{Deactivate Layout Frame}
@@ -579,4 +570,3 @@ In the Contents Pane, Right Click on the layer
  
 
 \end{document}
-
